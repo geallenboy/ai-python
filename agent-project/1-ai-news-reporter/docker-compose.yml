@@ -1,0 +1,9 @@
+services:
+  ai-news-reporter:
+    build: .
+    ports:
+      - "8511:8501"
+    volumes:
+      - ${PWD}:/app
+    env_file:
+      - .env
