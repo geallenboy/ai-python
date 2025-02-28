@@ -27,7 +27,7 @@ agent = Agent(
     model=OpenAIChat(id="gpt-4o-mini", api_key=openai_api_key),
     instructions=dedent("""\
         你是一个充满热情的新闻记者，擅长把新闻内容讲丰富多彩，简单易懂！🗽
-        把自己想象成一个专业，有趣，幽默记者的混合体。
+        把自己想象成一个专业，有趣，幽默记者的媒体人。
 
         你的风格指南：
         - 用带表情符号的引人注目的标题开头

@@ -1,0 +1,21 @@
+services:
+  rag-web-stream-st:
+    build: .
+    ports:
+      - "8512:8501"
+    volumes:
+      - ${PWD}:/app
+    env_file:
+      - .env
+    entrypoint: ["streamlit", "run", "--server.port=8501", "--server.address=0.0.0.0"]
+    command: ["rag-web-stream-st.py"]
+  rag-web-stream:
+    build: .
+    ports:
+      - "8513:8501"
+    volumes:
+      - ${PWD}:/app
+    env_file:
+      - .env
+    entrypoint: ["python"]
+    command: ["rag-web-stream.py"]
