@@ -8,7 +8,7 @@ source .venv/bin/activate
 
 2.安装依赖项
 pip3 install -U openai agno
- pip3 install --no-cache-dir -r requirements.txt
+pip3 install --no-cache-dir -r requirements.txt
 
 3.导出您的 OpenAI 密钥
 
