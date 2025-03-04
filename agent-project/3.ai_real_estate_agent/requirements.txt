@@ -1,0 +1,6 @@
+streamlit
+openai
+agno
+firecrawl-py==1.9.0
+pydantic
+streamlit
