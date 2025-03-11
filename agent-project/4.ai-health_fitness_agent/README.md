@@ -45,5 +45,5 @@
     ```
 3. **运行 Streamlit 应用**
     ```bash
-    streamlit run health_agent.py
+    streamlit run app.py
     ```
