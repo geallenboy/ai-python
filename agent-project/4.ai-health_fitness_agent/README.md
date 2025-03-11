@@ -25,14 +25,13 @@
 
 - `agno`
 - `google-generativeai`
+- `openai`
 - `streamlit`
 
 请确保按照 `requirements.txt` 文件中提到的版本安装这些依赖项
 
 ## 如何运行
 
-按照以下步骤设置和运行应用程序：
-首先，请在此处获取由 Google AI 提供的免费 Gemini API 密钥：https://aistudio.google.com/apikey
 
 1. **克隆仓库**：
    ```bash
