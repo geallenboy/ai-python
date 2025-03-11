@@ -3,7 +3,6 @@ ai agent
 ```
 1.设置你的虚拟环境
 
-python3 -m venv .venv
 python -m venv .venv
 source .venv/bin/activate
 
