@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
+
 st.set_page_config(
     page_title="AI健康与健身规划师",
     page_icon="🏋️‍♂️",

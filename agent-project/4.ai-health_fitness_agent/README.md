@@ -47,3 +47,8 @@
     ```bash
     streamlit run app.py
     ```
+
+## 效果
+![]
+
+![image](./image.png)
