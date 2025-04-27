@@ -40,6 +40,8 @@ def extract_json_info(json_path):
             "title": data.get("title", ""),
             "title_zh": data.get("title_zh", ""),
             "tags": data.get("tags", []),
+            "category": data.get("category", "未分类"),  # 添加分类字段
+            "category_url": data.get("category_url", ""),  # 添加分类URL字段
             "publish_date": data.get("publish_date", ""),
             "has_workflow_json": "workflow_json" in data and bool(data["workflow_json"]),
             "has_workflow_json_zh": "workflow_json_zh" in data and bool(data["workflow_json_zh"]),
@@ -51,7 +53,7 @@ def extract_json_info(json_path):
         st.error(f"提取文件信息出错 {json_path.name}: {e}")
         return None
 
-def get_all_json_files(directory, query="", tag_filter=None, has_translation=None):
+def get_all_json_files(directory, query="", tag_filter=None, category_filter="全部", has_translation=None):
     """获取目录及其子目录下的所有JSON文件路径"""
     all_files = []
     all_info = []
@@ -62,7 +64,7 @@ def get_all_json_files(directory, query="", tag_filter=None, has_translation=Non
     
     # 遍历目录及子目录
     for path in directory.glob('**/*.json'):
-        if path.is_file():
+        if path.is_file() and path.name != "n8n_categories.json":  # 跳过分类文件
             file_info = extract_json_info(path)
             if file_info:
                 # 应用搜索和过滤
@@ -74,6 +76,10 @@ def get_all_json_files(directory, query="", tag_filter=None, has_translation=Non
                 
                 # 标签过滤
                 if tag_filter and not any(tag in file_info.get("tags", []) for tag in tag_filter):
+                    continue
+                
+                # 分类过滤
+                if category_filter != "全部" and file_info.get("category", "未分类") != category_filter:
                     continue
                 
                 # 翻译状态过滤
@@ -248,6 +254,31 @@ def get_unique_tags(file_infos):
             all_tags.update(tags)
     return sorted(list(all_tags))
 
+def load_categories():
+    """从n8n_categories.json加载分类信息"""
+    categories_file = Path(__file__).parent / "data" / "n8n_categories.json"
+    
+    if not categories_file.exists():
+        st.warning("未找到分类数据文件 n8n_categories.json")
+        return [{"category_name": "全部", "category_url": ""}]
+    
+    try:
+        with open(categories_file, 'r', encoding='utf-8') as f:
+            categories_data = json.load(f)
+        
+        # 确保包含"全部"选项
+        categories = [{"category_name": "全部", "category_url": ""}]
+        
+        # 添加从文件加载的分类
+        for item in categories_data:
+            if isinstance(item, dict) and "category_name" in item and "category_url" in item:
+                categories.append(item)
+        
+        return categories
+    except Exception as e:
+        st.error(f"加载分类数据出错: {e}")
+        return [{"category_name": "全部", "category_url": ""}]
+
 def main():
     # 添加自定义CSS
     st.markdown("""
@@ -277,8 +308,21 @@ def main():
     .tags-container {
         margin-bottom: 10px;
     }
+    .category-badge {
+        background-color: #e8f0fe;
+        color: #1967d2;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        display: inline-block;
+        margin-right: 5px;
+    }
     </style>
     """, unsafe_allow_html=True)
+    
+    # 加载分类数据
+    categories = load_categories()
+    category_names = [cat["category_name"] for cat in categories]
     
     # 侧边栏过滤和搜索选项
     with st.sidebar:
@@ -286,6 +330,9 @@ def main():
         
         # 搜索框
         search_query = st.text_input("搜索文件名或标题", "")
+        
+        # 分类选择
+        selected_category = st.selectbox("按分类过滤", category_names)
         
         # 获取所有JSON文件的基本信息(不过滤)
         _, all_info = get_all_json_files(data_dir)
@@ -313,14 +360,15 @@ def main():
         if st.button("重置过滤器"):
             search_query = ""
             selected_tags = []
+            selected_category = "全部"
             translation_filter = "全部"
             has_translation = None
             items_per_page = 10
             st.session_state.page_number = 1
-            st.experimental_rerun()
-    
+            st.rerun()  # 使用st.rerun()替代st.experimental_rerun()
+
     # 应用过滤并获取文件
-    all_json_files, file_infos = get_all_json_files(data_dir, search_query, selected_tags, has_translation)
+    all_json_files, file_infos = get_all_json_files(data_dir, search_query, selected_tags, selected_category, has_translation)
     
     # 显示结果统计
     st.write(f"共找到 {len(all_json_files)} 个工作流文件")
@@ -344,11 +392,11 @@ def main():
     with col1:
         if st.button("« 首页"):
             st.session_state.page_number = 1
-            st.experimental_rerun()
+            st.rerun()  # 替换 st.experimental_rerun()
     with col2:
         if st.button("‹ 上一页", disabled=(st.session_state.page_number <= 1)):
             st.session_state.page_number -= 1
-            st.experimental_rerun()
+            st.rerun()  # 替换 st.experimental_rerun()
     with col3:
         page_number = st.number_input(
             "页码", 
@@ -361,11 +409,11 @@ def main():
         # 当页码输入框值变化时更新session state
         if page_number != st.session_state.page_number:
             st.session_state.page_number = page_number
-            st.experimental_rerun()
+            st.rerun()  # 替换 st.experimental_rerun()
     with col4:
         if st.button("下一页 ›", disabled=(st.session_state.page_number >= total_pages)):
             st.session_state.page_number += 1
-            st.experimental_rerun()
+            st.rerun()  # 替换 st.experimental_rerun()
     
     # 计算当前页的文件索引范围
     start_idx = (st.session_state.page_number - 1) * items_per_page
@@ -385,17 +433,17 @@ def main():
         with col1:
             if st.button("« 首页", key="bottom_first"):
                 st.session_state.page_number = 1
-                st.experimental_rerun()
+                st.rerun()  # 替换 st.experimental_rerun()
         with col2:
             if st.button("‹ 上一页", key="bottom_prev", disabled=(st.session_state.page_number <= 1)):
                 st.session_state.page_number -= 1
-                st.experimental_rerun()
+                st.rerun()  # 替换 st.experimental_rerun()
         with col3:
             st.write(f"第 {st.session_state.page_number} 页，共 {total_pages} 页")
         with col4:
             if st.button("下一页 ›", key="bottom_next", disabled=(st.session_state.page_number >= total_pages)):
                 st.session_state.page_number += 1
-                st.experimental_rerun()
+                st.rerun()  # 替换 st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
