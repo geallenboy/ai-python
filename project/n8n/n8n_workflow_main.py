@@ -1,4 +1,3 @@
-
 import json
 import time
 import random
@@ -8,17 +7,48 @@ import asyncio
 from typing import List, Dict, Any, Optional, Tuple
 from playwright.async_api import async_playwright, Page, Browser, BrowserContext
 import logging
+from pathlib import Path
 
 # 配置日志
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler('n8n_scraper.log', 'a', 'utf-8')
-    ]
-)
-logger = logging.getLogger(__name__)
+def setup_logger():
+    """配置日志系统，将日志文件保存到logs目录"""
+    # 确保logs目录存在
+    logs_dir = Path("logs")
+    if not logs_dir.exists():
+        logs_dir.mkdir(parents=True, exist_ok=True)
+    
+    # 配置日志
+    log_file = logs_dir / "n8n_scraper.log"
+    
+    # 配置日志格式和处理器
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    
+    # 避免重复添加处理器
+    if logger.handlers:
+        for handler in logger.handlers:
+            logger.removeHandler(handler)
+    
+    # 控制台处理器
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(console_formatter)
+    
+    # 文件处理器
+    file_handler = logging.FileHandler(log_file, 'a', 'utf-8')
+    file_handler.setLevel(logging.INFO)
+    file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(file_formatter)
+    
+    # 添加处理器
+    logger.addHandler(console_handler)
+    logger.addHandler(file_handler)
+    
+    return logger
+
+# 初始化日志
+logger = setup_logger()
 
 # 代理服务器配置 - 替换为您的代理服务器列表
 PROXY_SERVERS = [
@@ -175,9 +205,7 @@ class N8nWorkflowScraper:
                 logger.info("分类容器元素已找到")
             except Exception as e:
                 logger.warning(f"未能找到分类容器，尝试截图记录当前页面状态")
-                # 截图记录页面状态
-                await page.screenshot(path="error_categories_page.png")
-                logger.info("错误页面截图已保存到 error_categories_page.png")
+               
                 
                 # 尝试使用备选选择器
                 logger.info("尝试使用备选选择器...")
@@ -223,13 +251,14 @@ class N8nWorkflowScraper:
         
         return categories
     
-    async def scrape_category_workflows(self, categories: List[Dict[str, str]], max_workflows_per_category: int = None) -> List[Dict[str, Any]]:
+    async def scrape_category_workflows(self, categories: List[Dict[str, str]], max_workflows_per_category: int = None, initial_count: int = 20) -> List[Dict[str, Any]]:
         """
-        爬取每个分类URL中的工作流程，支持"加载更多"功能
+        爬取每个分类URL中的工作流程，支持"加载更多"功能和count参数
         
         Args:
             categories: 包含分类信息的列表
             max_workflows_per_category: 每个分类最多爬取的工作流程数量，None 表示不限制
+            initial_count: 初始count参数值，表示每页加载的数量
             
         Returns:
             所有爬取到的工作流程列表
@@ -248,7 +277,23 @@ class N8nWorkflowScraper:
             category_name = category.get('category_name')
             
             logger.info(f"\n[{i+1}/{len(categories)}] 开始爬取分类: {category_name}")
-            logger.info(f"URL: {category_url}")
+            logger.info(f"原始URL: {category_url}")
+            
+            # 处理URL中的count参数
+            current_count = initial_count
+            if "?" in category_url:
+                # 已经有查询参数
+                if "count=" in category_url:
+                    # URL已包含count参数，进行替换
+                    category_url = re.sub(r'count=\d+', f'count={current_count}', category_url)
+                else:
+                    # 添加count参数
+                    category_url += f"&count={current_count}"
+            else:
+                # 没有查询参数，添加count参数
+                category_url += f"?count={current_count}"
+            
+            logger.info(f"添加count参数后的URL: {category_url}")
             
             # 修改日志输出
             if max_workflows_per_category is not None:
@@ -264,6 +309,9 @@ class N8nWorkflowScraper:
                 category_workflows = []
                 already_loaded = 0
                 has_more = True  # 初始设为True，假设有更多内容可以加载
+                
+                # 记录爬取开始时间
+                category_start_time = time.time()
                 
                 # 访问分类URL
                 await page.goto(category_url, wait_until="domcontentloaded")
@@ -291,47 +339,56 @@ class N8nWorkflowScraper:
                 await page.wait_for_selector('.workflow-search-result, a.workflow-search-result')
                 
                 # 循环"加载更多"，直到没有更多内容或达到最大数量限制
+                load_more_count = 0  # 加载更多的次数
                 while has_more:
                     # 获取当前页面上的所有工作流项目
                     workflow_items = await page.query_selector_all('.workflow-search-result, a.workflow-search-result')
-                    current_count = len(workflow_items)
+                    current_item_count = len(workflow_items)
                     
-                    logger.info(f"当前已加载 {current_count} 个工作流程（之前已加载 {already_loaded} 个）")
+                    # 记录当前爬取进度
+                    self.log_scrape_progress(category_name, current_count, current_item_count)
+                    
+                    logger.info(f"当前已加载 {current_item_count} 个工作流程（count={current_count}，之前已加载 {already_loaded} 个）")
                     
                     # 检查是否有新内容加载
-                    if current_count <= already_loaded:
-                        logger.info("没有新内容加载，停止加载更多")
-                        break
+                    if current_item_count <= already_loaded:
+                        logger.info("没有新内容加载，尝试增加count参数")
+                        
+                        # 增加count值，尝试加载更多内容
+                        current_count += 20  # 每次增加20个
+                        new_url = re.sub(r'count=\d+', f'count={current_count}', category_url)
+                        
+                        logger.info(f"增加count参数到 {current_count}，新URL: {new_url}")
+                        
+                        # 访问新的URL
+                        await page.goto(new_url, wait_until="domcontentloaded")
+                        await asyncio.sleep(3)  # 给加载时间
+                        
+                        # 重新获取工作流项目
+                        workflow_items = await page.query_selector_all('.workflow-search-result, a.workflow-search-result')
+                        current_item_count = len(workflow_items)
+                        
+                        # 再次检查是否有新内容
+                        if current_item_count <= already_loaded:
+                            logger.info(f"即使增加count到 {current_count} 也没有更多内容，停止加载")
+                            break
+                        else:
+                            logger.info(f"增加count后成功加载到 {current_item_count} 个工作流（+{current_item_count - already_loaded}个）")
                     
                     # 检查是否已达到最大爬取数量
-                    if max_workflows_per_category is not None and current_count >= max_workflows_per_category:
+                    if max_workflows_per_category is not None and current_item_count >= max_workflows_per_category:
                         logger.info(f"已达到限制数量 {max_workflows_per_category}，停止加载更多")
+                        # 如果已加载的数量超过了限制，只处理到限制为止
+                        workflow_items = workflow_items[:max_workflows_per_category]
+                        current_item_count = len(workflow_items)
                         break
-                    
-                    # 查找"加载更多"按钮
-                    load_more_button = None
-                    load_more_selectors = [
-                        'button:has-text("Load more")', 
-                        'button:has-text("加载更多")',
-                        '.load-more-button',
-                        'button.btn.btn--main',
-                    ]
-                    
-                    for selector in load_more_selectors:
-                        try:
-                            load_more_button = await page.query_selector(selector)
-                            if load_more_button:
-                                logger.info(f"找到加载更多按钮，使用选择器: {selector}")
-                                break
-                        except Exception:
-                            continue
                     
                     # 处理当前页面的工作流程
                     items_to_process = workflow_items[already_loaded:]
                     logger.info(f"处理新加载的 {len(items_to_process)} 个工作流程")
                     
                     # 更新已加载数量
-                    already_loaded = current_count
+                    already_loaded = current_item_count
                     
                     # 处理每个工作流程项
                     for j, item in enumerate(items_to_process):
@@ -427,13 +484,28 @@ class N8nWorkflowScraper:
                         except Exception as e:
                             logger.error(f"  处理工作流程时出错: {e}")
                     
-                    # 如果没有找到"加载更多"按钮或已经达到最大数量，则结束循环
-                    if not load_more_button or not has_more:
-                        logger.info("未找到加载更多按钮或已达到最大数量限制，停止加载更多")
-                        break
-                    
-                    # 点击"加载更多"按钮
+                    # 尝试查找"加载更多"按钮
                     try:
+                        # 使用多个可能的选择器查找加载更多按钮
+                        load_more_button = None
+                        load_more_selectors = [
+                            'button.load-more', 
+                            'button:has-text("加载更多")', 
+                            'button:has-text("Load more")'
+                        ]
+                        
+                        for selector in load_more_selectors:
+                            load_more_button = await page.query_selector(selector)
+                            if load_more_button:
+                                logger.info(f"找到加载更多按钮: {selector}")
+                                break
+                        
+                        # 如果没有找到"加载更多"按钮或已经达到最大数量，则结束循环
+                        if not load_more_button or not has_more:
+                            logger.info("未找到加载更多按钮或已达到最大数量限制，停止加载更多")
+                            break
+                        
+                        # 点击"加载更多"按钮
                         logger.info("点击加载更多按钮...")
                         await load_more_button.click()
                         
@@ -817,13 +889,14 @@ class N8nWorkflowScraper:
         
         logger.info(f"已将 {len(workflows)} 个工作流程保存到 {filepath}")
     
-    async def run(self, max_workflows_per_category: int = None, use_hardcoded_categories: bool = False):
+    async def run(self, max_workflows_per_category: int = None, use_hardcoded_categories: bool = False, initial_count: int = 20):
         """
         运行爬虫
         
         Args:
             max_workflows_per_category: 每个分类最多爬取的工作流程数量，None 表示不限制
             use_hardcoded_categories: 是否使用硬编码的分类，而不是从网站抓取
+            initial_count: 初始count参数值，表示每页加载的数量
         """
         # 确保数据目录结构存在
         self.ensure_data_dir()
@@ -851,44 +924,19 @@ class N8nWorkflowScraper:
             
             if categories:
                 logger.info(f"\n===== 开始爬取全部 {len(categories)} 个分类 =====")
-                logger.info(f"每个分类最多爬取 {max_workflows_per_category} 条工作流程")
+                logger.info(f"初始count参数: {initial_count}")
+                logger.info(f"每个分类最多爬取 {max_workflows_per_category} 条工作流程" if max_workflows_per_category else "不限制爬取数量")
                 
                 # 爬取所有分类中的工作流程
                 all_workflows = await self.retry_with_proxies(
                     self.scrape_category_workflows, 
                     categories, 
-                    max_workflows_per_category
+                    max_workflows_per_category,
+                    initial_count
                 )
                 
-                # 保存所有工作流程
-                if all_workflows:
-                    # 保存所有分类的汇总数据
-                    self.save_workflows_to_file(all_workflows, filename="n8n_all_workflows.json")
-                    
-                    # 打印爬取到的工作流程数据
-                    logger.info("\n===== 工作流程数据汇总 =====")
-                    logger.info(f"共爬取 {len(categories)} 个分类，总计 {len(all_workflows)} 个工作流程")
-                    
-                    # 按分类统计
-                    category_counts = {}
-                    for workflow in all_workflows:
-                        cat = workflow.get('category', 'Unknown')
-                        if cat in category_counts:
-                            category_counts[cat] += 1
-                        else:
-                            category_counts[cat] = 1
-                    
-                    logger.info("\n===== 按分类统计工作流程数量 =====")
-                    for cat, count in category_counts.items():
-                        logger.info(f"{cat}: {count} 个工作流程")
-                else:
-                    logger.warning("未获取到任何工作流程")
-            else:
-                logger.warning("未获取到任何分类数据，无法进行爬取")
-            
-            logger.info("\n爬取任务完成!")
-            logger.info(f"所有数据均已保存到 'data/workflow/' 目录下，按分类整理")
-        
+                # ... 原有的结果处理逻辑
+                
         finally:
             # 确保关闭浏览器
             await self.close_browser()
@@ -960,6 +1008,73 @@ class N8nWorkflowScraper:
                 return True
                 
         return False
+    
+    def log_scrape_progress(self, category_name: str, count: int, workflows_loaded: int):
+        """
+        记录特定分类的爬取进度
+        
+        Args:
+            category_name: 分类名称
+            count: 当前页面的count参数值
+            workflows_loaded: 已加载的工作流数量
+        """
+        # 确保logs目录存在
+        logs_dir = os.path.join("logs")
+        if not os.path.exists(logs_dir):
+            os.makedirs(logs_dir)
+        
+        # 构建进度日志文件路径
+        progress_log = os.path.join(logs_dir, "scrape_progress.log")
+        
+        # 记录时间戳、分类名称、count值和已加载工作流数量
+        timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        log_entry = f"{timestamp} | {category_name} | count={count} | loaded={workflows_loaded}\n"
+        
+        # 追加到日志文件
+        with open(progress_log, "a", encoding="utf-8") as f:
+            f.write(log_entry)
+        
+        logger.info(f"进度已记录: {category_name} 分类已加载 {workflows_loaded} 个工作流 (count={count})")
+    
+    def get_last_scrape_progress(self, category_name: str) -> Tuple[int, int]:
+        """
+        获取上次爬取的进度
+        
+        Args:
+            category_name: 分类名称
+            
+        Returns:
+            (last_count, last_loaded): 上次使用的count值和已加载的工作流数量
+        """
+        progress_log = os.path.join("logs", "scrape_progress.log")
+        if not os.path.exists(progress_log):
+            return 20, 0  # 默认值
+        
+        last_count = 20
+        last_loaded = 0
+        
+        try:
+            with open(progress_log, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+                
+            # 从后往前查找该分类的最后一条记录
+            for line in reversed(lines):
+                if category_name in line:
+                    parts = line.strip().split(" | ")
+                    if len(parts) >= 3:
+                        count_str = parts[2].replace("count=", "")
+                        loaded_str = parts[3].replace("loaded=", "")
+                        try:
+                            last_count = int(count_str)
+                            last_loaded = int(loaded_str)
+                            logger.info(f"找到 {category_name} 的上次进度: count={last_count}, loaded={last_loaded}")
+                            break
+                        except ValueError:
+                            pass
+        except Exception as e:
+            logger.warning(f"读取上次爬取进度时出错: {e}")
+        
+        return last_count, last_loaded
 
 
 async def main():
@@ -974,6 +1089,7 @@ async def main():
     # 将默认值改为 None 表示不限制数量
     parser.add_argument('--max-workflows', type=int, default=None, help='每个分类最多爬取的工作流程数量 (默认: 不限制)')
     parser.add_argument('--test-mode', action='store_true', help='测试模式 (只爬取AI分类)')
+    parser.add_argument('--count', type=int, default=20, help='初始count参数，影响每页加载的工作流数量 (默认: 20)')
     args = parser.parse_args()
     
     # 创建爬虫实例，不使用代理
@@ -986,7 +1102,8 @@ async def main():
     # 运行爬虫
     await scraper.run(
         max_workflows_per_category=args.max_workflows,
-        use_hardcoded_categories=args.test_mode
+        use_hardcoded_categories=args.test_mode,
+        initial_count=args.count
     )
 
 if __name__ == "__main__":
