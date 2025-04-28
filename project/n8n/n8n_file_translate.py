@@ -93,7 +93,7 @@ def translate_text(text, from_lang="English", to_lang="Chinese"):
         translated_text = result['choices'][0]['message']['content'].strip()
         
         # 添加短暂延迟以避免API限制
-        time.sleep(1)
+        time.sleep(0.2)
         return translated_text
     
     except Exception as e:
