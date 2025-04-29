@@ -4,6 +4,8 @@ import random
 import os
 import re
 import asyncio
+import datetime
+import calendar
 from typing import List, Dict, Any, Optional, Tuple
 from playwright.async_api import async_playwright, Page, Browser, BrowserContext
 import logging
@@ -79,7 +81,60 @@ class N8nWorkflowScraper:
         self.current_proxy_index = 0
         self.browser = None
         self.context = None
+        
+        # 添加存储已爬取分类的记录
+        self.crawled_categories = self.load_crawled_categories()
     
+    def load_crawled_categories(self) -> Dict[str, Dict[str, Any]]:
+        """
+        加载已爬取的分类记录
+        
+        Returns:
+            已爬取的分类记录，格式为 {category_name: {'last_crawled': timestamp, 'count': count}}
+        """
+        crawled_file = os.path.join("logs", "crawled_categories.json")
+        if not os.path.exists(crawled_file):
+            return {}
+        
+        try:
+            with open(crawled_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            logger.warning(f"读取已爬取分类记录出错: {e}")
+            return {}
+    
+    def save_crawled_categories(self) -> None:
+        """
+        保存已爬取的分类记录
+        """
+        logs_dir = os.path.join("logs")
+        if not os.path.exists(logs_dir):
+            os.makedirs(logs_dir)
+        
+        crawled_file = os.path.join(logs_dir, "crawled_categories.json")
+        
+        try:
+            with open(crawled_file, 'w', encoding='utf-8') as f:
+                json.dump(self.crawled_categories, f, ensure_ascii=False, indent=2)
+            logger.info(f"已保存爬取记录到 {crawled_file}")
+        except Exception as e:
+            logger.error(f"保存爬取记录时出错: {e}")
+    
+    def mark_category_as_crawled(self, category_name: str, workflows_count: int) -> None:
+        """
+        标记分类为已爬取
+        
+        Args:
+            category_name: 分类名称
+            workflows_count: 爬取的工作流数量
+        """
+        self.crawled_categories[category_name] = {
+            'last_crawled': time.time(),
+            'last_crawled_date': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'count': workflows_count
+        }
+        self.save_crawled_categories()
+
     async def setup_browser(self) -> None:
         """
         设置 Playwright 浏览器环境，不使用代理
@@ -577,17 +632,17 @@ class N8nWorkflowScraper:
                 logger.error(f"无法访问详情页: {url}")
                 await page.close()
                 return {}
-           
-            
+       
+        
             # 初始化详情信息字典
             details = {
                 'author': '',
                 'publish_date': '',
+                'publish_date_absolute': '',  # 添加绝对日期字段
                 'content': '',
                 'workflow_json': '',
                 'readme': ''
             }
-            
             
             # 提取作者信息 - 根据您提供的DOM信息更新
             try:
@@ -630,7 +685,12 @@ class N8nWorkflowScraper:
                             date_text = await date_element.text_content()
                             if date_text and 'update' in date_text.lower():
                                 details['publish_date'] = date_text.strip()
-                                logger.info(f"    提取到更新日期: {details['publish_date']}")
+                                
+                                # 计算绝对日期
+                                absolute_date = parse_relative_date(date_text.strip())
+                                details['publish_date_absolute'] = absolute_date
+                                
+                                logger.info(f"    提取到更新日期: {details['publish_date']} (实际日期: {absolute_date})")
                                 break
                     except Exception:
                         continue
@@ -715,7 +775,7 @@ class N8nWorkflowScraper:
                 if "html2text" in str(e):
                     logger.error("请安装html2text模块: pip install html2text")
             
-            logger.info(f"    详情页信息获取成功，作者: {details['author']}, 发布于: {details['publish_date']}")
+            logger.info(f"    详情页信息获取成功，作者: {details['author']}, 发布于: {details['publish_date']}, 计算日期: {details['publish_date_absolute']}")
             
             # 关闭页面
             await page.close()
@@ -889,13 +949,19 @@ class N8nWorkflowScraper:
         
         logger.info(f"已将 {len(workflows)} 个工作流程保存到 {filepath}")
     
-    async def run(self, max_workflows_per_category: int = None, use_hardcoded_categories: bool = False, initial_count: int = 20):
+    async def run(self, max_workflows_per_category: int = None, 
+                 categories_to_crawl: List[str] = None,
+                 skip_crawled: bool = False, 
+                 force_update: bool = False,
+                 initial_count: int = 20):
         """
         运行爬虫
         
         Args:
             max_workflows_per_category: 每个分类最多爬取的工作流程数量，None 表示不限制
-            use_hardcoded_categories: 是否使用硬编码的分类，而不是从网站抓取
+            categories_to_crawl: 要爬取的特定分类名称列表，None 表示爬取所有分类
+            skip_crawled: 是否跳过已爬取的分类
+            force_update: 是否强制更新已爬取的分类
             initial_count: 初始count参数值，表示每页加载的数量
         """
         # 确保数据目录结构存在
@@ -906,24 +972,54 @@ class N8nWorkflowScraper:
             await self.setup_browser()
             
             # 抓取所有工作流程分类
-            if use_hardcoded_categories:
+            if categories_to_crawl and len(categories_to_crawl) == 1 and categories_to_crawl[0].lower() == "ai":
                 categories = [{
                     "category_url": "https://n8n.io/workflows/categories/ai/",
                     "category_name": "AI"
                 }]
-                logger.info("使用硬编码的分类列表")
+                logger.info("使用指定的AI分类")
             else:
-                categories = await self.retry_with_proxies(self.scrape_categories)
+                # 获取所有可用分类
+                all_categories = await self.retry_with_proxies(self.scrape_categories)
+                
+                # 保存所有分类信息到文件(无论是否全部爬取)
+                self.save_workflows_to_file(all_categories, filename="workflow/n8n_categories.json")
+                
+                # 根据条件过滤分类
+                if categories_to_crawl:
+                    # 过滤出指定的分类
+                    categories = [cat for cat in all_categories 
+                                if cat.get("category_name") in categories_to_crawl]
+                    
+                    if not categories:
+                        logger.warning(f"未找到指定的分类: {categories_to_crawl}")
+                        logger.info("可用分类有:")
+                        for cat in all_categories:
+                            logger.info(f"- {cat.get('category_name')}")
+                        return
+                    
+                    logger.info(f"将爬取以下指定分类: {[cat.get('category_name') for cat in categories]}")
+                else:
+                    # 使用所有分类
+                    categories = all_categories
             
-            # 保存分类信息到文件
-            self.save_workflows_to_file(categories, filename="workflow/n8n_categories.json")
+            # 根据已爬取记录过滤分类
+            if skip_crawled and not force_update:
+                original_count = len(categories)
+                categories = [cat for cat in categories 
+                             if cat.get("category_name") not in self.crawled_categories]
+                
+                if len(categories) < original_count:
+                    logger.info(f"跳过 {original_count - len(categories)} 个已爬取的分类")
+            elif force_update and categories_to_crawl:
+                logger.info(f"将强制更新指定的分类，即使已经爬取过")
             
             # 打印所有获取的分类信息的JSON格式
             logger.info("\n===== 工作流程分类数据(JSON格式) =====")
             logger.info(json.dumps(categories, ensure_ascii=False, indent=2))
             
             if categories:
-                logger.info(f"\n===== 开始爬取全部 {len(categories)} 个分类 =====")
+                logger.info(f"\n===== 开始爬取 {len(categories)} 个分类 =====")
                 logger.info(f"初始count参数: {initial_count}")
                 logger.info(f"每个分类最多爬取 {max_workflows_per_category} 条工作流程" if max_workflows_per_category else "不限制爬取数量")
                 
@@ -935,7 +1031,15 @@ class N8nWorkflowScraper:
                     initial_count
                 )
                 
-                # ... 原有的结果处理逻辑
+                # 更新已爬取的分类记录
+                for category in categories:
+                    category_name = category.get("category_name")
+                    category_workflows = [w for w in all_workflows if w.get("category") == category_name]
+                    self.mark_category_as_crawled(category_name, len(category_workflows))
+                
+                logger.info(f"\n爬取完成! 共获取 {len(all_workflows)} 个工作流程，来自 {len(categories)} 个分类")
+            else:
+                logger.warning("没有找到需要爬取的分类")
                 
         finally:
             # 确保关闭浏览器
@@ -1088,21 +1192,73 @@ async def main():
     parser.add_argument('--headless', action='store_true', help='使用无头模式')
     # 将默认值改为 None 表示不限制数量
     parser.add_argument('--max-workflows', type=int, default=None, help='每个分类最多爬取的工作流程数量 (默认: 不限制)')
-    parser.add_argument('--test-mode', action='store_true', help='测试模式 (只爬取AI分类)')
     parser.add_argument('--count', type=int, default=20, help='初始count参数，影响每页加载的工作流数量 (默认: 20)')
+    
+    # 添加新的分类选择相关参数
+    parser.add_argument('--categories', nargs='+', help='要爬取的特定分类名称，多个分类用空格分隔')
+    parser.add_argument('--skip-crawled', action='store_true', help='跳过已爬取的分类')
+    parser.add_argument('--force-update', action='store_true', help='强制更新指定分类，即使已爬取过')
+    parser.add_argument('--list-categories', action='store_true', help='列出所有可用分类名称并退出')
+    parser.add_argument('--show-crawled', action='store_true', help='显示已爬取的分类记录')
+    
     args = parser.parse_args()
     
-    # 创建爬虫实例，不使用代理
+    # 创建爬虫实例
     scraper = N8nWorkflowScraper(
         headless=args.headless,
-        use_proxies=False,  # 强制设置为 False
+        use_proxies=False,
         max_retries=3
     )
+    
+    # 如果只是想列出已爬取的分类
+    if args.show_crawled:
+        logger.info("=== 已爬取的分类记录 ===")
+        if not scraper.crawled_categories:
+            logger.info("没有爬取记录")
+        else:
+            for category_name, info in scraper.crawled_categories.items():
+                last_date = info.get('last_crawled_date', '未知')
+                count = info.get('count', 0)
+                logger.info(f"- {category_name}: 最后爬取于 {last_date}, 获取 {count} 个工作流")
+        return
+    
+    # 如果只是想列出所有可用分类
+    if args.list_categories:
+        # 设置浏览器
+        await scraper.setup_browser()
+        try:
+            # 获取所有分类
+            categories = await scraper.retry_with_proxies(scraper.scrape_categories)
+            
+            logger.info("=== 所有可用分类 ===")
+            for i, cat in enumerate(categories):
+                name = cat.get('category_name', '未知')
+                url = cat.get('category_url', '未知')
+                logger.info(f"{i+1}. {name} ({url})")
+                
+            # 显示已爬取状态
+            if scraper.crawled_categories:
+                logger.info("\n=== 爬取状态 ===")
+                for cat in categories:
+                    name = cat.get('category_name')
+                    if name in scraper.crawled_categories:
+                        info = scraper.crawled_categories[name]
+                        last_date = info.get('last_crawled_date', '未知')
+                        count = info.get('count', 0)
+                        logger.info(f"- {name}: 已爬取 (最后: {last_date}, 数量: {count})")
+                    else:
+                        logger.info(f"- {name}: 未爬取")
+        finally:
+            # 关闭浏览器
+            await scraper.close_browser()
+        return
     
     # 运行爬虫
     await scraper.run(
         max_workflows_per_category=args.max_workflows,
-        use_hardcoded_categories=args.test_mode,
+        categories_to_crawl=args.categories,
+        skip_crawled=args.skip_crawled,
+        force_update=args.force_update,
         initial_count=args.count
     )
 
