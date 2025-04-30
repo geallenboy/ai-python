@@ -1,0 +1,13 @@
+{
+  "title": "Create an event in PostHog when a request is made to a webhook URL",
+  "url": "https://n8n.io/workflows/968-create-an-event-in-posthog-when-a-request-is-made-to-a-webhook-url/",
+  "category": "Product",
+  "category_url": "https://n8n.io/workflows/categories/product/?count=20",
+  "author": "ghagrawal17",
+  "publish_date": "Last update 9 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"PostHog\",\"type\":\"n8n-nodes-base.postHog\",\"position\":[640,280],\"parameters\":{\"eventName\":\"={{$json[\\\"query\\\"][\\\"event\\\"]}}\",\"distinctId\":\"n8n\",\"additionalFields\":{}},\"credentials\":{\"postHogApi\":\"PostHog Credentials\"},\"typeVersion\":1},{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[440,280],\"webhookId\":\"f6d0071e-3cf9-49fd-8bbd-afdbea6b0c67\",\"parameters\":{\"path\":\"f6d0071e-3cf9-49fd-8bbd-afdbea6b0c67\",\"options\":{}},\"typeVersion\":1}],\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"PostHog\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow automatically creates an event in PostHog when a request is made to a webhook URL.\n\n## Prerequisites\n\n  * A PostHog account and [credentials](https://docs.n8n.io/integrations/credentials/posthog/)\n\n\n\n## Nodes\n\n  * [Webhook node](https://docs.n8n.io/integrations/core-nodes/n8n-nodes-base.webhook/) triggers the workflow when a URL is accessed.\n  * [PostHog node](https://docs.n8n.io/integrations/nodes/n8n-nodes-base.posthog/) creates a new event in PostHog.\n\n\n",
+  "readme_html": "<!--[--><div data-v-006f9244=\"\"><p>This workflow automatically creates an event in PostHog when a request is made to a webhook URL.</p>\n<h2>Prerequisites</h2>\n<ul>\n<li>A PostHog account and <a href=\"https://docs.n8n.io/integrations/credentials/posthog/\" rel=\"ugc nofollow\" target=\"_blank\">credentials</a></li>\n</ul>\n<h2>Nodes</h2>\n<ul>\n<li><a href=\"https://docs.n8n.io/integrations/core-nodes/n8n-nodes-base.webhook/\" rel=\"ugc nofollow\" target=\"_blank\">Webhook node</a> triggers the workflow when a URL is accessed.</li>\n<li><a href=\"https://docs.n8n.io/integrations/nodes/n8n-nodes-base.posthog/\" rel=\"ugc nofollow\" target=\"_blank\">PostHog node</a> creates a new event in PostHog.</li>\n</ul>\n</div><!--]-->"
+}

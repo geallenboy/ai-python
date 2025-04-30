@@ -1,0 +1,13 @@
+{
+  "title": "Import data from Google Sheets into MySQL",
+  "url": "https://n8n.io/workflows/1752-import-data-from-google-sheets-into-mysql/",
+  "category": "Engineering",
+  "category_url": "https://n8n.io/workflows/categories/engineering/?count=20",
+  "author": "Lorena",
+  "publish_date": "Last update 9 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[100,160],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":5,\"mode\":\"everyWeek\"}]}},\"typeVersion\":1},{\"name\":\"MySQL - insert\",\"type\":\"n8n-nodes-base.mySql\",\"position\":[500,160],\"parameters\":{\"table\":\"books\",\"columns\":\"title, price\",\"options\":{\"ignore\":true,\"priority\":\"LOW_PRIORITY\"}},\"credentials\":{\"mySql\":{\"id\":\"82\",\"name\":\"MySQL account\"}},\"typeVersion\":1},{\"name\":\"Google Sheets - read\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[300,160],\"parameters\":{\"options\":{},\"sheetId\":\"qwertz\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":{\"id\":\"2\",\"name\":\"google_sheets_oauth\"}},\"typeVersion\":1}],\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"Google Sheets - read\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets - read\":{\"main\":[[{\"node\":\"MySQL - insert\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow imports data from Google Sheets into a MySQL database.\n",
+  "readme_html": "<!--[--><div data-v-006f9244=\"\"><p>This workflow imports data from Google Sheets into a MySQL database.</p>\n</div><!--]-->"
+}

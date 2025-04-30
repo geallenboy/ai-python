@@ -15,3 +15,12 @@ python n8n_workflow_main.py --categories AI --force-update
 
 # 结合使用多个选项
 python n8n_workflow_main.py --categories AI Marketing --max-workflows 10 --count 30 --headless
+
+
+
+python n8n_file_translate.py --list
+# 处理单个子目录
+python n8n_file_translate.py --dirs automation
+
+# 处理多个子目录
+python n8n_file_translate.py --dirs automation marketing sales

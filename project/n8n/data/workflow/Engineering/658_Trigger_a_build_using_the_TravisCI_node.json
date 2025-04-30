@@ -1,0 +1,13 @@
+{
+  "title": "Trigger a build using the TravisCI node",
+  "url": "https://n8n.io/workflows/658-trigger-a-build-using-the-travisci-node/",
+  "category": "Engineering",
+  "category_url": "https://n8n.io/workflows/categories/engineering/",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 9 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"52\",\"name\":\"Trigger a build using the TravisCI node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[510,350],\"parameters\":{},\"typeVersion\":1},{\"name\":\"TravisCI\",\"type\":\"n8n-nodes-base.travisCi\",\"position\":[710,350],\"parameters\":{\"slug\":\"\",\"branch\":\"\",\"operation\":\"trigger\",\"additionalFields\":{}},\"credentials\":{\"travisCiApi\":\"travisCI\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"TravisCI\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"TravisCI\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

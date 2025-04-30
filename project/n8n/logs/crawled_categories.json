@@ -1,0 +1,32 @@
+{
+  "Product": {
+    "last_crawled": 1745905286.103555,
+    "last_crawled_date": "2025-04-29 13:41:26",
+    "count": 360
+  },
+  "Support": {
+    "last_crawled": 1745906263.324116,
+    "last_crawled_date": "2025-04-29 13:57:43",
+    "count": 150
+  },
+  "HR": {
+    "last_crawled": 1745932599.838305,
+    "last_crawled_date": "2025-04-29 21:16:39",
+    "count": 40
+  },
+  "AI": {
+    "last_crawled": 1745909500.107331,
+    "last_crawled_date": "2025-04-29 14:51:40",
+    "count": 20
+  },
+  "Design": {
+    "last_crawled": 1745909666.6216,
+    "last_crawled_date": "2025-04-29 14:54:26",
+    "count": 12
+  },
+  "Engineering": {
+    "last_crawled": 1745932157.3538408,
+    "last_crawled_date": "2025-04-29 21:09:17",
+    "count": 159
+  }
+}

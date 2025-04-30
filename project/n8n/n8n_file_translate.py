@@ -14,6 +14,8 @@ from pathlib import Path
 import logging
 import time
 import sys
+import datetime
+import re
 from dotenv import load_dotenv
 
 # 加载.env文件中的环境变量
@@ -100,62 +102,193 @@ def translate_text(text, from_lang="English", to_lang="Chinese"):
         logger.error(f"翻译失败: {e}")
         return text
 
+def parse_relative_date(relative_date_str):
+    """
+    从相对日期描述（如'Last update 4 days ago'）推算出绝对日期
+    
+    Args:
+        relative_date_str (str): 相对日期描述字符串
+    
+    Returns:
+        str: YYYY-MM-DD格式的绝对日期，如果无法解析则返回空字符串
+    """
+    today = datetime.datetime.now()
+    
+    # 处理"days ago"格式
+    days_pattern = re.compile(r"(\d+)\s*days?\s*ago", re.IGNORECASE)
+    days_match = days_pattern.search(relative_date_str)
+    if days_match:
+        days = int(days_match.group(1))
+        result_date = today - datetime.timedelta(days=days)
+        return result_date.strftime("%Y-%m-%d")
+    
+    # 处理"weeks ago"格式
+    weeks_pattern = re.compile(r"(\d+)\s*weeks?\s*ago", re.IGNORECASE)
+    weeks_match = weeks_pattern.search(relative_date_str)
+    if weeks_match:
+        weeks = int(weeks_match.group(1))
+        result_date = today - datetime.timedelta(weeks=weeks)
+        return result_date.strftime("%Y-%m-%d")
+    
+    # 处理"months ago"格式
+    months_pattern = re.compile(r"(\d+)\s*months?\s*ago", re.IGNORECASE)
+    months_match = months_pattern.search(relative_date_str)
+    if months_match:
+        months = int(months_match.group(1))
+        # 简单处理月份减法（不考虑不同月份天数）
+        year = today.year
+        month = today.month - months
+        while month <= 0:
+            year -= 1
+            month += 12
+        result_date = today.replace(year=year, month=month)
+        return result_date.strftime("%Y-%m-%d")
+    
+    # 处理"years ago"格式
+    years_pattern = re.compile(r"(\d+)\s*years?\s*ago", re.IGNORECASE)
+    years_match = years_pattern.search(relative_date_str)
+    if years_match:
+        years = int(years_match.group(1))
+        result_date = today.replace(year=today.year - years)
+        return result_date.strftime("%Y-%m-%d")
+    
+    # 处理"yesterday"
+    if re.search(r"yesterday", relative_date_str, re.IGNORECASE):
+        result_date = today - datetime.timedelta(days=1)
+        return result_date.strftime("%Y-%m-%d")
+    
+    # 处理"last week"
+    if re.search(r"last\s*week", relative_date_str, re.IGNORECASE):
+        result_date = today - datetime.timedelta(weeks=1)
+        return result_date.strftime("%Y-%m-%d")
+    
+    # 处理"last month"
+    if re.search(r"last\s*month", relative_date_str, re.IGNORECASE):
+        year = today.year
+        month = today.month - 1
+        if month <= 0:
+            year -= 1
+            month += 12
+        result_date = today.replace(year=year, month=month)
+        return result_date.strftime("%Y-%m-%d")
+    
+    # 处理"today"
+    if re.search(r"today", relative_date_str, re.IGNORECASE):
+        return today.strftime("%Y-%m-%d")
+    
+    # 尝试解析已有的日期格式（如果相对日期中已经包含确切日期）
+    date_patterns = [
+        # 美式日期: Month DD, YYYY
+        (r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{1,2}),?\s+(\d{4})", "%b %d %Y"),
+        # 欧式日期: DD Month YYYY
+        (r"(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})", "%d %b %Y"),
+        # ISO格式: YYYY-MM-DD
+        (r"(\d{4})-(\d{2})-(\d{2})", "%Y-%m-%d"),
+        # 其他常见格式: DD/MM/YYYY
+        (r"(\d{1,2})/(\d{1,2})/(\d{4})", "%d/%m/%Y"),
+        # 其他常见格式: MM/DD/YYYY
+        (r"(\d{1,2})/(\d{1,2})/(\d{4})", "%m/%d/%Y")
+    ]
+    
+    for pattern, date_format in date_patterns:
+        match = re.search(pattern, relative_date_str)
+        if match:
+            try:
+                if date_format == "%b %d %Y":
+                    date_str = f"{match.group(1)} {match.group(2)} {match.group(3)}"
+                elif date_format == "%d %b %Y":
+                    date_str = f"{match.group(1)} {match.group(2)} {match.group(3)}"
+                else:
+                    date_str = match.group(0)
+                
+                parsed_date = datetime.datetime.strptime(date_str, date_format)
+                return parsed_date.strftime("%Y-%m-%d")
+            except ValueError:
+                continue
+    
+    # 如果无法解析，返回空字符串
+    return ""
+
 def translate_workflow_json(workflow_json_str):
     """
-    智能翻译workflow_json，保留JSON结构，只翻译文本内容
+    智能翻译workflow_json，只翻译节点名称和Sticky Note内容，
+    保留所有技术结构不变，确保符合n8n格式要求
     
     Args:
         workflow_json_str (str): 原始的workflow_json字符串
         
     Returns:
-        str: 翻译后的workflow_json字符串，保持原始的JSON结构
+        str: 翻译后的workflow_json字符串，保持原始的JSON结构和技术元素
     """
     try:
         # 解析JSON字符串为Python对象
         workflow_obj = json.loads(workflow_json_str)
+        original_obj = json.loads(workflow_json_str)  # 保留原始结构副本用于比较和验证
         
-        # 翻译工作流名称
-        if "name" in workflow_obj and isinstance(workflow_obj["name"], str):
-            workflow_obj["name"] = translate_text(workflow_obj["name"])
-            logger.info(f"已翻译工作流名称: {workflow_obj['name']}")
+        # 创建节点名称映射字典 (英文名 -> 中文名)
+        node_name_map = {}
         
-        # 翻译节点名称和内容
+        # 翻译节点内容 - 只翻译节点名称和Sticky Note内容
         if "nodes" in workflow_obj and isinstance(workflow_obj["nodes"], list):
-            for node in workflow_obj["nodes"]:
-                # 翻译节点名称
-                if "name" in node and isinstance(node["name"], str):
-                    node["name"] = translate_text(node["name"])
+            for node_index, node in enumerate(workflow_obj["nodes"]):
+                # # 翻译节点名称
+                # if "name" in node and isinstance(node["name"], str):
+                #     english_name = node["name"]
+                #     # 保存原始节点名称，用于连接引用
+                #     node_name_map[english_name] = translate_text(english_name)
+                #     node["name"] = node_name_map[english_name]
+                #     logger.info(f"已翻译节点名称: {english_name} -> {node['name']}")
                 
-                # 翻译节点参数中的内容
-                if "parameters" in node and isinstance(node["parameters"], dict):
-                    for param_key, param_value in node["parameters"].items():
-                        if isinstance(param_value, str) and len(param_value) > 3:
-                            # 避免翻译代码或特殊格式内容
-                            if not (param_value.startswith('{{') or 
-                                   param_value.startswith('function') or
-                                   param_value.startswith('return') or
-                                   param_value.startswith('if ') or
-                                   param_value.startswith('const ') or
-                                   param_value.startswith('let ')):
-                                node["parameters"][param_key] = translate_text(param_value)
-                
-                # 翻译节点描述
-                if "description" in node and isinstance(node["description"], str) and len(node["description"]) > 3:
-                    node["description"] = translate_text(node["description"])
+                # 翻译Sticky Note内容
+                if "type" in node and node["type"] == "n8n-nodes-base.stickyNote":
+                    if "parameters" in node and isinstance(node["parameters"], dict):
+                        if "content" in node["parameters"] and isinstance(node["parameters"]["content"], str) and node["parameters"]["content"]:
+                            # 翻译便利贴内容
+                            original_content = node["parameters"]["content"]
+                            node["parameters"]["content"] = translate_text(original_content)
+                            logger.info(f"已翻译Sticky Note内容: {original_content[:30]}...")
         
-        # 翻译连接标签
-        if "connections" in workflow_obj and isinstance(workflow_obj["connections"], dict):
+       
+            # 创建新的连接对象
+            new_connections = {}
+            
+            # 遍历原始连接
             for source_node, targets in workflow_obj["connections"].items():
-                if isinstance(targets, list):
-                    for target in targets:
-                        if "index" in target and isinstance(target["index"], int) and "label" in target and isinstance(target["label"], str) and len(target["label"]) > 3:
-                            target["label"] = translate_text(target["label"])
+                # 使用翻译后的名称作为源节点
+                if source_node in node_name_map:
+                    new_source_node = node_name_map[source_node]
+                    new_connections[new_source_node] = targets
+                    
+                    # 处理目标节点引用
+                    if isinstance(targets, dict) and "main" in targets and isinstance(targets["main"], list):
+                        for target_list_index, target_list in enumerate(targets["main"]):
+                            if isinstance(target_list, list):
+                                for target_index, target in enumerate(target_list):
+                                    if isinstance(target, dict) and "node" in target:
+                                        # 更新节点引用到翻译后的名称
+                                        english_node_name = target["node"]
+                                        if english_node_name in node_name_map:
+                                            target["node"] = node_name_map[english_node_name]
+                else:
+                    # 如果在映射中找不到源节点，保留原始名称
+                    new_connections[source_node] = targets
+            
+            # 替换原有连接对象
+            workflow_obj["connections"] = new_connections
         
         # 将Python对象转换回JSON字符串
-        return json.dumps(workflow_obj, ensure_ascii=False)
+        # 检查原始字符串是否是压缩格式
+        is_compact = not ("\n" in workflow_json_str or "  " in workflow_json_str)
+        
+        if is_compact:
+            # 如果原始JSON是压缩的，返回压缩格式
+            return json.dumps(workflow_obj, ensure_ascii=False, separators=(',', ':'))
+        else:
+            # 如果原始JSON是美化的，返回美化格式
+            return json.dumps(workflow_obj, ensure_ascii=False, indent=2)
     
     except Exception as e:
-        logger.error(f"智能翻译workflow_json失败: {e}")
+        logger.error(f"翻译workflow_json失败: {e}")
         return workflow_json_str  # 如果失败则返回原始字符串
 
 def process_json_file(file_path):
@@ -219,6 +352,20 @@ def process_json_file(file_path):
         
         # 检查是否包含publish_date字段
         if isinstance(data, dict) and "publish_date" in data and data["publish_date"]:
+            # 处理publish_date_absolute字段
+            if "publish_date_absolute" not in data or not data["publish_date_absolute"]:
+                logger.info(f"处理publish_date_absolute字段: {file_path}")
+                
+                # 从相对日期推算绝对日期
+                relative_date = data["publish_date"]
+                absolute_date = parse_relative_date(relative_date)
+                
+                # 添加publish_date_absolute字段
+                data["publish_date_absolute"] = absolute_date
+                logger.info(f"已成功推算publish_date_absolute字段: {relative_date} -> {absolute_date}")
+                file_updated = True
+                processed_fields.append("publish_date_absolute")
+            
             # 检查是否已经翻译过publish_date
             if "publish_date_zh" in data and data["publish_date_zh"]:
                 logger.info(f"publish_date字段已翻译过，跳过: {file_path}")
@@ -275,54 +422,93 @@ def process_json_file(file_path):
         logger.error(f"处理文件 {file_path} 时出错: {e}")
         return False
 
-def scan_directory(directory):
+def get_workflow_directories(base_dir):
     """
-    递归扫描目录，处理所有JSON文件
+    获取workflow目录下的所有子目录
     
     Args:
-        directory (str): 要扫描的目录路径
+        base_dir (Path): 基础目录路径
+    
+    Returns:
+        list: 子目录名称列表
+    """
+    workflow_dir = base_dir / 'workflow'
+    if not workflow_dir.exists() or not workflow_dir.is_dir():
+        logger.error(f"workflow目录不存在: {workflow_dir}")
+        return []
+    
+    subdirs = [d.name for d in workflow_dir.iterdir() if d.is_dir()]
+    return sorted(subdirs)
+
+def scan_specific_directories(base_dir, subdirs=None):
+    """
+    扫描指定的子目录，处理其中的JSON文件
+    
+    Args:
+        base_dir (Path): 基础目录路径
+        subdirs (list, optional): 要处理的子目录名称列表，如果为None，处理所有子目录
     
     Returns:
         tuple: (处理的文件数, 成功翻译的文件数, 处理的文件列表, 未处理的文件列表)
     """
-    dir_path = Path(directory)
-    if not dir_path.exists() or not dir_path.is_dir():
-        logger.error(f"目录不存在或不是有效目录: {directory}")
+    workflow_dir = base_dir / 'workflow'
+    if not workflow_dir.exists() or not workflow_dir.is_dir():
+        logger.error(f"workflow目录不存在: {workflow_dir}")
         return 0, 0, [], []
+    
+    # 如果未指定子目录，获取所有子目录
+    if not subdirs:
+        subdirs = [d.name for d in workflow_dir.iterdir() if d.is_dir()]
+        logger.info(f"未指定子目录，将处理workflow下的所有子目录: {', '.join(subdirs)}")
     
     total_files = 0
     translated_files = 0
     processed_files = []
     unprocessed_files = []
     
-    # 获取所有JSON文件
-    all_json_files = list(dir_path.glob('**/*.json'))
-    total_json_count = len(all_json_files)
-    
-    logger.info(f"在目录 {directory} 中找到 {total_json_count} 个JSON文件")
-    
-    # 递归遍历目录
-    for i, file_path in enumerate(all_json_files):
-        total_files += 1
-        relative_path = file_path.relative_to(dir_path)
+    # 处理每个子目录
+    for subdir_name in subdirs:
+        subdir_path = workflow_dir / subdir_name
+        if not subdir_path.exists() or not subdir_path.is_dir():
+            logger.warning(f"子目录不存在或不是有效目录: {subdir_path}")
+            continue
         
-        # 显示处理进度
-        logger.info(f"正在处理 [{i+1}/{total_json_count}]: {relative_path}")
+        logger.info(f"开始处理子目录: {subdir_name}")
         
-        if process_json_file(file_path):
-            translated_files += 1
-            processed_files.append(str(relative_path))
-        else:
-            unprocessed_files.append(str(relative_path))
+        # 获取子目录中的所有JSON文件
+        json_files = list(subdir_path.glob('**/*.json'))
+        logger.info(f"在子目录 {subdir_name} 中找到 {len(json_files)} 个JSON文件")
         
-        # 打印当前进度
-        if (i+1) % 5 == 0 or i+1 == total_json_count:
-            logger.info(f"进度: {i+1}/{total_json_count} ({(i+1)/total_json_count*100:.1f}%), 已翻译: {translated_files}")
+        # 处理每个JSON文件
+        for i, file_path in enumerate(json_files):
+            total_files += 1
+            relative_path = file_path.relative_to(base_dir)
+            
+            # 显示处理进度
+            logger.info(f"正在处理 [{i+1}/{len(json_files)}]: {relative_path}")
+            
+            if process_json_file(file_path):
+                translated_files += 1
+                processed_files.append(str(relative_path))
+            else:
+                unprocessed_files.append(str(relative_path))
+            
+            # 打印当前进度
+            if (i+1) % 5 == 0 or i+1 == len(json_files):
+                logger.info(f"子目录 {subdir_name} 进度: {i+1}/{len(json_files)} ({(i+1)/max(1, len(json_files))*100:.1f}%), 已翻译: {translated_files}")
     
     return total_files, translated_files, processed_files, unprocessed_files
 
 def main():
     """主函数"""
+    import argparse
+    
+    # 创建命令行参数解析器
+    parser = argparse.ArgumentParser(description="将JSON文件翻译为中文")
+    parser.add_argument("--dirs", "-d", nargs='+', help="要处理的workflow子目录名称（多个目录用空格分隔）")
+    parser.add_argument("--list", "-l", action="store_true", help="列出所有可用的workflow子目录")
+    args = parser.parse_args()
+    
     start_time = time.time()
     try:
         logger.info("=== 开始JSON文件翻译任务 ===")
@@ -337,9 +523,26 @@ def main():
             print(f"错误: data目录不存在: {data_dir}")
             return
         
-        # 扫描处理data目录下的所有JSON文件
-        logger.info(f"开始扫描目录: {data_dir}")
-        total, translated, processed_files, unprocessed_files = scan_directory(data_dir)
+        # 如果请求列出所有子目录
+        if args.list:
+            subdirs = get_workflow_directories(data_dir)
+            if subdirs:
+                print("可用的workflow子目录:")
+                for i, subdir in enumerate(subdirs):
+                    print(f"{i+1}. {subdir}")
+            else:
+                print("未找到workflow子目录")
+            return
+        
+        # 如果指定了子目录
+        if args.dirs:
+            logger.info(f"指定的子目录: {', '.join(args.dirs)}")
+            print(f"将处理以下子目录: {', '.join(args.dirs)}")
+            total, translated, processed_files, unprocessed_files = scan_specific_directories(data_dir, args.dirs)
+        else:
+            # 默认处理data目录下的所有JSON文件
+            logger.info("未指定子目录，将处理data目录下的所有JSON文件")
+            total, translated, processed_files, unprocessed_files = scan_directory(data_dir)
         
         # 计算运行时间
         end_time = time.time()

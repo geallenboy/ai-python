@@ -1,0 +1,13 @@
+{
+  "title": "Send a file from S3 to AWS Textract",
+  "url": "https://n8n.io/workflows/1282-send-a-file-from-s3-to-aws-textract/",
+  "category": "Engineering",
+  "category_url": "https://n8n.io/workflows/categories/engineering/?count=20",
+  "author": "Tom",
+  "publish_date": "Last update 9 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"AWS Textract\",\"type\":\"n8n-nodes-base.awsTextract\",\"position\":[650,300],\"parameters\":{},\"credentials\":{\"aws\":{\"id\":\"12\",\"name\":\"AWS account\"}},\"typeVersion\":1},{\"name\":\"AWS S3\",\"type\":\"n8n-nodes-base.awsS3\",\"position\":[450,300],\"parameters\":{\"fileKey\":\"Rechnung.jpg\",\"bucketName\":\"textract-demodata\"},\"credentials\":{\"aws\":{\"id\":\"12\",\"name\":\"AWS account\"}},\"typeVersion\":1}],\"connections\":{\"AWS S3\":{\"main\":[[{\"node\":\"AWS Textract\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"AWS S3\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow shows how to download an image file from S3 and pass it on to Textract for text extraction.\n\n![](https://docs.n8n.io/assets/img/workflow.51d5f2fc.png)\n\nThe workflow uses two nodes:\n\n  * **AWS S3** : This node will download a receipt file from S3\n  * **AWS Textract** : This node connects to Aamazon's Textract service to extract text from the receipt file\n\n\n",
+  "readme_html": "<!--[--><div data-v-006f9244=\"\"><p>This workflow shows how to download an image file from S3 and pass it on to Textract for text extraction.</p>\n<p><img src=\"https://docs.n8n.io/assets/img/workflow.51d5f2fc.png\" alt=\"\"></p>\n<p>The workflow uses two nodes:</p>\n<ul>\n<li><strong>AWS S3</strong>: This node will download a receipt file from S3</li>\n<li><strong>AWS Textract</strong>: This node connects to Aamazon's Textract service to extract text from the receipt file</li>\n</ul>\n</div><!--]-->"
+}

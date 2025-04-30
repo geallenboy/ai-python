@@ -1,0 +1,13 @@
+{
+  "title": "Create a table in Quest DB and insert data",
+  "url": "https://n8n.io/workflows/592-create-a-table-in-quest-db-and-insert-data/",
+  "category": "Engineering",
+  "category_url": "https://n8n.io/workflows/categories/engineering/",
+  "author": "tanaypant",
+  "publish_date": "Last update 9 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"161\",\"name\":\"Create a table and insert data into it\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[440,460],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[840,460],\"parameters\":{\"values\":{\"number\":[{\"name\":\"id\"}],\"string\":[{\"name\":\"name\",\"value\":\"Tanay\"}]},\"options\":{}},\"typeVersion\":1},{\"name\":\"QuestDB\",\"type\":\"n8n-nodes-base.questDb\",\"position\":[640,460],\"parameters\":{\"query\":\"CREATE TABLE test (id INT, name STRING);\",\"operation\":\"executeQuery\"},\"credentials\":{\"questDb\":\"QuestDB\"},\"typeVersion\":1,\"alwaysOutputData\":true},{\"name\":\"QuestDB1\",\"type\":\"n8n-nodes-base.questDb\",\"position\":[1040,460],\"parameters\":{\"table\":\"test\",\"columns\":\"id, name\"},\"credentials\":{\"questDb\":\"QuestDB\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Set\":{\"main\":[[{\"node\":\"QuestDB1\",\"type\":\"main\",\"index\":0}]]},\"QuestDB\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"QuestDB\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

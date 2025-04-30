@@ -1,0 +1,13 @@
+{
+  "title": "Receive updates for GitLab events",
+  "url": "https://n8n.io/workflows/528-receive-updates-for-gitlab-events/",
+  "category": "Engineering",
+  "category_url": "https://n8n.io/workflows/categories/engineering/",
+  "author": "amudhan",
+  "publish_date": "Last update 9 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"Gitlab Trigger\",\"type\":\"n8n-nodes-base.gitlabTrigger\",\"position\":[460,480],\"webhookId\":\"0e855b27-6465-42be-9610-c61b2e09cef9\",\"parameters\":{\"owner\":\"n8n-io\",\"events\":[\"*\"],\"repository\":\"n8n-docs\"},\"credentials\":{\"gitlabApi\":\"gitlab_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for GitLab Trigger docs\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for GitLab Trigger docs</p>\n<p></p>\n</div><!--]-->"
+}

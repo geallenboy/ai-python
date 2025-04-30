@@ -308,17 +308,20 @@ class N8nWorkflowScraper:
     
     async def scrape_category_workflows(self, categories: List[Dict[str, str]], max_workflows_per_category: int = None, initial_count: int = 20) -> List[Dict[str, Any]]:
         """
-        爬取每个分类URL中的工作流程，支持"加载更多"功能和count参数
+        爬取每个分类URL中的工作流程，使用点击"加载更多"按钮的方式
         
         Args:
             categories: 包含分类信息的列表
             max_workflows_per_category: 每个分类最多爬取的工作流程数量，None 表示不限制
-            initial_count: 初始count参数值，表示每页加载的数量
+            initial_count: 初始count参数值，用于第一次加载(仍需提供但后续不增加)
             
         Returns:
             所有爬取到的工作流程列表
         """
         all_workflows = []
+        
+        # 全局去重集合
+        processed_urls = set()
         
         # 添加调试输出以确认正在爬取的分类
         logger.info("\n===== 开始爬取以下分类 =====")
@@ -328,33 +331,25 @@ class N8nWorkflowScraper:
         
         # 遍历每个分类
         for i, category in enumerate(categories):
-            category_url = category.get('category_url')
+            original_url = category.get('category_url')
             category_name = category.get('category_name')
             
             logger.info(f"\n[{i+1}/{len(categories)}] 开始爬取分类: {category_name}")
-            logger.info(f"原始URL: {category_url}")
+            logger.info(f"原始URL: {original_url}")
+            self.log_category_activity(category_name, f"开始爬取分类: {category_name}")
+            self.log_category_activity(category_name, f"原始URL: {original_url}")
             
-            # 处理URL中的count参数
-            current_count = initial_count
-            if "?" in category_url:
-                # 已经有查询参数
-                if "count=" in category_url:
-                    # URL已包含count参数，进行替换
-                    category_url = re.sub(r'count=\d+', f'count={current_count}', category_url)
+            # 处理原始URL，确保首次加载时有count参数
+            initial_url = original_url
+            if "?" in initial_url:
+                if "count=" in initial_url:
+                    initial_url = re.sub(r'count=\d+', f'count={initial_count}', initial_url)
                 else:
-                    # 添加count参数
-                    category_url += f"&count={current_count}"
+                    initial_url += f"&count={initial_count}"
             else:
-                # 没有查询参数，添加count参数
-                category_url += f"?count={current_count}"
+                initial_url += f"?count={initial_count}"
             
-            logger.info(f"添加count参数后的URL: {category_url}")
-            
-            # 修改日志输出
-            if max_workflows_per_category is not None:
-                logger.info(f"限制：每个分类最多爬取 {max_workflows_per_category} 条数据")
-            else:
-                logger.info(f"不限制爬取数量，将爬取所有工作流程")
+            self.log_category_activity(category_name, f"首次访问URL: {initial_url}")
             
             try:
                 # 创建新页面
@@ -362,91 +357,63 @@ class N8nWorkflowScraper:
                 
                 # 初始化分类工作流程列表
                 category_workflows = []
-                already_loaded = 0
-                has_more = True  # 初始设为True，假设有更多内容可以加载
+                
+                # 用于跟踪已处理的URL
+                category_processed_urls = set()
                 
                 # 记录爬取开始时间
                 category_start_time = time.time()
+                self.log_category_activity(category_name, f"爬取开始时间: {time.strftime('%Y-%m-%d %H:%M:%S')}")
                 
-                # 访问分类URL
-                await page.goto(category_url, wait_until="domcontentloaded")
-                await asyncio.sleep(3)  # 给JavaScript额外的时间加载内容
+                # 网站显示的总工作流数量
+                total_count = 0
                 
-                # 验证当前URL，确保我们在正确的页面上
-                current_url = page.url
-                logger.info(f"当前页面URL: {current_url}")
+                # 首次加载页面
+                logger.info(f"首次加载页面: {initial_url}")
+                await page.goto(initial_url, wait_until="domcontentloaded")
+                await asyncio.sleep(3)  # 给JavaScript额外时间加载内容
                 
-                # 获取总结果数量信息（仅供参考）
+                # 获取总结果数量信息
                 try:
                     total_element = await page.wait_for_selector('h2.title--white-violet', timeout=5000)
-                    result_text = await total_element.text_content()
-                    match = re.search(r'\((\d+)\)', result_text)
-                    total_count = int(match.group(1)) if match else 0
-                    if max_workflows_per_category is not None:
-                        logger.info(f"该分类下共有 {total_count} 个工作流程（仅获取前 {max_workflows_per_category} 条）")
-                    else:
-                        logger.info(f"该分类下共有 {total_count} 个工作流程（将获取全部）")
+                    if total_element:
+                        result_text = await total_element.text_content()
+                        match = re.search(r'\((\d+)\)', result_text)
+                        total_count = int(match.group(1)) if match else 0
+                        logger.info(f"网站显示该分类共有 {total_count} 个工作流")
+                        self.log_category_activity(category_name, f"网站显示该分类共有 {total_count} 个工作流")
                 except Exception as e:
                     logger.warning(f"无法获取总结果数量: {e}")
-                    total_count = 0
                 
-                # 等待工作流项目加载
-                await page.wait_for_selector('.workflow-search-result, a.workflow-search-result')
+                # 处理当前已加载的工作流和加载更多的循环
+                load_more_count = 0  # 计数器：点击"加载更多"的次数
+                continue_loading = True
                 
-                # 循环"加载更多"，直到没有更多内容或达到最大数量限制
-                load_more_count = 0  # 加载更多的次数
-                while has_more:
+                while continue_loading:
                     # 获取当前页面上的所有工作流项目
                     workflow_items = await page.query_selector_all('.workflow-search-result, a.workflow-search-result')
                     current_item_count = len(workflow_items)
                     
+                    logger.info(f"当前页面上有 {current_item_count} 个工作流 (加载次数: {load_more_count})")
+                    self.log_category_activity(category_name, f"当前页面上有 {current_item_count} 个工作流 (加载次数: {load_more_count})")
+                    
                     # 记录当前爬取进度
-                    self.log_scrape_progress(category_name, current_count, current_item_count)
+                    self.log_scrape_progress(category_name, load_more_count + 1, current_item_count)
                     
-                    logger.info(f"当前已加载 {current_item_count} 个工作流程（count={current_count}，之前已加载 {already_loaded} 个）")
-                    
-                    # 检查是否有新内容加载
-                    if current_item_count <= already_loaded:
-                        logger.info("没有新内容加载，尝试增加count参数")
-                        
-                        # 增加count值，尝试加载更多内容
-                        current_count += 20  # 每次增加20个
-                        new_url = re.sub(r'count=\d+', f'count={current_count}', category_url)
-                        
-                        logger.info(f"增加count参数到 {current_count}，新URL: {new_url}")
-                        
-                        # 访问新的URL
-                        await page.goto(new_url, wait_until="domcontentloaded")
-                        await asyncio.sleep(3)  # 给加载时间
-                        
-                        # 重新获取工作流项目
-                        workflow_items = await page.query_selector_all('.workflow-search-result, a.workflow-search-result')
-                        current_item_count = len(workflow_items)
-                        
-                        # 再次检查是否有新内容
-                        if current_item_count <= already_loaded:
-                            logger.info(f"即使增加count到 {current_count} 也没有更多内容，停止加载")
-                            break
-                        else:
-                            logger.info(f"增加count后成功加载到 {current_item_count} 个工作流（+{current_item_count - already_loaded}个）")
-                    
-                    # 检查是否已达到最大爬取数量
-                    if max_workflows_per_category is not None and current_item_count >= max_workflows_per_category:
-                        logger.info(f"已达到限制数量 {max_workflows_per_category}，停止加载更多")
-                        # 如果已加载的数量超过了限制，只处理到限制为止
-                        workflow_items = workflow_items[:max_workflows_per_category]
-                        current_item_count = len(workflow_items)
+                    # 检查是否有工作流加载
+                    if current_item_count == 0:
+                        logger.info("没有加载到任何工作流，停止加载")
+                        self.log_category_activity(category_name, "没有加载到任何工作流，停止加载")
                         break
                     
-                    # 处理当前页面的工作流程
-                    items_to_process = workflow_items[already_loaded:]
-                    logger.info(f"处理新加载的 {len(items_to_process)} 个工作流程")
+                    # 记录之前已处理URL的数量
+                    before_processing_count = len(category_processed_urls)
                     
-                    # 更新已加载数量
-                    already_loaded = current_item_count
+                    # 处理当前页面上的所有工作流
+                    logger.info(f"处理 {current_item_count} 个工作流程")
+                    self.log_category_activity(category_name, f"处理 {current_item_count} 个工作流程")
                     
-                    # 处理每个工作流程项
-                    for j, item in enumerate(items_to_process):
+                    for j, item in enumerate(workflow_items):
                         try:
                             # 获取详情页URL
                             href = await item.get_attribute('href')
@@ -455,7 +422,15 @@ class N8nWorkflowScraper:
                             
                             # 构造完整URL
                             workflow_url = f"https://n8n.io{href}" if href.startswith('/') else href
-                            logger.info(f"工作流程详情页URL: {workflow_url}")
+                            
+                            # 检查是否已处理过此URL
+                            if workflow_url in processed_urls or workflow_url in category_processed_urls:
+                                logger.info(f"  跳过已处理的工作流URL: {workflow_url}")
+                                continue
+                            
+                            # 添加到已处理集合
+                            processed_urls.add(workflow_url)
+                            category_processed_urls.add(workflow_url)
                             
                             # 提取工作流程标题
                             try:
@@ -491,7 +466,7 @@ class N8nWorkflowScraper:
                                     'title': title,
                                     'url': workflow_url,
                                     'category': category_name,
-                                    'category_url': category_url,
+                                    'category_url': original_url,
                                     'skipped_details': True,  # 标记为跳过详情页
                                     'note': '文件已存在，跳过详情页爬取'
                                 }
@@ -512,7 +487,7 @@ class N8nWorkflowScraper:
                                 'title': title,
                                 'url': workflow_url,
                                 'category': category_name,
-                                'category_url': category_url,
+                                'category_url': original_url,
                                 **detailed_info  # 合并详情页中获取的信息
                             }
 
@@ -533,61 +508,127 @@ class N8nWorkflowScraper:
                             # 检查是否已达到最大爬取数量
                             if max_workflows_per_category is not None and len(category_workflows) >= max_workflows_per_category:
                                 logger.info(f"已达到限制数量 {max_workflows_per_category}，停止处理更多工作流程")
-                                has_more = False
+                                continue_loading = False
                                 break
-                        
+                            
                         except Exception as e:
                             logger.error(f"  处理工作流程时出错: {e}")
                     
-                    # 尝试查找"加载更多"按钮
+                    # 检查是否有新的URL被处理
+                    after_processing_count = len(category_processed_urls)
+                    new_urls_processed = after_processing_count - before_processing_count
+                    
+                    logger.info(f"本次新处理了 {new_urls_processed} 个工作流URL，累计 {after_processing_count} 个")
+                    self.log_category_activity(category_name, f"本次新处理了 {new_urls_processed} 个工作流URL，累计 {after_processing_count} 个")
+                    
+                    # 如果没有新URL被处理，可能是因为已经处理过这些工作流
+                    # 但我们仍然需要继续点击"加载更多"来获取新内容
+                    
+                    # 检查是否已经加载了所有可用的工作流(使用总数和实际处理的URLs比较)
+                    if total_count > 0 and len(category_processed_urls) >= total_count:
+                        logger.info(f"已处理的URL数量({len(category_processed_urls)})已达到或超过总数({total_count})，停止加载")
+                        self.log_category_activity(category_name, f"已处理的URL数量({len(category_processed_urls)})已达到或超过总数({total_count})，停止加载")
+                        break
+                    
+                    # 检查是否已达到最大爬取数量
+                    if max_workflows_per_category is not None and len(category_workflows) >= max_workflows_per_category:
+                        logger.info(f"已达到预设的最大爬取数量 {max_workflows_per_category}，停止加载更多")
+                        self.log_category_activity(category_name, f"已达到预设的最大爬取数量 {max_workflows_per_category}，停止加载更多")
+                        break
+                    
+                    # 尝试点击"加载更多"按钮
                     try:
-                        # 使用多个可能的选择器查找加载更多按钮
-                        load_more_button = None
+                        # 尝试多种可能的选择器来查找"加载更多"按钮
                         load_more_selectors = [
                             'button.load-more', 
                             'button:has-text("加载更多")', 
-                            'button:has-text("Load more")'
+                            'button:has-text("Load more")',
+                            'button.font-geomanist',
+                            'button.text-mini-medium',
+                            'button.border-shades-lighter'
                         ]
                         
+                        load_more_button = None
                         for selector in load_more_selectors:
                             load_more_button = await page.query_selector(selector)
                             if load_more_button:
-                                logger.info(f"找到加载更多按钮: {selector}")
-                                break
+                                button_text = await load_more_button.text_content()
+                                logger.info(f"找到可能的加载更多按钮: '{button_text}' (选择器: {selector})")
+                                # 只有当按钮文本包含"加载更多"或"Load more"时才使用
+                                text_lower = button_text.lower()
+                                if "load more" in text_lower or "加载更多" in text_lower:
+                                    break
+                                else:
+                                    load_more_button = None
                         
-                        # 如果没有找到"加载更多"按钮或已经达到最大数量，则结束循环
-                        if not load_more_button or not has_more:
-                            logger.info("未找到加载更多按钮或已达到最大数量限制，停止加载更多")
+                        if not load_more_button:
+                            logger.info("未找到加载更多按钮，可能已加载所有内容")
+                            self.log_category_activity(category_name, "未找到加载更多按钮，可能已加载所有内容")
                             break
+                        
+                        # 点击"加载更多"按钮前记录当前项目数量
+                        before_items_count = current_item_count
                         
                         # 点击"加载更多"按钮
                         logger.info("点击加载更多按钮...")
-                        await load_more_button.click()
+                        self.log_category_activity(category_name, "点击加载更多按钮...")
                         
-                        # 等待加载动画
-                        try:
-                            await page.wait_for_selector('.loading, .spinner', timeout=2000)
-                            logger.info("检测到加载动画，等待其消失...")
-                            await page.wait_for_selector('.loading, .spinner', state='detached', timeout=20000)
-                        except Exception:
-                            # 如果没有加载动画或它消失得太快，我们仍然需要等待
-                            pass
+                        # 使用JavaScript点击，避免可能的视图问题
+                        await page.evaluate("(button) => button.click()", load_more_button)
+                        load_more_count += 1
                         
-                        # 等待更多内容加载
-                        await asyncio.sleep(3)
+                        # 等待新内容加载
+                        await asyncio.sleep(3)  # 先等待一小段时间
                         
-                        logger.info("内容加载完成，继续处理")
+                        # 等待页面上的工作流项目数量增加
+                        retry_count = 0
+                        max_retries = 5
+                        while retry_count < max_retries:
+                            # 重新获取工作流项目
+                            new_items = await page.query_selector_all('.workflow-search-result, a.workflow-search-result')
+                            if len(new_items) > before_items_count:
+                                logger.info(f"成功加载更多内容: {len(new_items) - before_items_count} 个新项目")
+                                self.log_category_activity(category_name, f"成功加载更多内容: {len(new_items) - before_items_count} 个新项目")
+                                break
+                            
+                            logger.info(f"等待新内容加载... (尝试 {retry_count+1}/{max_retries})")
+                            await asyncio.sleep(2)  # 增加额外等待时间
+                            retry_count += 1
+                        
+                        if retry_count >= max_retries:
+                            logger.warning("点击后未检测到新内容加载，可能已到达末尾")
+                            self.log_category_activity(category_name, "点击后未检测到新内容加载，可能已到达末尾", "WARNING")
+                            continue_loading = False
+                        
+                        # 安全检查：如果加载次数过多，可能存在问题
+                        if load_more_count >= 30:  # 根据实际情况调整
+                            logger.warning(f"已点击加载更多 {load_more_count} 次，停止以防止无限循环")
+                            self.log_category_activity(category_name, f"已点击加载更多 {load_more_count} 次，停止以防止无限循环", "WARNING")
+                            continue_loading = False
+                    
                     except Exception as e:
                         logger.error(f"点击加载更多按钮时出错: {e}")
-                        has_more = False  # 出错时停止加载更多
-            
+                        self.log_category_activity(category_name, f"点击加载更多按钮时出错: {e}", "ERROR")
+                        continue_loading = False
+                
                 # 将当前分类的工作流程添加到总列表
                 all_workflows.extend(category_workflows)
                 
                 # 保存每个分类的工作流程到单独的文件
                 self.save_category_workflows_to_file(category_workflows, category_name)
                 
-                logger.info(f"分类 '{category_name}' 爬取完成，共 {len(category_workflows)} 个工作流程")
+                # 记录最终统计信息
+                elapsed_time = time.time() - category_start_time
+                logger.info(f"分类 '{category_name}' 爬取完成：")
+                logger.info(f"- 网站显示总数: {total_count} 个工作流")
+                logger.info(f"- 实际处理URL数: {len(category_processed_urls)} 个")
+                logger.info(f"- 保存工作流数: {len(category_workflows)} 个")
+                logger.info(f"- 加载更多次数: {load_more_count} 次")
+                logger.info(f"- 耗时: {elapsed_time:.2f} 秒")
+                
+                self.log_category_activity(category_name, 
+                    f"爬取完成 - 总数: {total_count}, 处理: {len(category_processed_urls)}, "
+                    f"保存: {len(category_workflows)}, 加载: {load_more_count}次, 耗时: {elapsed_time:.2f}秒")
                 
                 # 关闭页面
                 await page.close()
@@ -598,9 +639,10 @@ class N8nWorkflowScraper:
                     delay = random.uniform(5.0, 10.0)  # 增加等待时间
                     logger.info(f"等待 {delay:.2f} 秒后爬取下一个分类...")
                     await asyncio.sleep(delay)
-                    
+            
             except Exception as e:
                 logger.error(f"爬取分类 '{category_name}' 时出错: {e}")
+                self.log_category_activity(category_name, f"爬取分类时出错: {e}", "ERROR")
                 # 确保页面关闭
                 try:
                     await page.close()
@@ -1179,7 +1221,32 @@ class N8nWorkflowScraper:
             logger.warning(f"读取上次爬取进度时出错: {e}")
         
         return last_count, last_loaded
-
+    
+    def log_category_activity(self, category_name: str, message: str, level: str = "INFO") -> None:
+        """
+        将日志记录到特定分类的日志文件
+        
+        Args:
+            category_name: 分类名称
+            message: 日志消息
+            level: 日志级别 (INFO, WARNING, ERROR)
+        """
+        # 确保日志目录存在
+        logs_dir = os.path.join("logs", "categories")
+        if not os.path.exists(logs_dir):
+            os.makedirs(logs_dir)
+        
+        # 为分类名称创建安全的文件名
+        safe_category_name = self.get_safe_dirname(category_name)
+        log_file = os.path.join(logs_dir, f"{safe_category_name}.log")
+        
+        # 记录时间戳和消息
+        timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        log_entry = f"{timestamp} - {level} - {message}\n"
+        
+        # 追加到日志文件
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write(log_entry)
 
 async def main():
     """
