@@ -15,9 +15,9 @@
     "count": 40
   },
   "AI": {
-    "last_crawled": 1745909500.107331,
-    "last_crawled_date": "2025-04-29 14:51:40",
-    "count": 20
+    "last_crawled": 1746452292.8157692,
+    "last_crawled_date": "2025-05-05 21:38:12",
+    "count": 300
   },
   "Design": {
     "last_crawled": 1745909666.6216,
@@ -28,5 +28,10 @@
     "last_crawled": 1745932157.3538408,
     "last_crawled_date": "2025-04-29 21:09:17",
     "count": 159
+  },
+  "SecOps": {
+    "last_crawled": 1746452552.142483,
+    "last_crawled_date": "2025-05-05 21:42:32",
+    "count": 50
   }
 }

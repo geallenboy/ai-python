@@ -280,14 +280,24 @@ class N8nWorkflowScraper:
                 category_name = await link.text_content()
                 category_name = category_name.strip()
                 
+                # 添加最新发布日期排序参数
+                sorted_href = href
+                if sorted_href:
+                    if '?' in sorted_href:
+                        # 如果URL已经有查询参数，添加排序参数
+                        sorted_href = f"{sorted_href}&sort=createdAt:desc"
+                    else:
+                        # 如果URL没有查询参数，添加排序参数
+                        sorted_href = f"{sorted_href}?sort=createdAt:desc"
+
                 # 打印每个分类的详细信息
                 logger.info(f"分类名称: {category_name}")
-                logger.info(f"分类链接: {href}")
+                logger.info(f"分类链接: {sorted_href}")
                 logger.info("--------------------------")
                 
                 # 将分类信息添加到categories列表
                 categories.append({
-                    'category_url': href if href.startswith("http") else f"https://n8n.io{href}",
+                    'category_url': sorted_href if sorted_href.startswith("http") else f"https://n8n.io{sorted_href}",
                     'category_name': category_name
                 })
             
@@ -1014,36 +1024,30 @@ class N8nWorkflowScraper:
             await self.setup_browser()
             
             # 抓取所有工作流程分类
-            if categories_to_crawl and len(categories_to_crawl) == 1 and categories_to_crawl[0].lower() == "ai":
-                categories = [{
-                    "category_url": "https://n8n.io/workflows/categories/ai/",
-                    "category_name": "AI"
-                }]
-                logger.info("使用指定的AI分类")
+            # 获取所有可用分类
+            all_categories = await self.retry_with_proxies(self.scrape_categories)
+            
+            # 保存所有分类信息到文件(无论是否全部爬取)
+            self.save_workflows_to_file(all_categories, filename="workflow/n8n_categories.json")
+            
+            # 根据条件过滤分类
+            if categories_to_crawl:
+                # 过滤出指定的分类
+                categories = [cat for cat in all_categories 
+                            if cat.get("category_name") in categories_to_crawl]
+                
+                if not categories:
+                    logger.warning(f"未找到指定的分类: {categories_to_crawl}")
+                    logger.info("可用分类有:")
+                    for cat in all_categories:
+                        logger.info(f"- {cat.get('category_name')}")
+                    return
+                
+                logger.info(f"将爬取以下指定分类: {[cat.get('category_name') for cat in categories]}")
             else:
-                # 获取所有可用分类
-                all_categories = await self.retry_with_proxies(self.scrape_categories)
+                # 使用所有分类
+                categories = all_categories
                 
-                # 保存所有分类信息到文件(无论是否全部爬取)
-                self.save_workflows_to_file(all_categories, filename="workflow/n8n_categories.json")
-                
-                # 根据条件过滤分类
-                if categories_to_crawl:
-                    # 过滤出指定的分类
-                    categories = [cat for cat in all_categories 
-                                if cat.get("category_name") in categories_to_crawl]
-                    
-                    if not categories:
-                        logger.warning(f"未找到指定的分类: {categories_to_crawl}")
-                        logger.info("可用分类有:")
-                        for cat in all_categories:
-                            logger.info(f"- {cat.get('category_name')}")
-                        return
-                    
-                    logger.info(f"将爬取以下指定分类: {[cat.get('category_name') for cat in categories]}")
-                else:
-                    # 使用所有分类
-                    categories = all_categories
             
             # 根据已爬取记录过滤分类
             if skip_crawled and not force_update:

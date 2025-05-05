@@ -1,0 +1,13 @@
+{
+  "title": "Create an alert on SIGNL4",
+  "url": "https://n8n.io/workflows/441-create-an-alert-on-signl4/",
+  "category": "SecOps",
+  "category_url": "https://n8n.io/workflows/categories/secops/?sort=createdAt:desc",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"SIGNL4\",\"type\":\"n8n-nodes-base.signl4\",\"position\":[450,300],\"parameters\":{\"message\":\"This is a test alert sent from n8n to SIGNL4\",\"additionalFields\":{\"title\":\"Sample Title\"}},\"credentials\":{\"signl4Api\":\"Signl4 Team Secret\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"SIGNL4\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for [SIGNL4 node docs](https://docs.n8n.io/nodes/n8n-nodes-base.signl4/).  \n.\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for <a href=\"https://docs.n8n.io/nodes/n8n-nodes-base.signl4/\" rel=\"ugc nofollow\" target=\"_blank\">SIGNL4 node docs</a>.<br>\n.</p>\n<p></p>\n</div><!--]-->"
+}

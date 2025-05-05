@@ -1,58 +1,58 @@
 [
   {
-    "category_url": "https://n8n.io/workflows/categories/ai/",
+    "category_url": "https://n8n.io/workflows/categories/ai/?sort=createdAt:desc",
     "category_name": "AI"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/secops/",
+    "category_url": "https://n8n.io/workflows/categories/secops/?sort=createdAt:desc",
     "category_name": "SecOps"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/sales/",
+    "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
     "category_name": "Sales"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/it-ops/",
+    "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
     "category_name": "IT Ops"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/marketing/",
+    "category_url": "https://n8n.io/workflows/categories/marketing/?sort=createdAt:desc",
     "category_name": "Marketing"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/engineering/",
+    "category_url": "https://n8n.io/workflows/categories/engineering/?sort=createdAt:desc",
     "category_name": "Engineering"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/devops/",
+    "category_url": "https://n8n.io/workflows/categories/devops/?sort=createdAt:desc",
     "category_name": "DevOps"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/building-blocks/",
+    "category_url": "https://n8n.io/workflows/categories/building-blocks/?sort=createdAt:desc",
     "category_name": "Building Blocks"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/design/",
+    "category_url": "https://n8n.io/workflows/categories/design/?sort=createdAt:desc",
     "category_name": "Design"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/finance/",
+    "category_url": "https://n8n.io/workflows/categories/finance/?sort=createdAt:desc",
     "category_name": "Finance"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/hr/",
+    "category_url": "https://n8n.io/workflows/categories/hr/?sort=createdAt:desc",
     "category_name": "HR"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/other/",
+    "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
     "category_name": "Other"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/product/",
+    "category_url": "https://n8n.io/workflows/categories/product/?sort=createdAt:desc",
     "category_name": "Product"
   },
   {
-    "category_url": "https://n8n.io/workflows/categories/support/",
+    "category_url": "https://n8n.io/workflows/categories/support/?sort=createdAt:desc",
     "category_name": "Support"
   }
 ]
