@@ -1,0 +1,13 @@
+{
+  "title": "Send automated daily reminders on Telegram",
+  "url": "https://n8n.io/workflows/1387-send-automated-daily-reminders-on-telegram/",
+  "category": "BuildingBlocks",
+  "category_url": "https://n8n.io/workflows/categories/building-blocks/?sort=createdAt:desc",
+  "author": "Nicholas Lewanowicz",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":1,\"name\":\"Daily Journal Reminder\",\"nodes\":[{\"name\":\"Morning reminder\",\"type\":\"n8n-nodes-base.cron\",\"notes\":\"Trigger very morning\",\"position\":[220,60],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":6}]}},\"notesInFlow\":true,\"typeVersion\":1,\"alwaysOutputData\":true},{\"name\":\"format reminder\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[460,60],\"parameters\":{\"functionCode\":\"\\n// Creates message with todays date\\nconst today = new Date()\\nconst yesterday = new Date(today)\\n\\nyesterday.setDate(yesterday.getDate() - 1)\\nconst message = `What did you do: ${yesterday.toISOString().split('T')[0]}`\\n\\nreturn {message};\"},\"typeVersion\":1},{\"name\":\"Send journal reminder\",\"type\":\"n8n-nodes-base.telegram\",\"position\":[700,60],\"parameters\":{\"text\":\"={{$node[\\\"format reminder\\\"].json[\\\"message\\\"]}}\",\"chatId\":\"666884239\",\"additionalFields\":{}},\"credentials\":{},\"typeVersion\":1}],\"active\":true,\"settings\":{},\"connections\":{\"format reminder\":{\"main\":[[{\"node\":\"Send journal reminder\",\"type\":\"main\",\"index\":0}]]},\"Morning reminder\":{\"main\":[[{\"node\":\"format reminder\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "A goal for 2022 is to write 1 thing I do each day. This workflow will automatically remind you on telegram to write something you did yesterday, optionally you can enable the [second workflow](https://n8n.io/workflows/1388) which will allow you to reply to the message and have it recorded in a google sheet.\n\nNote: Make sure to configure your Telegram credentials!\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>A goal for 2022 is to write 1 thing I do each day. This workflow will automatically remind you on telegram to write something you did yesterday, optionally you can enable the <a href=\"https://n8n.io/workflows/1388\" rel=\"ugc nofollow\" target=\"_blank\">second workflow</a> which will allow you to reply to the message and have it recorded in a google sheet.</p>\n<p>Note: Make sure to configure your Telegram credentials!</p>\n</div><!--]-->"
+}

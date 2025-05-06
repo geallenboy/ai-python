@@ -1,0 +1,13 @@
+{
+  "title": "Enrich new Hubspot contacts with contact and company data from ExactBuyer",
+  "url": "https://n8n.io/workflows/2111-enrich-new-hubspot-contacts-with-contact-and-company-data-from-exactbuyer/",
+  "category": "Marketing",
+  "category_url": "https://n8n.io/workflows/categories/marketing/?sort=createdAt:desc",
+  "author": "Mutasem",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "",
+  "readme": "## Use Case\n\nThis workflow aims to enrich new contacts in HubSpot. The more relevant the HubSpot profile, the more useful it is. Once active, this n8n workflow will update the social profiles, contact data (phone, email) as well as location data from ExactBuyer.\n\n## Setup\n\n  1. Add HubSpot trigger credential (be careful, scopes must be exactly as in [n8n docs](https://docs.n8n.io/integrations/builtin/credentials/hubspot/) )\n  2. Add your Exact Buyer API key\n  3. Add HubSpot credential for update node (be careful, scopes must be same as [n8n docs](https://docs.n8n.io/integrations/builtin/credentials/hubspot/) for this. This is different from the trigger cred)\n  4. Activate workflow\n\n\n\n## How to adjust this template\n\nThere's plenty of interesting info that ExactBuyer returns that could be helpful. Take a look and update this workflow to add what you need.\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><h2>Use Case</h2>\n<p>This workflow aims to enrich new contacts in HubSpot. The more relevant the HubSpot profile, the more useful it is. Once active, this n8n workflow will update the social profiles, contact data (phone, email) as well as location data from ExactBuyer.</p>\n<h2>Setup</h2>\n<ol>\n<li>Add HubSpot trigger credential (be careful, scopes must be exactly as in <a href=\"https://docs.n8n.io/integrations/builtin/credentials/hubspot/\" rel=\"ugc nofollow\" target=\"_blank\">n8n docs</a> )</li>\n<li>Add your Exact Buyer API key</li>\n<li>Add HubSpot credential for update node (be careful, scopes must be same as <a href=\"https://docs.n8n.io/integrations/builtin/credentials/hubspot/\" rel=\"ugc nofollow\" target=\"_blank\">n8n docs</a> for this. This is different from the trigger cred)</li>\n<li>Activate workflow</li>\n</ol>\n<h2>How to adjust this template</h2>\n<p>There's plenty of interesting info that ExactBuyer returns that could be helpful. Take a look and update this workflow to add what you need.</p>\n</div><!--]-->"
+}

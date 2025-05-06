@@ -1,0 +1,13 @@
+{
+  "title": "Send outreach/cold email using Gmail to new Hubspot contacts",
+  "url": "https://n8n.io/workflows/2112-send-outreachcold-email-using-gmail-to-new-hubspot-contacts/",
+  "category": "Marketing",
+  "category_url": "https://n8n.io/workflows/categories/marketing/?sort=createdAt:desc",
+  "author": "Mutasem",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "",
+  "readme": "## Use case\n\nThis workflow uses Gmail to send outreach emails to new Hubspot contacts that have yet to be contacted (usually unknown contacts), and records the outreach in Hubspot.\n\n## Setup\n\n  1. [Setup HubSpot Oauth2 creds](https://docs.n8n.io/integrations/builtin/credentials/hubspot/) (Be careful with scopes. They have to be exact, not less or more. Yes, it's not simple, but it's well documented in the n8n docs. Be smarter than me, read the docs)\n  2. Setup Gmail creds.\n  3. Change the from email and from name in the `Record outreach in HubSpot` node\n\n\n\n## How to adjust this template to your needs\n\n  * Change the email message in the `Set keys` node\n  * Think about your criteria to reach out to new contacts. Here we simply filter for only contacts with unknown dates.\n\n\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><h2>Use case</h2>\n<p>This workflow uses Gmail to send outreach emails to new Hubspot contacts that have yet to be contacted (usually unknown contacts), and records the outreach in Hubspot.</p>\n<h2>Setup</h2>\n<ol>\n<li><a href=\"https://docs.n8n.io/integrations/builtin/credentials/hubspot/\" rel=\"ugc nofollow\" target=\"_blank\">Setup HubSpot Oauth2 creds</a> (Be careful with scopes. They have to be exact, not less or more. Yes, it's not simple, but it's well documented in the n8n docs. Be smarter than me, read the docs)</li>\n<li>Setup Gmail creds.</li>\n<li>Change the from email and from name in the <code>Record outreach in HubSpot</code> node</li>\n</ol>\n<h2>How to adjust this template to your needs</h2>\n<ul>\n<li>Change the email message in the <code>Set keys</code> node</li>\n<li>Think about your criteria to reach out to new contacts. Here we simply filter for only contacts with unknown dates.</li>\n</ul>\n</div><!--]-->"
+}

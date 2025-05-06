@@ -1,0 +1,13 @@
+{
+  "title": "Create a meeting in Zoom automatically",
+  "url": "https://n8n.io/workflows/453-create-a-meeting-in-zoom-automatically/",
+  "category": "Other",
+  "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"83\",\"name\":\"Creating a meeting with the Zoom node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Zoom\",\"type\":\"n8n-nodes-base.zoom\",\"position\":[450,300],\"parameters\":{\"topic\":\"Something\",\"authentication\":\"\",\"additionalFields\":{}},\"credentials\":{\"zoomOAuth2Api\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Zoom\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Zoom\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

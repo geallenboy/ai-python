@@ -1,0 +1,13 @@
+{
+  "title": "Receive updates for events in Box",
+  "url": "https://n8n.io/workflows/560-receive-updates-for-events-in-box/",
+  "category": "Other",
+  "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"Box Trigger\",\"type\":\"n8n-nodes-base.boxTrigger\",\"position\":[1027,368],\"webhookId\":\"0e56bb0c-8e81-42de-a902-c0ab31834bd8\",\"parameters\":{\"events\":[\"FOLDER.MOVED\",\"FOLDER.DOWNLOADED\"],\"targetId\":\"118847708963\",\"targetType\":\"file\"},\"credentials\":{\"boxOAuth2Api\":\"box_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Box Trigger node docs\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Box Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Receive updates when an event occurs in Asana",
+  "url": "https://n8n.io/workflows/654-receive-updates-when-an-event-occurs-in-asana/",
+  "category": "Other",
+  "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"47\",\"name\":\"Receive updates when an event occurs in Asana\",\"nodes\":[{\"name\":\"Asana-Trigger\",\"type\":\"n8n-nodes-base.asanaTrigger\",\"position\":[1490,860],\"webhookId\":\"0de3b493-efb6-472c-9deb-80d28c89d28d\",\"parameters\":{\"resource\":\"Tweets\",\"workspace\":\"Engineering\"},\"credentials\":{\"asanaApi\":\"asana\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

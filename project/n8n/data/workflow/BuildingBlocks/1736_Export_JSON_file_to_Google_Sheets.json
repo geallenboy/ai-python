@@ -1,0 +1,13 @@
+{
+  "title": "Export JSON file to Google Sheets",
+  "url": "https://n8n.io/workflows/1736-export-json-file-to-google-sheets/",
+  "category": "BuildingBlocks",
+  "category_url": "https://n8n.io/workflows/categories/building-blocks/?sort=createdAt:desc",
+  "author": "Lorena",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"Google Sheets1\",\"type\":\"n8n-nodes-base.googleSheets\",\"notes\":\"Append data to sheet\",\"position\":[980,-120],\"parameters\":{\"range\":\"A:C\",\"options\":{\"usePathForKeyRow\":true},\"sheetId\":\"qwertz\",\"operation\":\"append\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":{\"id\":\"2\",\"name\":\"google_sheets_oauth\"}},\"notesInFlow\":true,\"typeVersion\":1},{\"name\":\"read json file\",\"type\":\"n8n-nodes-base.readBinaryFile\",\"position\":[620,-120],\"parameters\":{\"filePath\":\"/username/users_spreadsheet.json\"},\"typeVersion\":1},{\"name\":\"move binary data 2\",\"type\":\"n8n-nodes-base.moveBinaryData\",\"position\":[800,-120],\"parameters\":{\"options\":{}},\"typeVersion\":1}],\"connections\":{\"read json file\":{\"main\":[[{\"node\":\"move binary data 2\",\"type\":\"main\",\"index\":0}]]},\"move binary data 2\":{\"main\":[[{\"node\":\"Google Sheets1\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow exports the contents of a JSON file to Google Sheets.\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow exports the contents of a JSON file to Google Sheets.</p>\n</div><!--]-->"
+}

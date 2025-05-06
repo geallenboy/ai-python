@@ -1,0 +1,13 @@
+{
+  "title": "Get list of completed sale orders with Unleashed Software",
+  "url": "https://n8n.io/workflows/641-get-list-of-completed-sale-orders-with-unleashed-software/",
+  "category": "Sales",
+  "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"name\":\"\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[390,220],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Unleashed Software\",\"type\":\"n8n-nodes-base.unleashedSoftware\",\"position\":[600,220],\"parameters\":{\"filters\":{\"orderStatus\":[\"Completed\"]},\"returnAll\":true},\"credentials\":{\"unleashedSoftwareApi\":\"unleashed\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Unleashed Software\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

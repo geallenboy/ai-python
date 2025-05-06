@@ -1,0 +1,13 @@
+{
+  "title": "Create an organization in Affinity",
+  "url": "https://n8n.io/workflows/476-create-an-organization-in-affinity/",
+  "category": "Sales",
+  "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"95\",\"name\":\"Create an organization in Affinity\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[400,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Affinity\",\"type\":\"n8n-nodes-base.affinity\",\"position\":[600,250],\"parameters\":{\"name\":\"\",\"domain\":\"\",\"additionalFields\":{}},\"credentials\":{\"affinityApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Affinity\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

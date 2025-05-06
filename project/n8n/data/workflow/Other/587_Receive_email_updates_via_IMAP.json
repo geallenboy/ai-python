@@ -1,0 +1,13 @@
+{
+  "title": "Receive email updates via IMAP",
+  "url": "https://n8n.io/workflows/587-receive-email-updates-via-imap/",
+  "category": "Other",
+  "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"IMAP Email\",\"type\":\"n8n-nodes-base.emailReadImap\",\"position\":[760,400],\"parameters\":{\"options\":{\"allowUnauthorizedCerts\":false}},\"credentials\":{\"imap\":\"imap_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for IMAP Email node docs\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for IMAP Email node docs</p>\n<p></p>\n</div><!--]-->"
+}

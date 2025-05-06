@@ -1,0 +1,13 @@
+{
+  "title": "Receive updates when a form is submitted in Wufoo",
+  "url": "https://n8n.io/workflows/703-receive-updates-when-a-form-is-submitted-in-wufoo/",
+  "category": "Sales",
+  "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"78\",\"name\":\"Receive updates when a form is submitted in Wufoo\",\"nodes\":[{\"name\":\"Wufoo Trigger\",\"type\":\"n8n-nodes-base.wufooTrigger\",\"position\":[1290,140],\"webhookId\":\"106376c5-b49c-412f-8463-4db23a23c057\",\"parameters\":{\"form\":\"n8n\"},\"credentials\":{\"wufooApi\":\"wufoo\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

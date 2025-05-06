@@ -13,7 +13,7 @@
   },
   {
     "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
-    "category_name": "IT Ops"
+    "category_name": "ITOps"
   },
   {
     "category_url": "https://n8n.io/workflows/categories/marketing/?sort=createdAt:desc",
@@ -29,7 +29,7 @@
   },
   {
     "category_url": "https://n8n.io/workflows/categories/building-blocks/?sort=createdAt:desc",
-    "category_name": "Building Blocks"
+    "category_name": "BuildingBlocks"
   },
   {
     "category_url": "https://n8n.io/workflows/categories/design/?sort=createdAt:desc",

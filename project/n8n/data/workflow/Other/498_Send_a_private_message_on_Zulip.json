@@ -1,0 +1,13 @@
+{
+  "title": "Send a private message on Zulip",
+  "url": "https://n8n.io/workflows/498-send-a-private-message-on-zulip/",
+  "category": "Other",
+  "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"126\",\"name\":\"Send a private message on Zulip\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Zulip\",\"type\":\"n8n-nodes-base.zulip\",\"position\":[450,300],\"parameters\":{\"to\":[]},\"credentials\":{\"zulipApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Zulip\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

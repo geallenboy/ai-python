@@ -1,0 +1,13 @@
+{
+  "title": "Create and update lead in Salesforce",
+  "url": "https://n8n.io/workflows/664-create-and-update-lead-in-salesforce/",
+  "category": "Sales",
+  "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "",
+  "readme": "Companion workflow for Salesforce node docs\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Salesforce node docs</p>\n<p></p>\n</div><!--]-->"
+}

@@ -275,11 +275,42 @@ class N8nWorkflowScraper:
             logger.info(f"共找到 {len(category_links)} 个分类")
             logger.info("--------------------------")
             
+            # 修改 scrape_categories 方法中添加分类信息到categories列表的部分
             for link in category_links:
                 href = await link.get_attribute('href')
                 category_name = await link.text_content()
                 category_name = category_name.strip()
                 
+                # 处理category_name中的空格 - 直接去掉空格
+                category_name_no_space = category_name.replace(' ', '')
+                
+                # 检查URL是否需要处理 - 通常从网站获取的href已经正确，但以防万一
+                if not href:
+                    # 如果href为空，根据category_name构造URL
+                    # 将分类名称转换为小写并替换空格为连字符
+                    category_slug = category_name.lower().replace(' ', '-')
+                    href = f"/workflows/categories/{category_slug}/"
+                    logger.info(f"为分类 '{category_name}' 生成URL: {href}")
+                
+                # 确保URL中的分类名称格式正确，即使已有href
+                # 检查href是否包含分类路径
+                if '/workflows/categories/' in href:
+                    # 尝试标准化URL中的分类名称部分
+                    try:
+                        parts = href.split('/workflows/categories/')
+                        before = parts[0]
+                        after_parts = parts[1].split('/')
+                        
+                        # 确保分类部分使用小写和连字符格式
+                        category_slug = category_name.lower().replace(' ', '-')
+                        after_parts[0] = category_slug
+                        
+                        # 重建URL
+                        href = f"{before}/workflows/categories/{'/'.join(after_parts)}"
+                        logger.info(f"已标准化分类URL: {href}")
+                    except Exception as e:
+                        logger.warning(f"无法标准化URL: {e}")
+
                 # 添加最新发布日期排序参数
                 sorted_href = href
                 if sorted_href:
@@ -291,14 +322,14 @@ class N8nWorkflowScraper:
                         sorted_href = f"{sorted_href}?sort=createdAt:desc"
 
                 # 打印每个分类的详细信息
-                logger.info(f"分类名称: {category_name}")
+                logger.info(f"分类名称: {category_name} -> {category_name_no_space}")
                 logger.info(f"分类链接: {sorted_href}")
                 logger.info("--------------------------")
                 
-                # 将分类信息添加到categories列表
+                # 将分类信息添加到categories列表 - 使用无空格的分类名称
                 categories.append({
                     'category_url': sorted_href if sorted_href.startswith("http") else f"https://n8n.io{sorted_href}",
-                    'category_name': category_name
+                    'category_name': category_name_no_space  # 使用无空格的分类名称
                 })
             
             logger.info(f"\n成功获取 {len(categories)} 个分类")

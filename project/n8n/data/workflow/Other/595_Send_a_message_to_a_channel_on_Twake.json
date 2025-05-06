@@ -1,0 +1,13 @@
+{
+  "title": "Send a message to a channel on Twake",
+  "url": "https://n8n.io/workflows/595-send-a-message-to-a-channel-on-twake/",
+  "category": "Other",
+  "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"1\",\"name\":\"Send a message on Twake\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Twake\",\"type\":\"n8n-nodes-base.twake\",\"position\":[800,300],\"parameters\":{\"content\":\"\",\"channelId\":\"\",\"additionalFields\":{}},\"credentials\":{\"twakeCloudApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Twake\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

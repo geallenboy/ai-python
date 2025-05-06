@@ -1,0 +1,13 @@
+{
+  "title": "Receive messages for a MQTT queue",
+  "url": "https://n8n.io/workflows/657-receive-messages-for-a-mqtt-queue/",
+  "category": "Other",
+  "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"51\",\"name\":\"Receive messages for a MQTT queue\",\"nodes\":[{\"name\":\"MQTT Trigger\",\"type\":\"n8n-nodes-base.mqttTrigger\",\"position\":[690,260],\"parameters\":{\"options\":{}},\"credentials\":{\"mqtt\":\"mqtt\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}

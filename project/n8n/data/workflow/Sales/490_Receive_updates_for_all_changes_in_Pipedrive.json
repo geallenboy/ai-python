@@ -1,0 +1,13 @@
+{
+  "title": "Receive updates for all changes in Pipedrive",
+  "url": "https://n8n.io/workflows/490-receive-updates-for-all-changes-in-pipedrive/",
+  "category": "Sales",
+  "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "",
+  "content": "",
+  "workflow_json": "{\"id\":\"115\",\"name\":\"Receive updates for all changes in Pipedrive\",\"nodes\":[{\"name\":\"Pipedrive Trigger\",\"type\":\"n8n-nodes-base.pipedriveTrigger\",\"position\":[750,250],\"parameters\":{},\"credentials\":{\"pipedriveApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+}
