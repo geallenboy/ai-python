@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/building-blocks/?sort=createdAt:desc",
   "author": "Jonathan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "{\"id\":113,\"name\":\"Standup Bot - Override Config\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[240,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Write Binary File\",\"type\":\"n8n-nodes-base.writeBinaryFile\",\"position\":[600,300],\"parameters\":{\"fileName\":\"/home/node/.n8n/standup-bot-config.json\"},\"typeVersion\":1},{\"name\":\"Move Binary Data\",\"type\":\"n8n-nodes-base.moveBinaryData\",\"position\":[420,300],\"parameters\":{\"mode\":\"jsonToBinary\",\"options\":{\"encoding\":\"utf8\",\"fileName\":\"standup-bot-config.json\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Move Binary Data\":{\"main\":[[{\"node\":\"Write Binary File\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Move Binary Data\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "This is the third bot for the Mattermost Standup Bot. This workflow will override or update the configuration file as needed. This workflow is called by the 'Standup Bot - Worker' workflow.\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This is the third bot for the Mattermost Standup Bot. This workflow will override or update the configuration file as needed. This workflow is called by the 'Standup Bot - Worker' workflow.</p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This is the third bot for the Mattermost Standup Bot. This workflow will override or update the configuration file as needed. This workflow is called by the 'Standup Bot - Worker' workflow.</p>\n</div><!--]-->",
+  "readme_zh": "这是Mattermost站立会议机器人的第三个程序。此工作流将根据需要覆盖或更新配置文件。该工作流由\"站立会议机器人 - 工作器\"工作流调用。",
+  "title_zh": "单口相声机器人（3/4）：覆盖配置",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":113,\"name\":\"Standup Bot - Override Config\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[240,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Write Binary File\",\"type\":\"n8n-nodes-base.writeBinaryFile\",\"position\":[600,300],\"parameters\":{\"fileName\":\"/home/node/.n8n/standup-bot-config.json\"},\"typeVersion\":1},{\"name\":\"Move Binary Data\",\"type\":\"n8n-nodes-base.moveBinaryData\",\"position\":[420,300],\"parameters\":{\"mode\":\"jsonToBinary\",\"options\":{\"encoding\":\"utf8\",\"fileName\":\"standup-bot-config.json\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Move Binary Data\":{\"main\":[[{\"node\":\"Write Binary File\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Move Binary Data\",\"type\":\"main\",\"index\":0}]]}}}"
 }

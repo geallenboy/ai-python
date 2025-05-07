@@ -1,0 +1,17 @@
+{
+  "title": "Send an SMS when a workflow fails",
+  "url": "https://n8n.io/workflows/665-send-an-sms-when-a-workflow-fails/",
+  "category": "ITOps",
+  "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-06",
+  "content": "",
+  "workflow_json": "{\"id\":\"56\",\"name\":\"Send an SMS when a workflow fails\",\"nodes\":[{\"name\":\"Error Trigger\",\"type\":\"n8n-nodes-base.errorTrigger\",\"position\":[550,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Twilio\",\"type\":\"n8n-nodes-base.twilio\",\"position\":[750,260],\"parameters\":{\"to\":\"\",\"from\":\"\",\"message\":\"=Your workflow with ID: {{$node[\\\"Error Trigger\\\"].json[\\\"workflow\\\"][\\\"id\\\"]}} and name: {{$node[\\\"Error Trigger\\\"].json[\\\"workflow\\\"][\\\"name\\\"]}} failed to execute.\"},\"credentials\":{\"twilioApi\":\"twilio-credentials\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Error Trigger\":{\"main\":[[{\"node\":\"Twilio\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "翻译助手",
+  "title_zh": "工作流失败时发送短信",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"56\",\"name\":\"Send an SMS when a workflow fails\",\"nodes\":[{\"name\":\"Error Trigger\",\"type\":\"n8n-nodes-base.errorTrigger\",\"position\":[550,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Twilio\",\"type\":\"n8n-nodes-base.twilio\",\"position\":[750,260],\"parameters\":{\"to\":\"\",\"from\":\"\",\"message\":\"=Your workflow with ID: {{$node[\\\"Error Trigger\\\"].json[\\\"workflow\\\"][\\\"id\\\"]}} and name: {{$node[\\\"Error Trigger\\\"].json[\\\"workflow\\\"][\\\"name\\\"]}} failed to execute.\"},\"credentials\":{\"twilioApi\":\"twilio-credentials\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Error Trigger\":{\"main\":[[{\"node\":\"Twilio\",\"type\":\"main\",\"index\":0}]]}}}"
+}

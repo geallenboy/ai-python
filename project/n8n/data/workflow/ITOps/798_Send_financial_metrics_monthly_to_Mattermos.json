@@ -1,0 +1,17 @@
+{
+  "title": "Send financial metrics monthly to Mattermos",
+  "url": "https://n8n.io/workflows/798-send-financial-metrics-monthly-to-mattermos/",
+  "category": "ITOps",
+  "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-06",
+  "content": "",
+  "workflow_json": "{\"id\":\"146\",\"name\":\"Send financial metrics monthly to Mattermost\",\"nodes\":[{\"name\":\"ProfitWell\",\"type\":\"n8n-nodes-base.profitWell\",\"position\":[730,220],\"parameters\":{\"type\":\"monthly\",\"options\":{}},\"credentials\":{\"profitWellApi\":\"profitwell\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[530,220],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9,\"mode\":\"everyMonth\"}]}},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[930,220],\"parameters\":{\"message\":\"=Active Customers: {{$node[\\\"ProfitWell\\\"].json[\\\"active_customers\\\"]}}\\nTrailing Customers: {{$node[\\\"ProfitWell\\\"].json[\\\"active_trialing_customers\\\"]}}\\nNew Customers: {{$node[\\\"ProfitWell\\\"].json[\\\"new_customers\\\"]}}\\nGrowth Rate: {{$node[\\\"ProfitWell\\\"].json[\\\"growth_rate\\\"]}}\\nRecurring Revenue: {{$node[\\\"ProfitWell\\\"].json[\\\"recurring_revenue\\\"]}}\",\"channelId\":\"w6rsxrqds3bt9pguxzduowqucy\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"mattermost\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"ProfitWell\",\"type\":\"main\",\"index\":0}]]},\"ProfitWell\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "我是一个翻译助手。将以下文本从英文翻译成中文。只提供翻译，无需其他内容。",
+  "title_zh": "每月向Mattermos发送财务指标",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"146\",\"name\":\"Send financial metrics monthly to Mattermost\",\"nodes\":[{\"name\":\"ProfitWell\",\"type\":\"n8n-nodes-base.profitWell\",\"position\":[730,220],\"parameters\":{\"type\":\"monthly\",\"options\":{}},\"credentials\":{\"profitWellApi\":\"profitwell\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[530,220],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9,\"mode\":\"everyMonth\"}]}},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[930,220],\"parameters\":{\"message\":\"=Active Customers: {{$node[\\\"ProfitWell\\\"].json[\\\"active_customers\\\"]}}\\nTrailing Customers: {{$node[\\\"ProfitWell\\\"].json[\\\"active_trialing_customers\\\"]}}\\nNew Customers: {{$node[\\\"ProfitWell\\\"].json[\\\"new_customers\\\"]}}\\nGrowth Rate: {{$node[\\\"ProfitWell\\\"].json[\\\"growth_rate\\\"]}}\\nRecurring Revenue: {{$node[\\\"ProfitWell\\\"].json[\\\"recurring_revenue\\\"]}}\",\"channelId\":\"w6rsxrqds3bt9pguxzduowqucy\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"mattermost\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"ProfitWell\",\"type\":\"main\",\"index\":0}]]},\"ProfitWell\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}"
+}

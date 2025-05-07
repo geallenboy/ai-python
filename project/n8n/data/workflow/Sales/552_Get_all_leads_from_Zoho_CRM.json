@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Zoho CRM\",\"type\":\"n8n-nodes-base.zohoCrm\",\"position\":[450,300],\"parameters\":{\"options\":{},\"operation\":\"getAll\"},\"credentials\":{\"zohoOAuth2Api\":\"zoho_creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Zoho CRM\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "Companion workflow for Zoho CRM node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Zoho CRM node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Zoho CRM node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "Zoho CRM 节点文档配套工作流程",
+  "title_zh": "从Zoho CRM获取所有潜在客户",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Zoho CRM\",\"type\":\"n8n-nodes-base.zohoCrm\",\"position\":[450,300],\"parameters\":{\"options\":{},\"operation\":\"getAll\"},\"credentials\":{\"zohoOAuth2Api\":\"zoho_creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Zoho CRM\",\"type\":\"main\",\"index\":0}]]}}}"
 }

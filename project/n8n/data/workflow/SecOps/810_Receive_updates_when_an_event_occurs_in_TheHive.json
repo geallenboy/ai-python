@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/secops/?sort=createdAt:desc",
   "author": "Harshil Agrawal",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-06",
   "content": "",
   "workflow_json": "{\"id\":\"161\",\"name\":\"Receive updates when an event occurs in TheHive\",\"nodes\":[{\"name\":\"TheHive Trigger\",\"type\":\"n8n-nodes-base.theHiveTrigger\",\"position\":[690,220],\"webhookId\":\"bef3fea8-2d68-43e8-9061-6c17c1059c86\",\"parameters\":{\"events\":[\"*\"]},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "翻译助手",
+  "title_zh": "在TheHive中发生事件时接收更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"161\",\"name\":\"Receive updates when an event occurs in TheHive\",\"nodes\":[{\"name\":\"TheHive Trigger\",\"type\":\"n8n-nodes-base.theHiveTrigger\",\"position\":[690,220],\"webhookId\":\"bef3fea8-2d68-43e8-9061-6c17c1059c86\",\"parameters\":{\"events\":[\"*\"]},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
 }

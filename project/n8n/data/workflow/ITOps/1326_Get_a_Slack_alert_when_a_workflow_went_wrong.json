@@ -1,0 +1,16 @@
+{
+  "title": "Get a Slack alert when a workflow went wrong",
+  "url": "https://n8n.io/workflows/1326-get-a-slack-alert-when-a-workflow-went-wrong/",
+  "category": "ITOps",
+  "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
+  "author": "Pauline",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-07",
+  "content": "",
+  "workflow_json": "",
+  "readme": "This workflow allows you to have a Slack alert when one of your n8n workflows gets an issue.\n\n  * **Error trigger** : This node launched the workflow when one of your active workflows gets an issue\n\n  * **Slack node** : This node sends you a customized message to alert you and to check the error\n\n\n\n\n⚠️ You don't have to activate this workflow for it to be effective\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow allows you to have a Slack alert when one of your n8n workflows gets an issue.</p>\n<p></p>\n<ul>\n<li>\n<p><strong>Error trigger</strong>: This node launched the workflow when one of your active workflows gets an issue</p>\n</li>\n<li>\n<p><strong>Slack node</strong>: This node sends you a customized message to alert you and to check the error</p>\n</li>\n</ul>\n<p>⚠️ You don't have to activate this workflow for it to be effective</p>\n</div><!--]-->",
+  "readme_zh": "该工作流可在您的n8n工作流出现问题时发送Slack警报\n\n* **错误触发器节点**：当任一活跃工作流出现故障时自动触发本流程\n* **Slack消息节点**：向您发送定制化告警信息以便及时排查错误\n\n⚠️ 注意：无需手动启用此工作流即可生效",
+  "title_zh": "当工作流程出现问题时接收Slack警报",
+  "publish_date_zh": "最后更新于10个月前"
+}

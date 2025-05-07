@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Hubspot Trigger\",\"type\":\"n8n-nodes-base.hubspotTrigger\",\"position\":[700,260],\"webhookId\":\"9fe8c037-be4f-4809-a7c2-96e509bfc52e\",\"parameters\":{\"appId\":\"dghert3\",\"additionalFields\":{\"maxConcurrentRequests\":5}},\"credentials\":{\"hubspotDeveloperApi\":\"hubspot_trigger\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for HubSpot Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for HubSpot Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for HubSpot Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "HubSpot触发器节点文档配套工作流程",
+  "title_zh": "接收来自HubSpot关于新联系人创建的更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Hubspot Trigger\",\"type\":\"n8n-nodes-base.hubspotTrigger\",\"position\":[700,260],\"webhookId\":\"9fe8c037-be4f-4809-a7c2-96e509bfc52e\",\"parameters\":{\"appId\":\"dghert3\",\"additionalFields\":{\"maxConcurrentRequests\":5}},\"credentials\":{\"hubspotDeveloperApi\":\"hubspot_trigger\"},\"typeVersion\":1}],\"connections\":{}}"
 }

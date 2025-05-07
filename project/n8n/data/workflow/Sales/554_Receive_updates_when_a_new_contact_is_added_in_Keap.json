@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Keap Trigger\",\"type\":\"n8n-nodes-base.keapTrigger\",\"position\":[440,320],\"webhookId\":\"1df33e6f-7e5c-4d70-b90d-d5666aaf63e7\",\"parameters\":{\"eventId\":\"contact.add\"},\"credentials\":{\"keapOAuth2Api\":\"keap_creds\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for Keap Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Keap Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Keap Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "Keap触发器节点文档配套工作流程",
+  "title_zh": "在Keap中添加新联系人时接收更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Keap Trigger\",\"type\":\"n8n-nodes-base.keapTrigger\",\"position\":[440,320],\"webhookId\":\"1df33e6f-7e5c-4d70-b90d-d5666aaf63e7\",\"parameters\":{\"eventId\":\"contact.add\"},\"credentials\":{\"keapOAuth2Api\":\"keap_creds\"},\"typeVersion\":1}],\"connections\":{}}"
 }

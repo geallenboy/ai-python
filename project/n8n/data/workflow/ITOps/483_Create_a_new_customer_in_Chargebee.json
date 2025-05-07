@@ -1,0 +1,17 @@
+{
+  "title": "Create a new customer in Chargebee",
+  "url": "https://n8n.io/workflows/483-create-a-new-customer-in-chargebee/",
+  "category": "ITOps",
+  "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-06",
+  "content": "",
+  "workflow_json": "{\"id\":\"103\",\"name\":\"Create a new customer in Chargebee\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Chargebee\",\"type\":\"n8n-nodes-base.chargebee\",\"position\":[460,300],\"parameters\":{\"resource\":\"customer\",\"properties\":{\"last_name\":\"\",\"first_name\":\"\"}},\"credentials\":{\"chargebeeApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Chargebee\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "您是一位翻译助手。将以下英文文本翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在Chargebee中创建新客户",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"103\",\"name\":\"Create a new customer in Chargebee\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Chargebee\",\"type\":\"n8n-nodes-base.chargebee\",\"position\":[460,300],\"parameters\":{\"resource\":\"customer\",\"properties\":{\"last_name\":\"\",\"first_name\":\"\"}},\"credentials\":{\"chargebeeApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Chargebee\",\"type\":\"main\",\"index\":0}]]}}}"
+}

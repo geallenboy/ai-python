@@ -1,0 +1,17 @@
+{
+  "title": "Create a new Freshdesk ticket",
+  "url": "https://n8n.io/workflows/448-create-a-new-freshdesk-ticket/",
+  "category": "ITOps",
+  "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-06",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Freshdesk\",\"type\":\"n8n-nodes-base.freshdesk\",\"position\":[450,300],\"parameters\":{\"status\":\"open\",\"options\":{},\"requester\":\"email\",\"requesterIdentificationValue\":\"user@example.com\"},\"credentials\":{\"freshdeskApi\":\"freshdesk-api\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Freshdesk\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Freshdesk node documentation\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Freshdesk node documentation</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "Freshdesk节点文档配套工作流程",
+  "title_zh": "创建一个新的Freshdesk工单",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Freshdesk\",\"type\":\"n8n-nodes-base.freshdesk\",\"position\":[450,300],\"parameters\":{\"status\":\"open\",\"options\":{},\"requester\":\"email\",\"requesterIdentificationValue\":\"user@example.com\"},\"credentials\":{\"freshdeskApi\":\"freshdesk-api\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Freshdesk\",\"type\":\"main\",\"index\":0}]]}}}"
+}

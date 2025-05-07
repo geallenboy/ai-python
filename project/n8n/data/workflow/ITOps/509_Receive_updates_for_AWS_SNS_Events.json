@@ -1,0 +1,17 @@
+{
+  "title": "Receive updates for AWS SNS Events",
+  "url": "https://n8n.io/workflows/509-receive-updates-for-aws-sns-events/",
+  "category": "ITOps",
+  "category_url": "https://n8n.io/workflows/categories/it-ops/?sort=createdAt:desc",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-07",
+  "content": "",
+  "workflow_json": "{\"nodes\":[{\"name\":\"AWS-SNS-Trigger\",\"type\":\"n8n-nodes-base.awsSnsTrigger\",\"position\":[440,300],\"parameters\":{\"topic\":\"arn:aws:sns:ap-south-1:100558637562:n8n-rocks\"},\"credentials\":{\"aws\":\"amudhan-aws\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for AWS SNS Trigger node docs\n",
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for AWS SNS Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "AWS SNS触发器节点文档配套工作流",
+  "title_zh": "接收AWS SNS事件更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"AWS-SNS-Trigger\",\"type\":\"n8n-nodes-base.awsSnsTrigger\",\"position\":[440,300],\"parameters\":{\"topic\":\"arn:aws:sns:ap-south-1:100558637562:n8n-rocks\"},\"credentials\":{\"aws\":\"amudhan-aws\"},\"typeVersion\":1}],\"connections\":{}}"
+}

@@ -5,9 +5,12 @@
   "category_url": "https://n8n.io/workflows/categories/building-blocks/?sort=createdAt:desc",
   "author": "Jonathan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-06",
   "content": "",
   "workflow_json": "",
   "readme": "This workflow uses a Hubspot Trigger to check for new companies. It then checks the companies website exists using the HTTP node. If it doesn't, a message is sent to Slack.\n\nTo configure this workflow you will need to set the credentials for the Hubspot and Slack Nodes. You will also need to select the Slack channel to use for sending the message.\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow uses a Hubspot Trigger to check for new companies. It then checks the companies website exists using the HTTP node. If it doesn't, a message is sent to Slack.</p>\n<p>To configure this workflow you will need to set the credentials for the Hubspot and Slack Nodes. You will also need to select the Slack channel to use for sending the message.</p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow uses a Hubspot Trigger to check for new companies. It then checks the companies website exists using the HTTP node. If it doesn't, a message is sent to Slack.</p>\n<p>To configure this workflow you will need to set the credentials for the Hubspot and Slack Nodes. You will also need to select the Slack channel to use for sending the message.</p>\n</div><!--]-->",
+  "readme_zh": "This workflow uses a Hubspot Trigger to check for new companies. It then checks the companies website exists using the HTTP node. If it doesn't, a message is sent to Slack.\n\nTo configure this workflow you will need to set the credentials for the Hubspot and Slack Nodes. You will also need to select the Slack channel to use for sending the message.\n",
+  "title_zh": "验证Hubspot中新公司的网站",
+  "publish_date_zh": "最后更新于10个月前"
 }

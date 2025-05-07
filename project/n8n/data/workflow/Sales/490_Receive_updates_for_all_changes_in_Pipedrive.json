@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
   "author": "tanaypant",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "{\"id\":\"115\",\"name\":\"Receive updates for all changes in Pipedrive\",\"nodes\":[{\"name\":\"Pipedrive Trigger\",\"type\":\"n8n-nodes-base.pipedriveTrigger\",\"position\":[750,250],\"parameters\":{},\"credentials\":{\"pipedriveApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "翻译助手",
+  "title_zh": "接收Pipedrive中所有变更的更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"115\",\"name\":\"Receive updates for all changes in Pipedrive\",\"nodes\":[{\"name\":\"Pipedrive Trigger\",\"type\":\"n8n-nodes-base.pipedriveTrigger\",\"position\":[750,250],\"parameters\":{},\"credentials\":{\"pipedriveApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
 }
