@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Shopify Trigger\",\"type\":\"n8n-nodes-base.shopifyTrigger\",\"position\":[450,450],\"webhookId\":\"fd11b3d8-ff82-4902-89cc-c93b36ae38e7\",\"parameters\":{\"topic\":\"orders/create\"},\"credentials\":{\"shopifyApi\":\"shopify_creds\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for Shopify Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Shopify Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Shopify Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "Shopify触发器节点文档配套工作流程",
+  "title_zh": "接收Shopify中创建的订单更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Shopify Trigger\",\"type\":\"n8n-nodes-base.shopifyTrigger\",\"position\":[450,450],\"webhookId\":\"fd11b3d8-ff82-4902-89cc-c93b36ae38e7\",\"parameters\":{\"topic\":\"orders/create\"},\"credentials\":{\"shopifyApi\":\"shopify_creds\"},\"typeVersion\":1}],\"connections\":{}}"
 }

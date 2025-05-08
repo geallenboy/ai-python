@@ -5,9 +5,12 @@
   "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
   "author": "isa024787bel",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "",
   "readme": "Automatically adding expense receipts to Google Sheets with Telegram, Mindee API, Twilio, and n8n.\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Automatically adding expense receipts to Google Sheets with Telegram, Mindee API, Twilio, and n8n.</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Automatically adding expense receipts to Google Sheets with Telegram, Mindee API, Twilio, and n8n.</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "利用Telegram、Mindee API、Twilio和n8n实现费用收据自动录入Google表格。",
+  "title_zh": "将照片中的数据添加到Google表格",
+  "publish_date_zh": "最后更新于10个月前"
 }

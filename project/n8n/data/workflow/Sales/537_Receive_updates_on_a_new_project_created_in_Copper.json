@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/sales/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-07",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Copper Trigger\",\"type\":\"n8n-nodes-base.copperTrigger\",\"position\":[890,400],\"webhookId\":\"493ce79a-6a08-4062-86d9-7f4618b6c1ea\",\"parameters\":{\"event\":\"new\",\"resource\":\"project\"},\"credentials\":{\"copperApi\":\"copper_creds\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for Copper Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Copper Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Copper Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "铜触发节点文档配套工作流程",
+  "title_zh": "接收关于Copper中新创建项目的更新通知",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Copper Trigger\",\"type\":\"n8n-nodes-base.copperTrigger\",\"position\":[890,400],\"webhookId\":\"493ce79a-6a08-4062-86d9-7f4618b6c1ea\",\"parameters\":{\"event\":\"new\",\"resource\":\"project\"},\"credentials\":{\"copperApi\":\"copper_creds\"},\"typeVersion\":1}],\"connections\":{}}"
 }
