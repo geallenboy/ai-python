@@ -152,20 +152,19 @@ class N8nWorkflowScraper:
                 "--disable-setuid-sandbox",
                 "--disable-extensions",
                 "--disable-notifications",
-                "--disable-infobars",
-                "--blink-settings=imagesEnabled=false"  # 禁用图像加载
+                "--disable-infobars"
             ]
         }
         
-        # 创建浏览器实例
-        self.browser = await playwright.chromium.launch(**browser_options)
+        # 使用 Firefox 代替 Chromium
+        self.browser = await playwright.firefox.launch(**browser_options)
         
         # 创建浏览器上下文，不使用代理
         context_options = {
             "viewport": {"width": 1280, "height": 800},
             "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
         }
-            
+        
         self.context = await self.browser.new_context(**context_options)
 
         # 设置超时
@@ -177,13 +176,24 @@ class N8nWorkflowScraper:
     
     async def close_browser(self) -> None:
         """
-        关闭浏览器
+        关闭浏览器，处理可能的崩溃情况
         """
-        if self.context:
-            await self.context.close()
-        if self.browser:
-            await self.browser.close()
-        logger.info("浏览器已关闭")
+        try:
+            if self.context:
+                try:
+                    await self.context.close()
+                except Exception as e:
+                    logger.warning(f"关闭浏览器上下文时出错 (可能已崩溃): {e}")
+        
+            if self.browser:
+                try:
+                    await self.browser.close()
+                except Exception as e:
+                    logger.warning(f"关闭浏览器时出错 (可能已崩溃): {e}")
+            
+            logger.info("浏览器已关闭")
+        except Exception as e:
+            logger.error(f"关闭浏览器过程中出现未处理的异常: {e}")
     
     async def rotate_proxy(self) -> None:
         """

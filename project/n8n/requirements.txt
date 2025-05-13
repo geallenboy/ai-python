@@ -1,5 +1,4 @@
 # Python packages
-playwright==1.40.0
 html2text==2020.1.16
 typing-extensions==4.8.0
 asyncio==3.4.3
