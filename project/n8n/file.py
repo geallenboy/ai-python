@@ -54,7 +54,8 @@ def remove_translation_fields(file_path):
             data = json.load(f)
         
         # 要移除的翻译字段
-        translation_fields = ['readme_zh', 'title_zh', 'publish_date_zh', 'workflow_json_zh']
+        translation_fields = []
+        #['readme_zh', 'title_zh', 'publish_date_zh', 'workflow_json_zh']
         
         # 检查并移除翻译字段
         modified = False

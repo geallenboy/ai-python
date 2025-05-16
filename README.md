@@ -11,12 +11,14 @@
 
 ```
 1.设置你的虚拟环境
+# 局部设置（仅当前目录及其子目录）
+pyenv local 3.8.12
 
-python -m venv .venv
-source .venv/bin/activate
+pyenv activate n8n
 
 2.安装依赖项
-pip install --no-cache-dir -r requirements.txt
+pip3 install --no-cache-dir -r requirements.txt
+pip3 install -r requirements.txt
 
 3.导出您的 OpenAI 密钥
 
