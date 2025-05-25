@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Eventbrite Trigger\",\"type\":\"n8n-nodes-base.eventbriteTrigger\",\"position\":[880,400],\"webhookId\":\"90ebf00a-536b-4553-b879-2e2c3e35bd60\",\"parameters\":{\"event\":\"114095913950\",\"actions\":[\"order.placed\",\"order.updated\",\"order.refunded\"],\"organization\":\"461207981776\"},\"credentials\":{\"eventbriteApi\":\"eventbrite api\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for Eventbrite Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Eventbrite Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Eventbrite Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "Eventbrite触发器节点文档配套工作流程",
+  "title_zh": "接收Eventbrite活动的最新动态",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Eventbrite Trigger\",\"type\":\"n8n-nodes-base.eventbriteTrigger\",\"position\":[880,400],\"webhookId\":\"90ebf00a-536b-4553-b879-2e2c3e35bd60\",\"parameters\":{\"event\":\"114095913950\",\"actions\":[\"order.placed\",\"order.updated\",\"order.refunded\"],\"organization\":\"461207981776\"},\"credentials\":{\"eventbriteApi\":\"eventbrite api\"},\"typeVersion\":1}],\"connections\":{}}"
 }

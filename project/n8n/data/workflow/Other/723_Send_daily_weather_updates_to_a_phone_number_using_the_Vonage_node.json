@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "Harshil Agrawal",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"id\":\"84\",\"name\":\"Send daily weather updates to a phone number using the Vonage node\",\"nodes\":[{\"name\":\"Vonage\",\"type\":\"n8n-nodes-base.vonage\",\"position\":[770,260],\"parameters\":{\"to\":\"1234\",\"from\":\"Vonage APIs\",\"message\":\"=Hey! The temperature outside is {{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}°C.\",\"additionalFields\":{}},\"credentials\":{\"vonageApi\":\"vonage\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[370,260],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[570,260],\"parameters\":{\"cityName\":\"berlin\"},\"credentials\":{\"openWeatherMapApi\":\"owm\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Vonage\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "你是一个翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "使用Vonage节点向手机号码发送每日天气更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"84\",\"name\":\"Send daily weather updates to a phone number using the Vonage node\",\"nodes\":[{\"name\":\"Vonage\",\"type\":\"n8n-nodes-base.vonage\",\"position\":[770,260],\"parameters\":{\"to\":\"1234\",\"from\":\"Vonage APIs\",\"message\":\"=Hey! The temperature outside is {{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}°C.\",\"additionalFields\":{}},\"credentials\":{\"vonageApi\":\"vonage\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[370,260],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[570,260],\"parameters\":{\"cityName\":\"berlin\"},\"credentials\":{\"openWeatherMapApi\":\"owm\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Vonage\",\"type\":\"main\",\"index\":0}]]}}}"
 }

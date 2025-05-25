@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "tanaypant",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"id\":\"88\",\"name\":\"Get the current weather data for a city\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[450,300],\"parameters\":{\"cityName\":\"berlin,de\"},\"credentials\":{\"openWeatherMapApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"OpenWeatherMap\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "你是一个翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "获取某城市的当前天气数据",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"88\",\"name\":\"Get the current weather data for a city\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[450,300],\"parameters\":{\"cityName\":\"berlin,de\"},\"credentials\":{\"openWeatherMapApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"OpenWeatherMap\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]}}}"
 }

@@ -23,7 +23,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("logs/using.log"),
+        logging.FileHandler("logs/hosting.log"),
         logging.StreamHandler()
     ]
 )
@@ -31,8 +31,8 @@ logger = logging.getLogger(__name__)
 
 class N8nDocumentationScraper:
     def __init__(self):
-        self.base_url = "https://docs.n8n.io/"
-        self.output_dir = "data/using"
+        self.base_url = "https://docs.n8n.io/hosting/"
+        self.output_dir = "data/hosting"
         self.visited_urls = set()
         self.menu_structure = {}
         

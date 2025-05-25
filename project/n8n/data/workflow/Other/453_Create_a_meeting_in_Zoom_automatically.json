@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "tanaypant",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"id\":\"83\",\"name\":\"Creating a meeting with the Zoom node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Zoom\",\"type\":\"n8n-nodes-base.zoom\",\"position\":[450,300],\"parameters\":{\"topic\":\"Something\",\"authentication\":\"\",\"additionalFields\":{}},\"credentials\":{\"zoomOAuth2Api\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Zoom\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Zoom\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "您是一位翻译助手。将以下英文文本翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "自动在Zoom中创建会议",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"83\",\"name\":\"Creating a meeting with the Zoom node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Zoom\",\"type\":\"n8n-nodes-base.zoom\",\"position\":[450,300],\"parameters\":{\"topic\":\"Something\",\"authentication\":\"\",\"additionalFields\":{}},\"credentials\":{\"zoomOAuth2Api\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Zoom\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Zoom\",\"type\":\"main\",\"index\":0}]]}}}"
 }

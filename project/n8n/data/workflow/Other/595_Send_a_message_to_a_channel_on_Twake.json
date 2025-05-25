@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "Harshil Agrawal",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"id\":\"1\",\"name\":\"Send a message on Twake\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Twake\",\"type\":\"n8n-nodes-base.twake\",\"position\":[800,300],\"parameters\":{\"content\":\"\",\"channelId\":\"\",\"additionalFields\":{}},\"credentials\":{\"twakeCloudApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Twake\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "您是一位翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "向Twake上的频道发送消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"1\",\"name\":\"Send a message on Twake\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Twake\",\"type\":\"n8n-nodes-base.twake\",\"position\":[800,300],\"parameters\":{\"content\":\"\",\"channelId\":\"\",\"additionalFields\":{}},\"credentials\":{\"twakeCloudApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Twake\",\"type\":\"main\",\"index\":0}]]}}}"
 }

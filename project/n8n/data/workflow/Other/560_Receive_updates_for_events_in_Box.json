@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Box Trigger\",\"type\":\"n8n-nodes-base.boxTrigger\",\"position\":[1027,368],\"webhookId\":\"0e56bb0c-8e81-42de-a902-c0ab31834bd8\",\"parameters\":{\"events\":[\"FOLDER.MOVED\",\"FOLDER.DOWNLOADED\"],\"targetId\":\"118847708963\",\"targetType\":\"file\"},\"credentials\":{\"boxOAuth2Api\":\"box_creds\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for Box Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Box Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Box Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "Box触发器节点文档配套工作流程",
+  "title_zh": "接收Box中活动的更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Box Trigger\",\"type\":\"n8n-nodes-base.boxTrigger\",\"position\":[1027,368],\"webhookId\":\"0e56bb0c-8e81-42de-a902-c0ab31834bd8\",\"parameters\":{\"events\":[\"FOLDER.MOVED\",\"FOLDER.DOWNLOADED\"],\"targetId\":\"118847708963\",\"targetType\":\"file\"},\"credentials\":{\"boxOAuth2Api\":\"box_creds\"},\"typeVersion\":1}],\"connections\":{}}"
 }

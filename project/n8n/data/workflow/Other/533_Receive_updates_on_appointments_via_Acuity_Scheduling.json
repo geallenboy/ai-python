@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Acuity Scheduling Trigger\",\"type\":\"n8n-nodes-base.acuitySchedulingTrigger\",\"position\":[880,400],\"webhookId\":\"b326732d-9473-469f-a421-dd823d26b945\",\"parameters\":{\"event\":\"appointment.scheduled\"},\"credentials\":{\"acuitySchedulingApi\":\"acuity_creds\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for Acuity Scheduling Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Acuity Scheduling Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Acuity Scheduling Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "《Acuity Scheduling触发器节点文档配套工作流程指南》",
+  "title_zh": "通过Acuity Scheduling接收预约更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Acuity Scheduling Trigger\",\"type\":\"n8n-nodes-base.acuitySchedulingTrigger\",\"position\":[880,400],\"webhookId\":\"b326732d-9473-469f-a421-dd823d26b945\",\"parameters\":{\"event\":\"appointment.scheduled\"},\"credentials\":{\"acuitySchedulingApi\":\"acuity_creds\"},\"typeVersion\":1}],\"connections\":{}}"
 }

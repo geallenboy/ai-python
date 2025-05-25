@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "tanaypant",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"id\":\"138\",\"name\":\"Get new time entries from Toggl\",\"nodes\":[{\"name\":\"Toggl\",\"type\":\"n8n-nodes-base.togglTrigger\",\"position\":[650,250],\"parameters\":{\"pollTimes\":{\"item\":[{}]}},\"credentials\":{\"togglApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "你是一个翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "从Toggl获取新的时间记录",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"138\",\"name\":\"Get new time entries from Toggl\",\"nodes\":[{\"name\":\"Toggl\",\"type\":\"n8n-nodes-base.togglTrigger\",\"position\":[650,250],\"parameters\":{\"pollTimes\":{\"item\":[{}]}},\"credentials\":{\"togglApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
 }

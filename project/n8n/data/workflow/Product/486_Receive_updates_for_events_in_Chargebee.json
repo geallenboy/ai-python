@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/product/?count=20",
   "author": "tanaypant",
   "publish_date": "Last update 9 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-08-23",
   "content": "",
   "workflow_json": "{\"id\":\"108\",\"name\":\"Receive updates for events in Chargebee\",\"nodes\":[{\"name\":\"Chargebee Trigger\",\"type\":\"n8n-nodes-base.chargebeeTrigger\",\"position\":[700,250],\"parameters\":{\"events\":[\"*\"]},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-006f9244=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-006f9244=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "您是一位翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "接收Chargebee活动的最新动态",
+  "publish_date_zh": "最后更新于9个月前",
+  "workflow_json_zh": "{\"id\":\"108\",\"name\":\"Receive updates for events in Chargebee\",\"nodes\":[{\"name\":\"Chargebee Trigger\",\"type\":\"n8n-nodes-base.chargebeeTrigger\",\"position\":[700,250],\"parameters\":{\"events\":[\"*\"]},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
 }

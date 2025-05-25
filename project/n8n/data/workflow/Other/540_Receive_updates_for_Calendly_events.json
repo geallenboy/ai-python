@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "amudhan",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"nodes\":[{\"name\":\"Calendly Trigger\",\"type\":\"n8n-nodes-base.calendlyTrigger\",\"position\":[880,400],\"webhookId\":\"9d13bcea-781a-4462-a9af-44bfb1fb6891\",\"parameters\":{\"events\":[\"invitee.created\",\"invitee.canceled\"]},\"credentials\":{\"calendlyApi\":\"calendly_creds\"},\"typeVersion\":1}],\"connections\":{}}",
   "readme": "Companion workflow for Calendly Trigger node docs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Calendly Trigger node docs</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>Companion workflow for Calendly Trigger node docs</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "Calendly触发器节点文档配套工作流程",
+  "title_zh": "接收Calendly活动的更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Calendly Trigger\",\"type\":\"n8n-nodes-base.calendlyTrigger\",\"position\":[880,400],\"webhookId\":\"9d13bcea-781a-4462-a9af-44bfb1fb6891\",\"parameters\":{\"events\":[\"invitee.created\",\"invitee.canceled\"]},\"credentials\":{\"calendlyApi\":\"calendly_creds\"},\"typeVersion\":1}],\"connections\":{}}"
 }

@@ -1,0 +1,62 @@
+{
+  "AI": {
+    "last_crawled": 1747830262.1157792,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 300
+  },
+  "SecOps": {
+    "last_crawled": 1747830262.116767,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 50
+  },
+  "Sales": {
+    "last_crawled": 1747830262.1170619,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 266
+  },
+  "Engineering": {
+    "last_crawled": 1747830262.117283,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 161
+  },
+  "DevOps": {
+    "last_crawled": 1747830262.117486,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 10
+  },
+  "BuildingBlocks": {
+    "last_crawled": 1747830262.117704,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 213
+  },
+  "Design": {
+    "last_crawled": 1747830262.117929,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 8
+  },
+  "Finance": {
+    "last_crawled": 1747830262.118155,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 6
+  },
+  "HR": {
+    "last_crawled": 1747830262.118762,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 25
+  },
+  "Other": {
+    "last_crawled": 1747830262.119074,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 243
+  },
+  "Product": {
+    "last_crawled": 1747830262.119513,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 52
+  },
+  "Support": {
+    "last_crawled": 1747830262.120212,
+    "last_crawled_date": "2025-05-21 20:24:22",
+    "count": 35
+  }
+}

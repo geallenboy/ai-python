@@ -9,5 +9,8 @@
   "content": "",
   "workflow_json": "",
   "readme": "This workflow is aimed at generating keywords for SEO and articles  \nTo get started, you need to use the workflow as it is. You just call the webhook URL with a query parameter as q={{ $keywords}}  \nFor example, you can call it using ?q=keyword research  \nThis will give you a list of keywords back as an array.  \nThis system can be used by SEO pros, content marketers and also social media marketers to generate relevant keywords for their user needs\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow is aimed at generating keywords for SEO and articles<br>\nTo get started, you need to use the workflow as it is. You just call the webhook URL with a query parameter as q={{ $keywords}}<br>\nFor example, you can call it using ?q=keyword research<br>\nThis will give you a list of keywords back as an array.<br>\nThis system can be used by SEO pros, content marketers and also social media marketers to generate relevant keywords for their user needs</p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow is aimed at generating keywords for SEO and articles<br>\nTo get started, you need to use the workflow as it is. You just call the webhook URL with a query parameter as q={{ $keywords}}<br>\nFor example, you can call it using ?q=keyword research<br>\nThis will give you a list of keywords back as an array.<br>\nThis system can be used by SEO pros, content marketers and also social media marketers to generate relevant keywords for their user needs</p>\n</div><!--]-->",
+  "readme_zh": "该工作流程旨在为SEO和文章生成关键词  \n开始使用时，您需要直接调用该工作流程。只需通过查询参数q={{ $keywords}}调用webhook网址  \n例如，您可以使用?q=关键词研究进行调用  \n系统将返回一个关键词列表作为数组  \nSEO专家、内容营销人员以及社交媒体营销人员均可利用此系统，根据用户需求生成相关关键词",
+  "title_zh": "利用谷歌自动建议生成关键词",
+  "publish_date_zh": "上次更新于一年前"
 }

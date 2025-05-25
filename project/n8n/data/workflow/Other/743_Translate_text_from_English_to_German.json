@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "Harshil Agrawal",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-22",
   "content": "",
   "workflow_json": "{\"id\":\"92\",\"name\":\"Translate text from English to German\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Google Translate\",\"type\":\"n8n-nodes-base.googleTranslate\",\"position\":[470,300],\"parameters\":{\"text\":\"Hello from n8n!\",\"translateTo\":\"de\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleTranslateOAuth2Api\":\"google-translate\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Google Translate\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p></p>\n</div><!--]-->",
+  "readme_zh": "翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "Text von Englisch ins Deutsche übersetzen",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"92\",\"name\":\"Translate text from English to German\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Google Translate\",\"type\":\"n8n-nodes-base.googleTranslate\",\"position\":[470,300],\"parameters\":{\"text\":\"Hello from n8n!\",\"translateTo\":\"de\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleTranslateOAuth2Api\":\"google-translate\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Google Translate\",\"type\":\"main\",\"index\":0}]]}}}"
 }

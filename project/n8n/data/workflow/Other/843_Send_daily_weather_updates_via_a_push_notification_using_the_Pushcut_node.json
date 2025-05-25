@@ -5,9 +5,13 @@
   "category_url": "https://n8n.io/workflows/categories/other/?sort=createdAt:desc",
   "author": "Harshil Agrawal",
   "publish_date": "Last update 10 months ago",
-  "publish_date_absolute": "",
+  "publish_date_absolute": "2024-07-23",
   "content": "",
   "workflow_json": "{\"id\":\"82\",\"name\":\"Send daily weather updates via a push notification using the Pushcut node\",\"nodes\":[{\"name\":\"Pushcut\",\"type\":\"n8n-nodes-base.pushcut\",\"position\":[1050,420],\"parameters\":{\"additionalFields\":{\"text\":\"=Hey! The temperature outside is {{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}°C.\",\"title\":\"Today's Weather Update\"},\"notificationName\":\"n8n\"},\"credentials\":{\"pushcutApi\":\"Pushcut Credentials\"},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[850,420],\"parameters\":{\"cityName\":\"berlin\"},\"credentials\":{\"openWeatherMapApi\":\"open-weather-map\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[650,420],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Pushcut\",\"type\":\"main\",\"index\":0}]]}}}",
   "readme": "This workflow allows you to send daily weather updates via a push notification using the Pushcut node.\n",
-  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow allows you to send daily weather updates via a push notification using the Pushcut node.</p>\n<p></p>\n</div><!--]-->"
+  "readme_html": "<!--[--><div data-v-50766329=\"\"><p>This workflow allows you to send daily weather updates via a push notification using the Pushcut node.</p>\n<p></p>\n</div><!--]-->",
+  "readme_zh": "该工作流程允许您通过Pushcut节点发送每日天气更新的推送通知。",
+  "title_zh": "通过Pushcut节点发送每日天气更新的推送通知",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"82\",\"name\":\"Send daily weather updates via a push notification using the Pushcut node\",\"nodes\":[{\"name\":\"Pushcut\",\"type\":\"n8n-nodes-base.pushcut\",\"position\":[1050,420],\"parameters\":{\"additionalFields\":{\"text\":\"=Hey! The temperature outside is {{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}°C.\",\"title\":\"Today's Weather Update\"},\"notificationName\":\"n8n\"},\"credentials\":{\"pushcutApi\":\"Pushcut Credentials\"},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[850,420],\"parameters\":{\"cityName\":\"berlin\"},\"credentials\":{\"openWeatherMapApi\":\"open-weather-map\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[650,420],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Pushcut\",\"type\":\"main\",\"index\":0}]]}}}"
 }

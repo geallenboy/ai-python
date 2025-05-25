@@ -9,5 +9,6 @@
   "content": "",
   "workflow_json": "",
   "readme": "",
-  "readme_html": ""
+  "readme_html": "",
+  "title_zh": "使用Google Sheets、Supabase和审批流程进行原材料库存管理"
 }
