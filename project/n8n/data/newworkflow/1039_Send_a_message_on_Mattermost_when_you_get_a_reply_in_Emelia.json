@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/1039-send-a-message-on-mattermost-when-you-get-a-reply-in-emelia/",
+  "title": "Send a message on Mattermost when you get a reply in Emelia",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[650,200],\"parameters\":{\"message\":\"={{$json[\\\"contact\\\"][\\\"firstName\\\"]}} from {{$json[\\\"contact\\\"][\\\"company\\\"]}} has replied back to your campaign.\",\"channelId\":\"qx9yo1i9z3bg5qcy5a1oxnh69c\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"Mattermost Credentials\"},\"typeVersion\":1},{\"name\":\"Emelia Trigger\",\"type\":\"n8n-nodes-base.emeliaTrigger\",\"position\":[450,200],\"webhookId\":\"f53bc370-a8cb-4748-8f81-be7ae9b94972\",\"parameters\":{\"events\":[\"replied\"],\"campaignId\":\"6054d068b374b64365740101\"},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Emelia Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to send a message on Mattermost when a lead replies to your email.\n\n**Emelia Trigger node:** The Emelia Trigger node will trigger the workflow when a lead sends a reply to a campaign\n\n**Mattermost node:** This node will send a message to the `Leads` channel in Mattermost with the information about the reply. Based on your use case, you may want to send the message to a different channel. You may even want to use a different service. Replace the node with the service where you want to send a message.\n",
+  "crawled_at": "2025-05-25T19:15:22.738863",
+  "readme_zh": "该工作流可在潜在客户回复您的邮件时，通过Mattermost发送通知消息。\n\n**Emelia触发器节点**：当潜在客户对营销活动作出回复时，该节点将触发工作流运行。\n\n**Mattermost节点**：本节点会向Mattermost平台的`Leads`频道发送包含回复详情的消息。根据实际需求，您可调整消息发送至其他频道，或替换为其他通讯服务节点来实现消息推送。",
+  "title_zh": "在Emelia收到回复时，在Mattermost上发送一条消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[650,200],\"parameters\":{\"message\":\"={{$json[\\\"contact\\\"][\\\"firstName\\\"]}} from {{$json[\\\"contact\\\"][\\\"company\\\"]}} has replied back to your campaign.\",\"channelId\":\"qx9yo1i9z3bg5qcy5a1oxnh69c\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"Mattermost Credentials\"},\"typeVersion\":1},{\"name\":\"Emelia Trigger\",\"type\":\"n8n-nodes-base.emeliaTrigger\",\"position\":[450,200],\"webhookId\":\"f53bc370-a8cb-4748-8f81-be7ae9b94972\",\"parameters\":{\"events\":[\"replied\"],\"campaignId\":\"6054d068b374b64365740101\"},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Emelia Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}"
+}

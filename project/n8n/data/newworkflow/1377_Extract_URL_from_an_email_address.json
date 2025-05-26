@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1377-extract-url-from-an-email-address/",
+  "title": "Extract URL from an email address",
+  "author": "David",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[240,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Extract domain name\",\"type\":\"n8n-nodes-base.function\",\"position\":[700,300],\"parameters\":{\"functionCode\":\"// Take email and extract the domain name \\nvar email = ($json[\\\"email\\\"]);\\nvar name   = email.substring(0, email.lastIndexOf(\\\"@\\\"));\\nvar domain = email.substring(email.lastIndexOf(\\\"@\\\") +1);\\n\\n//To display the final domain name. (result)\\n\\nreturn [{\\n  json: { domain }\\n}]\"},\"typeVersion\":1},{\"name\":\"Sample email\",\"type\":\"n8n-nodes-base.set\",\"position\":[460,300],\"parameters\":{\"values\":{\"string\":[{\"name\":\"email\",\"value\":\"email@domain2.com\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1}],\"connections\":{\"Sample email\":{\"main\":[[{\"node\":\"Extract domain name\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Sample email\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This Workflow will extract the domain for the email address.  \n![image.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_690e44691b.png)\n",
+  "crawled_at": "2025-05-25T19:36:40.058920",
+  "readme_zh": "此工作流将提取电子邮件地址中的域名。  \n![image.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_690e44691b.png)",
+  "title_zh": "从电子邮件地址中提取URL",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\n  \"nodes\": [\n    {\n      \"name\": \"On clicking 'execute'\",\n      \"type\": \"n8n-nodes-base.manualTrigger\",\n      \"position\": [\n        240,\n        300\n      ],\n      \"parameters\": {},\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Extract domain name\",\n      \"type\": \"n8n-nodes-base.function\",\n      \"position\": [\n        700,\n        300\n      ],\n      \"parameters\": {\n        \"functionCode\": \"// Take email and extract the domain name \\nvar email = ($json[\\\"email\\\"]);\\nvar name   = email.substring(0, email.lastIndexOf(\\\"@\\\"));\\nvar domain = email.substring(email.lastIndexOf(\\\"@\\\") +1);\\n\\n//To display the final domain name. (result)\\n\\nreturn [{\\n  json: { domain }\\n}]\"\n      },\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Sample email\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"position\": [\n        460,\n        300\n      ],\n      \"parameters\": {\n        \"values\": {\n          \"string\": [\n            {\n              \"name\": \"email\",\n              \"value\": \"email@domain2.com\"\n            }\n          ]\n        },\n        \"options\": {},\n        \"keepOnlySet\": true\n      },\n      \"typeVersion\": 1\n    }\n  ],\n  \"connections\": {\n    \"Sample email\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Extract domain name\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"On clicking 'execute'\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Sample email\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  }\n}"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1021-create-update-and-get-a-person-from-copper/",
+  "title": "Create, update, and get a person from Copper",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Copper\",\"type\":\"n8n-nodes-base.copper\",\"position\":[450,320],\"parameters\":{\"name\":\"Harshil\",\"resource\":\"person\",\"additionalFields\":{\"emails\":{\"emailFields\":[{\"email\":\"harshil@n8n.io\",\"category\":\"work\"}]}}},\"credentials\":{\"copperApi\":\"Copper API Credentials\"},\"typeVersion\":1},{\"name\":\"Copper1\",\"type\":\"n8n-nodes-base.copper\",\"position\":[650,320],\"parameters\":{\"personId\":\"={{$json[\\\"id\\\"]}}\",\"resource\":\"person\",\"operation\":\"update\",\"updateFields\":{\"phone_numbers\":{\"phoneFields\":[{\"number\":\"1234567890\",\"category\":\"work\"}]}}},\"credentials\":{\"copperApi\":\"Copper API Credentials\"},\"typeVersion\":1},{\"name\":\"Copper2\",\"type\":\"n8n-nodes-base.copper\",\"position\":[850,320],\"parameters\":{\"personId\":\"={{$json[\\\"id\\\"]}}\",\"resource\":\"person\",\"operation\":\"get\"},\"credentials\":{\"copperApi\":\"Copper API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Copper\":{\"main\":[[{\"node\":\"Copper1\",\"type\":\"main\",\"index\":0}]]},\"Copper1\":{\"main\":[[{\"node\":\"Copper2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Copper\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create, update, and get a person from Copper.\n\n**Copper node:** This node will create a new person in Copper.\n\n**Copper1 node:** This node will update the information of the person that we created using the previous node.\n\n**Copper2 node:** This node will retrieve the information of the person that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:14:37.482028"
+}

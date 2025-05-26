@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1217-fetch-a-youtube-playlist-and-send-new-items-raindrop/",
+  "title": "Fetch a YouTube playlist and send new items Raindrop",
+  "author": "Alejandro AR",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This simple workflow will fetch a YouTube playlist every n minutes and send the new items s to a collection in Raindrop.\n\nYou can connect any application at the end of the flow.\n\nMake sure to authenticate to YouTube using Google Auth, and to Raindrop using an API.\n\nUpdate the Playlist ID and the Raindrop collection.\n",
+  "crawled_at": "2025-05-25T19:26:06.699510",
+  "readme_zh": "这个简单的工作流程会每隔n分钟获取一次YouTube播放列表，并将新增条目发送至Raindrop的收藏夹中。\n\n您可以在流程末端接入任意应用程序。\n\n请确保通过谷歌认证登录YouTube账号，并使用API密钥连接Raindrop。\n\n记得更新播放列表ID和Raindrop收藏夹设置。",
+  "title_zh": "获取YouTube播放列表并发送新项目至Raindrop",
+  "publish_date_zh": "最后更新于10个月前"
+}

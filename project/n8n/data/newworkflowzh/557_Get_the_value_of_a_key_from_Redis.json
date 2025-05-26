@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/557-get-the-value-of-a-key-from-redis/",
+  "title": "Get the value of a key from Redis",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Redis\",\"type\":\"n8n-nodes-base.redis\",\"position\":[470,320],\"parameters\":{\"key\":\"hello\",\"options\":{},\"operation\":\"get\"},\"credentials\":{\"redis\":\"redis-docker_creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Redis\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Redis node docs\n",
+  "crawled_at": "2025-05-25T18:20:42.969050"
+}

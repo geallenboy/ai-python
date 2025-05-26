@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/959-create-a-collection-and-create-update-and-get-a-bookmark-in-raindrop/",
+  "title": "Create a collection and create, update, and get a bookmark in Raindrop",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to create a collection and create, update, and get a bookmark in Raindrop.\n\n**Raindrop node:** This node will create a new collection in Raindrop. If you already have a collection, you can skip this node.\n\n**Raindrop1 node:** This node will create a new bookmark and add it to a collection.\n\n**Raindrop2 node:** This node will update the bookmark that we created in the previous node.\n\n**Raindrop3 node:** This node will return the information about the bookmark that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:07:47.471396",
+  "readme_zh": "该工作流程允许你在Raindrop中创建收藏集，并对书签进行创建、更新和获取操作。\n\n**Raindrop节点**：此节点将在Raindrop中新建一个收藏集。若已有收藏集，可跳过此节点。\n\n**Raindrop1节点**：此节点将创建新书签并添加到指定收藏集。\n\n**Raindrop2节点**：此节点将更新我们在前一节点创建的书签。\n\n**Raindrop3节点**：此节点将返回我们之前创建的书签相关信息。",
+  "title_zh": "创建合集并在Raindrop中创建、更新和获取书签",
+  "publish_date_zh": "最后更新于10个月前"
+}

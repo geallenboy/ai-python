@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/949-create-a-customer-and-send-the-invoice-automatically/",
+  "title": "Create a customer and send the invoice automatically",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Finance"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"QuickBooks2\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[870,300],\"parameters\":{\"email\":\"\",\"resource\":\"invoice\",\"invoiceId\":\"={{$json[\\\"Id\\\"]}}\",\"operation\":\"send\"},\"credentials\":{\"quickBooksOAuth2Api\":\"QuickBooks OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"QuickBooks1\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[670,300],\"parameters\":{\"Line\":[{\"Amount\":100,\"itemId\":\"1\",\"DetailType\":\"SalesItemLineDetail\",\"Description\":\"Consulting service\"}],\"resource\":\"invoice\",\"operation\":\"create\",\"CustomerRef\":\"={{$json[\\\"Id\\\"]}}\",\"additionalFields\":{}},\"credentials\":{\"quickBooksOAuth2Api\":\"QuickBooks OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"QuickBooks\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[470,300],\"parameters\":{\"operation\":\"create\",\"displayName\":\"Jack Ryan\",\"additionalFields\":{\"PrimaryEmailAddr\":\"jack@ryan.com\"}},\"credentials\":{\"quickBooksOAuth2Api\":\"QuickBooks OAuth Credentials\"},\"typeVersion\":1}],\"connections\":{\"QuickBooks\":{\"main\":[[{\"node\":\"QuickBooks1\",\"type\":\"main\",\"index\":0}]]},\"QuickBooks1\":{\"main\":[[{\"node\":\"QuickBooks2\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflows allows you to create a customer and an invoice and send the invoice to the customer.\n\n**QuickBooks node:** This node will create a new customer in QuickBooks.\n\n**QuickBooks1 node:** This node will create an invoice for the customer that we created in the previous node.\n\n**QuickBooks2 node:** This node will send the invoice that we created in the previous node.\n",
+  "crawled_at": "2025-05-25T19:07:40.921578",
+  "readme_zh": "该工作流程允许您创建客户及发票，并将发票发送给客户。\n\n**QuickBooks节点：** 此节点将在QuickBooks中创建新客户。\n\n**QuickBooks1节点：** 此节点将为我们在前一节点创建的客户生成发票。\n\n**QuickBooks2节点：** 此节点将发送我们在前一节点创建的发票。",
+  "title_zh": "创建客户并自动发送发票",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"QuickBooks2\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[870,300],\"parameters\":{\"email\":\"\",\"resource\":\"invoice\",\"invoiceId\":\"={{$json[\\\"Id\\\"]}}\",\"operation\":\"send\"},\"credentials\":{\"quickBooksOAuth2Api\":\"QuickBooks OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"QuickBooks1\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[670,300],\"parameters\":{\"Line\":[{\"Amount\":100,\"itemId\":\"1\",\"DetailType\":\"SalesItemLineDetail\",\"Description\":\"Consulting service\"}],\"resource\":\"invoice\",\"operation\":\"create\",\"CustomerRef\":\"={{$json[\\\"Id\\\"]}}\",\"additionalFields\":{}},\"credentials\":{\"quickBooksOAuth2Api\":\"QuickBooks OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"QuickBooks\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[470,300],\"parameters\":{\"operation\":\"create\",\"displayName\":\"Jack Ryan\",\"additionalFields\":{\"PrimaryEmailAddr\":\"jack@ryan.com\"}},\"credentials\":{\"quickBooksOAuth2Api\":\"QuickBooks OAuth Credentials\"},\"typeVersion\":1}],\"connections\":{\"QuickBooks\":{\"main\":[[{\"node\":\"QuickBooks1\",\"type\":\"main\",\"index\":0}]]},\"QuickBooks1\":{\"main\":[[{\"node\":\"QuickBooks2\",\"type\":\"main\",\"index\":0}]]}}}"
+}

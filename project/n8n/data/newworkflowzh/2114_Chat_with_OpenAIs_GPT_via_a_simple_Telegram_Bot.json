@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/2114-chat-with-openais-gpt-via-a-simple-telegram-bot/",
+  "title": "Chat with OpenAIs GPT via a simple Telegram Bot",
+  "author": "Mike",
+  "publish_date": "Last update 2 months ago",
+  "publish_date_absolute": "2025-03-25",
+  "categories": [
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "# Use case\n\nLLMs have provided a lot of value for several use cases. Especially some OpenAI models are proving to be quite valuable. However, it's sometimes not super accessible to chat with these models. This workflow enables you to chate directly with OpenAI's GPT-3.5 via Telegram.\n\n# How it works\n\nA simple telegram bot that connects to your botfather bot to give AI responses, using OpenAI's GPT 3.5 model, to a user's messages with emojis.\n\n# What to do\n\nAdd your telegram API key and your OpenAI api key and have fun!\n",
+  "crawled_at": "2025-05-25T20:58:46.886059"
+}

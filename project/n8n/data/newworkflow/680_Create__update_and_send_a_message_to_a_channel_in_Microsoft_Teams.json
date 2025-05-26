@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/680-create-update-and-send-a-message-to-a-channel-in-microsoft-teams/",
+  "title": "Create, update and send a message to a channel in Microsoft Teams",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[540,360],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Microsoft Teams\",\"type\":\"n8n-nodes-base.microsoftTeams\",\"position\":[740,360],\"parameters\":{\"name\":\"n8n-docs-demo\",\"teamId\":\"d6b83b00-085d-472c-a6d9-8c2c32c1424e\",\"options\":{}},\"credentials\":{\"microsoftTeamsOAuth2Api\":\"teams_n8n\"},\"typeVersion\":1},{\"name\":\"Microsoft Teams1\",\"type\":\"n8n-nodes-base.microsoftTeams\",\"position\":[940,360],\"parameters\":{\"teamId\":\"={{$node[\\\"Microsoft Teams\\\"].parameter[\\\"teamId\\\"]}}\",\"channelId\":\"={{$node[\\\"Microsoft Teams\\\"].json[\\\"id\\\"]}}\",\"operation\":\"update\",\"updateFields\":{\"name\":\"n8n-documentation-demo\"}},\"credentials\":{\"microsoftTeamsOAuth2Api\":\"teams_n8n\"},\"typeVersion\":1},{\"name\":\"Microsoft Teams2\",\"type\":\"n8n-nodes-base.microsoftTeams\",\"position\":[1140,360],\"parameters\":{\"teamId\":\"={{$node[\\\"Microsoft Teams\\\"].parameter[\\\"teamId\\\"]}}\",\"message\":\"n8n rocks!\",\"resource\":\"channelMessage\",\"channelId\":\"={{$node[\\\"Microsoft Teams\\\"].json[\\\"id\\\"]}}\",\"messageType\":\"text\"},\"credentials\":{\"microsoftTeamsOAuth2Api\":\"teams_n8n\"},\"typeVersion\":1}],\"connections\":{\"Microsoft Teams\":{\"main\":[[{\"node\":\"Microsoft Teams1\",\"type\":\"main\",\"index\":0}]]},\"Microsoft Teams1\":{\"main\":[[{\"node\":\"Microsoft Teams2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Microsoft Teams\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Microsoft Teams node docs\n",
+  "crawled_at": "2025-05-25T18:37:01.991146",
+  "readme_zh": "Microsoft Teams 节点文档配套工作流",
+  "title_zh": "在Microsoft Teams中创建、更新并发送消息至频道",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[540,360],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Microsoft Teams\",\"type\":\"n8n-nodes-base.microsoftTeams\",\"position\":[740,360],\"parameters\":{\"name\":\"n8n-docs-demo\",\"teamId\":\"d6b83b00-085d-472c-a6d9-8c2c32c1424e\",\"options\":{}},\"credentials\":{\"microsoftTeamsOAuth2Api\":\"teams_n8n\"},\"typeVersion\":1},{\"name\":\"Microsoft Teams1\",\"type\":\"n8n-nodes-base.microsoftTeams\",\"position\":[940,360],\"parameters\":{\"teamId\":\"={{$node[\\\"Microsoft Teams\\\"].parameter[\\\"teamId\\\"]}}\",\"channelId\":\"={{$node[\\\"Microsoft Teams\\\"].json[\\\"id\\\"]}}\",\"operation\":\"update\",\"updateFields\":{\"name\":\"n8n-documentation-demo\"}},\"credentials\":{\"microsoftTeamsOAuth2Api\":\"teams_n8n\"},\"typeVersion\":1},{\"name\":\"Microsoft Teams2\",\"type\":\"n8n-nodes-base.microsoftTeams\",\"position\":[1140,360],\"parameters\":{\"teamId\":\"={{$node[\\\"Microsoft Teams\\\"].parameter[\\\"teamId\\\"]}}\",\"message\":\"n8n rocks!\",\"resource\":\"channelMessage\",\"channelId\":\"={{$node[\\\"Microsoft Teams\\\"].json[\\\"id\\\"]}}\",\"messageType\":\"text\"},\"credentials\":{\"microsoftTeamsOAuth2Api\":\"teams_n8n\"},\"typeVersion\":1}],\"connections\":{\"Microsoft Teams\":{\"main\":[[{\"node\":\"Microsoft Teams1\",\"type\":\"main\",\"index\":0}]]},\"Microsoft Teams1\":{\"main\":[[{\"node\":\"Microsoft Teams2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Microsoft Teams\",\"type\":\"main\",\"index\":0}]]}}}"
+}

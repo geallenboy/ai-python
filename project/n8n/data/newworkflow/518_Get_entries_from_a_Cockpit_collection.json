@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/518-get-entries-from-a-cockpit-collection/",
+  "title": "Get entries from a Cockpit collection",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[750,360],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Cockpit\",\"type\":\"n8n-nodes-base.cockpit\",\"position\":[950,360],\"parameters\":{\"options\":{},\"collection\":\"samplecollection\"},\"credentials\":{\"cockpitApi\":\"cockpit api\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Cockpit\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Cockpit node docs\n",
+  "crawled_at": "2025-05-25T18:16:43.140433",
+  "readme_zh": "驾驶舱节点文档配套工作流程",
+  "title_zh": "从Cockpit集合中获取条目",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[750,360],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Cockpit\",\"type\":\"n8n-nodes-base.cockpit\",\"position\":[950,360],\"parameters\":{\"options\":{},\"collection\":\"samplecollection\"},\"credentials\":{\"cockpitApi\":\"cockpit api\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Cockpit\",\"type\":\"main\",\"index\":0}]]}}}"
+}

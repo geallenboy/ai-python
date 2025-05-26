@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/437-perform-speech-to-text-on-recorded-audio-clips-using-witai/",
+  "title": "Perform speech-to-text on recorded audio clips using Wit.ai",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Read Binary File\",\"type\":\"n8n-nodes-base.readBinaryFile\",\"position\":[450,300],\"parameters\":{\"filePath\":\"/data/demo1.wav\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[650,300],\"parameters\":{\"url\":\"https://api.wit.ai/speech?v=20200513\",\"options\":{\"bodyContentType\":\"raw\"},\"requestMethod\":\"POST\",\"jsonParameters\":true,\"sendBinaryData\":true,\"headerParametersJson\":\"={{JSON.parse('{\\\"Authorization\\\":\\\"Bearer {your_token_goes_here}\\\", \\\"Content-Type\\\":\\\"audio/wav\\\"}')}}\"},\"typeVersion\":1}],\"connections\":{\"Read Binary File\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow performs speech-to-text on recorded audio clips using [Wit.ai](http://Wit.ai).\n\nTo get started, replace your [Wit.ai](http://Wit.ai) _Server Access Token_ in the Authorization header.\n",
+  "crawled_at": "2025-05-25T18:06:20.940306",
+  "readme_zh": "该工作流利用[Wit.ai](http://Wit.ai)对录制的音频片段进行语音转文字处理。\n\n开始使用时，请在授权头部替换成您的[Wit.ai](http://Wit.ai) _服务器访问令牌_。",
+  "title_zh": "使用Wit.ai对录制的音频片段进行语音转文字",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Read Binary File\",\"type\":\"n8n-nodes-base.readBinaryFile\",\"position\":[450,300],\"parameters\":{\"filePath\":\"/data/demo1.wav\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[650,300],\"parameters\":{\"url\":\"https://api.wit.ai/speech?v=20200513\",\"options\":{\"bodyContentType\":\"raw\"},\"requestMethod\":\"POST\",\"jsonParameters\":true,\"sendBinaryData\":true,\"headerParametersJson\":\"={{JSON.parse('{\\\"Authorization\\\":\\\"Bearer {your_token_goes_here}\\\", \\\"Content-Type\\\":\\\"audio/wav\\\"}')}}\"},\"typeVersion\":1}],\"connections\":{\"Read Binary File\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}"
+}

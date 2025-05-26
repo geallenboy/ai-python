@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1771-send-or-update-new-mailchimp-subscribers-in-hubspot/",
+  "title": "Send or update new Mailchimp subscribers in HubSpot",
+  "author": "n8n Team",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow sends new Mailchimp subscribers to HubSpot as new or updated contacts.\n\n## Prerequisites\n\n  * Mailchimp account and [Mailchimp credentials](https://docs.n8n.io/integrations/builtin/credentials/mailchimp/)\n  * HubSpot account and [HubSpot credentials](https://docs.n8n.io/integrations/builtin/credentials/hubspot/)\n\n\n\n## How it works\n\n  1. Cron node triggers this workflow every day at 7:00.\n  2. Mailchimp node searches for new subscribers.\n  3. New Mailchimp subscribes get sent to HubSpot.\n  4. HubSpot node either updates the existing contact or adds a new one to the pipeline.\n\n\n",
+  "crawled_at": "2025-05-25T20:03:53.944069"
+}

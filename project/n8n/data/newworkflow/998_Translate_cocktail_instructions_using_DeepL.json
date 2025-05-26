@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/998-translate-cocktail-instructions-using-deepl/",
+  "title": "Translate cocktail instructions using DeepL",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[510,320],\"parameters\":{\"url\":\"https://www.thecocktaildb.com/api/json/v1/1/random.php\",\"options\":{}},\"typeVersion\":1},{\"name\":\"DeepL\",\"type\":\"n8n-nodes-base.deepL\",\"position\":[710,320],\"parameters\":{\"text\":\"={{$json[\\\"drinks\\\"][0][\\\"strInstructions\\\"]}}\",\"translateTo\":\"FR\",\"additionalFields\":{}},\"credentials\":{\"deepLApi\":\"DeepL API Credentials\"},\"typeVersion\":1}],\"connections\":{\"HTTP Request\":{\"main\":[[{\"node\":\"DeepL\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to translate cocktail instructions using DeepL.\n\n**HTTP Request node:** This node will make a GET request to the API `https://www.thecocktaildb.com/api/json/v1/1/random.php` to fetch a random cocktail. This information gets passed on to the next node in the workflow. Based on your use case, replace the node with the node from where you might receive the data.\n\n**DeepL node:** This node will translate the cocktail instructions that we got from the previous node to French. To translate the instructions in your language, select your language instead.\n",
+  "crawled_at": "2025-05-25T19:13:53.579904",
+  "readme_zh": "该工作流允许您使用DeepL翻译鸡尾酒制作说明。\n\n**HTTP请求节点:** 此节点将向API`https://www.thecocktaildb.com/api/json/v1/1/random.php`发起GET请求，获取随机鸡尾酒信息。获取的数据将传递至工作流下一个节点。根据实际使用场景，您可替换为其他数据来源节点。\n\n**DeepL翻译节点:** 此节点将把前一个节点获取的鸡尾酒制作说明翻译为法语。如需翻译为其他语言，请在此节点选择目标语言。",
+  "title_zh": "使用DeepL翻译鸡尾酒制作说明",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[510,320],\"parameters\":{\"url\":\"https://www.thecocktaildb.com/api/json/v1/1/random.php\",\"options\":{}},\"typeVersion\":1},{\"name\":\"DeepL\",\"type\":\"n8n-nodes-base.deepL\",\"position\":[710,320],\"parameters\":{\"text\":\"={{$json[\\\"drinks\\\"][0][\\\"strInstructions\\\"]}}\",\"translateTo\":\"FR\",\"additionalFields\":{}},\"credentials\":{\"deepLApi\":\"DeepL API Credentials\"},\"typeVersion\":1}],\"connections\":{\"HTTP Request\":{\"main\":[[{\"node\":\"DeepL\",\"type\":\"main\",\"index\":0}]]}}}"
+}

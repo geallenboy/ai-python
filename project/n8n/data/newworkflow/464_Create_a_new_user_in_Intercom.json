@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/464-create-a-new-user-in-intercom/",
+  "title": "Create a new user in Intercom",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Support"
+    }
+  ],
+  "workflow_json": "{\"id\":\"91\",\"name\":\"Create a new user in Intercom\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Intercom\",\"type\":\"n8n-nodes-base.intercom\",\"position\":[800,250],\"parameters\":{\"idValue\":\"\",\"identifierType\":\"email\",\"additionalFields\":{}},\"credentials\":{\"intercomApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Intercom\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:08:52.904521",
+  "readme_zh": "你是一个翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在Intercom中创建新用户",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"91\",\"name\":\"Create a new user in Intercom\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Intercom\",\"type\":\"n8n-nodes-base.intercom\",\"position\":[800,250],\"parameters\":{\"idValue\":\"\",\"identifierType\":\"email\",\"additionalFields\":{}},\"credentials\":{\"intercomApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Intercom\",\"type\":\"main\",\"index\":0}]]}}}"
+}

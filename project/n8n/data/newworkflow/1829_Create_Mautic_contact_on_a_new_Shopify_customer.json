@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/1829-create-mautic-contact-on-a-new-shopify-customer/",
+  "title": "Create Mautic contact on a new Shopify customer",
+  "author": "n8n Team",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"meta\":{\"instanceId\":\"237600ca44303ce91fa31ee72babcdc8493f55ee2c0e8aa2b78b3b4ce6f70bd9\"},\"nodes\":[{\"id\":\"a5f74e05-acea-4ff4-b3b2-5997850be036\",\"name\":\"On new customer\",\"type\":\"n8n-nodes-base.shopifyTrigger\",\"position\":[180,420],\"webhookId\":\"8efd263c-73fb-481b-90d8-8ae0db929548\",\"parameters\":{\"topic\":\"customers/create\",\"authentication\":\"accessToken\"},\"credentials\":{\"shopifyAccessTokenApi\":{\"id\":\"37\",\"name\":\"[UPDATE ME]\"}},\"typeVersion\":1},{\"id\":\"5b4a9e71-3aa7-40d8-a439-79a504c60a46\",\"name\":\"Create contact\",\"type\":\"n8n-nodes-base.mautic\",\"position\":[400,420],\"parameters\":{\"email\":\"={{$node[\\\"On new customer\\\"].json[\\\"email\\\"]}}\",\"options\":{},\"lastName\":\"={{$node[\\\"On new customer\\\"].json[\\\"last_name\\\"]}}\",\"firstName\":\"={{$node[\\\"On new customer\\\"].json[\\\"first_name\\\"]}}\",\"additionalFields\":{}},\"credentials\":{\"mauticApi\":{\"id\":\"34\",\"name\":\"[UPDATE ME]\"}},\"typeVersion\":1},{\"id\":\"4b7b306e-1b4c-464f-b8f0-373167ded16f\",\"name\":\"Note\",\"type\":\"n8n-nodes-base.stickyNote\",\"position\":[400,600],\"parameters\":{\"width\":332,\"height\":116,\"content\":\"### Add more fields to Mautic\\nBy default, the first name, last name and email are pushed to Mautic. If you require more fields, add it in the `Create contact` node.\"},\"typeVersion\":1}],\"connections\":{\"On new customer\":{\"main\":[[{\"node\":\"Create contact\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow creates a new contact in Mautic when a new customer is created in Shopify. By default, the workflow will fill the first name, last name, and email address. You can add any other fields you require.\n\n# Prerequisites\n\n  * Shopify account and [Shopify credentials](https://docs.n8n.io/integrations/builtin/credentials/shopify/).\n  * Mautic account and [Mautic credentials](https://docs.n8n.io/integrations/builtin/credentials/mautic/).\n\n\n\n# How it works\n\n  1. Triggers on a new customer in Shopify.\n  2. Sends the required data to Mautic to create a new contact.\n\n\n",
+  "crawled_at": "2025-05-25T20:11:31.571643",
+  "readme_zh": "该工作流程会在Shopify中创建新客户时，同步在Mautic中生成对应联系人。默认情况下，系统将自动填充名字、姓氏和电子邮件地址字段。您可根据需要添加其他任意字段。\n\n# 前置条件\n\n  * 拥有Shopify账户及[Shopify凭证](https://docs.n8n.io/integrations/builtin/credentials/shopify/)\n  * 拥有Mautic账户及[Mautic凭证](https://docs.n8n.io/integrations/builtin/credentials/mautic/)\n\n# 运行机制\n\n  1. 由Shopify新客户创建事件触发\n  2. 将必要数据传输至Mautic以创建新联系人",
+  "title_zh": "在Shopify新客户上创建Mautic联系人",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"meta\":{\"instanceId\":\"237600ca44303ce91fa31ee72babcdc8493f55ee2c0e8aa2b78b3b4ce6f70bd9\"},\"nodes\":[{\"id\":\"a5f74e05-acea-4ff4-b3b2-5997850be036\",\"name\":\"On new customer\",\"type\":\"n8n-nodes-base.shopifyTrigger\",\"position\":[180,420],\"webhookId\":\"8efd263c-73fb-481b-90d8-8ae0db929548\",\"parameters\":{\"topic\":\"customers/create\",\"authentication\":\"accessToken\"},\"credentials\":{\"shopifyAccessTokenApi\":{\"id\":\"37\",\"name\":\"[UPDATE ME]\"}},\"typeVersion\":1},{\"id\":\"5b4a9e71-3aa7-40d8-a439-79a504c60a46\",\"name\":\"Create contact\",\"type\":\"n8n-nodes-base.mautic\",\"position\":[400,420],\"parameters\":{\"email\":\"={{$node[\\\"On new customer\\\"].json[\\\"email\\\"]}}\",\"options\":{},\"lastName\":\"={{$node[\\\"On new customer\\\"].json[\\\"last_name\\\"]}}\",\"firstName\":\"={{$node[\\\"On new customer\\\"].json[\\\"first_name\\\"]}}\",\"additionalFields\":{}},\"credentials\":{\"mauticApi\":{\"id\":\"34\",\"name\":\"[UPDATE ME]\"}},\"typeVersion\":1},{\"id\":\"4b7b306e-1b4c-464f-b8f0-373167ded16f\",\"name\":\"Note\",\"type\":\"n8n-nodes-base.stickyNote\",\"position\":[400,600],\"parameters\":{\"width\":332,\"height\":116,\"content\":\"### 向Mautic添加更多字段  \\n默认情况下，系统仅推送名字、姓氏和电子邮件至Mautic。如需添加更多字段，请在“创建联系人”节点中进行设置。\"},\"typeVersion\":1}],\"connections\":{\"On new customer\":{\"main\":[[{\"node\":\"Create contact\",\"type\":\"main\",\"index\":0}]]}}}"
+}

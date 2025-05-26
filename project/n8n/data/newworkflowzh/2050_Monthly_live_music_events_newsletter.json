@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/2050-monthly-live-music-events-newsletter/",
+  "title": "Monthly live music events newsletter",
+  "author": "Milorad Filipovic",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "# How it works?\n\n  * This workflows sends you a monthly lists of live music events for a specific location.\n  * Events are fetched from [songkick.com](http://songkick.com) and delivered to you by email to a provided email address(es).\n  * Each event in the list has a link to a full SongKick page where you can see more details about the event and buy tickets for it.\n\n\n\n**Example email:**  \n![Example email](https://i.imgur.com/7WTn72L.png)\n\n# How to set it up?\n\nFirst thing that this workflow needs is a location link for your desired city from the SongKick website. You can get it by following these steps:\n\n  1. Visit [songkick.com](https://www.songkick.com/) and enter the city name in the search box:  \n![Songkick search](https://i.imgur.com/lNwGG9p.png)\n\n  2. From the results page, click the result that contains the location info. These will have the `Location` tag on top of the location name:  \n![Location result example](https://i.imgur.com/vMQJTbL.png)\n\n  3. Once on the location page, copy the url  \n![URL copy example](https://i.imgur.com/GErLksA.png)\n\n  4. Back in the n8n workflow page, paste the url in the _location_ parameter of the node called _Setup location and email_ :  \n![URL in node settings](https://i.imgur.com/ZwUucrt.png)\n\n\n\n\nSecond thing it needs is the email address which will receive the monthly list. For this, simply enter it in the _email_ field of the _Setup location and email_ node. If you want to set multiple receivers, simply separate email addresses by `,`:  \n![Emails in node settings](https://i.imgur.com/3XGkrsD.png)\n\n# Required accounts\n\nThis workflow requires you to have a properly set up Gmail account that will be used by Gmail Node to send emails. You can read more about how to create credentials for a Gmail node in n8n documentation [here](https://docs.n8n.io/integrations/builtin/credentials/google/oauth-single-service/?utm_source=n8n_app&utm_medium=left_nav_menu&utm_campaign=create_new_credentials_modal).\n",
+  "crawled_at": "2025-05-25T20:44:28.859620"
+}

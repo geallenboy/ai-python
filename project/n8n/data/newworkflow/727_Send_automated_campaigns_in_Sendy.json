@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/727-send-automated-campaigns-in-sendy/",
+  "title": "Send automated campaigns in Sendy",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"14\",\"name\":\"Add a subscriber to a list and create and send a campaign\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Sendy\",\"type\":\"n8n-nodes-base.sendy\",\"position\":[450,300],\"parameters\":{\"email\":\"harshil@n8n.io\",\"listId\":\"2\",\"additionalFields\":{\"name\":\"Harshil\"}},\"credentials\":{\"sendyApi\":\"sendy\"},\"typeVersion\":1},{\"name\":\"Sendy1\",\"type\":\"n8n-nodes-base.sendy\",\"position\":[650,300],\"parameters\":{\"title\":\"Welcome to n8n\",\"replyTo\":\"docs@n8n.io\",\"subject\":\"Welcome to n8n\",\"fromName\":\"n8n\",\"htmlText\":\"<body>\\n  <p>Hey!</p>\\n  <p>Welcome to n8n!</p>\\n</body>\",\"resource\":\"campaign\",\"fromEmail\":\"docs@n8n.io\",\"sendCampaign\":true,\"additionalFields\":{\"listIds\":\"2\"}},\"credentials\":{\"sendyApi\":\"sendy\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Sendy\":{\"main\":[[{\"node\":\"Sendy1\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Sendy\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:41:35.528489",
+  "readme_zh": "翻译助手",
+  "title_zh": "在Sendy中发送自动化营销活动",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\n  \"id\": \"14\",\n  \"name\": \"Add a subscriber to a list and create and send a campaign\",\n  \"nodes\": [\n    {\n      \"name\": \"On clicking 'execute'\",\n      \"type\": \"n8n-nodes-base.manualTrigger\",\n      \"position\": [\n        250,\n        300\n      ],\n      \"parameters\": {},\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Sendy\",\n      \"type\": \"n8n-nodes-base.sendy\",\n      \"position\": [\n        450,\n        300\n      ],\n      \"parameters\": {\n        \"email\": \"harshil@n8n.io\",\n        \"listId\": \"2\",\n        \"additionalFields\": {\n          \"name\": \"Harshil\"\n        }\n      },\n      \"credentials\": {\n        \"sendyApi\": \"sendy\"\n      },\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Sendy1\",\n      \"type\": \"n8n-nodes-base.sendy\",\n      \"position\": [\n        650,\n        300\n      ],\n      \"parameters\": {\n        \"title\": \"Welcome to n8n\",\n        \"replyTo\": \"docs@n8n.io\",\n        \"subject\": \"Welcome to n8n\",\n        \"fromName\": \"n8n\",\n        \"htmlText\": \"<body>\\n  <p>Hey!</p>\\n  <p>Welcome to n8n!</p>\\n</body>\",\n        \"resource\": \"campaign\",\n        \"fromEmail\": \"docs@n8n.io\",\n        \"sendCampaign\": true,\n        \"additionalFields\": {\n          \"listIds\": \"2\"\n        }\n      },\n      \"credentials\": {\n        \"sendyApi\": \"sendy\"\n      },\n      \"typeVersion\": 1\n    }\n  ],\n  \"active\": false,\n  \"settings\": {},\n  \"connections\": {\n    \"Sendy\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Sendy1\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"On clicking 'execute'\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Sendy\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  }\n}"
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1776-sync-payment-and-customer-data-between-stripe-and-pipedrive/",
+  "title": "Sync payment and customer data between Stripe and Pipedrive",
+  "author": "n8n Team",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow combines customers' details with their payment data and passes the input to Pipedrive as a note to the organization.\n\n## Prerequisites\n\n  * Stripe account and [Stripe credentials](https://docs.n8n.io/integrations/builtin/credentials/stripe/)\n  * Pipedrive account and [Pipedrive credentials](https://docs.n8n.io/integrations/builtin/credentials/pipedrive/)\n\n\n\n## How it works\n\n  1. Cron node triggers the workflow every day at 8 a.m.\n  2. HTTP Request node searches for payments in Stripe.\n  3. The Item Lists node creates separate items from a list of payment data.\n  4. Merge node takes in the payment data as an input 1.\n  5. Stripe node gets all the customers data.\n  6. Set node renames customer-related data fields and keeps only needed fields.\n  7. Merge node takes in the customer data as an input 2.\n  8. Merge node combines the payment data with the customers one.\n  9. Pipedrive node searches for the organization and creates a note with payment data.\n\n\n",
+  "crawled_at": "2025-05-25T20:04:18.743529"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/992-manage-transfers-automatically-in-wise/",
+  "title": "Manage transfers automatically in Wise",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to create a quote and a transfer, execute the transfer and get the information of the transfer using the Wise node.\n\n**Wise node:** This node will create a new quote in Wise.\n\n**Wise1 node:** This node will create a new transfer for the quote that we created in the previous node.\n\n**Wise2 node:** This node will execute the transfer that we created in the previous node.\n\n**Wise3 node:** This node will return the information of the transfer that we executed in the previous node.\n",
+  "crawled_at": "2025-05-25T19:11:54.945365"
+}

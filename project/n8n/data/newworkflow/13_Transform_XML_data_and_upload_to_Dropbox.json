@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/13-transform-xml-data-and-upload-to-dropbox/",
+  "title": "Transform XML data and upload to Dropbox",
+  "author": "Jan Oberhauser",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"To JSON\",\"type\":\"n8n-nodes-base.xml\",\"position\":[700,300],\"parameters\":{\"options\":{}},\"typeVersion\":1},{\"name\":\"Change title\",\"type\":\"n8n-nodes-base.set\",\"position\":[900,300],\"parameters\":{\"values\":{\"string\":[{\"name\":\"slideshow.title\",\"value\":\"New Title Name\"}]}},\"typeVersion\":1},{\"name\":\"Get XML Data\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[500,300],\"parameters\":{\"url\":\"https://httpbin.org/xml\",\"responseFormat\":\"string\"},\"typeVersion\":1},{\"name\":\"Dropbox\",\"type\":\"n8n-nodes-base.dropbox\",\"position\":[1300,300],\"parameters\":{\"path\":\"/my-xml-file.xml\",\"fileContent\":\"={{$node[\\\"To XML\\\"].data[\\\"data\\\"]}}\"},\"credentials\":{\"dropboxApi\":\"\"},\"typeVersion\":1},{\"name\":\"To XML\",\"type\":\"n8n-nodes-base.xml\",\"position\":[1100,300],\"parameters\":{\"mode\":\"jsonToxml\",\"options\":{}},\"typeVersion\":1}],\"connections\":{\"To XML\":{\"main\":[[{\"node\":\"Dropbox\",\"type\":\"main\",\"index\":0}]]},\"To JSON\":{\"main\":[[{\"node\":\"Change title\",\"type\":\"main\",\"index\":0}]]},\"Change title\":{\"main\":[[{\"node\":\"To XML\",\"type\":\"main\",\"index\":0}]]},\"Get XML Data\":{\"main\":[[{\"node\":\"To JSON\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "  1. Download XML data\n  2. Convert it to JSON\n  3. Change title in data\n  4. Convert back to XML\n  5. Upload file to Dropbox\n\n\n",
+  "crawled_at": "2025-05-25T17:44:59.875861",
+  "readme_zh": "1. 下载XML数据  \n2. 转换为JSON格式  \n3. 修改数据中的标题  \n4. 重新转回XML格式  \n5. 将文件上传至Dropbox",
+  "title_zh": "转换XML数据并上传至Dropbox",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"To JSON\",\"type\":\"n8n-nodes-base.xml\",\"position\":[700,300],\"parameters\":{\"options\":{}},\"typeVersion\":1},{\"name\":\"Change title\",\"type\":\"n8n-nodes-base.set\",\"position\":[900,300],\"parameters\":{\"values\":{\"string\":[{\"name\":\"slideshow.title\",\"value\":\"New Title Name\"}]}},\"typeVersion\":1},{\"name\":\"Get XML Data\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[500,300],\"parameters\":{\"url\":\"https://httpbin.org/xml\",\"responseFormat\":\"string\"},\"typeVersion\":1},{\"name\":\"Dropbox\",\"type\":\"n8n-nodes-base.dropbox\",\"position\":[1300,300],\"parameters\":{\"path\":\"/my-xml-file.xml\",\"fileContent\":\"={{$node[\\\"To XML\\\"].data[\\\"data\\\"]}}\"},\"credentials\":{\"dropboxApi\":\"\"},\"typeVersion\":1},{\"name\":\"To XML\",\"type\":\"n8n-nodes-base.xml\",\"position\":[1100,300],\"parameters\":{\"mode\":\"jsonToxml\",\"options\":{}},\"typeVersion\":1}],\"connections\":{\"To XML\":{\"main\":[[{\"node\":\"Dropbox\",\"type\":\"main\",\"index\":0}]]},\"To JSON\":{\"main\":[[{\"node\":\"Change title\",\"type\":\"main\",\"index\":0}]]},\"Change title\":{\"main\":[[{\"node\":\"To XML\",\"type\":\"main\",\"index\":0}]]},\"Get XML Data\":{\"main\":[[{\"node\":\"To JSON\",\"type\":\"main\",\"index\":0}]]}}}"
+}

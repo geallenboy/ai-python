@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/767-create-an-array-of-objects/",
+  "title": "Create an array of objects",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Mock Data\",\"type\":\"n8n-nodes-base.function\",\"position\":[802,307],\"parameters\":{\"functionCode\":\"return [\\n  {\\n    json: {\\n      id: 1,\\n      name: \\\"Jim\\\"\\n    }\\n  },\\n  {\\n    json: {\\n      id: 2,\\n      name: \\\"Stefan\\\"\\n    }\\n  },\\n  {\\n    json: {\\n      id: 3,\\n      name: \\\"Hans\\\"\\n    }\\n  }\\n];\"},\"typeVersion\":1},{\"name\":\"Create an array of objects\",\"type\":\"n8n-nodes-base.function\",\"position\":[1052,307],\"parameters\":{\"functionCode\":\"return [\\n  {\\n    json: {\\n      data_object: items.map(item => item.json),\\n    },\\n  }\\n];\\n\"},\"typeVersion\":1}],\"connections\":{\"Mock Data\":{\"main\":[[{\"node\":\"Create an array of objects\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "You can use the Function node to create an array of objects.\n",
+  "crawled_at": "2025-05-25T18:47:07.246732",
+  "readme_zh": "您可以使用函数节点来创建一个对象数组。",
+  "title_zh": "创建一个对象数组",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\n  \"nodes\": [\n    {\n      \"name\": \"Mock Data\",\n      \"type\": \"n8n-nodes-base.function\",\n      \"position\": [\n        802,\n        307\n      ],\n      \"parameters\": {\n        \"functionCode\": \"return [\\n  {\\n    json: {\\n      id: 1,\\n      name: \\\"Jim\\\"\\n    }\\n  },\\n  {\\n    json: {\\n      id: 2,\\n      name: \\\"Stefan\\\"\\n    }\\n  },\\n  {\\n    json: {\\n      id: 3,\\n      name: \\\"Hans\\\"\\n    }\\n  }\\n];\"\n      },\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Create an array of objects\",\n      \"type\": \"n8n-nodes-base.function\",\n      \"position\": [\n        1052,\n        307\n      ],\n      \"parameters\": {\n        \"functionCode\": \"return [\\n  {\\n    json: {\\n      data_object: items.map(item => item.json),\\n    },\\n  }\\n];\\n\"\n      },\n      \"typeVersion\": 1\n    }\n  ],\n  \"connections\": {\n    \"Mock Data\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Create an array of objects\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  }\n}"
+}

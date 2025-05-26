@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/18-n8n-nodemation-basic-getting-started-on-the-workflow-canvas-13/",
+  "title": "n8n Nodemation basic - getting started on the workflow canvas (1/3)",
+  "author": "sven",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"5\",\"name\":\"testworkflow\",\"nodes\":[{\"name\":\"FunctionItem\",\"type\":\"n8n-nodes-base.functionItem\",\"color\":\"#067325\",\"position\":[860,680],\"parameters\":{\"functionCode\":\"item.myVariable = 1;\\nitem.myVariable2 = \\\"this is exciting\\\";\\nreturn item;\"},\"typeVersion\":1},{\"name\":\"2 hours Interval\",\"type\":\"n8n-nodes-base.interval\",\"color\":\"#FF2A00\",\"notes\":\"It is the 4 hours interval in which this node gets executed\",\"position\":[630,680],\"parameters\":{\"unit\":\"hours\",\"interval\":2},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[1040,680],\"parameters\":{\"values\":{\"string\":[{\"name\":\"data\",\"value\":\"={{$node[\\\"FunctionItem\\\"].data[\\\"myVariable2\\\"]}}\"}]},\"keepOnlySet\":true},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"FunctionItem\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]},\"2 hours Interval\":{\"main\":[[{\"node\":\"FunctionItem\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "In this video I will show you the workflow canvas and how to use nodes by building your first simple workflow.\n\n[>> Videotuturial on Youtube](https://youtu.be/JIaxjH2CyFc)\n\n[![Videotuturial on Youtube](http://img.youtube.com/vi/JIaxjH2CyFc/0.jpg)](http://www.youtube.com/watch?v=JIaxjH2CyFc \"Videotuturial on Youtube\")\n",
+  "crawled_at": "2025-05-25T17:45:36.275372",
+  "readme_zh": "在本视频中，我将通过构建您的第一个简单工作流，向您展示工作流画布以及如何使用节点。\n\n[>> YouTube视频教程](https://youtu.be/JIaxjH2CyFc)\n\n[![YouTube视频教程](http://img.youtube.com/vi/JIaxjH2CyFc/0.jpg)](http://www.youtube.com/watch?v=JIaxjH2CyFc \"YouTube视频教程\")",
+  "title_zh": "n8n 节点自动化基础 - 工作流画布入门指南（1/3）",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"5\",\"name\":\"testworkflow\",\"nodes\":[{\"name\":\"FunctionItem\",\"type\":\"n8n-nodes-base.functionItem\",\"color\":\"#067325\",\"position\":[860,680],\"parameters\":{\"functionCode\":\"item.myVariable = 1;\\nitem.myVariable2 = \\\"this is exciting\\\";\\nreturn item;\"},\"typeVersion\":1},{\"name\":\"2 hours Interval\",\"type\":\"n8n-nodes-base.interval\",\"color\":\"#FF2A00\",\"notes\":\"It is the 4 hours interval in which this node gets executed\",\"position\":[630,680],\"parameters\":{\"unit\":\"hours\",\"interval\":2},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[1040,680],\"parameters\":{\"values\":{\"string\":[{\"name\":\"data\",\"value\":\"={{$node[\\\"FunctionItem\\\"].data[\\\"myVariable2\\\"]}}\"}]},\"keepOnlySet\":true},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"FunctionItem\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]},\"2 hours Interval\":{\"main\":[[{\"node\":\"FunctionItem\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/928-create-a-post-with-comments-in-reddit-automatically/",
+  "title": "Create a post with comments in Reddit automatically",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,340],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Reddit\",\"type\":\"n8n-nodes-base.reddit\",\"position\":[470,340],\"parameters\":{\"text\":\"This post was created using the Reddit node in n8n\",\"title\":\"Created from n8n\",\"subreddit\":\"n8n\"},\"credentials\":{\"redditOAuth2Api\":\"Reddit OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"Reddit1\",\"type\":\"n8n-nodes-base.reddit\",\"position\":[670,340],\"parameters\":{\"postId\":\"={{$json[\\\"id\\\"]}}\",\"operation\":\"get\",\"subreddit\":\"={{$node[\\\"Reddit\\\"].parameter[\\\"subreddit\\\"]}}\"},\"credentials\":{\"redditOAuth2Api\":\"Reddit OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"Reddit2\",\"type\":\"n8n-nodes-base.reddit\",\"position\":[870,340],\"parameters\":{\"postId\":\"={{$json[\\\"id\\\"]}}\",\"resource\":\"postComment\",\"commentText\":\"This comment was added from n8n!\"},\"credentials\":{\"redditOAuth2Api\":\"Reddit OAuth Credentials\"},\"typeVersion\":1}],\"connections\":{\"Reddit\":{\"main\":[[{\"node\":\"Reddit1\",\"type\":\"main\",\"index\":0}]]},\"Reddit1\":{\"main\":[[{\"node\":\"Reddit2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Reddit\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create a post a Reddit and add a comment on the post.\n\n**Reddit node:** This node creates a post in the subreddit `n8n`. If you want to create a post in a different subreddit, enter the name of that subreddit instead.\n\n**Reddit1 node:** This node gets the post that we created previously. It returns the data like the post ID, title of the post, content of the post, etc.\n\n**Reddit2 node:** This node adds a comment on the post that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:06:08.833576",
+  "readme_zh": "该工作流允许您在Reddit上创建帖子并添加评论。\n\n**Reddit节点：** 此节点会在`n8n`版块创建帖子。若需在其他版块发帖，请替换为相应版块名称。\n\n**Reddit1节点：** 此节点获取先前创建的帖子数据，返回包括帖子ID、标题、内容等信息。\n\n**Reddit2节点：** 此节点为我们之前创建的帖子添加评论。",
+  "title_zh": "自动在Reddit上创建带评论的帖子",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,340],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Reddit\",\"type\":\"n8n-nodes-base.reddit\",\"position\":[470,340],\"parameters\":{\"text\":\"This post was created using the Reddit node in n8n\",\"title\":\"Created from n8n\",\"subreddit\":\"n8n\"},\"credentials\":{\"redditOAuth2Api\":\"Reddit OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"Reddit1\",\"type\":\"n8n-nodes-base.reddit\",\"position\":[670,340],\"parameters\":{\"postId\":\"={{$json[\\\"id\\\"]}}\",\"operation\":\"get\",\"subreddit\":\"={{$node[\\\"Reddit\\\"].parameter[\\\"subreddit\\\"]}}\"},\"credentials\":{\"redditOAuth2Api\":\"Reddit OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"Reddit2\",\"type\":\"n8n-nodes-base.reddit\",\"position\":[870,340],\"parameters\":{\"postId\":\"={{$json[\\\"id\\\"]}}\",\"resource\":\"postComment\",\"commentText\":\"This comment was added from n8n!\"},\"credentials\":{\"redditOAuth2Api\":\"Reddit OAuth Credentials\"},\"typeVersion\":1}],\"connections\":{\"Reddit\":{\"main\":[[{\"node\":\"Reddit1\",\"type\":\"main\",\"index\":0}]]},\"Reddit1\":{\"main\":[[{\"node\":\"Reddit2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Reddit\",\"type\":\"main\",\"index\":0}]]}}}"
+}

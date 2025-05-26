@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/639-receive-server-sent-events/",
+  "title": "Receive server-sent events",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"name\":\"\",\"nodes\":[{\"name\":\"SSE Trigger\",\"type\":\"n8n-nodes-base.sseTrigger\",\"position\":[850,420],\"parameters\":{\"url\":\"https://n8n.io\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "Companion workflow for SSE Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:31:56.454653",
+  "readme_zh": "SSE触发器节点文档配套工作流程",
+  "title_zh": "接收服务器发送事件",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"name\":\"\",\"nodes\":[{\"name\":\"SSE Trigger\",\"type\":\"n8n-nodes-base.sseTrigger\",\"position\":[850,420],\"parameters\":{\"url\":\"https://n8n.io\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

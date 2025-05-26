@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/740-send-daily-weather-updates-via-push-notification/",
+  "title": "Send daily weather updates via push notification",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:43:40.178754"
+}

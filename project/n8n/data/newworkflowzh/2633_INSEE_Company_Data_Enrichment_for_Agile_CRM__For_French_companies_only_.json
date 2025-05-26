@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/2633-insee-company-data-enrichment-for-agile-crm-for-french-companies-only/",
+  "title": "INSEE Company Data Enrichment for Agile CRM (For French companies only)",
+  "author": "Johan Denoyer",
+  "publish_date": "Last update 5 months ago",
+  "publish_date_absolute": "2024-12-26",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## How it works\n\n  1. Extracts all company entries in Agile CRM\n  2. Search for company name in French INSEE OpenData database to extract address and government ID (SIREN)\n  3. Updates entries with data extracted from French Insee OpenData dabase\n\n\n\nWorkflow also has a readonly feature to make sure entry is not overwritten.\n\n## Setup steps\n\n  1. Add your AgileCRM credentials\n  2. Add your INSEE OpenData credentials\n  3. Add two company custom fields in your Agile CRM (for SIREN data and ReadOnly support)\n\n\n",
+  "crawled_at": "2025-05-26T01:33:21.941390"
+}

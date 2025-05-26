@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/513-receive-messages-for-an-activemq-queue/",
+  "title": "Receive messages for an ActiveMQ queue",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "{\"id\":\"135\",\"name\":\"Receive messages for an ActiveMQ queue via AMQP Trigger\",\"nodes\":[{\"name\":\"AMQP Trigger\",\"type\":\"n8n-nodes-base.amqpTrigger\",\"position\":[650,200],\"parameters\":{\"sink\":\"\"},\"credentials\":{\"amqp\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:16:05.927546",
+  "readme_zh": "翻译助手",
+  "title_zh": "接收ActiveMQ队列的消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"135\",\"name\":\"Receive messages for an ActiveMQ queue via AMQP Trigger\",\"nodes\":[{\"name\":\"AMQP Trigger\",\"type\":\"n8n-nodes-base.amqpTrigger\",\"position\":[650,200],\"parameters\":{\"sink\":\"\"},\"credentials\":{\"amqp\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

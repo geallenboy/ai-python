@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/539-execute-a-job-on-rundeck/",
+  "title": "Execute a job on Rundeck",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Rundeck\",\"type\":\"n8n-nodes-base.rundeck\",\"position\":[450,300],\"parameters\":{\"jobid\":\"f02c7661-6f75-4ffe-958c-c0ed5f9bc9e6\"},\"credentials\":{\"rundeckApi\":\"rundeck_creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Rundeck\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Rundeck node docs\n",
+  "crawled_at": "2025-05-25T18:18:54.212871",
+  "readme_zh": "Rundeck节点文档配套工作流程",
+  "title_zh": "在Rundeck上执行一个作业",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Rundeck\",\"type\":\"n8n-nodes-base.rundeck\",\"position\":[450,300],\"parameters\":{\"jobid\":\"f02c7661-6f75-4ffe-958c-c0ed5f9bc9e6\"},\"credentials\":{\"rundeckApi\":\"rundeck_creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Rundeck\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1283-get-email-notifications-for-newly-uploaded-google-drive-files/",
+  "title": "Get email notifications for newly uploaded Google Drive files",
+  "author": "Tom",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Google Drive Trigger\",\"type\":\"n8n-nodes-base.googleDriveTrigger\",\"position\":[250,150],\"parameters\":{\"event\":\"fileCreated\",\"options\":{},\"triggerOn\":\"specificFolder\",\"folderToWatch\":\"1HwOAKkkgveLji8vVpW9Xrg1EsBskwMNb\"},\"credentials\":{\"googleDriveOAuth2Api\":{\"id\":\"28\",\"name\":\"Google Drive account\"}},\"typeVersion\":1},{\"name\":\"Send Email\",\"type\":\"n8n-nodes-base.emailSend\",\"position\":[450,150],\"parameters\":{\"text\":\"=A file in your Google Drive file folder has been created: {{$json[\\\"name\\\"]}}\",\"options\":{},\"subject\":\"File Update\",\"toEmail\":\"mutedjam@n8n.io\",\"fromEmail\":\"mutedjam@n8n.io\"},\"credentials\":{\"smtp\":{\"id\":\"14\",\"name\":\"SMTP account\"}},\"typeVersion\":1}],\"connections\":{\"Google Drive Trigger\":{\"main\":[[{\"node\":\"Send Email\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow sends out email notifications when a new file has been uploaded to Google Drive.\n\n![](https://docs.n8n.io/assets/img/workflow.44f43fab.png)\n\nThe workflow uses two nodes:\n\n  * **Google Drive Trigger** : This node will trigger the workflow whenever a new file has been uploaded to a given folder\n  * **Send Email** : This node sends out the email using data from the previous Google Drive Trigger node.\n\n\n",
+  "crawled_at": "2025-05-25T19:30:47.143518",
+  "readme_zh": "当有新文件上传至Google Drive时，此工作流会发送电子邮件通知。\n\n![](https://docs.n8n.io/assets/img/workflow.44f43fab.png)\n\n该工作流包含两个节点：\n\n  * **Google Drive触发器**：当指定文件夹中有新文件上传时，此节点将触发工作流\n  * **发送邮件**：此节点利用前一个Google Drive触发器节点提供的数据发送电子邮件",
+  "title_zh": "获取新上传至Google Drive文件的电子邮件通知",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Google Drive Trigger\",\"type\":\"n8n-nodes-base.googleDriveTrigger\",\"position\":[250,150],\"parameters\":{\"event\":\"fileCreated\",\"options\":{},\"triggerOn\":\"specificFolder\",\"folderToWatch\":\"1HwOAKkkgveLji8vVpW9Xrg1EsBskwMNb\"},\"credentials\":{\"googleDriveOAuth2Api\":{\"id\":\"28\",\"name\":\"Google Drive account\"}},\"typeVersion\":1},{\"name\":\"Send Email\",\"type\":\"n8n-nodes-base.emailSend\",\"position\":[450,150],\"parameters\":{\"text\":\"=A file in your Google Drive file folder has been created: {{$json[\\\"name\\\"]}}\",\"options\":{},\"subject\":\"File Update\",\"toEmail\":\"mutedjam@n8n.io\",\"fromEmail\":\"mutedjam@n8n.io\"},\"credentials\":{\"smtp\":{\"id\":\"14\",\"name\":\"SMTP account\"}},\"typeVersion\":1}],\"connections\":{\"Google Drive Trigger\":{\"main\":[[{\"node\":\"Send Email\",\"type\":\"main\",\"index\":0}]]}}}"
+}

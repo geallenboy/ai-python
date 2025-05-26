@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/458-run-a-sql-query-on-postgres/",
+  "title": "Run a SQL query on Postgres",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Postgres\",\"type\":\"n8n-nodes-base.postgres\",\"position\":[450,300],\"parameters\":{\"query\":\"SELECT * from sometable;\",\"operation\":\"executeQuery\"},\"credentials\":{\"postgres\":\"postgres-creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Postgres\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion Workflow for Postgres node docs\n",
+  "crawled_at": "2025-05-25T18:07:52.684748",
+  "readme_zh": "Postgres节点文档配套工作流程",
+  "title_zh": "在Postgres上执行SQL查询",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Postgres\",\"type\":\"n8n-nodes-base.postgres\",\"position\":[450,300],\"parameters\":{\"query\":\"SELECT * from sometable;\",\"operation\":\"executeQuery\"},\"credentials\":{\"postgres\":\"postgres-creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Postgres\",\"type\":\"main\",\"index\":0}]]}}}"
+}

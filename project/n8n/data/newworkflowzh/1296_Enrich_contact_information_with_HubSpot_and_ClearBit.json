@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1296-enrich-contact-information-with-hubspot-and-clearbit/",
+  "title": "Enrich contact information with HubSpot and ClearBit",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Clearbit\",\"type\":\"n8n-nodes-base.clearbit\",\"position\":[850,300],\"parameters\":{\"email\":\"={{$json[\\\"properties\\\"][\\\"email\\\"][\\\"value\\\"]}}\",\"resource\":\"person\",\"additionalFields\":{}},\"credentials\":{\"clearbitApi\":{\"id\":\"296\",\"name\":\"Clearbit account\"}},\"typeVersion\":1},{\"name\":\"Hubspot Trigger\",\"type\":\"n8n-nodes-base.hubspotTrigger\",\"position\":[450,300],\"webhookId\":\"b9c442e0-6f98-4d6f-8170-7135c4dbd850\",\"parameters\":{\"eventsUi\":{\"eventValues\":[{}]},\"additionalFields\":{}},\"credentials\":{\"hubspotDeveloperApi\":{\"id\":\"295\",\"name\":\"Hubspot Developer account\"}},\"typeVersion\":1},{\"name\":\"Get Contact\",\"type\":\"n8n-nodes-base.hubspot\",\"position\":[650,300],\"parameters\":{\"resource\":\"contact\",\"contactId\":\"={{$json[\\\"contactId\\\"]}}\",\"operation\":\"get\",\"authentication\":\"oAuth2\",\"additionalFields\":{}},\"credentials\":{\"hubspotOAuth2Api\":{\"id\":\"268\",\"name\":\"HubSpot@Test Account\"}},\"typeVersion\":1},{\"name\":\"Update Contact\",\"type\":\"n8n-nodes-base.hubspot\",\"position\":[1050,300],\"parameters\":{\"email\":\"={{$json[\\\"email\\\"]}}\",\"resource\":\"contact\",\"authentication\":\"oAuth2\",\"additionalFields\":{\"city\":\"={{$json[\\\"geo\\\"][\\\"city\\\"]}}\",\"jobTitle\":\"={{$json[\\\"employment\\\"][\\\"title\\\"]}}\",\"companyName\":\"={{$json[\\\"employment\\\"][\\\"name\\\"]}}\"}},\"credentials\":{\"hubspotOAuth2Api\":{\"id\":\"268\",\"name\":\"HubSpot@Test Account\"}},\"typeVersion\":1}],\"connections\":{\"Clearbit\":{\"main\":[[{\"node\":\"Update Contact\",\"type\":\"main\",\"index\":0}]]},\"Get Contact\":{\"main\":[[{\"node\":\"Clearbit\",\"type\":\"main\",\"index\":0}]]},\"Hubspot Trigger\":{\"main\":[[{\"node\":\"Get Contact\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow enriches the information of a new contact that gets added to HubSpot.\n\n**HubSpot Trigger:** This node triggers the workflow when a new contact gets added to HubSpot.\n\n**Get Contact:** This node fetches the information of the new contact.\n\n**Clearbit:** This node returns the data of the person and the company associated with the email address.\n\n**Update Contact:** This node will update the contact with the information returned by the Clearbit node. Based on your use case, you can select which fields you want to update.\n",
+  "crawled_at": "2025-05-25T19:30:57.272704"
+}

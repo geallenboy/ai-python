@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1112-create-update-and-get-a-monitor-using-uptimerobot/",
+  "title": "Create, update, and get a monitor using UptimeRobot",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "DevOps"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"UptimeRobot2\",\"type\":\"n8n-nodes-base.uptimeRobot\",\"position\":[890,320],\"parameters\":{\"id\":\"={{$json[\\\"id\\\"]}}\",\"resource\":\"monitor\",\"operation\":\"get\"},\"credentials\":{\"uptimeRobotApi\":\"UptimeRobot API Credentials\"},\"typeVersion\":1},{\"name\":\"UptimeRobot\",\"type\":\"n8n-nodes-base.uptimeRobot\",\"position\":[490,320],\"parameters\":{\"url\":\"https://n8n.io\",\"type\":1,\"resource\":\"monitor\",\"operation\":\"create\",\"friendlyName\":\"n8n\"},\"credentials\":{\"uptimeRobotApi\":\"UptimeRobot API Credentials\"},\"typeVersion\":1},{\"name\":\"UptimeRobot1\",\"type\":\"n8n-nodes-base.uptimeRobot\",\"position\":[690,320],\"parameters\":{\"id\":\"={{$json[\\\"id\\\"]}}\",\"resource\":\"monitor\",\"operation\":\"update\",\"updateFields\":{\"friendly_name\":\"n8n website\"}},\"credentials\":{\"uptimeRobotApi\":\"UptimeRobot API Credentials\"},\"typeVersion\":1}],\"connections\":{\"UptimeRobot\":{\"main\":[[{\"node\":\"UptimeRobot1\",\"type\":\"main\",\"index\":0}]]},\"UptimeRobot1\":{\"main\":[[{\"node\":\"UptimeRobot2\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create, update, and get a monitor using the UptimeRobot node.\n\n**UptimeRobot node:** This node creates a new monitor of the type `HTTP(S)`.\n\n**UptimeRobot1 node:** This node will update the monitor that we created in the previous node.\n\n**UptimeRobot2 node:** This node will get the information of the monitor that we created in the previous node.\n",
+  "crawled_at": "2025-05-25T19:23:18.388947"
+}

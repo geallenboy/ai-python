@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1777-add-new-products-to-stripe-when-product-added-to-pipedrive/",
+  "title": "Add new products to Stripe when product added to Pipedrive",
+  "author": "n8n Team",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Product"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow adds a new product in Stripe whenever a new product has been added to Pipedrive.\n\n## Prerequisites\n\n  * Stripe account and [Stripe credentials](https://docs.n8n.io/integrations/builtin/credentials/stripe/)\n  * Pipedrive account and [Pipedrive credentials](https://docs.n8n.io/integrations/builtin/credentials/pipedrive/)\n\n\n\n## How it works\n\n  1. Pipedrive trigger node starts the workflow when a new product is added.\n  2. HTTP Request node creates a new product in Stripe using previuos input.\n  3. Merge node combines data of both Pipedrive and Stripe inputs. The output will contain the data of Pipedrive input merged with the data of Stripe input. The merge occurs based on the index of the items.\n  4. The Item Lists node splits prices to separate items.\n  5. HTTP Request node creates price records in Stripe.\n\n\n",
+  "crawled_at": "2025-05-25T20:04:35.261467"
+}

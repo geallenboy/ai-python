@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/917-receive-updates-of-the-position-of-the-iss-and-add-it-to-a-table-in-timescaledb/",
+  "title": "Receive updates of the position of the ISS and add it to a table in TimescaleDB",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"TimescaleDB\",\"type\":\"n8n-nodes-base.timescaleDb\",\"position\":[1110,260],\"parameters\":{\"table\":\"iss\",\"columns\":\"latitude, longitude, timestamp\"},\"credentials\":{\"timescaleDb\":\"TimescaleDB\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[910,260],\"parameters\":{\"values\":{\"string\":[{\"name\":\"latitude\",\"value\":\"={{$json[\\\"0\\\"][\\\"latitude\\\"]}}\"},{\"name\":\"longitude\",\"value\":\"={{$json[\\\"0\\\"][\\\"longitude\\\"]}}\"},{\"name\":\"timestamp\",\"value\":\"={{$json[\\\"0\\\"][\\\"timestamp\\\"]}}\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[710,260],\"parameters\":{\"url\":\"https://api.wheretheiss.at/v1/satellites/25544/positions\",\"options\":{},\"queryParametersUi\":{\"parameter\":[{\"name\":\"timestamps\",\"value\":\"={{Date.now()}}\"}]}},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[510,260],\"parameters\":{\"triggerTimes\":{\"item\":[{\"mode\":\"everyMinute\"}]}},\"typeVersion\":1}],\"connections\":{\"Set\":{\"main\":[[{\"node\":\"TimescaleDB\",\"type\":\"main\",\"index\":0}]]},\"Cron\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to receive updates about the positiong of the ISS and add it to a table in TimescaleDB.\n\n**Cron node:** The Cron node triggers the workflow every minute. You can configure the time based on your use-case.\n\n**HTTP Request node:** This node makes an HTTP Request to an API that returns the position of the ISS. Based on your use-case you may want to fetch data from a different URL. Enter the URL in the _**URL**_ field.\n\n**Set node:** In the Set node we set the information that we need in the workflow. Since we only need the timestamp, latitude, and longitude we set this in the node. If you need other information, you can set them in this node.\n\n**TimescaleDB node:** This node stores the information in a table named `iss`. You can use a different table as well.\n",
+  "crawled_at": "2025-05-25T19:05:21.485387"
+}

@@ -1,0 +1,24 @@
+{
+  "url": "https://n8n.io/workflows/4203-extract-structured-linkedin-profile-data-with-airtop-and-ai-parsing/",
+  "title": "Extract Structured LinkedIn Profile Data with Airtop & AI Parsing",
+  "author": "Airtop",
+  "publish_date": "Last update 6 days ago",
+  "publish_date_absolute": "2025-05-20",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "AI"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "# Extracting LinkedIn Profile Information\n\n## Use Case\n\nManually copying data from LinkedIn profiles is time-consuming and error-prone. This automation helps you extract structured, detailed information from any public LinkedIn profile—enabling fast enrichment, hiring research, or lead scoring.\n\n## What This Automation Does\n\nThis automation extracts profile details from a LinkedIn URL using the following input parameters:\n\n  * **airtop_profile** : The name of your [Airtop Profile](https://portal.airtop.ai/browser-profiles) connected to LinkedIn.\n  * **linkedin_url** : The URL of the LinkedIn profile you want to extract data from.\n\n\n\n## How It Works\n\n  1. Starts with a form trigger or via another workflow.\n  2. Assigns the LinkedIn URL and Airtop profile variables.\n  3. Opens the LinkedIn profile in a real browser session using Airtop.\n  4. Uses an AI prompt to extract structured information, including: \n     * Name, headline, location\n     * Current company and position\n     * About section, experience, and education history\n     * Skills, certifications, languages, connections, and recommendations\n  5. Returns structured JSON ready for further use or storage.\n\n\n\n## Setup Requirements\n\n  1. [Airtop API Key](https://portal.airtop.ai/api-keys) — free to generate.\n  2. An [Airtop Profile](https://portal.airtop.ai/browser-profiles) connected to LinkedIn (requires one-time login).\n\n\n\n## Next Steps\n\n  * **Sync with CRM** : Push extracted data into HubSpot, Salesforce, or Airtable for lead enrichment.\n  * **Combine with Search Automation** : Use with a LinkedIn search scraper to process profiles in bulk.\n  * **Adapt to Other Platforms** : Customize the prompt to extract structured data from GitHub, Twitter, or company sites.\n\n\n\nRead more about the [Extract Linkedin Profile Information](https://www.airtop.ai/automations/extract-linkedin-profile-information-n8n) automation.\n",
+  "crawled_at": "2025-05-26T07:05:28.953799",
+  "readme_zh": "# 领英个人资料信息提取方案\n\n## 应用场景\n\n人工复制领英个人资料数据耗时且易出错。本自动化方案可帮助您从任何公开领英档案中提取结构化详细信息，实现快速信息补全、招聘调研或潜在客户评分。\n\n## 功能说明\n\n本自动化程序通过以下输入参数从领英URL提取资料详情：\n* **airtop_profile**：您已关联领英的[Airtop浏览器配置文件](https://portal.airtop.ai/browser-profiles)\n* **linkedin_url**：待提取资料的领英个人主页URL\n\n## 运作流程\n\n1. 通过表单触发器或其他工作流启动\n2. 分配领英URL和Airtop配置文件变量\n3. 使用Airtop在真实浏览器会话中打开领英个人主页\n4. 通过AI指令提取结构化信息，包括：\n   * 姓名、职位头衔、所在地\n   * 当前任职公司及职位\n   * \"关于\"简介、工作经历和教育背景\n   * 技能、认证、语言能力、人脉数量及推荐信\n5. 输出可供直接使用的结构化JSON数据\n\n## 配置要求\n\n1. [Airtop API密钥](https://portal.airtop.ai/api-keys)（可免费生成）\n2. 已关联领英账户的[Airtop浏览器配置文件](https://portal.airtop.ai/browser-profiles)（需一次性登录验证）\n\n## 后续应用\n\n* **对接CRM系统**：将提取数据推送至HubSpot、Salesforce或Airtable完善客户档案\n* **结合搜索自动化**：与领英搜索采集器配合实现批量资料处理\n* **适配其他平台**：修改指令即可从GitHub、Twitter或企业网站提取结构化数据\n\n详细了解[领英个人资料信息提取自动化方案](https://www.airtop.ai/automations/extract-linkedin-profile-information-n8n)",
+  "title_zh": "利用Airtop与AI解析提取结构化领英资料数据",
+  "publish_date_zh": "最后更新于6天前"
+}

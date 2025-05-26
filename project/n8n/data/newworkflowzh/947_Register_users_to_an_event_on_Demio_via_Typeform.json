@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/947-register-users-to-an-event-on-demio-via-typeform/",
+  "title": "Register users to an event on Demio via Typeform",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Typeform Trigger\",\"type\":\"n8n-nodes-base.typeformTrigger\",\"position\":[510,260],\"webhookId\":\"1cbca674-78fb-402e-b225-2aa6f92b5338\",\"parameters\":{\"formId\":\"\"},\"credentials\":{\"typeformApi\":\"Typeform Burner Account\"},\"typeVersion\":1},{\"name\":\"Demio\",\"type\":\"n8n-nodes-base.demio\",\"position\":[710,260],\"parameters\":{\"email\":\"={{$json[\\\"What's your email address?\\\"]}}\",\"eventId\":357191,\"firstName\":\"={{$json[\\\"Let's start with your name.\\\"]}}\",\"operation\":\"register\",\"additionalFields\":{}},\"credentials\":{\"demioApi\":\"Demio API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Typeform Trigger\":{\"main\":[[{\"node\":\"Demio\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to register your audience to an event on Demio via a Typeform submission.\n\n**Typeform Trigger node:** This node will trigger the workflow when a form response is submitted. Based on your use-case, you may use a different platform. Replace the Typeform Trigger node with a node of that platform.\n\n**Demio node:** This node registers a user for an event. It gets the details of the users from the Typeform response.\n",
+  "crawled_at": "2025-05-25T19:07:32.653882"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/989-create-an-invoice-based-on-the-typeform-submission/",
+  "title": "Create an invoice based on the Typeform submission",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Typeform Trigger\",\"type\":\"n8n-nodes-base.typeformTrigger\",\"position\":[490,280],\"webhookId\":\"6c4b1aa0-226a-4875-bdc3-85bf2313085b\",\"parameters\":{\"formId\":\"dpr2kxSL\",\"simplifyAnswers\":false},\"credentials\":{\"typeformApi\":\"Typeform Burner Account\"},\"typeVersion\":1},{\"name\":\"APITemplate.io\",\"type\":\"n8n-nodes-base.apiTemplateIo\",\"position\":[690,280],\"parameters\":{\"options\":{\"fileName\":\"invoice.pdf\"},\"download\":true,\"resource\":\"pdf\",\"pdfTemplateId\":\"96c77b2b1ab6ac88\",\"jsonParameters\":true,\"propertiesJson\":\"={\\n  \\\"company\\\": \\\"n8n\\\",\\n  \\\"email\\\": \\\"{{$json[\\\"1\\\"][\\\"email\\\"]}}\\\",\\n  \\\"invoice_no\\\": \\\"213223444\\\",\\n  \\\"invoice_date\\\": \\\"18-03-2021\\\",\\n  \\\"invoice_due_date\\\": \\\"17-04-2021\\\",\\n  \\\"address\\\": \\\"Berlin, Germany\\\",\\n  \\\"company_bill_to\\\": \\\"{{$json[\\\"0\\\"][\\\"text\\\"]}}\\\",\\n  \\\"website\\\": \\\"https://n8n.io\\\",\\n  \\\"document_id\\\": \\\"889856789012\\\",\\n  \\\"items\\\": [\\n    {\\n      \\\"item_name\\\": \\\"{{$json[\\\"2\\\"][\\\"text\\\"]}}\\\",\\n      \\\"price\\\": \\\"EUR {{$json[\\\"3\\\"][\\\"number\\\"]}}\\\"\\n    },\\n    {\\n      \\\"item_name\\\": \\\"{{$json[\\\"4\\\"][\\\"text\\\"]}}\\\",\\n      \\\"price\\\": \\\"EUR {{$json[\\\"5\\\"][\\\"number\\\"]}}\\\"\\n    }    \\n    ]\\n}\"},\"credentials\":{\"apiTemplateIoApi\":\"APITemplate Credentials\"},\"typeVersion\":1}],\"connections\":{\"Typeform Trigger\":{\"main\":[[{\"node\":\"APITemplate.io\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create an invoice with the information received via Typeform submission.\n\n**Typeform node:** This node triggers the workflow. Whenever the form is submitted, the node triggers the workflow. We will use the information received in this node to generate the invoice.\n\n**[APITemplate.io](http://APITemplate.io) node:** This node generates the invoice using the information from the previous node.\n",
+  "crawled_at": "2025-05-25T19:11:31.354349"
+}

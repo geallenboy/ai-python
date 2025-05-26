@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/865-gathering-tasks-in-typeform-and-send-to-clickup/",
+  "title": "Gathering tasks in Typeform and send to ClickUp",
+  "author": "jason",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Using Typeform to push task requests to an n8n webhook that then categorizes the request and assigns it in ClickUp accordingly.\n\n![image.png](https://f000.backblazeb2.com/file/n8n-website-images/dcf013dda6604fef8ef3c90070ced6ed.png)\n\nIn order to get his workflow working for yourself, you will need:\n\n  * ClickUp account\n  * Typeform account\n  * Credentials for these services\n  * ClickUp configured with appropriate lists\n  * Typeform setup with options that correspond with ClickUp lists.\n\n\n\nYou may modify this workflow to meet your specific needs and configuration. This is a very simple version of this workflow and you can make it as complicated as you wish to meet your requirements.\n",
+  "crawled_at": "2025-05-25T19:00:19.200991"
+}

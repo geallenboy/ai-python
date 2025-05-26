@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/476-create-an-organization-in-affinity/",
+  "title": "Create an organization in Affinity",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"95\",\"name\":\"Create an organization in Affinity\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[400,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Affinity\",\"type\":\"n8n-nodes-base.affinity\",\"position\":[600,250],\"parameters\":{\"name\":\"\",\"domain\":\"\",\"additionalFields\":{}},\"credentials\":{\"affinityApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Affinity\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:10:02.334447",
+  "readme_zh": "您是一位翻译助手。将以下英文文本翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在Affinity中创建一个组织",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"95\",\"name\":\"Create an organization in Affinity\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[400,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Affinity\",\"type\":\"n8n-nodes-base.affinity\",\"position\":[600,250],\"parameters\":{\"name\":\"\",\"domain\":\"\",\"additionalFields\":{}},\"credentials\":{\"affinityApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Affinity\",\"type\":\"main\",\"index\":0}]]}}}"
+}

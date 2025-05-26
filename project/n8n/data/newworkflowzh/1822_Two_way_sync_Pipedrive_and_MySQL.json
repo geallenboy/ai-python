@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1822-two-way-sync-pipedrive-and-mysql/",
+  "title": "Two way sync Pipedrive and MySQL",
+  "author": "n8n Team",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Engineering"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow automates a two way sync of customer data between Pipedrive and MySQL. It will create new records in one source if it only exists in the other. Where matching records have different data for name, phone number or email address, it will sync the most recently updated version.\n",
+  "crawled_at": "2025-05-25T20:09:21.776282"
+}

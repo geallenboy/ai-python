@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1277-send-a-daily-summary-of-your-google-calendar-events-to-slack/",
+  "title": "Send a daily summary of your Google Calendar events to Slack",
+  "author": "Sami Abid",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow will trigger daily at 6am to retrieve your day's calendar events from Google Calendar and send them as a summary message to Slack.\n\nI've used a low-code method to filter the dates as I can't code much in JSON :)\n\nContact me on <https://twitter.com/sami_abid> if you have any questions!\n",
+  "crawled_at": "2025-05-25T19:30:21.439336"
+}

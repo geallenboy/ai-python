@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/848-send-a-message-on-mattermost-when-an-order-is-created-in-woocommerce/",
+  "title": "Send a message on Mattermost when an order is created in WooCommerce",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"id\":\"188\",\"name\":\"Send a message on Mattermost when an order is created in WooCommerce\",\"nodes\":[{\"name\":\"WooCommerce Trigger\",\"type\":\"n8n-nodes-base.wooCommerceTrigger\",\"position\":[550,260],\"webhookId\":\"84960a7c-cb69-4dfb-a5ed-aac12e0efbf8\",\"parameters\":{\"event\":\"order.created\"},\"credentials\":{\"wooCommerceApi\":\"woocommerce\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[750,260],\"parameters\":{\"message\":\"={{$node[\\\"WooCommerce Trigger\\\"].json[\\\"billing\\\"][\\\"first_name\\\"]}} bought {{$node[\\\"WooCommerce Trigger\\\"].json[\\\"line_items\\\"][0][\\\"name\\\"]}}!\",\"channelId\":\"pj1p95ebei8g3ro5p84kxxuuio\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"Mattermost Credentials\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"WooCommerce Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to send a message on Mattermost when an order is created in WooCommerce.\n",
+  "crawled_at": "2025-05-25T18:57:21.912210",
+  "readme_zh": "该工作流程允许您在WooCommerce中创建订单时，在Mattermost上发送一条消息。",
+  "title_zh": "在WooCommerce中创建订单时在Mattermost上发送消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"188\",\"name\":\"Send a message on Mattermost when an order is created in WooCommerce\",\"nodes\":[{\"name\":\"WooCommerce Trigger\",\"type\":\"n8n-nodes-base.wooCommerceTrigger\",\"position\":[550,260],\"webhookId\":\"84960a7c-cb69-4dfb-a5ed-aac12e0efbf8\",\"parameters\":{\"event\":\"order.created\"},\"credentials\":{\"wooCommerceApi\":\"woocommerce\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[750,260],\"parameters\":{\"message\":\"={{$node[\\\"WooCommerce Trigger\\\"].json[\\\"billing\\\"][\\\"first_name\\\"]}} bought {{$node[\\\"WooCommerce Trigger\\\"].json[\\\"line_items\\\"][0][\\\"name\\\"]}}!\",\"channelId\":\"pj1p95ebei8g3ro5p84kxxuuio\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"Mattermost Credentials\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"WooCommerce Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}"
+}

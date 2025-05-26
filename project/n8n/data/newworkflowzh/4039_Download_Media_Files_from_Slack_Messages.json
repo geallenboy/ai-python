@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/4039-download-media-files-from-slack-messages/",
+  "title": "Download Media Files from Slack Messages",
+  "author": "Usman Liaqat",
+  "publish_date": "Last update 10 days ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    },
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "{\"meta\":{\"instanceId\":\"4e229722e6c43a4914d2d66178b48335adf795d73afbee5b0ea0c52938ef4d8e\",\"templateCredsSetupCompleted\":true},\"nodes\":[{\"id\":\"0a986ad8-37ca-4869-9071-2236cefddd49\",\"name\":\"Trigger Slack File Message\",\"type\":\"n8n-nodes-base.slackTrigger\",\"position\":[-2460,-200],\"webhookId\":\"88033a8d-c5a4-4226-a742-909e005bb5b3\",\"parameters\":{\"options\":{},\"trigger\":[\"message\"],\"watchWorkspace\":true},\"credentials\":{\"slackApi\":{\"id\":\"5PavU8rt9kHN9pW4\",\"name\":\"n8n user\"}},\"typeVersion\":1},{\"id\":\"bb609575-b106-4786-8fe6-85f9eaed45c0\",\"name\":\"Download Media from Slack\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[-2100,-200],\"parameters\":{\"url\":\"={{ $('Trigger Slack File Message').item.json.files[0].url_private_download }}\",\"options\":{\"response\":{\"response\":{}}},\"authentication\":\"genericCredentialType\",\"genericAuthType\":\"httpHeaderAuth\"},\"credentials\":{\"httpHeaderAuth\":{\"id\":\"TTp4u7ld1rzfYb3s\",\"name\":\"Slack n8n\"}},\"typeVersion\":4.2},{\"id\":\"5248c9ad-adbb-419d-a193-cf97efc14541\",\"name\":\"Sticky Note\",\"type\":\"n8n-nodes-base.stickyNote\",\"position\":[-2560,-260],\"parameters\":{\"width\":320,\"height\":220,\"content\":\"This node listens for new messages in Slack that include file attachments.\"},\"typeVersion\":1},{\"id\":\"b363e861-cf22-4be9-a534-414d98190da0\",\"name\":\"Sticky Note1\",\"type\":\"n8n-nodes-base.stickyNote\",\"position\":[-2180,-260],\"parameters\":{\"width\":320,\"height\":220,\"content\":\"This node downloads the file from the Slack message using the private download URL. \"},\"typeVersion\":1}],\"pinData\":{},\"connections\":{\"Trigger Slack File Message\":{\"main\":[[{\"node\":\"Download Media from Slack\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "**Description:**  \nThis n8n workflow helps you capture Slack messages via a webhook and download attached media files (like images, documents, or videos) directly from those messages.\n\n**How it works:**\n\n  * Slack Trigger (Webhook) – Listens for new messages in a Slack channel where the app is added.\n  * HTTP Request – Uses the file's private download URL to retrieve the media securely.\n\n\n\n**Use cases:**\n\n  * Download files shared by team members in a Slack channel.\n  * Capture and process media from specific project or support channels.\n  * Prepare media for later processing, archiving, or review.\n\n\n\n**Requirements:**\n\n  * Slack app with appropriate permissions (files:read, channels:history, etc.).\n  * Slack webhook set up to listen to channel messages.\n  *     * Authenticated HTTP request to handle private Slack file URLs.\n\n\n\nThis template is ideal for users who want full control over file handling triggered by real-time Slack messages.\n",
+  "crawled_at": "2025-05-26T06:20:30.608915"
+}

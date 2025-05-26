@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/600-insert-and-read-data-from-google-sheets/",
+  "title": "Insert and read data from Google Sheets",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[650,300],\"parameters\":{\"range\":\"A:B\",\"options\":{},\"sheetId\":\"1ijnLMy6htVTX_68e2lsdGYiA5_6ZG72FXUbxAy_DC94\",\"operation\":\"append\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":\"Amudhan-GoogleSheets\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[450,300],\"parameters\":{\"values\":{\"number\":[{\"name\":\"id\"}],\"string\":[{\"name\":\"name\",\"value\":\"n8n\"}]},\"options\":{}},\"typeVersion\":1,\"alwaysOutputData\":true},{\"name\":\"Google Sheets1\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[850,300],\"parameters\":{\"range\":\"A:B\",\"options\":{},\"sheetId\":\"1ijnLMy6htVTX_68e2lsdGYiA5_6ZG72FXUbxAy_DC94\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":\"Amudhan-GoogleSheets\"},\"typeVersion\":1}],\"connections\":{\"Set\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets\":{\"main\":[[{\"node\":\"Google Sheets1\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Google Sheets node docs\n",
+  "crawled_at": "2025-05-25T18:28:07.003979",
+  "readme_zh": "Google Sheets节点文档配套工作流程",
+  "title_zh": "从Google表格中插入并读取数据",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[650,300],\"parameters\":{\"range\":\"A:B\",\"options\":{},\"sheetId\":\"1ijnLMy6htVTX_68e2lsdGYiA5_6ZG72FXUbxAy_DC94\",\"operation\":\"append\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":\"Amudhan-GoogleSheets\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[450,300],\"parameters\":{\"values\":{\"number\":[{\"name\":\"id\"}],\"string\":[{\"name\":\"name\",\"value\":\"n8n\"}]},\"options\":{}},\"typeVersion\":1,\"alwaysOutputData\":true},{\"name\":\"Google Sheets1\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[850,300],\"parameters\":{\"range\":\"A:B\",\"options\":{},\"sheetId\":\"1ijnLMy6htVTX_68e2lsdGYiA5_6ZG72FXUbxAy_DC94\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":\"Amudhan-GoogleSheets\"},\"typeVersion\":1}],\"connections\":{\"Set\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets\":{\"main\":[[{\"node\":\"Google Sheets1\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}"
+}

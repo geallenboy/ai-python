@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/659-create-a-coupon-on-paddle/",
+  "title": "Create a coupon on Paddle",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"id\":\"54\",\"name\":\"Create a coupon on Paddle\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[550,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Paddle\",\"type\":\"n8n-nodes-base.paddle\",\"position\":[750,260],\"parameters\":{\"discountAmount\":2,\"additionalFields\":{\"couponCode\":\"n8n-docs\"}},\"credentials\":{\"paddleApi\":\"paddle\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Paddle\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Paddle\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:34:56.082063",
+  "readme_zh": "您是一位翻译助手。将以下英文文本翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在Paddle上创建优惠券",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"54\",\"name\":\"Create a coupon on Paddle\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[550,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Paddle\",\"type\":\"n8n-nodes-base.paddle\",\"position\":[750,260],\"parameters\":{\"discountAmount\":2,\"additionalFields\":{\"couponCode\":\"n8n-docs\"}},\"credentials\":{\"paddleApi\":\"paddle\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Paddle\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Paddle\",\"type\":\"main\",\"index\":0}]]}}}"
+}

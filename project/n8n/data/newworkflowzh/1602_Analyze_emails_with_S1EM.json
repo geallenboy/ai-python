@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1602-analyze-emails-with-s1em/",
+  "title": "Analyze emails with S1EM",
+  "author": "v1d1an",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "SecOps"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "With workflow, you analyze Email with TheHive/Cortex\n\n<https://github.com/V1D1AN/S1EM/wiki/Soar-guide>\n",
+  "crawled_at": "2025-05-25T19:56:09.455352"
+}

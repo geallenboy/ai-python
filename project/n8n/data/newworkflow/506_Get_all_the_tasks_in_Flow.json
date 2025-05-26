@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/506-get-all-the-tasks-in-flow/",
+  "title": "Get all the tasks in Flow",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"130\",\"name\":\"Get all the tasks in Flow\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Flow\",\"type\":\"n8n-nodes-base.flow\",\"position\":[450,300],\"parameters\":{\"filters\":{},\"operation\":\"getAll\",\"returnAll\":true},\"credentials\":{\"flowApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Flow\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:15:01.098666",
+  "readme_zh": "翻译助手",
+  "title_zh": "获取流程中的所有任务",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"130\",\"name\":\"Get all the tasks in Flow\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Flow\",\"type\":\"n8n-nodes-base.flow\",\"position\":[450,300],\"parameters\":{\"filters\":{},\"operation\":\"getAll\",\"returnAll\":true},\"credentials\":{\"flowApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Flow\",\"type\":\"main\",\"index\":0}]]}}}"
+}

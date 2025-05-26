@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1111-create-transcription-jobs-using-aws-transcribe/",
+  "title": "Create transcription jobs using AWS Transcribe",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[190,160],\"parameters\":{},\"typeVersion\":1},{\"name\":\"AWS Transcribe\",\"type\":\"n8n-nodes-base.awsTranscribe\",\"position\":[590,160],\"parameters\":{\"options\":{},\"mediaFileUri\":\"=s3://{{$node[\\\"AWS S3\\\"].parameter[\\\"bucketName\\\"]}}/{{$json[\\\"Key\\\"]}}\",\"detectLanguage\":true,\"transcriptionJobName\":\"={{$json[\\\"Key\\\"].replace(/\\\\s/g,'-')}}\"},\"credentials\":{\"aws\":\"AWS Transcribe Credentials\"},\"typeVersion\":1},{\"name\":\"AWS S3\",\"type\":\"n8n-nodes-base.awsS3\",\"position\":[390,160],\"parameters\":{\"options\":{},\"operation\":\"getAll\",\"returnAll\":true,\"bucketName\":\"n8n-docs\"},\"credentials\":{\"aws\":\"AWS S3 Credentials\"},\"typeVersion\":1}],\"connections\":{\"AWS S3\":{\"main\":[[{\"node\":\"AWS Transcribe\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"AWS S3\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create transcription jobs for all your audio and video files stored in AWS S3.\n\n**AWS S3:** This node will retrieve all the files from an S3 bucket you specify.\n\n**AWS Transcribe:** This node will create a transcription job for the files that get returned by the previous node.\n",
+  "crawled_at": "2025-05-25T19:23:11.804076"
+}

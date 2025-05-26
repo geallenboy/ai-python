@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/961-create-a-campaign-add-a-contact-and-get-the-campaign-from-emelia/",
+  "title": "Create a campaign, add a contact, and get the campaign from Emelia",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Emelia\",\"type\":\"n8n-nodes-base.emelia\",\"position\":[530,310],\"parameters\":{\"operation\":\"create\",\"campaignName\":\"n8n-docs\"},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1},{\"name\":\"Emelia1\",\"type\":\"n8n-nodes-base.emelia\",\"position\":[730,310],\"parameters\":{\"operation\":\"addContact\",\"campaignId\":\"603dfd70cbe34c3c9730fd09\",\"contactEmail\":\"email@example.com\",\"additionalFields\":{\"firstName\":\"NAME\"}},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1},{\"name\":\"Emelia2\",\"type\":\"n8n-nodes-base.emelia\",\"position\":[930,310],\"parameters\":{\"campaignId\":\"={{$node[\\\"Emelia\\\"].json[\\\"_id\\\"]}}\"},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Emelia\":{\"main\":[[{\"node\":\"Emelia1\",\"type\":\"main\",\"index\":0}]]},\"Emelia1\":{\"main\":[[{\"node\":\"Emelia2\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create a campaign, add a contact, and get the campaign from Emelia.\n\n**Emelia node:** This node will create a new campaign in Emelia.\n\n**Emelia1 node:** This node will add a contact to the campaign that we created in the previous node. Based on your use-case, you can add a Google Sheets node or an Airtable node to get the email address of the contact.\n\n**Emelia2 node:** This node will get the information about the campaign that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:08:14.873015",
+  "readme_zh": "该工作流支持您在Emelia中创建营销活动、添加联系人并获取活动详情。\n\n**Emelia节点：** 此节点将在Emelia中创建新的营销活动。\n\n**Emelia1节点：** 此节点会将联系人添加至前序节点创建的活动。根据实际需求，您可接入Google Sheets节点或Airtable节点以获取联系人邮箱地址。\n\n**Emelia2节点：** 此节点将获取我们先前创建的营销活动信息。",
+  "title_zh": "创建活动，添加联系人，并从Emelia获取活动",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Emelia\",\"type\":\"n8n-nodes-base.emelia\",\"position\":[530,310],\"parameters\":{\"operation\":\"create\",\"campaignName\":\"n8n-docs\"},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1},{\"name\":\"Emelia1\",\"type\":\"n8n-nodes-base.emelia\",\"position\":[730,310],\"parameters\":{\"operation\":\"addContact\",\"campaignId\":\"603dfd70cbe34c3c9730fd09\",\"contactEmail\":\"email@example.com\",\"additionalFields\":{\"firstName\":\"NAME\"}},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1},{\"name\":\"Emelia2\",\"type\":\"n8n-nodes-base.emelia\",\"position\":[930,310],\"parameters\":{\"campaignId\":\"={{$node[\\\"Emelia\\\"].json[\\\"_id\\\"]}}\"},\"credentials\":{\"emeliaApi\":\"Emelia API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Emelia\":{\"main\":[[{\"node\":\"Emelia1\",\"type\":\"main\",\"index\":0}]]},\"Emelia1\":{\"main\":[[{\"node\":\"Emelia2\",\"type\":\"main\",\"index\":0}]]}}}"
+}

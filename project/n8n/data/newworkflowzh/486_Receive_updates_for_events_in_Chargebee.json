@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/486-receive-updates-for-events-in-chargebee/",
+  "title": "Receive updates for events in Chargebee",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    },
+    {
+      "name": "Product"
+    }
+  ],
+  "workflow_json": "{\"id\":\"108\",\"name\":\"Receive updates for events in Chargebee\",\"nodes\":[{\"name\":\"Chargebee Trigger\",\"type\":\"n8n-nodes-base.chargebeeTrigger\",\"position\":[700,250],\"parameters\":{\"events\":[\"*\"]},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:12:26.765413"
+}

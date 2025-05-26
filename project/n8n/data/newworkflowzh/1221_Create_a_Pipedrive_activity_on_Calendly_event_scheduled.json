@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1221-create-a-pipedrive-activity-on-calendly-event-scheduled/",
+  "title": "Create a Pipedrive activity on Calendly event scheduled",
+  "author": "Lorena",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Support"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow is triggered when a meeting is scheduled via Calendly. Then, an activity is automatically created in Pipedrive and 15 minutes after the end of the meeting, a message is sent to the interviewer in Slack, reminding them to write down their notes and insights from the meeting.\n",
+  "crawled_at": "2025-05-25T19:26:24.577768"
+}

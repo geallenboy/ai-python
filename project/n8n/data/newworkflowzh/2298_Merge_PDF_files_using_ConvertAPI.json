@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/2298-merge-pdf-files-using-convertapi/",
+  "title": "Merge PDF files using ConvertAPI",
+  "author": "ConvertAPI",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## Who is this for?\n\nFor developers and organizations that need to combine **PDF** files.\n\n## What problem is this workflow solving?\n\nPDF file merging problem.\n\n## What this workflow does\n\n  1. Downloads two PDF files from the web.\n  2. Merges two PDF files into one.\n  3. Stores the PDF file in the local file system.\n\n\n\n## How to customize this workflow to your needs\n\n  1. Open the `PDF merge HTTP Request` node.\n  2. Adjust the URL parameter (all endpoints can be found [here](https://www.convertapi.com/api)).\n  3. Add your `secret` to the `Query Auth account` parameter. Please create a [ConvertAPI account to get an authentication secret](https://www.convertapi.com/a/signin).\n  4. Optionally, additional `Body Parameters` can be added for the converter.\n\n\n",
+  "crawled_at": "2025-05-25T22:36:35.431945"
+}

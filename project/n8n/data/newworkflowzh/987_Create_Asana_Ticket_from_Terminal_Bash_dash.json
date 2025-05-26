@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/987-create-asana-ticket-from-terminal-bash-dash/",
+  "title": "Create Asana Ticket from Terminal Bash-dash",
+  "author": "Jan Oberhauser",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Asana\",\"type\":\"n8n-nodes-base.asana\",\"position\":[450,500],\"parameters\":{\"name\":\"={{$json[\\\"query\\\"][\\\"parameter\\\"]}}\",\"workspace\":\"\",\"authentication\":\"oAuth2\",\"otherProperties\":{\"projects\":[\"\"]}},\"credentials\":{\"asanaOAuth2Api\":\"\"},\"typeVersion\":1},{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[250,500],\"webhookId\":\"b43ae7e2-a058-4738-8d49-ac76db6e8166\",\"parameters\":{\"path\":\"asana\",\"options\":{\"responsePropertyName\":\"response\"},\"responseMode\":\"lastNode\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[650,500],\"parameters\":{\"values\":{\"string\":[{\"name\":\"response\",\"value\":\"=Created Asana Task:  {{$json[\\\"permalink_url\\\"]}}\"}]},\"options\":{}},\"typeVersion\":1}],\"connections\":{\"Asana\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]},\"Webhook\":{\"main\":[[{\"node\":\"Asana\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows creating a new Asana task via [bash-dash](https://github.com/n8n-io/bash-dash)\n\n**Example usage:**  \n\\- asana My new task\n\n**Example bash-dash config:**  \ncommands[asana]=\"<http://localhost:5678/webhook/asana>\"\n",
+  "crawled_at": "2025-05-25T19:11:03.087788"
+}

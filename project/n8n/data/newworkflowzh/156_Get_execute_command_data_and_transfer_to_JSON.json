@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/156-get-execute-command-data-and-transfer-to-json/",
+  "title": "Get execute command data and transfer to JSON",
+  "author": "jan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Execute Command\",\"type\":\"n8n-nodes-base.executeCommand\",\"position\":[600,350],\"parameters\":{\"command\":\"echo \\\"{ \\\\\\\"value1\\\\\\\": true, \\\\\\\"value2\\\\\\\": 1 }\\\"\"},\"typeVersion\":1},{\"name\":\"IF\",\"type\":\"n8n-nodes-base.if\",\"position\":[800,450],\"parameters\":{\"conditions\":{\"boolean\":[{\"value1\":\"={{JSON.parse($node[\\\"Execute Command\\\"].data[\\\"stdout\\\"]).value1}}\",\"value2\":true}]}},\"typeVersion\":1},{\"name\":\"To Flow Data\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[800,250],\"parameters\":{\"functionCode\":\"item = JSON.parse(item.stdout);\\nreturn item;\"},\"typeVersion\":1}],\"connections\":{\"Execute Command\":{\"main\":[[{\"node\":\"To Flow Data\",\"type\":\"main\",\"index\":0},{\"node\":\"IF\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Shows how it is possible to use the data of a command line tool which returns JSON.\n\nExample shows how:\n\n  1. to bring data in flow\n  2. to use data directly in a node\n\n\n\nNote that the 'execute command' node is not available on n8n Cloud.\n",
+  "crawled_at": "2025-05-25T17:58:17.679000"
+}

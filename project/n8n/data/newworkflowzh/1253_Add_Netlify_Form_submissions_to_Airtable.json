@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1253-add-netlify-form-submissions-to-airtable/",
+  "title": "Add Netlify Form submissions to Airtable",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Netlify Trigger\",\"type\":\"n8n-nodes-base.netlifyTrigger\",\"position\":[450,300],\"webhookId\":\"df7efc17-09bb-4409-9f6f-09bd5e59546e\",\"parameters\":{\"event\":\"submissionCreated\",\"formId\":\"615ad58f9f491e00070abac5\",\"siteId\":\"b585059c-a19a-487c-831f-c57af6f13bd1\"},\"credentials\":{\"netlifyApi\":\"Netlify account\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[650,300],\"parameters\":{\"values\":{\"string\":[{\"name\":\"Name\",\"value\":\"={{$json[\\\"name\\\"]}}\"},{\"name\":\"Email\",\"value\":\"={{$json[\\\"email\\\"]}}\"},{\"name\":\"Role\",\"value\":\"={{$json[\\\"role\\\"][0]}}\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1},{\"name\":\"Airtable\",\"type\":\"n8n-nodes-base.airtable\",\"position\":[850,300],\"parameters\":{\"table\":\"Table 1\",\"options\":{},\"operation\":\"append\",\"application\":\"apphwBsFxzjDPDBA8\"},\"credentials\":{\"airtableApi\":\"Airtable Credentials @n8n\"},\"typeVersion\":1}],\"connections\":{\"Set\":{\"main\":[[{\"node\":\"Airtable\",\"type\":\"main\",\"index\":0}]]},\"Netlify Trigger\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow demonstrates how to use the Netlify Trigger node to capture form submissions and add it Airtable. You can reuse the workflow to add the data to another similar database by replacing the Airtable node with the corresponding node.\n\n**Netlify Trigger node:** This node triggers the workflow when a new form is submitted. Select your site from the _**Site Name/ID**_ dropdown list and the form from the _**Form ID**_ dropdown list.\n\n**Set node:** This node extract the required data from the Netlify Trigger node. In this example, we only want to add the Name, Email, and Role of the user.\n\n**Airtable node:** This node appends the data to Airtable. If you want the data to Google Sheets or a database, replace this node with the corresponding node.\n",
+  "crawled_at": "2025-05-25T19:28:40.517282"
+}

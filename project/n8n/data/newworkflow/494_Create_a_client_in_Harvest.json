@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/494-create-a-client-in-harvest/",
+  "title": "Create a client in Harvest",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"id\":\"120\",\"name\":\"Create a client in Harvest\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Harvest\",\"type\":\"n8n-nodes-base.harvest\",\"position\":[450,300],\"parameters\":{\"name\":\"\",\"resource\":\"client\",\"operation\":\"create\",\"additionalFields\":{}},\"credentials\":{\"harvestApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Harvest\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:13:25.683328",
+  "readme_zh": "翻译助手",
+  "title_zh": "在 Harvest 中创建客户",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"120\",\"name\":\"Create a client in Harvest\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Harvest\",\"type\":\"n8n-nodes-base.harvest\",\"position\":[450,300],\"parameters\":{\"name\":\"\",\"resource\":\"client\",\"operation\":\"create\",\"additionalFields\":{}},\"credentials\":{\"harvestApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Harvest\",\"type\":\"main\",\"index\":0}]]}}}"
+}

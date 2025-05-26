@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/368-create-ticket-on-specific-customer-messages-in-telegram/",
+  "title": "Create ticket on specific customer messages in Telegram",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Support"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This is a workflow where a support channel on Telegram is being used to gather customer feedback. Depending on certain keywords in the customer's message, this workflow creates a ticket with a tag in your Freshdesk instance. The customer is then sent a message on Telegram and an item is created on [Monday.com](http://Monday.com) for tracking.\n",
+  "crawled_at": "2025-05-25T18:02:33.404313"
+}

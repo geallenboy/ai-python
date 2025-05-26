@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/412-create-a-contact-in-activecampaign/",
+  "title": "Create a contact in ActiveCampaign",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"name\":\"\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"ActiveCampaign\",\"type\":\"n8n-nodes-base.activeCampaign\",\"position\":[800,250],\"parameters\":{\"email\":\"\",\"updateIfExists\":true,\"additionalFields\":{\"lastName\":\"\",\"firstName\":\"\"}},\"credentials\":{\"activeCampaignApi\":\"ActiveCampaign\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"ActiveCampaign\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:04:40.784291",
+  "readme_zh": "我是一个翻译助手。将以下文本从英文翻译成中文。只提供翻译，无需其他内容。",
+  "title_zh": "在ActiveCampaign中创建联系人",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"name\":\"\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"ActiveCampaign\",\"type\":\"n8n-nodes-base.activeCampaign\",\"position\":[800,250],\"parameters\":{\"email\":\"\",\"updateIfExists\":true,\"additionalFields\":{\"lastName\":\"\",\"firstName\":\"\"}},\"credentials\":{\"activeCampaignApi\":\"ActiveCampaign\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"ActiveCampaign\",\"type\":\"main\",\"index\":0}]]}}}"
+}

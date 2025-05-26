@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/852-create-update-and-get-a-subscriber-using-the-e-goi-node/",
+  "title": "Create, update, and get a subscriber using the e-goi node",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"189\",\"name\":\"Create, update, and get a subscriber using the e-goi node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"e-goi\",\"type\":\"n8n-nodes-base.egoi\",\"position\":[470,300],\"parameters\":{\"list\":1,\"email\":\"nathan@testmail.com\",\"additionalFields\":{\"first_name\":\"Nathan\"}},\"credentials\":{\"egoiApi\":\"e-goi Credentials\"},\"typeVersion\":1},{\"name\":\"e-goi1\",\"type\":\"n8n-nodes-base.egoi\",\"position\":[670,300],\"parameters\":{\"list\":\"={{$node[\\\"e-goi\\\"].parameter[\\\"list\\\"]}}\",\"contactId\":\"={{$node[\\\"e-goi\\\"].json[\\\"base\\\"][\\\"contact_id\\\"]}}\",\"operation\":\"update\",\"updateFields\":{\"first_name\":\"Nat\"}},\"credentials\":{\"egoiApi\":\"e-goi Credentials\"},\"typeVersion\":1},{\"name\":\"e-goi2\",\"type\":\"n8n-nodes-base.egoi\",\"position\":[870,300],\"parameters\":{\"list\":\"={{$node[\\\"e-goi\\\"].parameter[\\\"list\\\"]}}\",\"contactId\":\"={{$node[\\\"e-goi1\\\"].json[\\\"base\\\"][\\\"contact_id\\\"]}}\",\"operation\":\"get\"},\"credentials\":{\"egoiApi\":\"e-goi Credentials\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"e-goi\":{\"main\":[[{\"node\":\"e-goi1\",\"type\":\"main\",\"index\":0}]]},\"e-goi1\":{\"main\":[[{\"node\":\"e-goi2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"e-goi\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create, update, and get a subscriber using the E-goi node.\n",
+  "crawled_at": "2025-05-25T18:57:45.780955",
+  "readme_zh": "该工作流程允许您使用E-goi节点创建、更新和获取订阅者信息。",
+  "title_zh": "使用e-goi节点创建、更新和获取订阅者",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"189\",\"name\":\"Create, update, and get a subscriber using the e-goi node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"e-goi\",\"type\":\"n8n-nodes-base.egoi\",\"position\":[470,300],\"parameters\":{\"list\":1,\"email\":\"nathan@testmail.com\",\"additionalFields\":{\"first_name\":\"Nathan\"}},\"credentials\":{\"egoiApi\":\"e-goi Credentials\"},\"typeVersion\":1},{\"name\":\"e-goi1\",\"type\":\"n8n-nodes-base.egoi\",\"position\":[670,300],\"parameters\":{\"list\":\"={{$node[\\\"e-goi\\\"].parameter[\\\"list\\\"]}}\",\"contactId\":\"={{$node[\\\"e-goi\\\"].json[\\\"base\\\"][\\\"contact_id\\\"]}}\",\"operation\":\"update\",\"updateFields\":{\"first_name\":\"Nat\"}},\"credentials\":{\"egoiApi\":\"e-goi Credentials\"},\"typeVersion\":1},{\"name\":\"e-goi2\",\"type\":\"n8n-nodes-base.egoi\",\"position\":[870,300],\"parameters\":{\"list\":\"={{$node[\\\"e-goi\\\"].parameter[\\\"list\\\"]}}\",\"contactId\":\"={{$node[\\\"e-goi1\\\"].json[\\\"base\\\"][\\\"contact_id\\\"]}}\",\"operation\":\"get\"},\"credentials\":{\"egoiApi\":\"e-goi Credentials\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"e-goi\":{\"main\":[[{\"node\":\"e-goi1\",\"type\":\"main\",\"index\":0}]]},\"e-goi1\":{\"main\":[[{\"node\":\"e-goi2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"e-goi\",\"type\":\"main\",\"index\":0}]]}}}"
+}

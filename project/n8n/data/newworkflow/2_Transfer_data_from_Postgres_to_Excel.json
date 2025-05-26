@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/2-transfer-data-from-postgres-to-excel/",
+  "title": "Transfer data from Postgres to Excel",
+  "author": "Jan Oberhauser",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Run Query\",\"type\":\"n8n-nodes-base.postgres\",\"position\":[450,450],\"parameters\":{\"query\":\"SELECT name, ean FROM product\",\"operation\":\"executeQuery\"},\"credentials\":{\"postgres\":\"postgres\"},\"typeVersion\":1},{\"name\":\"Spreadsheet File\",\"type\":\"n8n-nodes-base.spreadsheetFile\",\"position\":[600,450],\"parameters\":{\"operation\":\"toFile\"},\"typeVersion\":1},{\"name\":\"Write Binary File\",\"type\":\"n8n-nodes-base.writeBinaryFile\",\"position\":[750,450],\"parameters\":{\"fileName\":\"spreadsheet.xls\"},\"typeVersion\":1}],\"connections\":{\"Run Query\":{\"main\":[[{\"node\":\"Spreadsheet File\",\"type\":\"main\",\"index\":0}]]},\"Spreadsheet File\":{\"main\":[[{\"node\":\"Write Binary File\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "  1. Read data from Postgres\n  2. Converting it to XLS\n  3. Save it to disk\n\n\n",
+  "readme_zh": "1. 从Postgres读取数据  \n2. 转换为XLS格式  \n3. 保存到磁盘",
+  "title_zh": "将数据从Postgres导出到Excel",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Run Query\",\"type\":\"n8n-nodes-base.postgres\",\"position\":[450,450],\"parameters\":{\"query\":\"SELECT name, ean FROM product\",\"operation\":\"executeQuery\"},\"credentials\":{\"postgres\":\"postgres\"},\"typeVersion\":1},{\"name\":\"Spreadsheet File\",\"type\":\"n8n-nodes-base.spreadsheetFile\",\"position\":[600,450],\"parameters\":{\"operation\":\"toFile\"},\"typeVersion\":1},{\"name\":\"Write Binary File\",\"type\":\"n8n-nodes-base.writeBinaryFile\",\"position\":[750,450],\"parameters\":{\"fileName\":\"spreadsheet.xls\"},\"typeVersion\":1}],\"connections\":{\"Run Query\":{\"main\":[[{\"node\":\"Spreadsheet File\",\"type\":\"main\",\"index\":0}]]},\"Spreadsheet File\":{\"main\":[[{\"node\":\"Write Binary File\",\"type\":\"main\",\"index\":0}]]}}}"
+}

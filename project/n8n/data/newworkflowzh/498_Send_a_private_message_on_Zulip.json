@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/498-send-a-private-message-on-zulip/",
+  "title": "Send a private message on Zulip",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"126\",\"name\":\"Send a private message on Zulip\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Zulip\",\"type\":\"n8n-nodes-base.zulip\",\"position\":[450,300],\"parameters\":{\"to\":[]},\"credentials\":{\"zulipApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Zulip\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:14:01.020223"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/667-send-an-sms-using-the-mocean-node/",
+  "title": "Send an SMS using the Mocean node",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"59\",\"name\":\"Send an SMS using the Mocean node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[590,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Mocean\",\"type\":\"n8n-nodes-base.mocean\",\"position\":[790,260],\"parameters\":{\"to\":\"\",\"from\":\"\",\"message\":\"\"},\"credentials\":{\"moceanApi\":\"mocean\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Mocean\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:36:18.849859"
+}

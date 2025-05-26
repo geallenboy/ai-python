@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/703-receive-updates-when-a-form-is-submitted-in-wufoo/",
+  "title": "Receive updates when a form is submitted in Wufoo",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"78\",\"name\":\"Receive updates when a form is submitted in Wufoo\",\"nodes\":[{\"name\":\"Wufoo Trigger\",\"type\":\"n8n-nodes-base.wufooTrigger\",\"position\":[1290,140],\"webhookId\":\"106376c5-b49c-412f-8463-4db23a23c057\",\"parameters\":{\"form\":\"n8n\"},\"credentials\":{\"wufooApi\":\"wufoo\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:40:26.167107",
+  "readme_zh": "翻译助手",
+  "title_zh": "在Wufoo表单提交时接收更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"78\",\"name\":\"Receive updates when a form is submitted in Wufoo\",\"nodes\":[{\"name\":\"Wufoo Trigger\",\"type\":\"n8n-nodes-base.wufooTrigger\",\"position\":[1290,140],\"webhookId\":\"106376c5-b49c-412f-8463-4db23a23c057\",\"parameters\":{\"form\":\"n8n\"},\"credentials\":{\"wufooApi\":\"wufoo\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

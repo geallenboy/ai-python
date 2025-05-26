@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/516-catch-mailchimp-subscribe-events/",
+  "title": "Catch MailChimp subscribe events",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Mailchimp Trigger\",\"type\":\"n8n-nodes-base.mailchimpTrigger\",\"position\":[870,370],\"parameters\":{\"list\":\"0a5a4ca5de\",\"events\":[\"subscribe\"],\"sources\":[\"api\",\"admin\",\"user\"]},\"credentials\":{\"mailchimpApi\":\"mailchimp_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Mailchimp Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:16:27.845806",
+  "readme_zh": "Mailchimp触发器节点文档配套工作流程",
+  "title_zh": "捕获MailChimp订阅事件",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Mailchimp Trigger\",\"type\":\"n8n-nodes-base.mailchimpTrigger\",\"position\":[870,370],\"parameters\":{\"list\":\"0a5a4ca5de\",\"events\":[\"subscribe\"],\"sources\":[\"api\",\"admin\",\"user\"]},\"credentials\":{\"mailchimpApi\":\"mailchimp_creds\"},\"typeVersion\":1}],\"connections\":{}}"
+}

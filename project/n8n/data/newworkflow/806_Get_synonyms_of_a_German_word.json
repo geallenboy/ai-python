@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/806-get-synonyms-of-a-german-word/",
+  "title": "Get synonyms of a German word",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"157\",\"name\":\"Get synonyms of a German word\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[550,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"OpenThesaurus\",\"type\":\"n8n-nodes-base.openThesaurus\",\"position\":[750,260],\"parameters\":{\"text\":\"Hallo\",\"options\":{}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"OpenThesaurus\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:51:34.906795",
+  "readme_zh": "翻译助手",
+  "title_zh": "获取一个德语单词的同义词",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"157\",\"name\":\"Get synonyms of a German word\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[550,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"OpenThesaurus\",\"type\":\"n8n-nodes-base.openThesaurus\",\"position\":[750,260],\"parameters\":{\"text\":\"Hallo\",\"options\":{}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"OpenThesaurus\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/546-get-all-posts-from-wordpress/",
+  "title": "Get all posts from Wordpress",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Wordpress\",\"type\":\"n8n-nodes-base.wordpress\",\"position\":[450,300],\"parameters\":{\"options\":{},\"operation\":\"getAll\"},\"credentials\":{\"wordpressApi\":\"wp_creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Wordpress\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Wordpress node docs\n",
+  "crawled_at": "2025-05-25T18:19:36.762989",
+  "readme_zh": "WordPress节点文档配套工作流程",
+  "title_zh": "从Wordpress获取所有文章",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Wordpress\",\"type\":\"n8n-nodes-base.wordpress\",\"position\":[450,300],\"parameters\":{\"options\":{},\"operation\":\"getAll\"},\"credentials\":{\"wordpressApi\":\"wp_creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Wordpress\",\"type\":\"main\",\"index\":0}]]}}}"
+}

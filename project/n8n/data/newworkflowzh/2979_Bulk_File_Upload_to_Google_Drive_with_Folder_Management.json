@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/2979-bulk-file-upload-to-google-drive-with-folder-management/",
+  "title": "Bulk File Upload to Google Drive with Folder Management",
+  "author": "Julian Kaiser",
+  "publish_date": "Last update 3 months ago",
+  "publish_date_absolute": "2025-02-26",
+  "categories": [
+    {
+      "name": "HR"
+    },
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "# 🗂️ Bulk File Upload to Google Drive with Folder Management\n\n## How it works\n\n  1. User submits files and target folder name via form\n  2. Workflow checks if folder exists in Drive\n  3. Creates folder if needed or uses existing one\n  4. Processes and uploads all files maintaining structure\n\n\n\n## Set up steps (Est. 10-15 mins)\n\n  1. Set up Google Drive credentials in n8n\n  2. Replace parent folder ID in search query with your Drive folder ID\n  3. Configure form node with: \n     * Multiple file upload field\n     * Folder name text field\n  4. Test workflow with sample files\n\n\n\n💡 Detailed configuration steps and patterns are documented in sticky notes within the workflow.\n\nPerfect for:\n\n  * Bulk file organization\n  * Automated Drive folder management\n  * File upload automation\n  * Maintaining consistent file structures\n\n\n",
+  "crawled_at": "2025-05-26T02:33:50.603153"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/545-receive-updates-for-stripe-events/",
+  "title": "Receive updates for Stripe events",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Stripe Trigger\",\"type\":\"n8n-nodes-base.stripeTrigger\",\"position\":[890,400],\"webhookId\":\"4b359a40-a292-4c58-bc15-842b4d8eb3ca\",\"parameters\":{\"events\":[\"*\"]},\"credentials\":{\"stripeApi\":\"stripe_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Stripe Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:19:28.748225",
+  "readme_zh": "Stripe触发器节点文档配套工作流程",
+  "title_zh": "接收Stripe事件的更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Stripe Trigger\",\"type\":\"n8n-nodes-base.stripeTrigger\",\"position\":[890,400],\"webhookId\":\"4b359a40-a292-4c58-bc15-842b4d8eb3ca\",\"parameters\":{\"events\":[\"*\"]},\"credentials\":{\"stripeApi\":\"stripe_creds\"},\"typeVersion\":1}],\"connections\":{}}"
+}

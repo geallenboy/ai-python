@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/440-add-a-song-to-your-spotify-queue/",
+  "title": "Add a song to your Spotify queue",
+  "author": "eem2188",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"8\",\"name\":\"Sample Spotify\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[500,310],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Spotify\",\"type\":\"n8n-nodes-base.spotify\",\"position\":[780,310],\"parameters\":{\"id\":\"spotify:track:6SPOM20nWbQSBvTwzgIzqg\"},\"credentials\":{\"spotifyOAuth2Api\":\"spotifyOAuth2\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Spotify\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:06:38.592980"
+}

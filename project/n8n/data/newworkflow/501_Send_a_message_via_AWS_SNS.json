@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/501-send-a-message-via-aws-sns/",
+  "title": "Send a message via AWS SNS",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"AWS SNS\",\"type\":\"n8n-nodes-base.awsSns\",\"position\":[450,300],\"parameters\":{\"topic\":\"n8n-rocks\",\"message\":\"This is a test message\",\"subject\":\"This is a test subject\"},\"credentials\":{\"aws\":\"aws\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"AWS SNS\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for AWS SNS node docs\n",
+  "crawled_at": "2025-05-25T18:14:30.095185",
+  "readme_zh": "AWS SNS节点文档配套工作流程",
+  "title_zh": "通过AWS SNS发送消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"AWS SNS\",\"type\":\"n8n-nodes-base.awsSns\",\"position\":[450,300],\"parameters\":{\"topic\":\"n8n-rocks\",\"message\":\"This is a test message\",\"subject\":\"This is a test subject\"},\"credentials\":{\"aws\":\"aws\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"AWS SNS\",\"type\":\"main\",\"index\":0}]]}}}"
+}

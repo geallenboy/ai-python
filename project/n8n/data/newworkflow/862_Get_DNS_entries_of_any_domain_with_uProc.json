@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/862-get-dns-entries-of-any-domain-with-uproc/",
+  "title": "Get DNS entries of any domain with uProc",
+  "author": "Miquel Colomer",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "IT Ops"
+    },
+    {
+      "name": "SecOps"
+    }
+  ],
+  "workflow_json": "{\"id\":\"113\",\"name\":\"Get DNS entries\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[240,290],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Create Domain Item\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[450,290],\"parameters\":{\"functionCode\":\"item.domain = \\\"n8n.io\\\";\\nreturn item;\"},\"typeVersion\":1},{\"name\":\"Get DNS records\",\"type\":\"n8n-nodes-base.uproc\",\"position\":[650,290],\"parameters\":{\"tool\":\"getDomainRecords\",\"group\":\"internet\",\"domain\":\"= {{$node[\\\"Create Domain Item\\\"].json[\\\"domain\\\"]}}\",\"additionalOptions\":{}},\"credentials\":{\"uprocApi\":\"miquel-uproc\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Create Domain Item\":{\"main\":[[{\"node\":\"Get DNS records\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Create Domain Item\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Do you want to control the DNS domain entries of your customers or servers?\n\nThis workflow gets DNS information of any domain using the uProc [**Get Domain DNS records tool**](https://app.uproc.io/#/tools/processor/get/domain/records).\n\nYou can use this workflow to check existing DNS records in real-time to ensure that any domain setup is correct.\n\nYou need to add your credentials (Email and API Key - real -) located at [**Integration section**](https://app.uproc.io/#/settings/integration) to n8n.\n\nYou can replace \"Create Domain Item\" with any integration containing a domain, like Google Sheets, MySQL, or Zabbix server.\n\nEvery \"uProc\" node returns multiple items with the next fields per every item:\n\n  * type: Contains the DNS record type (A, ALIAS, AAAA, CERT, CNAME, MX, NAPTR, NS, PTR, SOA, SRV, TXT, URL).\n  * values: Contains the DNS record values.\n\n\n",
+  "crawled_at": "2025-05-25T18:59:48.554714",
+  "readme_zh": "您是否希望掌控客户或服务器的DNS域名条目？\n\n此工作流利用uProc平台的[**获取域名DNS记录工具**](https://app.uproc.io/#/tools/processor/get/domain/records)，可实时获取任意域名的DNS信息。\n\n通过该工作流，您可以即时核查现有DNS记录，确保域名配置准确无误。\n\n使用前需在n8n中添加您的凭证信息（有效邮箱及API密钥），这些信息可在[**集成设置板块**](https://app.uproc.io/#/settings/integration)获取。\n\n\"创建域名条目\"节点可替换为任何包含域名的集成方案，例如Google表格、MySQL数据库或Zabbix服务器。\n\n每个\"uProc\"节点将返回包含以下字段的多条记录项：\n  * 类型：DNS记录类型（A/别名/AAAA/证书/CNAME/MX/NAPTR/NS/PTR/SOA/SRV/TXT/URL）\n  * 数值：DNS记录对应值",
+  "title_zh": "使用uProc获取任何域名的DNS记录",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"113\",\"name\":\"Get DNS entries\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[240,290],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Create Domain Item\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[450,290],\"parameters\":{\"functionCode\":\"item.domain = \\\"n8n.io\\\";\\nreturn item;\"},\"typeVersion\":1},{\"name\":\"Get DNS records\",\"type\":\"n8n-nodes-base.uproc\",\"position\":[650,290],\"parameters\":{\"tool\":\"getDomainRecords\",\"group\":\"internet\",\"domain\":\"= {{$node[\\\"Create Domain Item\\\"].json[\\\"domain\\\"]}}\",\"additionalOptions\":{}},\"credentials\":{\"uprocApi\":\"miquel-uproc\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Create Domain Item\":{\"main\":[[{\"node\":\"Get DNS records\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Create Domain Item\",\"type\":\"main\",\"index\":0}]]}}}"
+}

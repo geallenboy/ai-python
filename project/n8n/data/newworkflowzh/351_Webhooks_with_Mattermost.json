@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/351-webhooks-with-mattermost/",
+  "title": "Webhooks with Mattermost",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"13\",\"name\":\"Mattermost Webhook\",\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[340,200],\"parameters\":{\"path\":\"webhook\",\"options\":{},\"httpMethod\":\"POST\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[570,200],\"parameters\":{\"url\":\"https://www.thecocktaildb.com/api/json/v1/1/random.php\",\"options\":{}},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[770,200],\"parameters\":{\"message\":\"=Why not try {{$node[\\\"HTTP Request\\\"].json[\\\"drinks\\\"][0][\\\"strDrink\\\"]}}?\\n{{$node[\\\"HTTP Request\\\"].json[\\\"drinks\\\"][0][\\\"strInstructions\\\"]}} Serve in {{$node[\\\"HTTP Request\\\"].json[\\\"drinks\\\"][0][\\\"strGlass\\\"]}}.\",\"channelId\":\"={{$node[\\\"Webhook\\\"].json[\\\"body\\\"][\\\"channel_id\\\"]}}\",\"attachments\":[{\"image_url\":\"={{$node[\\\"HTTP Request\\\"].json[\\\"drinks\\\"][0][\\\"strDrinkThumb\\\"]}}\"}],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"Mattermost\"},\"typeVersion\":1}],\"active\":true,\"settings\":{},\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Does pretty much what [this](this) workflow does but is triggered by a slash command using a Webhook node.\n\n![image.png](https://f000.backblazeb2.com/file/n8n-website-images/b21250a65c784fc1abee02c79a56d82b.png)\n",
+  "crawled_at": "2025-05-25T18:01:26.189572"
+}

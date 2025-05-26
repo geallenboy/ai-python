@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/1132-trigger-a-build-in-travis-ci-when-code-changes-are-push-to-a-github-repo/",
+  "title": "Trigger a build in Travis CI when code changes are push to a GitHub repo",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Github Trigger\",\"type\":\"n8n-nodes-base.githubTrigger\",\"position\":[450,300],\"webhookId\":\"01518289-14b1-4a45-9d33-39be08f7a544\",\"parameters\":{\"owner\":\"n8n-io\",\"events\":[\"push\",\"pull_request\"],\"repository\":\"n8n\",\"authentication\":\"oAuth2\"},\"credentials\":{\"githubOAuth2Api\":\"GitHub Credentials\"},\"typeVersion\":1},{\"name\":\"IF\",\"type\":\"n8n-nodes-base.if\",\"position\":[650,300],\"parameters\":{\"conditions\":{\"string\":[{\"value1\":\"={{$json[\\\"headers\\\"][\\\"x-github-event\\\"]}}\",\"value2\":\"push\"},{\"value1\":\"={{$json[\\\"body\\\"][\\\"action\\\"]}}\",\"value2\":\"opened\"}]},\"combineOperation\":\"any\"},\"typeVersion\":1},{\"name\":\"TravisCI\",\"type\":\"n8n-nodes-base.travisCi\",\"position\":[850,200],\"parameters\":{\"slug\":\"={{$json[\\\"body\\\"][\\\"repository\\\"][\\\"full_name\\\"]}}\",\"branch\":\"=\",\"operation\":\"trigger\",\"additionalFields\":{}},\"credentials\":{\"travisCiApi\":\"Travis API\"},\"typeVersion\":1},{\"name\":\"NoOp\",\"type\":\"n8n-nodes-base.noOp\",\"position\":[850,400],\"parameters\":{},\"typeVersion\":1}],\"connections\":{\"IF\":{\"main\":[[{\"node\":\"TravisCI\",\"type\":\"main\",\"index\":0}],[{\"node\":\"NoOp\",\"type\":\"main\",\"index\":0}]]},\"Github Trigger\":{\"main\":[[{\"node\":\"IF\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to trigger a build in Travis CI when code changes are pushed to a GitHub repo or a pull request gets opened.\n\n**GitHub Trigger node:** This node will trigger the workflow when changes are pushed or when a pull request is created, updated, or deleted.\n\n**IF node:** This node checks for the action type. We want to trigger a build when code changes are pushed or when a pull request is opened. We don't want to build the project when a PR is closed or updated.\n\n**TravisCI node:** This node will trigger the build in Travis CI. If you're using CircleCI in your pipeline, replace the node with the CircleCI node.\n\n**NoOp node:** Adding this node is optional.\n",
+  "crawled_at": "2025-05-25T19:24:01.373061",
+  "readme_zh": "该工作流允许您在代码变更推送至GitHub仓库或开启拉取请求时，触发Travis CI的构建流程。\n\n**GitHub触发器节点**：当代码变更被推送或拉取请求被创建、更新、删除时，该节点将触发工作流。\n\n**条件判断节点**：此节点用于检测操作类型。我们仅需在代码推送或开启拉取请求时触发构建，而无需在PR关闭或更新时构建项目。\n\n**TravisCI执行节点**：该节点将触发Travis CI的构建流程。若您的流水线中使用的是CircleCI，请将此节点替换为CircleCI节点。\n\n**空操作节点**（可选）：此节点为可选项。",
+  "title_zh": "当代码更改推送到GitHub仓库时，在Travis CI中触发构建",
+  "publish_date_zh": "最后更新于9个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Github Trigger\",\"type\":\"n8n-nodes-base.githubTrigger\",\"position\":[450,300],\"webhookId\":\"01518289-14b1-4a45-9d33-39be08f7a544\",\"parameters\":{\"owner\":\"n8n-io\",\"events\":[\"push\",\"pull_request\"],\"repository\":\"n8n\",\"authentication\":\"oAuth2\"},\"credentials\":{\"githubOAuth2Api\":\"GitHub Credentials\"},\"typeVersion\":1},{\"name\":\"IF\",\"type\":\"n8n-nodes-base.if\",\"position\":[650,300],\"parameters\":{\"conditions\":{\"string\":[{\"value1\":\"={{$json[\\\"headers\\\"][\\\"x-github-event\\\"]}}\",\"value2\":\"push\"},{\"value1\":\"={{$json[\\\"body\\\"][\\\"action\\\"]}}\",\"value2\":\"opened\"}]},\"combineOperation\":\"any\"},\"typeVersion\":1},{\"name\":\"TravisCI\",\"type\":\"n8n-nodes-base.travisCi\",\"position\":[850,200],\"parameters\":{\"slug\":\"={{$json[\\\"body\\\"][\\\"repository\\\"][\\\"full_name\\\"]}}\",\"branch\":\"=\",\"operation\":\"trigger\",\"additionalFields\":{}},\"credentials\":{\"travisCiApi\":\"Travis API\"},\"typeVersion\":1},{\"name\":\"NoOp\",\"type\":\"n8n-nodes-base.noOp\",\"position\":[850,400],\"parameters\":{},\"typeVersion\":1}],\"connections\":{\"IF\":{\"main\":[[{\"node\":\"TravisCI\",\"type\":\"main\",\"index\":0}],[{\"node\":\"NoOp\",\"type\":\"main\",\"index\":0}]]},\"Github Trigger\":{\"main\":[[{\"node\":\"IF\",\"type\":\"main\",\"index\":0}]]}}}"
+}

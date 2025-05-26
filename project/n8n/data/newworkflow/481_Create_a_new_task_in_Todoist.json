@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/481-create-a-new-task-in-todoist/",
+  "title": "Create a new task in Todoist",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"100\",\"name\":\"Create a new task in Todoist\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[550,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Todoist\",\"type\":\"n8n-nodes-base.todoist\",\"position\":[750,250],\"parameters\":{\"content\":\"\",\"options\":{}},\"credentials\":{\"todoistApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Todoist\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:10:32.207346",
+  "readme_zh": "翻译助手",
+  "title_zh": "在Todoist中创建新任务",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"100\",\"name\":\"Create a new task in Todoist\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[550,250],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Todoist\",\"type\":\"n8n-nodes-base.todoist\",\"position\":[750,250],\"parameters\":{\"content\":\"\",\"options\":{}},\"credentials\":{\"todoistApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Todoist\",\"type\":\"main\",\"index\":0}]]}}}"
+}

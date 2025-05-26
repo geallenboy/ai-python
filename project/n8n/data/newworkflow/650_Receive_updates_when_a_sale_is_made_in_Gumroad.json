@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/650-receive-updates-when-a-sale-is-made-in-gumroad/",
+  "title": "Receive updates when a sale is made in Gumroad",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"id\":\"34\",\"name\":\"Receive updates when a sale is made in Gumroad\",\"nodes\":[{\"name\":\"Gumroad Trigger\",\"type\":\"n8n-nodes-base.gumroadTrigger\",\"position\":[1310,700],\"webhookId\":\"d72f9547-0530-4733-9e8b-3e3b1beec2eb\",\"parameters\":{\"resource\":\"sale\"},\"credentials\":{\"gumroadApi\":\"gumroad\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:33:26.997345",
+  "readme_zh": "翻译助手",
+  "title_zh": "在Gumroad上有销售时接收更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"34\",\"name\":\"Receive updates when a sale is made in Gumroad\",\"nodes\":[{\"name\":\"Gumroad Trigger\",\"type\":\"n8n-nodes-base.gumroadTrigger\",\"position\":[1310,700],\"webhookId\":\"d72f9547-0530-4733-9e8b-3e3b1beec2eb\",\"parameters\":{\"resource\":\"sale\"},\"credentials\":{\"gumroadApi\":\"gumroad\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

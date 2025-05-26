@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1416-send-a-message-to-telegram-on-a-new-item-saved-to-reader/",
+  "title": "Send a message to Telegram on a new item saved to Reader",
+  "author": "Nicolas",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## What is it\n\nThis workflow aims to build a simple bot that will send a message to a telegram channel every time there is a new saved item to the Reader.\n\nThis workflow can be easily modify to support other way of sending the notification, thanks to existing n8n nodes.\n\nWarning: **This is only for folks who already have access to the Reader, it won't work if you don't**\n\nAlso, this workflow use a file to store the last update time in order to not sync everything everytime.\n\n## Setup\n\nThe config node :\n\n  * It contains the telegram channel id\n  * It also contains the file used as storage\n\n\n\nTo get the header auth, you have to :\n\n  1. Go to the reader\n  2. Open the devtools, Option + ⌘ + J (on macOS), or Shift + CTRL + J (on Windows/Linux)\n  3. Go to network and find a `profile_details/` request, click on it\n  4. Go to Request Headers\n  5. Copy the value for \"Cookie\"\n  6. In n8n, set the name of the Header auth account to `Cookie` and the value with the one you copied before\n\n\n",
+  "crawled_at": "2025-05-25T19:40:12.744601"
+}

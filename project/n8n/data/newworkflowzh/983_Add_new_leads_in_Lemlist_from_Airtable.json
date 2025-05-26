@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/983-add-new-leads-in-lemlist-from-airtable/",
+  "title": "Add new leads in Lemlist from Airtable",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Airtable\",\"type\":\"n8n-nodes-base.airtable\",\"position\":[440,320],\"parameters\":{\"operation\":\"list\",\"additionalOptions\":{}},\"credentials\":{\"airtableApi\":\"Airtable Credentials n8n\"},\"typeVersion\":1},{\"name\":\"Lemlist\",\"type\":\"n8n-nodes-base.lemlist\",\"position\":[640,320],\"parameters\":{\"email\":\"={{$json[\\\"fields\\\"][\\\"Email\\\"]}}\",\"resource\":\"lead\",\"campaignId\":\"cam_H5pYEryq6mRKBiy5v\",\"additionalFields\":{\"firstName\":\"={{$json[\\\"fields\\\"][\\\"Name\\\"]}}\"}},\"credentials\":{\"lemlistApi\":\"Lemlist API Credentials\"},\"typeVersion\":1},{\"name\":\"Lemlist1\",\"type\":\"n8n-nodes-base.lemlist\",\"position\":[840,320],\"parameters\":{\"email\":\"={{$node[\\\"Airtable\\\"].json[\\\"fields\\\"][\\\"Email\\\"]}}\",\"resource\":\"lead\",\"operation\":\"get\"},\"credentials\":{\"lemlistApi\":\"Lemlist API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Lemlist\":{\"main\":[[{\"node\":\"Lemlist1\",\"type\":\"main\",\"index\":0}]]},\"Airtable\":{\"main\":[[{\"node\":\"Lemlist\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to add new leads in Lemlist from Airtable.\n\n**Airtable node:** This node lists all the emails that are stored in your Table. You may have the email addresses stored in a Google Sheet, CRM, or database. Replace the Airtable node with the respective node to get the list of the email addresses.\n\n**Lemlist node:** This node creates new leads for a campaign in Lemlist taking the information from the previous node.\n\n**Lemlist1 node:** This node returns the information of a lead from Lemlist.\n",
+  "crawled_at": "2025-05-25T19:10:37.849919"
+}

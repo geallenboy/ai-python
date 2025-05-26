@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/640-get-all-the-entries-from-contentful/",
+  "title": "Get all the entries from Contentful",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"name\":\"\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[150,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Contentful\",\"type\":\"n8n-nodes-base.contentful\",\"position\":[350,300],\"parameters\":{\"operation\":\"getAll\",\"returnAll\":true,\"additionalFields\":{}},\"credentials\":{\"contentfulApi\":\"contentful\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Contentful\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:32:05.778312"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/342-send-daily-affirmations-to-telegram/",
+  "title": "Send daily affirmations to Telegram",
+  "author": "malgamves",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"2\",\"name\":\"Daily Text Affirmations\",\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[350,380],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[760,380],\"parameters\":{\"url\":\"https://affirmations.dev\",\"options\":{}},\"typeVersion\":1},{\"name\":\"Telegram\",\"type\":\"n8n-nodes-base.telegram\",\"position\":[1140,380],\"parameters\":{\"text\":\"=Hey Daniel, here's your daily affirmation...\\n\\n{{$node[\\\"HTTP Request\\\"].json[\\\"affirmation\\\"]}}\",\"additionalFields\":{}},\"credentials\":{\"telegramApi\":\"Telegram Token\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"Telegram\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "![telegramworkflow.PNG](https://f000.backblazeb2.com/file/n8n-website-images/d918d8a3f5434aff87d31785a85241cb.PNG)\n\nA workflow which allows you to receive daily affirmations via Telegram by querying a REST API triggered by a Cron node.\n\nI used the [affirmations.dev](https://github.com/annthurium/affirmations) API\n",
+  "crawled_at": "2025-05-25T18:01:09.671774",
+  "readme_zh": "一个工作流，通过由Cron节点触发的REST API查询，让你能够每天在Telegram上接收励志语录。\n\n我使用了[affirmations.dev](https://github.com/annthurium/affirmations)的API。",
+  "title_zh": "每日发送肯定信息至Telegram",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"2\",\"name\":\"Daily Text Affirmations\",\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[350,380],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[760,380],\"parameters\":{\"url\":\"https://affirmations.dev\",\"options\":{}},\"typeVersion\":1},{\"name\":\"Telegram\",\"type\":\"n8n-nodes-base.telegram\",\"position\":[1140,380],\"parameters\":{\"text\":\"=Hey Daniel, here's your daily affirmation...\\n\\n{{$node[\\\"HTTP Request\\\"].json[\\\"affirmation\\\"]}}\",\"additionalFields\":{}},\"credentials\":{\"telegramApi\":\"Telegram Token\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"Telegram\",\"type\":\"main\",\"index\":0}]]}}}"
+}

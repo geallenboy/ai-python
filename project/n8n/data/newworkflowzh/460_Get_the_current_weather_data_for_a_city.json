@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/460-get-the-current-weather-data-for-a-city/",
+  "title": "Get the current weather data for a city",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"88\",\"name\":\"Get the current weather data for a city\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[450,300],\"parameters\":{\"cityName\":\"berlin,de\"},\"credentials\":{\"openWeatherMapApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"OpenWeatherMap\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:08:16.013879"
+}

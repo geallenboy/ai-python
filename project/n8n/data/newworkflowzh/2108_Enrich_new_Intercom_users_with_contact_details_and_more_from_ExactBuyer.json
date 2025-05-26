@@ -1,0 +1,24 @@
+{
+  "url": "https://n8n.io/workflows/2108-enrich-new-intercom-users-with-contact-details-and-more-from-exactbuyer/",
+  "title": "Enrich new Intercom users with contact details and more from ExactBuyer",
+  "author": "Mutasem",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Support"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## Use Case\n\nThis workflow aims to enrich new contacts in Intercom. The more relevant the Intercom profile, the more useful it is. Once active, this n8n workflow will update contact data (phone, email) as well as location data from ExactBuyer.\n\n## Setup\n\n  1. Add a webhook url in Intercom to call this workflow\n  2. Add your Exact Buyer API key\n  3. Add your Intercom API key\n  4. Activate workflow\n\n\n\n## How to adjust this template\n\nThere's plenty of interesting info that ExactBuyer returns that could be helpful. Take a look and update this workflow to add what you need.\n",
+  "crawled_at": "2025-05-25T20:57:39.250629"
+}

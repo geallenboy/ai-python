@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/995-split-in-batches-node-noitemsleft-example/",
+  "title": "Split In Batches node noItemsLeft example",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[430,310],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Function\",\"type\":\"n8n-nodes-base.function\",\"position\":[630,310],\"parameters\":{\"functionCode\":\"const newItems = [];\\n\\nfor (let i=0;i<10;i++) {\\n  newItems.push({json:{i}});\\n}\\n\\nreturn newItems;\"},\"typeVersion\":1},{\"name\":\"SplitInBatches\",\"type\":\"n8n-nodes-base.splitInBatches\",\"position\":[830,310],\"parameters\":{\"options\":{},\"batchSize\":1},\"typeVersion\":1},{\"name\":\"IF\",\"type\":\"n8n-nodes-base.if\",\"position\":[1030,460],\"parameters\":{\"conditions\":{\"boolean\":[{\"value1\":true,\"value2\":\"={{$node[\\\"SplitInBatches\\\"].context[\\\"noItemsLeft\\\"]}}\"}]}},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[1230,360],\"parameters\":{\"values\":{\"string\":[{\"name\":\"Message\",\"value\":\"No Items Left\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1}],\"connections\":{\"IF\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}],[{\"node\":\"SplitInBatches\",\"type\":\"main\",\"index\":0}]]},\"Function\":{\"main\":[[{\"node\":\"SplitInBatches\",\"type\":\"main\",\"index\":0}]]},\"SplitInBatches\":{\"main\":[[{\"node\":\"IF\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Function\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow demonstrates how to use `noItemsLeft` to check if there are items left to be processed by the SplitInBatches node.\n\n**Function node:** This node generates mock data for the workflow. Replace it with the node whose data you want to split into batches.\n\n**SplitInBatches node:** This node splits the data with the batch size equal to `1`. Based on your use-case, set the value of the _**Batch Size**_.\n\n**IF node:** This node check if all the data by the SplitInBatches are not processed or not. It uses the expression `{{$node[\"SplitInBatches\"].context[\"noItemsLeft\"]}}` which returns a boolean value.  \nIf there is data yet to be processed, the expression will return `false`, otherwise `true`.\n\n**Set node:** This node prints a message `No Items Left`. Based on your use-case, connect the false output of the _IF_ node to the input of the node you want to execute, after the data is processed by the _SplitInBatches_ node.\n",
+  "crawled_at": "2025-05-25T19:12:46.263662"
+}

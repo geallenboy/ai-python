@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/521-receive-updates-on-emails-sent-via-mailjet/",
+  "title": "Receive updates on emails sent via Mailjet",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Mailjet Trigger\",\"type\":\"n8n-nodes-base.mailjetTrigger\",\"position\":[530,400],\"parameters\":{\"event\":\"sent\"},\"credentials\":{\"mailjetEmailApi\":\"mailjet creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Mailjet Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:17:07.143660"
+}

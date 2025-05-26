@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/513-receive-messages-for-an-activemq-queue/",
+  "title": "Receive messages for an ActiveMQ queue",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "{\"id\":\"135\",\"name\":\"Receive messages for an ActiveMQ queue via AMQP Trigger\",\"nodes\":[{\"name\":\"AMQP Trigger\",\"type\":\"n8n-nodes-base.amqpTrigger\",\"position\":[650,200],\"parameters\":{\"sink\":\"\"},\"credentials\":{\"amqp\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:16:05.927546"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/418-cross-post-your-blog-posts/",
+  "title": "Cross-post your blog posts",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Medium\",\"type\":\"n8n-nodes-base.medium\",\"position\":[650,450],\"parameters\":{\"title\":\"={{$json[\\\"body\\\"][\\\"entry\\\"][\\\"Title\\\"]}}\",\"content\":\"={{$json[\\\"body\\\"][\\\"entry\\\"][\\\"PostContent\\\"]}}\",\"contentFormat\":\"markdown\",\"additionalFields\":{}},\"credentials\":{\"mediumApi\":\"Medium Credentials\"},\"typeVersion\":1},{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[450,300],\"webhookId\":\"\",\"parameters\":{\"path\":\"\",\"options\":{},\"httpMethod\":\"POST\",\"authentication\":\"headerAuth\"},\"credentials\":{\"httpHeaderAuth\":\"Strapi Webhook Credentials\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[650,200],\"parameters\":{\"url\":\"https://dev.to/api/articles\",\"options\":{},\"requestMethod\":\"POST\",\"authentication\":\"headerAuth\",\"jsonParameters\":true,\"bodyParametersJson\":\"={\\n\\t\\\"article\\\": {\\n\\t\\t\\\"title\\\": \\\"{{$json[\\\"body\\\"][\\\"entry\\\"][\\\"Title\\\"]}}\\\",\\n\\t\\t\\\"published\\\": true,\\n\\t\\t\\\"body_markdown\\\": \\\"{{$json[\\\"body\\\"][\\\"entry\\\"][\\\"PostContent\\\"]}}\\\",\\n\\t\\t\\\"tags\\\":[\\\"{{$json[\\\"body\\\"][\\\"entry\\\"][\\\"Tag\\\"]}}\\\"]\\n\\t}\\n}\",\"headerParametersJson\":\"{\\\"Content-Type\\\": \\\"application/json\\\"}\"},\"credentials\":{\"httpHeaderAuth\":\"Dev.to Credentials\"},\"typeVersion\":1}],\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0},{\"node\":\"Medium\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow uses [Strapi](https://strapi.io/) as a CMS and then cross posts new blog posts to [Medium](https://medium.com/) and [Dev.to](https://dev.to/).\n",
+  "crawled_at": "2025-05-25T18:04:56.301633",
+  "readme_zh": "该工作流程采用[Strapi](https://strapi.io/)作为内容管理系统，随后将新博客文章同步发布至[Medium](https://medium.com/)和[Dev.to](https://dev.to/)平台。",
+  "title_zh": "交叉发布你的博客文章",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Medium\",\"type\":\"n8n-nodes-base.medium\",\"position\":[650,450],\"parameters\":{\"title\":\"={{$json[\\\"body\\\"][\\\"entry\\\"][\\\"Title\\\"]}}\",\"content\":\"={{$json[\\\"body\\\"][\\\"entry\\\"][\\\"PostContent\\\"]}}\",\"contentFormat\":\"markdown\",\"additionalFields\":{}},\"credentials\":{\"mediumApi\":\"Medium Credentials\"},\"typeVersion\":1},{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[450,300],\"webhookId\":\"\",\"parameters\":{\"path\":\"\",\"options\":{},\"httpMethod\":\"POST\",\"authentication\":\"headerAuth\"},\"credentials\":{\"httpHeaderAuth\":\"Strapi Webhook Credentials\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[650,200],\"parameters\":{\"url\":\"https://dev.to/api/articles\",\"options\":{},\"requestMethod\":\"POST\",\"authentication\":\"headerAuth\",\"jsonParameters\":true,\"bodyParametersJson\":\"={\\n\\t\\\"article\\\": {\\n\\t\\t\\\"title\\\": \\\"{{$json[\\\"body\\\"][\\\"entry\\\"][\\\"Title\\\"]}}\\\",\\n\\t\\t\\\"published\\\": true,\\n\\t\\t\\\"body_markdown\\\": \\\"{{$json[\\\"body\\\"][\\\"entry\\\"][\\\"PostContent\\\"]}}\\\",\\n\\t\\t\\\"tags\\\":[\\\"{{$json[\\\"body\\\"][\\\"entry\\\"][\\\"Tag\\\"]}}\\\"]\\n\\t}\\n}\",\"headerParametersJson\":\"{\\\"Content-Type\\\": \\\"application/json\\\"}\"},\"credentials\":{\"httpHeaderAuth\":\"Dev.to Credentials\"},\"typeVersion\":1}],\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0},{\"node\":\"Medium\",\"type\":\"main\",\"index\":0}]]}}}"
+}

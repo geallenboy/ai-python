@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/2990-generate-text-images-from-the-free-dummyjson-api-using-the-http-request-node/",
+  "title": "Generate Text Images from the Free DummyJSON API Using the HTTP Request Node",
+  "author": "Akram Kadri",
+  "publish_date": "Last update 3 months ago",
+  "publish_date_absolute": "2025-02-26",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## Who is this for?\n\nThis workflow template is ideal for marketers, designers, content creators, and developers who need to generate custom text-based images dynamically. Whether you want to create social media graphics, placeholder images, or text-based LinkedIn carousels, this workflow provides a simple, no-code solution using an API that requires no authentication.\n\n## What problem does this workflow solve?\n\nCreating text-based images often requires design software or complex integrations with graphic tools. This workflow eliminates that hassle by allowing users to generate images with custom text, font styles, colors, and background colors using a simple HTTP request. It’s perfect for automating image generation without relying on external tools or manual effort.\n\n## What this workflow does\n\nThis workflow leverages an HTTP request to a free API that generates text-based images dynamically. Here's what it enables you to do:\n\n  * Define custom image text\n  * Set image dimensions (width x height)\n  * Choose a background color and text color using hex codes\n  * Select a font family and font size\n  * Specify the image format (PNG, JPG, or WebP)\n\n\n\nThe generated image can be used immediately, making it ideal for automating content creation workflows.\n\n### Setup\n\n  1. Open the workflow in n8n.\n  2. Modify the Set node to define your preferred image properties:\n\n\n    \n    \n    - text: The message displayed on the image.\n    - size: Image dimensions (e.g., 500x300 pixels).\n    - backgroundColor: Hex color code for the background.\n    - textColor: Hex color code for the text.\n    - fontFamily: Select from available font options (e.g., Pacifico, Ubuntu).\n    - fontSize: Define the text size.\n    - type: Choose the image format (PNG, JPG, or WebP).\n    \n\n  1. Execute the workflow to generate an image.\n  2. The HTTP request returns the generated image, ready for use.\n\n\n\n## How to customize this workflow\n\n  *     1. Adjust the Set node values to match your desired design.\n           \n\n  *     1. Use dynamic data for text, allowing personalized images based on user input.\n           \n\n  *     1. Automate image delivery by adding email or social media posting nodes.\n           \n\n  *     1. Integrate this workflow into larger automation sequences, such as content marketing pipelines.\n           \n\n\n\n",
+  "crawled_at": "2025-05-26T03:25:59.501720"
+}

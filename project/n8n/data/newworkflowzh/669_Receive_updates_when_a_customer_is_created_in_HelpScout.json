@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/669-receive-updates-when-a-customer-is-created-in-helpscout/",
+  "title": "Receive updates when a customer is created in HelpScout",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Support"
+    }
+  ],
+  "workflow_json": "{\"id\":\"61\",\"name\":\"Receive updates when a customer is created in HelpScout\",\"nodes\":[{\"name\":\"HelpScout Trigger\",\"type\":\"n8n-nodes-base.helpScoutTrigger\",\"position\":[690,260],\"webhookId\":\"aaaf8b3f-8247-4d98-ae65-8c6626aade95\",\"parameters\":{\"events\":[\"customer.created\"]},\"credentials\":{\"helpScoutOAuth2Api\":\"helpscout\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:36:36.126971"
+}

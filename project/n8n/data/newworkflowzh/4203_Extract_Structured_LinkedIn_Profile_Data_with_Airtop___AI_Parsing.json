@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/4203-extract-structured-linkedin-profile-data-with-airtop-and-ai-parsing/",
+  "title": "Extract Structured LinkedIn Profile Data with Airtop & AI Parsing",
+  "author": "Airtop",
+  "publish_date": "Last update 6 days ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "AI"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "# Extracting LinkedIn Profile Information\n\n## Use Case\n\nManually copying data from LinkedIn profiles is time-consuming and error-prone. This automation helps you extract structured, detailed information from any public LinkedIn profile—enabling fast enrichment, hiring research, or lead scoring.\n\n## What This Automation Does\n\nThis automation extracts profile details from a LinkedIn URL using the following input parameters:\n\n  * **airtop_profile** : The name of your [Airtop Profile](https://portal.airtop.ai/browser-profiles) connected to LinkedIn.\n  * **linkedin_url** : The URL of the LinkedIn profile you want to extract data from.\n\n\n\n## How It Works\n\n  1. Starts with a form trigger or via another workflow.\n  2. Assigns the LinkedIn URL and Airtop profile variables.\n  3. Opens the LinkedIn profile in a real browser session using Airtop.\n  4. Uses an AI prompt to extract structured information, including: \n     * Name, headline, location\n     * Current company and position\n     * About section, experience, and education history\n     * Skills, certifications, languages, connections, and recommendations\n  5. Returns structured JSON ready for further use or storage.\n\n\n\n## Setup Requirements\n\n  1. [Airtop API Key](https://portal.airtop.ai/api-keys) — free to generate.\n  2. An [Airtop Profile](https://portal.airtop.ai/browser-profiles) connected to LinkedIn (requires one-time login).\n\n\n\n## Next Steps\n\n  * **Sync with CRM** : Push extracted data into HubSpot, Salesforce, or Airtable for lead enrichment.\n  * **Combine with Search Automation** : Use with a LinkedIn search scraper to process profiles in bulk.\n  * **Adapt to Other Platforms** : Customize the prompt to extract structured data from GitHub, Twitter, or company sites.\n\n\n\nRead more about the [Extract Linkedin Profile Information](https://www.airtop.ai/automations/extract-linkedin-profile-information-n8n) automation.\n",
+  "crawled_at": "2025-05-26T07:05:28.953799"
+}

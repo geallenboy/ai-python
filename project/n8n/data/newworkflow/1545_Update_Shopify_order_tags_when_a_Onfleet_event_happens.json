@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/1545-update-shopify-order-tags-when-a-onfleet-event-happens/",
+  "title": "Update Shopify order tags when a Onfleet event happens",
+  "author": "James Li",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"name\":\"Updating Shopify tags on Onfleet events\",\"nodes\":[{\"name\":\"Onfleet Trigger\",\"type\":\"n8n-nodes-base.onfleetTrigger\",\"position\":[460,300],\"webhookId\":\"6d6a2bee-f83e-4ebd-a1d5-8708c34393dc\",\"parameters\":{\"triggerOn\":\"taskDelayed\",\"additionalFields\":{}},\"typeVersion\":1},{\"name\":\"Shopify\",\"type\":\"n8n-nodes-base.shopify\",\"position\":[680,300],\"parameters\":{\"operation\":\"update\",\"updateFields\":{\"tags\":\"\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Onfleet Trigger\":{\"main\":[[{\"node\":\"Shopify\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "**Summary**\n\nOnfleet is a last-mile delivery software that provides end-to-end route planning, dispatch, communication, and analytics to handle the heavy lifting while you can focus on your customers.\n\nThis workflow template automatically updates the tags for a Shopify Order when an Onfleet event occurs.\n\n**Configurations**\n\n  * Update the Onfleet trigger node with your own Onfleet credentials, to register for an **Onfleet API key** , please visit <https://onfleet.com/signup> to get started\n  * You can easily change which Onfleet event to listen to. Learn more about Onfleet webhooks with [Onfleet Support](https://support.onfleet.com/hc/en-us/articles/360045763852-Webhooks)\n  * Update the Shopify node with your Shopify credentials and add your own tags to the Shopify Order\n\n\n",
+  "crawled_at": "2025-05-25T19:52:41.532791",
+  "readme_zh": "**概述**\n\nOnfleet是一款终端配送管理软件，提供从路线规划、任务派发、实时通讯到数据分析的全流程解决方案，为您分担物流运营压力，让您能专注于服务客户。\n\n此工作流模板可在Onfleet触发事件时，自动更新Shopify订单的标签。\n\n**配置说明**\n\n  * 在Onfleet触发节点中配置您的账户凭证。如需注册**Onfleet API密钥**，请访问<https://onfleet.com/signup>完成开户\n  * 可自由设定需要监听的Onfleet事件类型。更多关于Onfleet网络钩子的信息，请参阅[Onfleet官方支持文档](https://support.onfleet.com/hc/en-us/articles/360045763852-Webhooks)\n  * 在Shopify节点中配置您的店铺凭证，并为Shopify订单添加自定义标签\n\n（注：根据技术文档翻译规范，保留\"webhooks\"专业术语不译，采用\"网络钩子\"这一通用译法；\"last-mile delivery\"译为\"终端配送\"符合物流行业术语；\"handle the heavy lifting\"采用意译\"分担运营压力\"更符合中文表达习惯；保持所有超链接及品牌名称原貌）",
+  "title_zh": "当Onfleet事件发生时更新Shopify订单标签",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"name\":\"Updating Shopify tags on Onfleet events\",\"nodes\":[{\"name\":\"Onfleet Trigger\",\"type\":\"n8n-nodes-base.onfleetTrigger\",\"position\":[460,300],\"webhookId\":\"6d6a2bee-f83e-4ebd-a1d5-8708c34393dc\",\"parameters\":{\"triggerOn\":\"taskDelayed\",\"additionalFields\":{}},\"typeVersion\":1},{\"name\":\"Shopify\",\"type\":\"n8n-nodes-base.shopify\",\"position\":[680,300],\"parameters\":{\"operation\":\"update\",\"updateFields\":{\"tags\":\"\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Onfleet Trigger\":{\"main\":[[{\"node\":\"Shopify\",\"type\":\"main\",\"index\":0}]]}}}"
+}

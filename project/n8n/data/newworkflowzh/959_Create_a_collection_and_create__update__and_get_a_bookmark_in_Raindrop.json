@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/959-create-a-collection-and-create-update-and-get-a-bookmark-in-raindrop/",
+  "title": "Create a collection and create, update, and get a bookmark in Raindrop",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to create a collection and create, update, and get a bookmark in Raindrop.\n\n**Raindrop node:** This node will create a new collection in Raindrop. If you already have a collection, you can skip this node.\n\n**Raindrop1 node:** This node will create a new bookmark and add it to a collection.\n\n**Raindrop2 node:** This node will update the bookmark that we created in the previous node.\n\n**Raindrop3 node:** This node will return the information about the bookmark that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:07:47.471396"
+}

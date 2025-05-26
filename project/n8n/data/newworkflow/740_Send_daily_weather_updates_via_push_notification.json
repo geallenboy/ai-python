@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/740-send-daily-weather-updates-via-push-notification/",
+  "title": "Send daily weather updates via push notification",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:43:40.178754",
+  "readme_zh": "你是翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "通过推送通知发送每日天气更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"91\",\"name\":\"Send daily weather updates via a push notification\",\"nodes\":[{\"name\":\"Pushover\",\"type\":\"n8n-nodes-base.pushover\",\"position\":[970,300],\"parameters\":{\"message\":\"=Hey! The temperature outside is {{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}°C.\",\"userKey\":\"\",\"priority\":0,\"additionalFields\":{\"title\":\"Today's Weather\"}},\"credentials\":{\"pushoverApi\":\"pushover\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[570,300],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[770,300],\"parameters\":{\"cityName\":\"berlin\"},\"credentials\":{\"openWeatherMapApi\":\"owm\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Pushover\",\"type\":\"main\",\"index\":0}]]}}}"
+}

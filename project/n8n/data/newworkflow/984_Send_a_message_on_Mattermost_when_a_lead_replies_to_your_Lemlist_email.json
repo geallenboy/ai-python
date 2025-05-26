@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/984-send-a-message-on-mattermost-when-a-lead-replies-to-your-lemlist-email/",
+  "title": "Send a message on Mattermost when a lead replies to your Lemlist email",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Lemlist Trigger\",\"type\":\"n8n-nodes-base.lemlistTrigger\",\"position\":[410,160],\"webhookId\":\"e1e29f99-7222-488a-826f-5af50ffe7505\",\"parameters\":{\"event\":\"emailsReplied\",\"options\":{\"campaignId\":\"cam_H5pYEryq6mRKBiy5v\"}},\"credentials\":{\"lemlistApi\":\"Lemlist API Credentials\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[610,160],\"parameters\":{\"message\":\"={{$json[\\\"firstName\\\"]}} has replied back to your {{$json[\\\"campaignName\\\"]}}. Below is the reply:\\n> {{$json[\\\"text\\\"]}}\",\"channelId\":\"qx9yo1i9z3bg5qcy5a1oxnh69c\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"Mattermost Credentials\"},\"typeVersion\":1}],\"connections\":{\"Lemlist Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to send a message on Mattermost when a lead replies to your email.\n\n**Lemlist Trigger:** The Lemlist Trigger node will trigger the workflow when a lead sends a reply to a campaign.\n\n**Mattermost node:** This node will send a message to the `Leads` channel in Mattermost with the information about the reply. Based on your use-case, you may want to send the message to a different channel. You may even want to use a different service. Replace the node with the service where you want to send a message.\n",
+  "crawled_at": "2025-05-25T19:10:48.455076",
+  "readme_zh": "该工作流可在潜在客户回复邮件时，通过Mattermost发送通知消息。\n\n**Lemlist触发器节点：** 当潜在客户回复营销邮件时，此节点将触发工作流运行。\n\n**Mattermost节点：** 该节点会向Mattermost平台的`Leads`频道发送包含回复详情的消息。根据实际需求，您可修改目标通知频道，或替换为其他通讯服务节点。只需将当前节点更换为您需要使用的消息推送服务即可。",
+  "title_zh": "当潜在客户回复您的Lemlist邮件时，在Mattermost上发送一条消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Lemlist Trigger\",\"type\":\"n8n-nodes-base.lemlistTrigger\",\"position\":[410,160],\"webhookId\":\"e1e29f99-7222-488a-826f-5af50ffe7505\",\"parameters\":{\"event\":\"emailsReplied\",\"options\":{\"campaignId\":\"cam_H5pYEryq6mRKBiy5v\"}},\"credentials\":{\"lemlistApi\":\"Lemlist API Credentials\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[610,160],\"parameters\":{\"message\":\"={{$json[\\\"firstName\\\"]}} has replied back to your {{$json[\\\"campaignName\\\"]}}. Below is the reply:\\n> {{$json[\\\"text\\\"]}}\",\"channelId\":\"qx9yo1i9z3bg5qcy5a1oxnh69c\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"Mattermost Credentials\"},\"typeVersion\":1}],\"connections\":{\"Lemlist Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}"
+}

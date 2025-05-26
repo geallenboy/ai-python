@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1747-joining-different-datasets/",
+  "title": "Joining different datasets",
+  "author": "Jonathan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "**Task:**  \nMerge two datasets into one based on matching rules\n\n**Why:**  \nA powerful capability of n8n is to easily branch out the workflow in order to process different datasets. Even more powerful is the ability to join them back together with SQL-like joining logic.\n\n**Main use cases:**\n\n  * Appending data sets\n  * Keep only new items\n  * Keep only existing items\n\n\n",
+  "crawled_at": "2025-05-25T19:59:59.124717"
+}

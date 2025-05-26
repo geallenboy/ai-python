@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1111-create-transcription-jobs-using-aws-transcribe/",
+  "title": "Create transcription jobs using AWS Transcribe",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[190,160],\"parameters\":{},\"typeVersion\":1},{\"name\":\"AWS Transcribe\",\"type\":\"n8n-nodes-base.awsTranscribe\",\"position\":[590,160],\"parameters\":{\"options\":{},\"mediaFileUri\":\"=s3://{{$node[\\\"AWS S3\\\"].parameter[\\\"bucketName\\\"]}}/{{$json[\\\"Key\\\"]}}\",\"detectLanguage\":true,\"transcriptionJobName\":\"={{$json[\\\"Key\\\"].replace(/\\\\s/g,'-')}}\"},\"credentials\":{\"aws\":\"AWS Transcribe Credentials\"},\"typeVersion\":1},{\"name\":\"AWS S3\",\"type\":\"n8n-nodes-base.awsS3\",\"position\":[390,160],\"parameters\":{\"options\":{},\"operation\":\"getAll\",\"returnAll\":true,\"bucketName\":\"n8n-docs\"},\"credentials\":{\"aws\":\"AWS S3 Credentials\"},\"typeVersion\":1}],\"connections\":{\"AWS S3\":{\"main\":[[{\"node\":\"AWS Transcribe\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"AWS S3\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create transcription jobs for all your audio and video files stored in AWS S3.\n\n**AWS S3:** This node will retrieve all the files from an S3 bucket you specify.\n\n**AWS Transcribe:** This node will create a transcription job for the files that get returned by the previous node.\n",
+  "crawled_at": "2025-05-25T19:23:11.804076",
+  "readme_zh": "该工作流支持您为存储在AWS S3中的所有音视频文件创建转录任务。\n\n**AWS S3节点：** 此节点将从您指定的S3存储桶中获取全部文件。\n\n**AWS Transcribe节点：** 此节点会为前序节点返回的文件创建转录任务。",
+  "title_zh": "使用AWS Transcribe创建转录任务",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[190,160],\"parameters\":{},\"typeVersion\":1},{\"name\":\"AWS Transcribe\",\"type\":\"n8n-nodes-base.awsTranscribe\",\"position\":[590,160],\"parameters\":{\"options\":{},\"mediaFileUri\":\"=s3://{{$node[\\\"AWS S3\\\"].parameter[\\\"bucketName\\\"]}}/{{$json[\\\"Key\\\"]}}\",\"detectLanguage\":true,\"transcriptionJobName\":\"={{$json[\\\"Key\\\"].replace(/\\\\s/g,'-')}}\"},\"credentials\":{\"aws\":\"AWS Transcribe Credentials\"},\"typeVersion\":1},{\"name\":\"AWS S3\",\"type\":\"n8n-nodes-base.awsS3\",\"position\":[390,160],\"parameters\":{\"options\":{},\"operation\":\"getAll\",\"returnAll\":true,\"bucketName\":\"n8n-docs\"},\"credentials\":{\"aws\":\"AWS S3 Credentials\"},\"typeVersion\":1}],\"connections\":{\"AWS S3\":{\"main\":[[{\"node\":\"AWS Transcribe\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"AWS S3\",\"type\":\"main\",\"index\":0}]]}}}"
+}

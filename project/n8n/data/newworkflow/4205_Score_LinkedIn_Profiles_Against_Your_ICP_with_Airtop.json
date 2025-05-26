@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/4205-score-linkedin-profiles-against-your-icp-with-airtop/",
+  "title": "Score LinkedIn Profiles Against Your ICP with Airtop",
+  "author": "Airtop",
+  "publish_date": "Last update 6 days ago",
+  "publish_date_absolute": "2025-05-20",
+  "categories": [
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "# Scoring LinkedIn Profiles Against Your ICP\n\n## Use Case\n\nThis automation scores individual LinkedIn profiles against your Ideal Customer Profile (ICP) based on interest in AI, technical depth, and seniority level. It's ideal for prioritizing leads and understanding how well a person fits your ICP criteria.\n\n## What This Automation Does\n\nGiven a LinkedIn profile and an Airtop profile, it:\n\n  * Extracts relevant data from the person's profile\n  * Determines levels of AI interest, seniority, and technical depth\n  * Calculates an ICP score based on weighted criteria\n  * Returns the full enriched profile with the score\n\n\n\n## Input parameters:\n\n  * **LinkedIn Profile URL** (e.g., `https://linkedin.com/in/janedoe`)\n  * **Airtop Profile** connected to LinkedIn\n  * **ICP scoring method** in the Airtop node prompt\n\n\n\n## Output fields in JSON format:\n\n  * Full name, job title, employer, company LinkedIn URL, location, number of connections and followers, about section content and more\n  * Calculated ICP Score (out of 100)\n\n\n\n## How It Works\n\n  1. **Form Trigger or Workflow Trigger** : Accepts input from either a form or another workflow.\n  2. **Parameter Assignment** : Ensures proper variable names for downstream nodes.\n  3. **Airtop Enrichment Tool** : Extracts and scores the person based on a detailed prompt.\n  4. **Scoring** : Uses this point system: \n     * AI Interest: beginner (5), intermediate (10), advanced (25), expert (35)\n     * Technical Depth: basic (5), intermediate (15), advanced (25), expert (35)\n     * Seniority Level: junior (5), mid-level (15), senior (25), executive (30)\n  5. **Output Formatting** : Cleans and returns the result as JSON.\n\n\n\n## Setup Requirements\n\n  1. IMPORTANT: Enter your ICP scoring method in the prompt field of the Airtop node\n  2. [Airtop Profile](https://portal.airtop.ai/browser-profiles) connected to LinkedIn.\n  3. Airtop API credentials configured in n8n.\n  4. Optional: a front-end form to collect profile URLs and trigger the automation.\n\n\n\n## Next Steps\n\n  * **Embed in CRM** : Trigger this automation on new leads to auto-score them.\n  * **Batch Process Leads** : Run it over a list of profile URLs for segmentation.\n  * **Customize Scoring** : Adjust point weights based on your sales priorities.\n\n\n\nRead more about [Scoring LinkedIn Profiles Against Your ICP](https://www.airtop.ai/automations/icp-scoring-of-a-person-linkedin-profile-n8n)\n",
+  "crawled_at": "2025-05-26T07:05:58.429414",
+  "readme_zh": "# 根据理想客户画像(ICP)为领英档案评分\n\n## 使用场景\n\n本自动化流程可根据目标对象对AI的兴趣程度、技术深度和职级水平，对照您的理想客户画像(ICP)为领英个人档案进行评分。特别适用于潜在客户优先级排序，以及评估个人与您ICP标准的匹配程度。\n\n## 功能说明\n\n给定领英档案和Airtop档案，本流程将：\n  * 从个人档案中提取相关数据\n  * 判定AI兴趣水平、职级层次和技术深度\n  * 基于加权标准计算ICP匹配分数\n  * 返回包含评分结果的完整增强版档案\n\n## 输入参数：\n  * **领英档案URL**（如`https://linkedin.com/in/janedoe`）\n  * 与领英关联的**Airtop档案**\n  * Airtop节点提示中的**ICP评分方法**\n\n## JSON格式输出字段：\n  * 全名、职位、雇主、公司领英URL、所在地、人脉及关注者数量、个人简介等\n  * 计算得出的ICP分数（百分制）\n\n## 工作原理\n  1. **表单触发或工作流触发**：接收来自表单或其他工作流的输入\n  2. **参数分配**：为下游节点配置正确的变量名\n  3. **Airtop增强工具**：根据详细提示提取信息并进行评分\n  4. **评分系统**采用以下标准：\n     * AI兴趣：初级(5)、中级(10)、高级(25)、专家(35)\n     * 技术深度：基础(5)、中等(15)、深入(25)、专家(35)\n     * 职级水平：初级(5)、中级(15)、高级(25)、高管(30)\n  5. **输出格式化**：清理数据并以JSON格式返回结果\n\n## 设置要求\n  1. 重要：在Airtop节点的提示字段中输入您的ICP评分方法\n  2. 关联领英的[Airtop档案](https://portal.airtop.ai/browser-profiles)\n  3. 在n8n中配置Airtop API凭证\n  4. 可选：用于收集档案URL并触发流程的前端表单\n\n## 后续步骤\n  * **嵌入CRM系统**：在新线索入库时自动触发评分\n  * **批量处理线索**：对URL列表执行批量评分实现客户分群\n  * **自定义评分标准**：根据销售重点调整权重分配\n\n了解更多关于[根据ICP为领英档案评分](https://www.airtop.ai/automations/icp-scoring-of-a-person-linkedin-profile-n8n)",
+  "title_zh": "使用Airtop将LinkedIn个人资料与您的理想客户画像(ICP)进行评分匹配",
+  "publish_date_zh": "最后更新于6天前"
+}

@@ -1,0 +1,14 @@
+{
+  "url": "https://n8n.io/workflows/6-sync-data-between-multiple-google-spreadsheets/",
+  "title": "Sync data between multiple Google Spreadsheets",
+  "author": "Jan Oberhauser",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Read Sheet\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[700,300],\"parameters\":{\"range\":\"Data!A:G\",\"rawData\":true},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[500,300],\"parameters\":{\"triggerTimes\":{\"item\":[{\"mode\":\"custom\",\"cronExpression\":\"0 */2 * * * *\"}]}},\"typeVersion\":1},{\"name\":\"Write Sheet 2\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[900,400],\"parameters\":{\"range\":\"={{$node[\\\"Read Sheet\\\"].parameter[\\\"range\\\"]}}\",\"rawData\":true,\"operation\":\"update\"},\"typeVersion\":1},{\"name\":\"Write Sheet 1\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[900,200],\"parameters\":{\"range\":\"={{$node[\\\"Read Sheet\\\"].parameter[\\\"range\\\"]}}\",\"rawData\":true,\"operation\":\"update\"},\"typeVersion\":1}],\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"Read Sheet\",\"type\":\"main\",\"index\":0}]]},\"Read Sheet\":{\"main\":[[{\"node\":\"Write Sheet 2\",\"type\":\"main\",\"index\":0},{\"node\":\"Write Sheet 1\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "  1. Triggers workflow all two minutes\n  2. Reads data from a Google Spreadsheet (in example Sheet Data columns A to G)\n  3. Write the data unchanged in two different Spreadsheets with same Sheet name and columns, expressions are optional)\n\n\n"
+}

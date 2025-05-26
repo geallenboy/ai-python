@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/160-convert-xml-to-json/",
+  "title": "Convert XML to JSON",
+  "author": "mail",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"3\",\"name\":\"XML Conversion\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[510,300],\"parameters\":{\"values\":{\"string\":[{\"name\":\"xml\",\"value\":\"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?> <ORDERS05>   <IDOC BEGIN=\\\"1\\\">     <EDI_DC40 SEGMENT=\\\"1\\\">       <TABNAM>EDI_DC40</TABNAM>     </EDI_DC40>   </IDOC> </ORDERS05>\"}]},\"keepOnlySet\":true},\"typeVersion\":1},{\"name\":\"XML\",\"type\":\"n8n-nodes-base.xml\",\"position\":[740,300],\"parameters\":{\"options\":{\"attrkey\":\"$\",\"mergeAttrs\":false,\"explicitRoot\":true},\"dataPropertyName\":\"xml\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Set\":{\"main\":[[{\"node\":\"XML\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Transforms XML data to JSON honoring XML attributes by putting them in a separate key:  \n\n",
+  "crawled_at": "2025-05-25T17:59:16.593294",
+  "readme_zh": "将XML数据转换为JSON时，通过将XML属性放入单独的键来保留这些属性：",
+  "title_zh": "将XML转换为JSON",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\n  \"id\": \"3\",\n  \"name\": \"XML Conversion\",\n  \"nodes\": [\n    {\n      \"name\": \"On clicking 'execute'\",\n      \"type\": \"n8n-nodes-base.manualTrigger\",\n      \"position\": [\n        250,\n        300\n      ],\n      \"parameters\": {},\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Set\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"position\": [\n        510,\n        300\n      ],\n      \"parameters\": {\n        \"values\": {\n          \"string\": [\n            {\n              \"name\": \"xml\",\n              \"value\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?> <ORDERS05>   <IDOC BEGIN=\\\"1\\\">     <EDI_DC40 SEGMENT=\\\"1\\\">       <TABNAM>EDI_DC40</TABNAM>     </EDI_DC40>   </IDOC> </ORDERS05>\"\n            }\n          ]\n        },\n        \"keepOnlySet\": true\n      },\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"XML\",\n      \"type\": \"n8n-nodes-base.xml\",\n      \"position\": [\n        740,\n        300\n      ],\n      \"parameters\": {\n        \"options\": {\n          \"attrkey\": \"$\",\n          \"mergeAttrs\": false,\n          \"explicitRoot\": true\n        },\n        \"dataPropertyName\": \"xml\"\n      },\n      \"typeVersion\": 1\n    }\n  ],\n  \"active\": false,\n  \"settings\": {},\n  \"connections\": {\n    \"Set\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"XML\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"On clicking 'execute'\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Set\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  }\n}"
+}

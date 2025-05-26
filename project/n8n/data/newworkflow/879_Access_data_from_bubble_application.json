@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/879-access-data-from-bubble-application/",
+  "title": "Access data from bubble application",
+  "author": "jason",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"15\",\"name\":\"Bubble Data Access\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[450,300],\"parameters\":{\"url\":\"https://n8n-lessons.bubbleapps.io/version-test/api/1.1/obj/user\",\"options\":{},\"authentication\":\"headerAuth\"},\"credentials\":{\"httpHeaderAuth\":\"Bubble n8n Lessons Token\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This is a proof of concept workflow showing how you would connect n8n to a Bubble data collection.\n",
+  "crawled_at": "2025-05-25T19:02:31.632013",
+  "readme_zh": "这是一个概念验证工作流程，展示了如何将n8n连接到Bubble数据收集系统。",
+  "title_zh": "从气泡应用程序中获取数据",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"15\",\"name\":\"Bubble Data Access\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[450,300],\"parameters\":{\"url\":\"https://n8n-lessons.bubbleapps.io/version-test/api/1.1/obj/user\",\"options\":{},\"authentication\":\"headerAuth\"},\"credentials\":{\"httpHeaderAuth\":\"Bubble n8n Lessons Token\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}"
+}

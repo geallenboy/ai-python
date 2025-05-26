@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/485-create-a-task-in-clickup/",
+  "title": "Create a task in ClickUp",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-26",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"105\",\"name\":\"Create a task in ClickUp\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"ClickUp\",\"type\":\"n8n-nodes-base.clickUp\",\"position\":[450,300],\"parameters\":{\"list\":\"\",\"name\":\"\",\"team\":\"\",\"space\":\"\",\"folder\":\"\",\"additionalFields\":{}},\"credentials\":{\"clickUpApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"ClickUp\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-26T07:37:13.894631"
+}

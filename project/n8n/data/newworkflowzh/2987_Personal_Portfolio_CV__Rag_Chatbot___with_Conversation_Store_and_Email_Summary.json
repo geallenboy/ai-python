@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/2987-personal-portfolio-cv-rag-chatbot-with-conversation-store-and-email-summary/",
+  "title": "Personal Portfolio CV  Rag Chatbot - with Conversation Store and Email Summary",
+  "author": "Sean Lon",
+  "publish_date": "Last update 3 months ago",
+  "publish_date_absolute": "2025-02-26",
+  "categories": [
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## Personal Portfolio CV Rag Chatbot - with Conversation Store and Email Summary\n\n### Target Audience\n\nThis template is perfect for:\n\nIndividuals looking to create a working professional and interactive personal portfolio chatbot.\n\nDevelopers interested in integrating RAG Chatbot functionality with conversation storage.\n\n### 1\\. Description\n\nCreate a stunning Personal Portfolio CV with integrated RAG Chatbot capabilities, including conversation storage and daily email summaries.\n\n### 2.Features:\n\n#### Training: Setup Ingestion stage\n\nUpload your CV to Google Drive and let the Drive trigger updates to read your resume cv and convert it into your vector database (RAG purpose). Modify any parts as needed.\n\n#### Chat & Track:\n\nUse any frontend/backend interface to call the chat API and chat history API.\n\n#### Reporting Daily Chat Conversations:\n\nReceive daily automatic summaries of chat conversations. Data stored via NocoDB.\n\n### 3.Setup Guide:\n\n#### Step-by-Step Instructions:\n\nEnsure all credentials are ready. Follow the notes provided.\n\n  1. Ingestion:  \nUpload your CV to Google Drive.  \nThe Drive triggers RAG update in your vector database. You can change the folder name, files and indexname of the vector database accordingly.\n  2. Chat:  \nUse any frontend/backend interface to call the chat API (refer to the notes for details) .\n\n\n\n[optional] Use any frontend/backend interface to call the update chat history API (refer to the notes for details).\n\n3.Tracking Chat:\n\nGet daily automatic summaries of chat conversations.Format email conversations report as you like.\n\nYou are ready to go!\n",
+  "crawled_at": "2025-05-26T03:25:31.868504"
+}

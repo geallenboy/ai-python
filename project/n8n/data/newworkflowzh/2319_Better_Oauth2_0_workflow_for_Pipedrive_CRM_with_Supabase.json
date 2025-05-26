@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/2319-better-oauth20-workflow-for-pipedrive-crm-with-supabase/",
+  "title": "Better Oauth2.0 workflow for Pipedrive CRM with Supabase",
+  "author": "Priya Jain",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow provides an OAuth 2.0 auth token refresh process for better control. Developers can utilize it as an alternative to n8n's built-in OAuth flow to achieve improved control and visibility. In this template, I've used [Pipedrive API](https://developers.pipedrive.com/docs/api/v1/Oauth#get-tokens), but users can apply it with any app that requires the authorization_code for token access.\n\nThis resolves the issue of manually refreshing the OAuth 2.0 token when it expires, or when n8n's native OAuth stops working.\n\n## What you need to replicate this\n\n  1. Your database with a pre-existing table for storing authentication tokens and associated information. I'm using Supabase in this example, but you can also employ a self-hosted MySQL.\n\n\n\nHere's a [quick video](https://go.screenpal.com/watch/cZiXhEV8N0y) on setting up the Supabase table.\n\n  1. Create a client app for your chosen application that you want to access via the API.\n\n  2. After duplicating the template:\n\n\n\n\na. Add credentials to your database and connect the DB nodes in all 3 workflows.\n\n  1. Enable/Publish the first workflow, \"1. Generate and Save Pipedrive tokens to Database.\"\n\n  2. Open your client app and follow the Pipedrive instructions to authenticate.\n\n\n\n\nClick on [Install and test](https://www.awesomescreenshot.com/image/49321214?key=886672146f2ba1b1482d43a625b72f10).\n\nThis will save your initial refresh token and access token to the database.\n\n  1. Please watch the [YouTube video](https://youtu.be/6nXi_yverss) for a detailed demonstration of the workflow:\n\n\n\n## How it operates\n\n**Workflow 1**. Create a workflow to capture the authorization_code, generate the access_token, and refresh the token, and then save the token to the database.\n\n**Workflow 2**. Develop your primary workflow to fetch or post data to/from your application. Observe the logic to include an if condition when an error occurs with an invalid token. This triggers the third workflow to refresh the token.\n\n**Workflow 3**. This workflow will handle the token refresh. Remember to send the unique ID to the webhook to fetch the necessary tokens from your table.\n\nDetailed demonstration of the workflow:  \n<https://youtu.be/6nXi_yverss>\n",
+  "crawled_at": "2025-05-25T23:28:40.549734"
+}

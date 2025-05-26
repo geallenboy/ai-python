@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/226-receive-google-sheet-data-via-rest-api/",
+  "title": "Receive Google Sheet data via REST API",
+  "author": "Jan Oberhauser",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[700,300],\"parameters\":{\"range\":\"Problems!A:D\",\"options\":{},\"sheetId\":\"17fzSFl1BZ1njldTfp5lvh8HtS0-pNXH66b7qGZIiGRU\"},\"credentials\":{\"googleApi\":\"\"},\"typeVersion\":1},{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[500,300],\"parameters\":{\"path\":\"webhook\",\"options\":{},\"responseData\":\"allEntries\",\"responseMode\":\"lastNode\"},\"typeVersion\":1}],\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Simple workflow which allows to receive data from a Google Sheet via \"REST\" endpoint.\n\n  1. Wait for Webhook Call\n  2. Get data from Google Sheet\n  3. Return data\n\n\n\nExample Sheet: <https://docs.google.com/spreadsheets/d/17fzSFl1BZ1njldTfp5lvh8HtS0-pNXH66b7qGZIiGRU>\n",
+  "crawled_at": "2025-05-25T18:01:01.991233"
+}

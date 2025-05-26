@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/1752-import-data-from-google-sheets-into-mysql/",
+  "title": "Import data from Google Sheets into MySQL",
+  "author": "Lorena",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow imports data from Google Sheets into a MySQL database.\n",
+  "crawled_at": "2025-05-25T20:01:27.420563",
+  "readme_zh": "该工作流程将数据从Google表格导入到MySQL数据库中。",
+  "title_zh": "Import data from Google Sheets into MySQL",
+  "publish_date_zh": "Last update 9 months ago",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[100,160],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":5,\"mode\":\"everyWeek\"}]}},\"typeVersion\":1},{\"name\":\"MySQL - insert\",\"type\":\"n8n-nodes-base.mySql\",\"position\":[500,160],\"parameters\":{\"table\":\"books\",\"columns\":\"title, price\",\"options\":{\"ignore\":true,\"priority\":\"LOW_PRIORITY\"}},\"credentials\":{\"mySql\":{\"id\":\"82\",\"name\":\"MySQL account\"}},\"typeVersion\":1},{\"name\":\"Google Sheets - read\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[300,160],\"parameters\":{\"options\":{},\"sheetId\":\"qwertz\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":{\"id\":\"2\",\"name\":\"google_sheets_oauth\"}},\"typeVersion\":1}],\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"Google Sheets - read\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets - read\":{\"main\":[[{\"node\":\"MySQL - insert\",\"type\":\"main\",\"index\":0}]]}}}"
+}

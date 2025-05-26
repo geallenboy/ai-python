@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/2095-ask-a-human-for-help-when-the-ai-doesnt-know-the-answer/",
+  "title": "Ask a human for help when the AI doesn't know the answer",
+  "author": "Deborah",
+  "publish_date": "Last update 2 months ago",
+  "publish_date_absolute": "2025-03-25",
+  "categories": [
+    {
+      "name": "Support"
+    },
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This is a workflow that tries to answer user queries using the standard GPT-4 model. If it can't answer, it sends a message to Slack to ask for human help. It prompts the user to supply an email address.\n\nThis workflow is used in [Advanced AI examples | Ask a human](https://docs.n8n.io/advanced-ai/examples/human-fallback/) in the documentation.\n\nTo use this workflow:\n\n  1. Load it into your n8n instance.\n  2. Add your credentials as prompted by the notes.\n  3. Configure the Slack node to use your Slack details, or swap out Slack for a different service.\n\n\n",
+  "crawled_at": "2025-05-25T20:54:55.014895"
+}

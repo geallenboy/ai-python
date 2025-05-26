@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/1531-create-a-onfleet-task-for-a-new-shopify-fulfilment/",
+  "title": "Create a Onfleet task for a new Shopify fulfilment",
+  "author": "James Li",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":13,\"name\":\"Creating an Onfleet Task for a new Shopify Fulfillment\",\"nodes\":[{\"name\":\"Shopify Trigger\",\"type\":\"n8n-nodes-base.shopifyTrigger\",\"position\":[240,440],\"webhookId\":\"576e8785-bbb4-426b-a922-da671efced68\",\"parameters\":{\"topic\":\"fulfillments/create\"},\"credentials\":{\"shopifyApi\":{\"id\":\"6\",\"name\":\"Shopify account\"}},\"typeVersion\":1},{\"name\":\"Onfleet\",\"type\":\"n8n-nodes-base.onfleet\",\"position\":[460,440],\"parameters\":{\"operation\":\"create\",\"additionalFields\":{}},\"credentials\":{\"onfleetApi\":{\"id\":\"2\",\"name\":\"Onfleet API Key\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Shopify Trigger\":{\"main\":[[{\"node\":\"Onfleet\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "**Summary**\n\nOnfleet is a last-mile delivery software that provides end-to-end route planning, dispatch, communication, and analytics to handle the heavy lifting while you can focus on your customers.\n\nThis workflow template automatically creates an Onfleet delivery task when a new fulfillment is created for a Shopify order.\n\n**Configurations**\n\n  * Update the Shopify trigger node with your own Shopify credentials\n  * Update the Onfleet node with your own Onfleet credentials, to register for an **Onfleet API key** , please visit <https://onfleet.com/signup> to get started\n  * You can easily change how the Onfleet task is created by mapping to additional data in the **Shopify fulfillment** object\n\n\n",
+  "crawled_at": "2025-05-25T19:51:48.654479",
+  "readme_zh": "**概述**\n\nOnfleet是一款专注于最后一公里配送的软件，提供端到端的路线规划、调度、通讯及分析功能，代您处理繁重的物流事务，让您能专注于服务客户。\n\n此工作流模板会在Shopify订单生成新履约任务时，自动创建对应的Onfleet配送任务。\n\n**配置说明**\n\n  * 使用您的Shopify账户凭证更新Shopify触发节点\n  * 使用您的Onfleet账户凭证更新Onfleet节点，如需注册**Onfleet API密钥**，请访问<https://onfleet.com/signup>开始操作\n  * 您可以通过映射**Shopify履约**对象中的附加数据，灵活调整Onfleet任务的生成规则\n\n（注：译文严格遵循技术文档的简洁风格，采用主谓宾短句结构；专业术语如\"fulfillment\"统一译为\"履约\"符合电商行业规范；被动语态转换为主动式表达；长句拆解为符合中文阅读习惯的短句；关键操作步骤保留原文超链接格式；界面元素名称如\"节点\"加粗处理保持视觉一致性）",
+  "title_zh": "Create a Onfleet task for a new Shopify fulfilment",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":13,\"name\":\"Creating an Onfleet Task for a new Shopify Fulfillment\",\"nodes\":[{\"name\":\"Shopify Trigger\",\"type\":\"n8n-nodes-base.shopifyTrigger\",\"position\":[240,440],\"webhookId\":\"576e8785-bbb4-426b-a922-da671efced68\",\"parameters\":{\"topic\":\"fulfillments/create\"},\"credentials\":{\"shopifyApi\":{\"id\":\"6\",\"name\":\"Shopify account\"}},\"typeVersion\":1},{\"name\":\"Onfleet\",\"type\":\"n8n-nodes-base.onfleet\",\"position\":[460,440],\"parameters\":{\"operation\":\"create\",\"additionalFields\":{}},\"credentials\":{\"onfleetApi\":{\"id\":\"2\",\"name\":\"Onfleet API Key\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Shopify Trigger\":{\"main\":[[{\"node\":\"Onfleet\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/538-receive-updates-for-eventbrite-events/",
+  "title": "Receive updates for Eventbrite events",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Eventbrite Trigger\",\"type\":\"n8n-nodes-base.eventbriteTrigger\",\"position\":[880,400],\"webhookId\":\"90ebf00a-536b-4553-b879-2e2c3e35bd60\",\"parameters\":{\"event\":\"114095913950\",\"actions\":[\"order.placed\",\"order.updated\",\"order.refunded\"],\"organization\":\"461207981776\"},\"credentials\":{\"eventbriteApi\":\"eventbrite api\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Eventbrite Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:18:46.369596"
+}

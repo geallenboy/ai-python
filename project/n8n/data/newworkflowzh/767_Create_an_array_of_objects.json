@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/767-create-an-array-of-objects/",
+  "title": "Create an array of objects",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Mock Data\",\"type\":\"n8n-nodes-base.function\",\"position\":[802,307],\"parameters\":{\"functionCode\":\"return [\\n  {\\n    json: {\\n      id: 1,\\n      name: \\\"Jim\\\"\\n    }\\n  },\\n  {\\n    json: {\\n      id: 2,\\n      name: \\\"Stefan\\\"\\n    }\\n  },\\n  {\\n    json: {\\n      id: 3,\\n      name: \\\"Hans\\\"\\n    }\\n  }\\n];\"},\"typeVersion\":1},{\"name\":\"Create an array of objects\",\"type\":\"n8n-nodes-base.function\",\"position\":[1052,307],\"parameters\":{\"functionCode\":\"return [\\n  {\\n    json: {\\n      data_object: items.map(item => item.json),\\n    },\\n  }\\n];\\n\"},\"typeVersion\":1}],\"connections\":{\"Mock Data\":{\"main\":[[{\"node\":\"Create an array of objects\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "You can use the Function node to create an array of objects.\n",
+  "crawled_at": "2025-05-25T18:47:07.246732"
+}

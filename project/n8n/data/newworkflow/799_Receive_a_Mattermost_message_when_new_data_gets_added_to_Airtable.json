@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/799-receive-a-mattermost-message-when-new-data-gets-added-to-airtable/",
+  "title": "Receive a Mattermost message when new data gets added to Airtable",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"151\",\"name\":\"Receive a Mattermost message when new data gets added to Airtable\",\"nodes\":[{\"name\":\"Airtable Trigger\",\"type\":\"n8n-nodes-base.airtableTrigger\",\"position\":[550,340],\"parameters\":{\"baseId\":\"\",\"tableId\":\"Data\",\"pollTimes\":{\"item\":[{\"mode\":\"everyMinute\"}]},\"triggerField\":\"Created\",\"additionalFields\":{}},\"credentials\":{\"airtableApi\":\"Airtable Credentials n8n\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[750,340],\"parameters\":{\"message\":\"=New Data was added to Airtable.\\nID:{{$node[\\\"Airtable Trigger\\\"].json[\\\"fields\\\"][\\\"id\\\"]}}\\nName: {{$node[\\\"Airtable Trigger\\\"].json[\\\"fields\\\"][\\\"name\\\"]}}\",\"channelId\":\"\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"mattermost\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Airtable Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:51:21.152723",
+  "readme_zh": "您是一位翻译助手。将以下英文文本翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "当Airtable新增数据时接收Mattermost消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"151\",\"name\":\"Receive a Mattermost message when new data gets added to Airtable\",\"nodes\":[{\"name\":\"Airtable Trigger\",\"type\":\"n8n-nodes-base.airtableTrigger\",\"position\":[550,340],\"parameters\":{\"baseId\":\"\",\"tableId\":\"Data\",\"pollTimes\":{\"item\":[{\"mode\":\"everyMinute\"}]},\"triggerField\":\"Created\",\"additionalFields\":{}},\"credentials\":{\"airtableApi\":\"Airtable Credentials n8n\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[750,340],\"parameters\":{\"message\":\"=New Data was added to Airtable.\\nID:{{$node[\\\"Airtable Trigger\\\"].json[\\\"fields\\\"][\\\"id\\\"]}}\\nName: {{$node[\\\"Airtable Trigger\\\"].json[\\\"fields\\\"][\\\"name\\\"]}}\",\"channelId\":\"\",\"attachments\":[],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"mattermost\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Airtable Trigger\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}"
+}

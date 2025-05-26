@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/488-receive-updates-when-a-new-account-is-added-by-an-admin-in-activecampaign/",
+  "title": "Receive updates when a new account is added by an admin in ActiveCampaign",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"112\",\"name\":\"Receive updates when a new account is added by an admin in ActiveCampaign\",\"nodes\":[{\"name\":\"ActiveCampaign Trigger\",\"type\":\"n8n-nodes-base.activeCampaignTrigger\",\"position\":[700,250],\"parameters\":{\"events\":[\"account_add\"],\"sources\":[\"admin\"]},\"credentials\":{\"activeCampaignApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:12:42.614542",
+  "readme_zh": "您是一位翻译助手。将以下英文文本翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在ActiveCampaign中管理员添加新账户时接收更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"112\",\"name\":\"Receive updates when a new account is added by an admin in ActiveCampaign\",\"nodes\":[{\"name\":\"ActiveCampaign Trigger\",\"type\":\"n8n-nodes-base.activeCampaignTrigger\",\"position\":[700,250],\"parameters\":{\"events\":[\"account_add\"],\"sources\":[\"admin\"]},\"credentials\":{\"activeCampaignApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

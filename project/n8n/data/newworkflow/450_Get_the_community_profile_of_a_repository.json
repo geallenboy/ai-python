@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/450-get-the-community-profile-of-a-repository/",
+  "title": "Get the community profile of a repository",
+  "author": "sshaligr",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    }
+  ],
+  "workflow_json": "{\"id\":\"5\",\"name\":\"new\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[540,350],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Github\",\"type\":\"n8n-nodes-base.github\",\"position\":[790,350],\"parameters\":{\"owner\":\"n8n-io\",\"resource\":\"repository\",\"operation\":\"getProfile\",\"repository\":\"n8n\"},\"credentials\":{\"githubApi\":\"shraddha\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Github\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:07:19.438048",
+  "readme_zh": "您是一位翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "获取仓库的社区概况",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"5\",\"name\":\"new\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[540,350],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Github\",\"type\":\"n8n-nodes-base.github\",\"position\":[790,350],\"parameters\":{\"owner\":\"n8n-io\",\"resource\":\"repository\",\"operation\":\"getProfile\",\"repository\":\"n8n\"},\"credentials\":{\"githubApi\":\"shraddha\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Github\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-该脚本用于扫描data目录下的所有JSON文件，
+该脚本用于扫描data/newworkflow目录下的所有JSON文件，
 查找包含readme、workflow_json、title和publish_date字段的文件，使用DeepSeek API将内容翻译为中文，
 并在JSON文件中添加readme_zh、workflow_json_zh、title_zh和publish_date_zh字段保存翻译结果。
 """
@@ -422,80 +422,53 @@ def process_json_file(file_path):
         logger.error(f"处理文件 {file_path} 时出错: {e}")
         return False
 
-def get_workflow_directories(base_dir):
+def scan_directory(base_dir):
     """
-    获取workflow目录下的所有子目录
+    扫描data/newworkflow目录下的所有JSON文件并进行翻译处理
     
     Args:
         base_dir (Path): 基础目录路径
-    
-    Returns:
-        list: 子目录名称列表
-    """
-    workflow_dir = base_dir / 'workflow'
-    if not workflow_dir.exists() or not workflow_dir.is_dir():
-        logger.error(f"workflow目录不存在: {workflow_dir}")
-        return []
-    
-    subdirs = [d.name for d in workflow_dir.iterdir() if d.is_dir()]
-    return sorted(subdirs)
-
-def scan_specific_directories(base_dir, subdirs=None):
-    """
-    扫描指定的子目录，处理其中的JSON文件
-    
-    Args:
-        base_dir (Path): 基础目录路径
-        subdirs (list, optional): 要处理的子目录名称列表，如果为None，处理所有子目录
     
     Returns:
         tuple: (处理的文件数, 成功翻译的文件数, 处理的文件列表, 未处理的文件列表)
     """
-    workflow_dir = base_dir / 'workflow'
-    if not workflow_dir.exists() or not workflow_dir.is_dir():
-        logger.error(f"workflow目录不存在: {workflow_dir}")
+    newworkflow_dir = base_dir / 'newworkflow'
+    if not newworkflow_dir.exists() or not newworkflow_dir.is_dir():
+        logger.error(f"newworkflow目录不存在: {newworkflow_dir}")
         return 0, 0, [], []
     
-    # 如果未指定子目录，获取所有子目录
-    if not subdirs:
-        subdirs = [d.name for d in workflow_dir.iterdir() if d.is_dir()]
-        logger.info(f"未指定子目录，将处理workflow下的所有子目录: {', '.join(subdirs)}")
+    logger.info(f"开始扫描目录: {newworkflow_dir}")
+    
+    # 获取所有JSON文件（递归搜索）
+    json_files = list(newworkflow_dir.glob('**/*.json'))
+    
+    # 过滤掉日志目录中的文件
+    json_files = [f for f in json_files if 'logs' not in f.parts]
+    
+    logger.info(f"在 {newworkflow_dir} 中找到 {len(json_files)} 个JSON文件")
     
     total_files = 0
     translated_files = 0
     processed_files = []
     unprocessed_files = []
     
-    # 处理每个子目录
-    for subdir_name in subdirs:
-        subdir_path = workflow_dir / subdir_name
-        if not subdir_path.exists() or not subdir_path.is_dir():
-            logger.warning(f"子目录不存在或不是有效目录: {subdir_path}")
-            continue
+    # 处理每个JSON文件
+    for i, file_path in enumerate(json_files):
+        total_files += 1
+        relative_path = file_path.relative_to(base_dir)
         
-        logger.info(f"开始处理子目录: {subdir_name}")
+        # 显示处理进度
+        logger.info(f"正在处理 [{i+1}/{len(json_files)}]: {relative_path}")
         
-        # 获取子目录中的所有JSON文件
-        json_files = list(subdir_path.glob('**/*.json'))
-        logger.info(f"在子目录 {subdir_name} 中找到 {len(json_files)} 个JSON文件")
+        if process_json_file(file_path):
+            translated_files += 1
+            processed_files.append(str(relative_path))
+        else:
+            unprocessed_files.append(str(relative_path))
         
-        # 处理每个JSON文件
-        for i, file_path in enumerate(json_files):
-            total_files += 1
-            relative_path = file_path.relative_to(base_dir)
-            
-            # 显示处理进度
-            logger.info(f"正在处理 [{i+1}/{len(json_files)}]: {relative_path}")
-            
-            if process_json_file(file_path):
-                translated_files += 1
-                processed_files.append(str(relative_path))
-            else:
-                unprocessed_files.append(str(relative_path))
-            
-            # 打印当前进度
-            if (i+1) % 5 == 0 or i+1 == len(json_files):
-                logger.info(f"子目录 {subdir_name} 进度: {i+1}/{len(json_files)} ({(i+1)/max(1, len(json_files))*100:.1f}%), 已翻译: {translated_files}")
+        # 打印当前进度
+        if (i+1) % 10 == 0 or i+1 == len(json_files):
+            logger.info(f"进度: {i+1}/{len(json_files)} ({(i+1)/max(1, len(json_files))*100:.1f}%), 已翻译: {translated_files}")
     
     return total_files, translated_files, processed_files, unprocessed_files
 
@@ -504,14 +477,14 @@ def main():
     import argparse
     
     # 创建命令行参数解析器
-    parser = argparse.ArgumentParser(description="将JSON文件翻译为中文")
-    parser.add_argument("--dirs", "-d", nargs='+', help="要处理的workflow子目录名称（多个目录用空格分隔）")
-    parser.add_argument("--list", "-l", action="store_true", help="列出所有可用的workflow子目录")
+    parser = argparse.ArgumentParser(description="将data/newworkflow目录下的JSON文件翻译为中文")
+    parser.add_argument("--count", "-c", type=int, help="限制处理的文件数量")
     args = parser.parse_args()
     
     start_time = time.time()
     try:
         logger.info("=== 开始JSON文件翻译任务 ===")
+        logger.info("目标目录: data/newworkflow")
         
         # 获取当前脚本所在目录
         current_dir = Path(__file__).parent
@@ -523,26 +496,16 @@ def main():
             print(f"错误: data目录不存在: {data_dir}")
             return
         
-        # 如果请求列出所有子目录
-        if args.list:
-            subdirs = get_workflow_directories(data_dir)
-            if subdirs:
-                print("可用的workflow子目录:")
-                for i, subdir in enumerate(subdirs):
-                    print(f"{i+1}. {subdir}")
-            else:
-                print("未找到workflow子目录")
+        # 检查newworkflow目录是否存在
+        newworkflow_dir = data_dir / 'newworkflow'
+        if not newworkflow_dir.exists():
+            logger.error(f"newworkflow目录不存在: {newworkflow_dir}")
+            print(f"错误: newworkflow目录不存在: {newworkflow_dir}")
             return
         
-        # 如果指定了子目录
-        if args.dirs:
-            logger.info(f"指定的子目录: {', '.join(args.dirs)}")
-            print(f"将处理以下子目录: {', '.join(args.dirs)}")
-            total, translated, processed_files, unprocessed_files = scan_specific_directories(data_dir, args.dirs)
-        else:
-            # 默认处理data目录下的所有JSON文件
-            logger.info("未指定子目录，将处理data目录下的所有JSON文件")
-            total, translated, processed_files, unprocessed_files = scan_directory(data_dir)
+        # 处理data/newworkflow目录下的所有JSON文件
+        logger.info("开始处理data/newworkflow目录下的所有JSON文件")
+        total, translated, processed_files, unprocessed_files = scan_directory(data_dir)
         
         # 计算运行时间
         end_time = time.time()
@@ -557,14 +520,18 @@ def main():
         # 记录已处理的文件
         if processed_files:
             logger.info("--- 已翻译的文件 ---")
-            for file in processed_files:
+            for file in processed_files[:10]:  # 只显示前10个
                 logger.info(f"√ {file}")
+            if len(processed_files) > 10:
+                logger.info(f"... 还有 {len(processed_files) - 10} 个文件")
         
         # 记录未处理的文件
         if unprocessed_files:
             logger.info("--- 未翻译的文件 ---")
-            for file in unprocessed_files:
+            for file in unprocessed_files[:10]:  # 只显示前10个
                 logger.info(f"× {file}")
+            if len(unprocessed_files) > 10:
+                logger.info(f"... 还有 {len(unprocessed_files) - 10} 个文件")
         
         print(f"处理完成。共处理 {total} 个JSON文件，翻译了 {translated} 个文件")
         print(f"详细信息请查看日志文件: {logs_dir / 'file_translate.log'}")

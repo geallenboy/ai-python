@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/401-send-an-smswhatsapp-message-with-twilio/",
+  "title": "Send an SMS/Whatsapp message with Twilio",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"name\":\"A workflow with the Twilio node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Twilio\",\"type\":\"n8n-nodes-base.twilio\",\"position\":[430,300],\"parameters\":{},\"credentials\":{\"twilioApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Twilio\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "![A workflow with the Twilio node](https://i.imgur.com/hhrzqyR.png)\n",
+  "crawled_at": "2025-05-25T18:03:38.862014",
+  "readme_zh": "![使用Twilio节点的工作流程](https://i.imgur.com/hhrzqyR.png)",
+  "title_zh": "使用Twilio发送短信/WhatsApp消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"name\":\"A workflow with the Twilio node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Twilio\",\"type\":\"n8n-nodes-base.twilio\",\"position\":[430,300],\"parameters\":{},\"credentials\":{\"twilioApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Twilio\",\"type\":\"main\",\"index\":0}]]}}}"
+}

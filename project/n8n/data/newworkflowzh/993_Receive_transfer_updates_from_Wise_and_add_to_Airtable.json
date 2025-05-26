@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/993-receive-transfer-updates-from-wise-and-add-to-airtable/",
+  "title": "Receive transfer updates from Wise and add to Airtable",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to receive updates from Wise and add information of a transfer to a base in Airtable.\n\n**Wise Trigger node:** This node will trigger the workflow when the status of your transfer changes.\n\n**Wise node:** This node will get the information about the transfer.\n\n**Set node:** We use the Set node to ensure that only the data that we set in this node gets passed on to the next nodes in the workflow. We set the value of `Transfer ID`, `Date`, `Reference`, and `Amount` in this node.\n\n**Airtable node:** This node will append the data that we set in the previous node to a table.\n",
+  "crawled_at": "2025-05-25T19:12:13.272101"
+}

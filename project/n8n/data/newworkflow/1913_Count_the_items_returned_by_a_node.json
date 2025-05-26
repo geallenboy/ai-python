@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1913-count-the-items-returned-by-a-node/",
+  "title": "Count the items returned by a node",
+  "author": "Tom",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"id\":\"41e0d0a9-9bd4-4ece-a204-5e1bf507b0eb\",\"meta\":{\"instanceId\":\"cb9c144f2050b3f9b30bf379399398f9061341e3665eb2faf2b1092a42b38b14\"},\"name\":\"When clicking \\\"Execute Workflow\\\"\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[820,400],\"parameters\":{},\"typeVersion\":1},{\"id\":\"aa373efa-d493-44cd-91ee-e07630309675\",\"name\":\"Customer Datastore (n8n training)\",\"type\":\"n8n-nodes-base.n8nTrainingCustomerDatastore\",\"position\":[1040,400],\"parameters\":{\"operation\":\"getAllPeople\"},\"typeVersion\":1},{\"id\":\"29555ae0-ad6c-4888-8865-c1e097b3b44e\",\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[1260,400],\"parameters\":{\"values\":{\"number\":[{\"name\":\"itemCount\",\"value\":\"={{ $input.all().length }}\"}]},\"options\":{},\"keepOnlySet\":true},\"executeOnce\":true,\"typeVersion\":1}],\"connections\":{\"When clicking \\\"Execute Workflow\\\"\":{\"main\":[[{\"node\":\"Customer Datastore (n8n training)\",\"type\":\"main\",\"index\":0}]]},\"Customer Datastore (n8n training)\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow provides a simple approach to counting the items returned by a node.\n\nIt uses a Set node with the Execute Once option:\n\n![image.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_c138128065.png)\n\nThe expression uses `$input.all()` (documented [here](https://docs.n8n.io/code-examples/methods-variables-reference/)) to fetch all incoming items at once, and `.length` (documented for example [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)) to count them.\n",
+  "crawled_at": "2025-05-25T20:17:00.639636",
+  "readme_zh": "该工作流提供了一种简单的方法来统计节点返回的项目数量。\n\n它采用了一个带有\"执行一次\"选项的Set节点：\n\n![image.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_c138128065.png)\n\n表达式使用`$input.all()`（文档参见[此处](https://docs.n8n.io/code-examples/methods-variables-reference/)）一次性获取所有输入项，并通过`.length`属性（文档示例参见[此处](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)）进行计数。",
+  "title_zh": "计算节点返回的项目数量",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"id\":\"41e0d0a9-9bd4-4ece-a204-5e1bf507b0eb\",\"meta\":{\"instanceId\":\"cb9c144f2050b3f9b30bf379399398f9061341e3665eb2faf2b1092a42b38b14\"},\"name\":\"When clicking \\\"Execute Workflow\\\"\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[820,400],\"parameters\":{},\"typeVersion\":1},{\"id\":\"aa373efa-d493-44cd-91ee-e07630309675\",\"name\":\"Customer Datastore (n8n training)\",\"type\":\"n8n-nodes-base.n8nTrainingCustomerDatastore\",\"position\":[1040,400],\"parameters\":{\"operation\":\"getAllPeople\"},\"typeVersion\":1},{\"id\":\"29555ae0-ad6c-4888-8865-c1e097b3b44e\",\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[1260,400],\"parameters\":{\"values\":{\"number\":[{\"name\":\"itemCount\",\"value\":\"={{ $input.all().length }}\"}]},\"options\":{},\"keepOnlySet\":true},\"executeOnce\":true,\"typeVersion\":1}],\"connections\":{\"When clicking \\\"Execute Workflow\\\"\":{\"main\":[[{\"node\":\"Customer Datastore (n8n training)\",\"type\":\"main\",\"index\":0}]]},\"Customer Datastore (n8n training)\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}"
+}

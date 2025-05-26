@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/988-telegram-messaging-for-bash-dash/",
+  "title": "Telegram messaging for bash-dash",
+  "author": "Lorena",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to send a message in a Telegram chat via [bash-dash](https://github.com/n8n-io/bash-dash).\n\n**Example usage** : - telegram I'll be late\n\nIf you want to send a predefined message without typing it in the command line, you can replace the Text Expression in the Telegram node with a specific message. In this case, the dash command - telegram will send the predefined message to the chat.\n\n**Example bash-dash config** : commands[telegram]=\"<http://localhost:5678/webhook/telegram>\"\n",
+  "crawled_at": "2025-05-25T19:11:12.450746",
+  "readme_zh": "该工作流允许你通过[bash-dash](https://github.com/n8n-io/bash-dash)在Telegram聊天中发送消息。\n\n**使用示例**：- telegram 我会晚点到\n\n若想发送预设信息而无需在命令行输入，可将Telegram节点中的文本表达式替换为特定消息。此时执行- telegram指令即可将预设内容发送至聊天窗口。\n\n**bash-dash配置示例**：commands[telegram]=\"<http://localhost:5678/webhook/telegram>\"",
+  "title_zh": "电报消息传递用于bash-dash",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"5\",\"name\":\"bash-dash telegram\",\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[450,450],\"webhookId\":\"b43ae7e2-a058-4738-8d49-ac76db6e8166\",\"parameters\":{\"path\":\"telegram\",\"options\":{\"responsePropertyName\":\"response\"},\"responseMode\":\"lastNode\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[850,450],\"parameters\":{\"values\":{\"string\":[{\"name\":\"response\",\"value\":\"=Sent message to {{$node[\\\"Telegram\\\"].json[\\\"result\\\"][\\\"chat\\\"][\\\"first_name\\\"]}}: \\\"{{$node[\\\"Telegram\\\"].parameter[\\\"text\\\"]}}\\\"\"}]},\"options\":{}},\"typeVersion\":1},{\"name\":\"Telegram\",\"type\":\"n8n-nodes-base.telegram\",\"position\":[650,450],\"parameters\":{\"text\":\"={{$node[\\\"Webhook\\\"].json[\\\"query\\\"][\\\"parameter\\\"]}}\",\"chatId\":\"123456789\",\"additionalFields\":{}},\"credentials\":{\"telegramApi\":\"telegram_bot\"},\"typeVersion\":1}],\"active\":true,\"settings\":{},\"connections\":{\"Set\":{\"main\":[[]]},\"Webhook\":{\"main\":[[{\"node\":\"Telegram\",\"type\":\"main\",\"index\":0}]]},\"Telegram\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1083-create-an-event-file-and-send-it-as-an-email-attachment/",
+  "title": "Create an event file and send it as an email attachment",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[350,200],\"parameters\":{},\"typeVersion\":1},{\"name\":\"iCalendar\",\"type\":\"n8n-nodes-base.iCal\",\"position\":[550,200],\"parameters\":{\"end\":\"2021-06-11T16:15:00.000Z\",\"start\":\"2021-06-11T15:30:00.000Z\",\"title\":\"n8n Community Meetup\",\"additionalFields\":{}},\"typeVersion\":1},{\"name\":\"Send Email\",\"type\":\"n8n-nodes-base.emailSend\",\"position\":[750,200],\"parameters\":{\"text\":\"Hey Harshil,\\n\\nWe are excited to invite you to the n8n community meetup!\\n\\nWith this email you will find the invite attached.\\n\\nLooking forward to seeing you at the meetup!\\n\\nCheers,\\nHarshil\",\"options\":{},\"subject\":\"n8n Community Meetup 🚀\",\"attachments\":\"data\"},\"credentials\":{\"smtp\":\"Outlook Burner Credentials\"},\"typeVersion\":1}],\"connections\":{\"iCalendar\":{\"main\":[[{\"node\":\"Send Email\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"iCalendar\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create an event file and send it as an attachment via email.\n\n**iCalendar node:** This node will create an event file.\n\n**Send Email:** This node will send the event file as an attachment.\n",
+  "crawled_at": "2025-05-25T19:20:39.740926",
+  "readme_zh": "该工作流允许您创建事件文件并通过邮件以附件形式发送。\n\n**iCalendar节点：** 此节点将生成事件文件。\n\n**发送邮件：** 此节点会将事件文件作为附件发送。",
+  "title_zh": "创建事件文件并作为电子邮件附件发送",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[350,200],\"parameters\":{},\"typeVersion\":1},{\"name\":\"iCalendar\",\"type\":\"n8n-nodes-base.iCal\",\"position\":[550,200],\"parameters\":{\"end\":\"2021-06-11T16:15:00.000Z\",\"start\":\"2021-06-11T15:30:00.000Z\",\"title\":\"n8n Community Meetup\",\"additionalFields\":{}},\"typeVersion\":1},{\"name\":\"Send Email\",\"type\":\"n8n-nodes-base.emailSend\",\"position\":[750,200],\"parameters\":{\"text\":\"Hey Harshil,\\n\\nWe are excited to invite you to the n8n community meetup!\\n\\nWith this email you will find the invite attached.\\n\\nLooking forward to seeing you at the meetup!\\n\\nCheers,\\nHarshil\",\"options\":{},\"subject\":\"n8n Community Meetup 🚀\",\"attachments\":\"data\"},\"credentials\":{\"smtp\":\"Outlook Burner Credentials\"},\"typeVersion\":1}],\"connections\":{\"iCalendar\":{\"main\":[[{\"node\":\"Send Email\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"iCalendar\",\"type\":\"main\",\"index\":0}]]}}}"
+}

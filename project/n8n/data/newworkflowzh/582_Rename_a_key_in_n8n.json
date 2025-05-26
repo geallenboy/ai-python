@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/582-rename-a-key-in-n8n/",
+  "title": "Rename a key in n8n",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Companion workflow for Rename Keys node docs\n",
+  "crawled_at": "2025-05-25T18:23:25.886599"
+}

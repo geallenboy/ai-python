@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/784-create-update-and-get-a-profile-in-humantic-ai/",
+  "title": "Create, update, and get a profile in Humantic AI",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "{\"id\":\"127\",\"name\":\"Create, update, and get a profile in Humantic AI\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[290,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Humantic AI\",\"type\":\"n8n-nodes-base.humanticAi\",\"position\":[490,300],\"parameters\":{\"userId\":\"https://www.linkedin.com/in/harshil1712/\"},\"credentials\":{\"humanticAiApi\":\"humantic\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[690,300],\"parameters\":{\"url\":\"\",\"options\":{},\"responseFormat\":\"file\"},\"typeVersion\":1},{\"name\":\"Humantic AI1\",\"type\":\"n8n-nodes-base.humanticAi\",\"position\":[890,300],\"parameters\":{\"userId\":\"={{$node[\\\"Humantic AI\\\"].json[\\\"results\\\"][\\\"userid\\\"]}}\",\"operation\":\"update\",\"sendResume\":true},\"credentials\":{\"humanticAiApi\":\"humantic\"},\"typeVersion\":1},{\"name\":\"Humantic AI2\",\"type\":\"n8n-nodes-base.humanticAi\",\"position\":[1090,300],\"parameters\":{\"userId\":\"={{$node[\\\"Humantic AI\\\"].json[\\\"results\\\"][\\\"userid\\\"]}}\",\"options\":{\"persona\":[\"hiring\"]},\"operation\":\"get\"},\"credentials\":{\"humanticAiApi\":\"humantic\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Humantic AI\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"Humantic AI1\",\"type\":\"main\",\"index\":0}]]},\"Humantic AI1\":{\"main\":[[{\"node\":\"Humantic AI2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Humantic AI\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:48:51.016928",
+  "readme_zh": "翻译助手",
+  "title_zh": "在Humantic AI中创建、更新和获取个人资料",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"127\",\"name\":\"Create, update, and get a profile in Humantic AI\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[290,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Humantic AI\",\"type\":\"n8n-nodes-base.humanticAi\",\"position\":[490,300],\"parameters\":{\"userId\":\"https://www.linkedin.com/in/harshil1712/\"},\"credentials\":{\"humanticAiApi\":\"humantic\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[690,300],\"parameters\":{\"url\":\"\",\"options\":{},\"responseFormat\":\"file\"},\"typeVersion\":1},{\"name\":\"Humantic AI1\",\"type\":\"n8n-nodes-base.humanticAi\",\"position\":[890,300],\"parameters\":{\"userId\":\"={{$node[\\\"Humantic AI\\\"].json[\\\"results\\\"][\\\"userid\\\"]}}\",\"operation\":\"update\",\"sendResume\":true},\"credentials\":{\"humanticAiApi\":\"humantic\"},\"typeVersion\":1},{\"name\":\"Humantic AI2\",\"type\":\"n8n-nodes-base.humanticAi\",\"position\":[1090,300],\"parameters\":{\"userId\":\"={{$node[\\\"Humantic AI\\\"].json[\\\"results\\\"][\\\"userid\\\"]}}\",\"options\":{\"persona\":[\"hiring\"]},\"operation\":\"get\"},\"credentials\":{\"humanticAiApi\":\"humantic\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Humantic AI\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"Humantic AI1\",\"type\":\"main\",\"index\":0}]]},\"Humantic AI1\":{\"main\":[[{\"node\":\"Humantic AI2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Humantic AI\",\"type\":\"main\",\"index\":0}]]}}}"
+}

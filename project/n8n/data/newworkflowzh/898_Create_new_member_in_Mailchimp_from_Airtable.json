@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/898-create-new-member-in-mailchimp-from-airtable/",
+  "title": "Create new member in Mailchimp from Airtable",
+  "author": "claudia",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to automatically create new members in MailChimp based on entries in an Airtable base.\n",
+  "crawled_at": "2025-05-25T19:03:35.651699"
+}

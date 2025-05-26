@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/648-receive-updates-for-support-in-zendesk/",
+  "title": "Receive updates for support in Zendesk",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Support"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:33:09.972363"
+}

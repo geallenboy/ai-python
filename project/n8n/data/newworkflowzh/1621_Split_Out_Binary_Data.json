@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1621-split-out-binary-data/",
+  "title": "Split Out Binary Data",
+  "author": "Tom",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflows helps with processing binary data.\n\nYou'll often have binary objects with keys such as `attachment_0`, `attachment_1`, `attachment_2`, etc. attached to your items, for example when reading an incoming email.\n\nThis binary data is hard to process because it's not an array you can simply loop through.\n\nThis workflow solves this problem by providing a Function node that takes all incoming items and all their binary data and then returning a single item for each file with a `data` key containing your binary file.\n\nIncoming binary data:  \n![image.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/0b811ea7340a47ed84e7d2d275aba4e0.png)\n\nProcessed binary data:  \n![image.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/9fc0919391b04826a297ffc8e28ca17c.png)\n",
+  "crawled_at": "2025-05-25T19:56:34.783183"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/19-n8n-nodemation-basic-creating-your-first-simple-workflow-23/",
+  "title": "n8n Nodemation basic - creating your first simple workflow (2/3)",
+  "author": "sven",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"4\",\"name\":\"greeting\",\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[720,410],\"parameters\":{\"path\":\"greetinghook\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[1120,410],\"parameters\":{\"url\":\"https://webhook.site/c0a47a6f-6a71-4d18-baef-51f694f7c56b\",\"requestMethod\":\"POST\",\"responseFormat\":\"string\",\"bodyParametersUi\":{\"parameter\":[{\"name\":\"greeting\",\"value\":\"={{$node[\\\"FunctionItem\\\"].data[\\\"greeting\\\"]}}\"}]}},\"typeVersion\":1},{\"name\":\"FunctionItem\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[930,410],\"parameters\":{\"functionCode\":\"item.greeting = `Hello ${item.query.name}, have fun at the ${item.query.event}!`;\\nitem.greeting = \\\"Hello \\\" + item.query.name + \\\", have fun at the \\\" + item.query.event + \\\"!\\\";\\nreturn item;\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"FunctionItem\",\"type\":\"main\",\"index\":0}]]},\"FunctionItem\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "In this video we will create a simple n8n Nodemation workflow to receive date via webhook, alter the data and send it to a webserver. We will be using webhook, function and http request node together.\n\n[>> Youtube Video](https://youtu.be/ovlxledZfM4)\n\n[![Youtube Video](http://img.youtube.com/vi/ovlxledZfM4/0.jpg)](http://www.youtube.com/watch?v=ovlxledZfM4 \"Youtube Video\")\n",
+  "crawled_at": "2025-05-25T17:46:11.634370",
+  "readme_zh": "在本视频中，我们将创建一个简单的n8n自动化节点工作流，用于通过Webhook接收数据、修改数据并将其发送至网络服务器。我们将组合使用Webhook节点、函数节点和HTTP请求节点。\n\n[>> YouTube视频](https://youtu.be/ovlxledZfM4)\n\n[![YouTube视频](http://img.youtube.com/vi/ovlxledZfM4/0.jpg)](http://www.youtube.com/watch?v=ovlxledZfM4 \"YouTube视频\")",
+  "title_zh": "n8n 节点自动化基础 - 创建你的第一个简单工作流程（2/3）",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"4\",\"name\":\"greeting\",\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[720,410],\"parameters\":{\"path\":\"greetinghook\"},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[1120,410],\"parameters\":{\"url\":\"https://webhook.site/c0a47a6f-6a71-4d18-baef-51f694f7c56b\",\"requestMethod\":\"POST\",\"responseFormat\":\"string\",\"bodyParametersUi\":{\"parameter\":[{\"name\":\"greeting\",\"value\":\"={{$node[\\\"FunctionItem\\\"].data[\\\"greeting\\\"]}}\"}]}},\"typeVersion\":1},{\"name\":\"FunctionItem\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[930,410],\"parameters\":{\"functionCode\":\"item.greeting = `Hello ${item.query.name}, have fun at the ${item.query.event}!`;\\nitem.greeting = \\\"Hello \\\" + item.query.name + \\\", have fun at the \\\" + item.query.event + \\\"!\\\";\\nreturn item;\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"FunctionItem\",\"type\":\"main\",\"index\":0}]]},\"FunctionItem\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}"
+}

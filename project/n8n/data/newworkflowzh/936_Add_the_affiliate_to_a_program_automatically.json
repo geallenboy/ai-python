@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/936-add-the-affiliate-to-a-program-automatically/",
+  "title": "Add the affiliate to a program automatically",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to create an affiliate, add metadata, and add the affiliate to a program.\n\n**Tapfiliate node:** This node allows you to create a new affiliate in Tapfiliate.\n\n**Tapfiliate1 node:** This node allows you add metadata to the affiliate that you created previously. Based on your use-case, you may or may not require this node.\n\n**Tapfiliate2 node:** This node allows you to add the affiliate that you created previously to a program.\n\nBased on your use-case, you might want to replace the **Start node** with a trigger node that gets you the information of an affiliate.\n",
+  "crawled_at": "2025-05-25T19:07:13.867302"
+}

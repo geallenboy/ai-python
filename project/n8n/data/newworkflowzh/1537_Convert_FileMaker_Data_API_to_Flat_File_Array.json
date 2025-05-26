@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1537-convert-filemaker-data-api-to-flat-file-array/",
+  "title": "Convert FileMaker Data API to Flat File Array",
+  "author": "Dick",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Basis workflow to convert FileMaker Data API ...\n\n![Screenshot 20220318 at 21.26.43.png](https://f000.backblazeb2.com/file/n8n-website-images/90c763898616498ca2f20f1344bbf4e8.png)\n\nto Flat File Array ...\n\n![Screenshot 20220318 at 21.26.59.png](https://f000.backblazeb2.com/file/n8n-website-images/4440f783e28e48a1a7db46b8b0839929.png)\n",
+  "crawled_at": "2025-05-25T19:52:24.244350"
+}

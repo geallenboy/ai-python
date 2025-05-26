@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/487-receive-updates-for-events-in-clickup/",
+  "title": "Receive updates for events in ClickUp",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"110\",\"name\":\"Receive updates for events in ClickUp\",\"nodes\":[{\"name\":\"ClickUp Trigger\",\"type\":\"n8n-nodes-base.clickUpTrigger\",\"position\":[700,250],\"parameters\":{\"team\":\"\",\"events\":[\"*\"],\"filters\":{}},\"credentials\":{\"clickUpApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:12:35.498144"
+}

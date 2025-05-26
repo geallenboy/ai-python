@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/574-encrypt-some-data-using-the-crypto-node/",
+  "title": "Encrypt some data using the crypto node",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Crypto\",\"type\":\"n8n-nodes-base.crypto\",\"position\":[450,300],\"parameters\":{\"value\":\"n8n rocks!\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Crypto\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Crypto node docs\n",
+  "crawled_at": "2025-05-25T18:22:02.705438"
+}

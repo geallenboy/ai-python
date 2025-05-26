@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/577-read-a-file-from-disk/",
+  "title": "Read a file from disk",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Read Binary File\",\"type\":\"n8n-nodes-base.readBinaryFile\",\"position\":[470,320],\"parameters\":{\"filePath\":\"/data/picture.jpg\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Read Binary File\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Read Binary File node docs\n",
+  "crawled_at": "2025-05-25T18:22:53.728662",
+  "readme_zh": "Read Binary File 节点文档配套工作流程",
+  "title_zh": "从磁盘读取文件",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Read Binary File\",\"type\":\"n8n-nodes-base.readBinaryFile\",\"position\":[470,320],\"parameters\":{\"filePath\":\"/data/picture.jpg\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Read Binary File\",\"type\":\"main\",\"index\":0}]]}}}"
+}

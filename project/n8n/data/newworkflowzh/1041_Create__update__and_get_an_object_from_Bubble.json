@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1041-create-update-and-get-an-object-from-bubble/",
+  "title": "Create, update, and get an object from Bubble",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Bubble\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[450,280],\"parameters\":{\"typeName\":\"Doc\",\"operation\":\"create\",\"properties\":{\"property\":[{\"key\":\"Name\",\"value\":\"Bubble\"}]}},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1},{\"name\":\"Bubble1\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[650,280],\"parameters\":{\"objectId\":\"={{$json[\\\"id\\\"]}}\",\"typeName\":\"={{$node[\\\"Bubble\\\"].parameter[\\\"typeName\\\"]}}\",\"operation\":\"update\",\"properties\":{\"property\":[{\"key\":\"Name\",\"value\":\"Bubble node\"}]}},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1},{\"name\":\"Bubble2\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[850,280],\"parameters\":{\"objectId\":\"={{$node[\\\"Bubble\\\"].json[\\\"id\\\"]}}\",\"typeName\":\"={{$node[\\\"Bubble\\\"].parameter[\\\"typeName\\\"]}}\"},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Bubble\":{\"main\":[[{\"node\":\"Bubble1\",\"type\":\"main\",\"index\":0}]]},\"Bubble1\":{\"main\":[[{\"node\":\"Bubble2\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create, update, and get an object from Bubble.\n\n**Bubble node:** This node will create a new object of the type `Doc` in Bubble. If you want to create an object with a different type, use that type instead.\n\n**Bubble1 node:** This node will update the object that we created using the previous node.\n\n**Bubble2 node:** This node will retrieve the information of the object that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:15:33.149349"
+}

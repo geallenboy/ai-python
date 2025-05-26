@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/807-receive-the-weather-information-of-any-city/",
+  "title": "Receive the weather information of any city",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"158\",\"name\":\"Receive the weather information of any city\",\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[580,340],\"webhookId\":\"45690b6a-2b01-472d-8839-5e83a74858e5\",\"parameters\":{\"path\":\"45690b6a-2b01-472d-8839-5e83a74858e5\",\"options\":{},\"responseData\":\"allEntries\",\"responseMode\":\"lastNode\"},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[770,340],\"parameters\":{\"cityName\":\"={{$node[\\\"Webhook\\\"].json[\\\"query\\\"][\\\"city\\\"]}}\"},\"credentials\":{\"openWeatherMapApi\":\"\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[970,340],\"parameters\":{\"values\":{\"string\":[{\"name\":\"temp\",\"value\":\"={{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}\"},{\"name\":\"description\",\"value\":\"={{$node[\\\"OpenWeatherMap\\\"].json[\\\"weather\\\"][0][\\\"description\\\"]}}\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:51:46.753354",
+  "readme_zh": "翻译助手",
+  "title_zh": "接收任意城市的天气信息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"158\",\"name\":\"Receive the weather information of any city\",\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[580,340],\"webhookId\":\"45690b6a-2b01-472d-8839-5e83a74858e5\",\"parameters\":{\"path\":\"45690b6a-2b01-472d-8839-5e83a74858e5\",\"options\":{},\"responseData\":\"allEntries\",\"responseMode\":\"lastNode\"},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[770,340],\"parameters\":{\"cityName\":\"={{$node[\\\"Webhook\\\"].json[\\\"query\\\"][\\\"city\\\"]}}\"},\"credentials\":{\"openWeatherMapApi\":\"\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[970,340],\"parameters\":{\"values\":{\"string\":[{\"name\":\"temp\",\"value\":\"={{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}\"},{\"name\":\"description\",\"value\":\"={{$node[\\\"OpenWeatherMap\\\"].json[\\\"weather\\\"][0][\\\"description\\\"]}}\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}"
+}

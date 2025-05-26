@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/900-add-a-datapoint-to-beeminder-on-strava-activity-update/",
+  "title": "Add a datapoint to Beeminder on Strava activity update",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to add a datapoint to Beeminder when a new activity is added to Strava.\n\nYou can use this workflow to keep a track of your fitness activities and connect Strava with Beeminder.\n\nIf you want to keep a track of different activities like the number of hours worked in a week or the number of tasks completed, you can use the relevant node. For example, you can use the Clockify Trigger node or the Toggl Trigger node.\n",
+  "crawled_at": "2025-05-25T19:03:52.155778",
+  "readme_zh": "该工作流允许您在Strava新增活动时，向Beeminder添加数据点。\n\n您可通过此工作流追踪健身活动，实现Strava与Beeminder的联动。\n\n若需追踪其他类型活动（如每周工作小时数或完成任务数），可选用相应功能节点。例如使用Clockify触发器节点或Toggl触发器节点。",
+  "title_zh": "在Strava活动更新时向Beeminder添加一个数据点",
+  "publish_date_zh": "最后更新于10个月前"
+}

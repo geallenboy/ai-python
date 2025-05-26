@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/500-create-a-company-in-salesmate/",
+  "title": "Create a company in Salesmate",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"id\":\"128\",\"name\":\"Create a company in Salesmate\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Salesmate\",\"type\":\"n8n-nodes-base.salesmate\",\"position\":[450,300],\"parameters\":{\"name\":\"\",\"owner\":\"\",\"resource\":\"company\",\"additionalFields\":{}},\"credentials\":{\"salesmateApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Salesmate\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:14:21.518784"
+}

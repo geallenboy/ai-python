@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/933-add-subscribed-customers-to-airtable-automatically/",
+  "title": "Add subscribed customers to Airtable automatically",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Airtable\",\"type\":\"n8n-nodes-base.airtable\",\"position\":[1090,340],\"parameters\":{\"table\":\"Table 1\",\"options\":{},\"operation\":\"append\",\"application\":\"\"},\"credentials\":{\"airtableApi\":\"Airtable Credentials n8n\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[890,340],\"parameters\":{\"values\":{\"string\":[{\"name\":\"Name\",\"value\":\"={{$json[\\\"contact_name\\\"]}}\"},{\"name\":\"Email\",\"value\":\"={{$json[\\\"contact_email\\\"]}}\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1},{\"name\":\"GetResponse Trigger\",\"type\":\"n8n-nodes-base.getResponseTrigger\",\"position\":[690,340],\"webhookId\":\"4bdfc1fa-44bc-4293-987c-fb512327e845\",\"parameters\":{\"events\":[\"subscribe\"],\"listIds\":[\"qtPk7\"],\"options\":{}},\"credentials\":{\"getResponseApi\":\"GetResponse API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Set\":{\"main\":[[{\"node\":\"Airtable\",\"type\":\"main\",\"index\":0}]]},\"GetResponse Trigger\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to receive updates when a customer is subscribed to a list in GetResponse and add them to a base in Airtable.\n\n**GetResponse Trigger node:** This node triggers the workflow when a customer is added to a list. Based on your use-case, you can select a different event.\n\n**Set node:** The Set node is uded here to ensure that only the data that we set in this node gets passed on to the next nodes in the workflow. For this workflow, we set the name and email of the customer.\n\n**Airtable node:** The data from the **Set node** is added to a table in Airtable. Based on your use-case, you may want to add the infromation about the customer to a CRM instead of a table in Airtable. Replace the Airtable node with the node of the CRM where you want to add the data.\n",
+  "crawled_at": "2025-05-25T19:06:28.840233",
+  "readme_zh": "该工作流可在客户订阅GetResponse中的邮件列表时接收更新，并将其添加至Airtable数据库。\n\n**GetResponse触发器节点**：当客户被添加至邮件列表时触发工作流。您可根据实际业务场景选择不同触发事件。\n\n**数据设定节点**：此处用于确保仅传递本节点设定的数据至后续节点。本工作流中我们设定了客户的姓名与邮箱信息。\n\n**Airtable节点**：将**数据设定节点**的信息添加至Airtable表格。根据业务需求，您也可选择将客户信息添加至CRM系统而非Airtable表格，只需将本节点替换为目标CRM系统的对应节点即可。",
+  "title_zh": "自动将订阅客户添加到Airtable",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Airtable\",\"type\":\"n8n-nodes-base.airtable\",\"position\":[1090,340],\"parameters\":{\"table\":\"Table 1\",\"options\":{},\"operation\":\"append\",\"application\":\"\"},\"credentials\":{\"airtableApi\":\"Airtable Credentials n8n\"},\"typeVersion\":1},{\"name\":\"Set\",\"type\":\"n8n-nodes-base.set\",\"position\":[890,340],\"parameters\":{\"values\":{\"string\":[{\"name\":\"Name\",\"value\":\"={{$json[\\\"contact_name\\\"]}}\"},{\"name\":\"Email\",\"value\":\"={{$json[\\\"contact_email\\\"]}}\"}]},\"options\":{},\"keepOnlySet\":true},\"typeVersion\":1},{\"name\":\"GetResponse Trigger\",\"type\":\"n8n-nodes-base.getResponseTrigger\",\"position\":[690,340],\"webhookId\":\"4bdfc1fa-44bc-4293-987c-fb512327e845\",\"parameters\":{\"events\":[\"subscribe\"],\"listIds\":[\"qtPk7\"],\"options\":{}},\"credentials\":{\"getResponseApi\":\"GetResponse API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Set\":{\"main\":[[{\"node\":\"Airtable\",\"type\":\"main\",\"index\":0}]]},\"GetResponse Trigger\":{\"main\":[[{\"node\":\"Set\",\"type\":\"main\",\"index\":0}]]}}}"
+}

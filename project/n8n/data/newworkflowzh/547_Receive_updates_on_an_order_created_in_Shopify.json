@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/547-receive-updates-on-an-order-created-in-shopify/",
+  "title": "Receive updates on an order created in Shopify",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Shopify Trigger\",\"type\":\"n8n-nodes-base.shopifyTrigger\",\"position\":[450,450],\"webhookId\":\"fd11b3d8-ff82-4902-89cc-c93b36ae38e7\",\"parameters\":{\"topic\":\"orders/create\"},\"credentials\":{\"shopifyApi\":\"shopify_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Shopify Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:19:44.867245"
+}

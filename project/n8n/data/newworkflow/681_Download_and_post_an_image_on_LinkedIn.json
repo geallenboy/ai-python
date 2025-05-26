@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/681-download-and-post-an-image-on-linkedin/",
+  "title": "Download and post an image on LinkedIn",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[440,300],\"parameters\":{\"url\":\"https://n8n.io/n8n-logo.png\",\"options\":{},\"responseFormat\":\"file\"},\"typeVersion\":1},{\"name\":\"LinkedIn\",\"type\":\"n8n-nodes-base.linkedIn\",\"position\":[640,300],\"parameters\":{\"text\":\"this is a test image post\",\"person\":\"gZG0JALzuy\",\"postAs\":\"person\",\"additionalFields\":{},\"shareMediaCategory\":\"IMAGE\"},\"credentials\":{\"linkedInOAuth2Api\":\"linkedin_demo\"},\"typeVersion\":1}],\"connections\":{\"HTTP Request\":{\"main\":[[{\"node\":\"LinkedIn\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for LinkedIn node docs\n",
+  "crawled_at": "2025-05-25T18:37:11.154663",
+  "readme_zh": "领英节点文档配套工作流程",
+  "title_zh": "在LinkedIn上下载并发布一张图片",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[440,300],\"parameters\":{\"url\":\"https://n8n.io/n8n-logo.png\",\"options\":{},\"responseFormat\":\"file\"},\"typeVersion\":1},{\"name\":\"LinkedIn\",\"type\":\"n8n-nodes-base.linkedIn\",\"position\":[640,300],\"parameters\":{\"text\":\"this is a test image post\",\"person\":\"gZG0JALzuy\",\"postAs\":\"person\",\"additionalFields\":{},\"shareMediaCategory\":\"IMAGE\"},\"credentials\":{\"linkedInOAuth2Api\":\"linkedin_demo\"},\"typeVersion\":1}],\"connections\":{\"HTTP Request\":{\"main\":[[{\"node\":\"LinkedIn\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}"
+}

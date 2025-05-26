@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/658-trigger-a-build-using-the-travisci-node/",
+  "title": "Trigger a build using the TravisCI node",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    }
+  ],
+  "workflow_json": "{\"id\":\"52\",\"name\":\"Trigger a build using the TravisCI node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[510,350],\"parameters\":{},\"typeVersion\":1},{\"name\":\"TravisCI\",\"type\":\"n8n-nodes-base.travisCi\",\"position\":[710,350],\"parameters\":{\"slug\":\"\",\"branch\":\"\",\"operation\":\"trigger\",\"additionalFields\":{}},\"credentials\":{\"travisCiApi\":\"travisCI\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"TravisCI\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"TravisCI\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:34:48.127132",
+  "readme_zh": "你是翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "使用TravisCI节点触发构建",
+  "publish_date_zh": "最后更新于9个月前",
+  "workflow_json_zh": "{\"id\":\"52\",\"name\":\"Trigger a build using the TravisCI node\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[510,350],\"parameters\":{},\"typeVersion\":1},{\"name\":\"TravisCI\",\"type\":\"n8n-nodes-base.travisCi\",\"position\":[710,350],\"parameters\":{\"slug\":\"\",\"branch\":\"\",\"operation\":\"trigger\",\"additionalFields\":{}},\"credentials\":{\"travisCiApi\":\"travisCI\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"TravisCI\":{\"main\":[[]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"TravisCI\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/410-send-a-message-with-a-discord-bot/",
+  "title": "Send a message with a Discord Bot",
+  "author": "eem2188",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"2\",\"name\":\"Discord Intro\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[510,330],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Discord\",\"type\":\"n8n-nodes-base.discord\",\"position\":[800,330],\"parameters\":{\"text\":\"Hello World!\",\"webhookUri\":\"https://discordapp.com/api/webhooks/XXX/XXX\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Discord\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:04:23.262889",
+  "readme_zh": "翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "通过Discord机器人发送消息",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"2\",\"name\":\"Discord Intro\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[510,330],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Discord\",\"type\":\"n8n-nodes-base.discord\",\"position\":[800,330],\"parameters\":{\"text\":\"Hello World!\",\"webhookUri\":\"https://discordapp.com/api/webhooks/XXX/XXX\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Discord\",\"type\":\"main\",\"index\":0}]]}}}"
+}

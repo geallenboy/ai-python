@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/741-extract-infromation-from-a-receipt-and-store-it-in-airtable/",
+  "title": "Extract infromation from a receipt and store it in Airtable",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:43:57.673160",
+  "readme_zh": "翻译助手",
+  "title_zh": "从收据中提取信息并存储到Airtable中",
+  "publish_date_zh": "最后更新于10个月前"
+}

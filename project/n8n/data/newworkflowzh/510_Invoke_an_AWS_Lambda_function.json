@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/510-invoke-an-aws-lambda-function/",
+  "title": "Invoke an AWS Lambda function",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"AWS Lambda\",\"type\":\"n8n-nodes-base.awsLambda\",\"position\":[450,300],\"parameters\":{\"function\":\"arn:aws:lambda:ap-south-1:100558637562:function:hello-world-sample\"},\"credentials\":{\"aws\":\"amudhan-aws\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"AWS Lambda\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for AWS Lambda docs\n",
+  "crawled_at": "2025-05-25T18:15:47.079872"
+}

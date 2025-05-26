@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/653-receive-updates-when-a-billing-plan-is-activated-in-paypal/",
+  "title": "Receive updates when a billing plan is activated in PayPal",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    }
+  ],
+  "workflow_json": "{\"id\":\"46\",\"name\":\"Receive updates when a billing plan is activated in PayPal\",\"nodes\":[{\"name\":\"PayPal Trigger\",\"type\":\"n8n-nodes-base.payPalTrigger\",\"position\":[1130,620],\"webhookId\":\"242a300e-b5a0-45a2-87bc-40def6fe56ef\",\"parameters\":{\"events\":[\"BILLING.PLAN.ACTIVATED\"]},\"credentials\":{\"payPalApi\":\"paypal\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:34:09.149975",
+  "readme_zh": "你是一个翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "当PayPal中的账单计划被激活时接收更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"46\",\"name\":\"Receive updates when a billing plan is activated in PayPal\",\"nodes\":[{\"name\":\"PayPal Trigger\",\"type\":\"n8n-nodes-base.payPalTrigger\",\"position\":[1130,620],\"webhookId\":\"242a300e-b5a0-45a2-87bc-40def6fe56ef\",\"parameters\":{\"events\":[\"BILLING.PLAN.ACTIVATED\"]},\"credentials\":{\"payPalApi\":\"paypal\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

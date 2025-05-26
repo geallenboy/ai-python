@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/578-read-multiple-files-from-disk/",
+  "title": "Read multiple files from disk",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Read Binary Files\",\"type\":\"n8n-nodes-base.readBinaryFiles\",\"position\":[470,320],\"parameters\":{\"fileSelector\":\"/data/lol/*.jpg\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Read Binary Files\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Read Binary Files node docs\n",
+  "crawled_at": "2025-05-25T18:23:07.424179",
+  "readme_zh": "读取二进制文件节点文档的配套工作流程",
+  "title_zh": "从磁盘读取多个文件",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Read Binary Files\",\"type\":\"n8n-nodes-base.readBinaryFiles\",\"position\":[470,320],\"parameters\":{\"fileSelector\":\"/data/lol/*.jpg\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Read Binary Files\",\"type\":\"main\",\"index\":0}]]}}}"
+}

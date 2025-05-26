@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/763-convert-an-array-into-an-array-of-objects/",
+  "title": "Convert an array into an array of objects",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Mock Data\",\"type\":\"n8n-nodes-base.function\",\"position\":[550,300],\"parameters\":{\"functionCode\":\"return [{json:[\\\"item-1\\\", \\\"item-2\\\", \\\"item-3\\\", \\\"item-4\\\"]}];\"},\"typeVersion\":1},{\"name\":\"Function\",\"type\":\"n8n-nodes-base.function\",\"position\":[750,300],\"parameters\":{\"functionCode\":\"return items[0].json.map(item => {\\n  return {\\n    json: {\\n      data:item\\n    },\\n  }\\n});\\n\"},\"typeVersion\":1}],\"connections\":{\"Mock Data\":{\"main\":[[{\"node\":\"Function\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "You can use the Function node to convert an array to an array of objects.\n",
+  "crawled_at": "2025-05-25T18:46:37.862871"
+}

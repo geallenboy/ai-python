@@ -1,0 +1,27 @@
+{
+  "url": "https://n8n.io/workflows/484-look-up-a-person-using-their-email-in-clearbit/",
+  "title": "Look up a person using their email in Clearbit",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Support"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Building Blocks"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"104\",\"name\":\"Look up a person using their email in Clearbit\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Clearbit\",\"type\":\"n8n-nodes-base.clearbit\",\"position\":[450,300],\"parameters\":{\"email\":\"\",\"resource\":\"person\",\"additionalFields\":{}},\"credentials\":{\"clearbitApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Clearbit\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:11:27.280630"
+}

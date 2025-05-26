@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1088-add-a-new-user-to-notion-database-on-calendly-invite-creation/",
+  "title": "Add a new user to Notion database on Calendly invite creation",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Calendly Trigger\",\"type\":\"n8n-nodes-base.calendlyTrigger\",\"position\":[490,320],\"webhookId\":\"d932d43a-511e-4e54-9a8d-c8da6f6ab7c2\",\"parameters\":{\"events\":[\"invitee.created\"]},\"credentials\":{\"calendlyApi\":\"Calendly API Credentials\"},\"typeVersion\":1},{\"name\":\"Notion\",\"type\":\"n8n-nodes-base.notion\",\"position\":[690,320],\"parameters\":{\"blockUi\":{\"blockValues\":[]},\"resource\":\"databasePage\",\"databaseId\":\"b40628ca-9000-4576-ab2c-4ed3c37e6ee4\",\"propertiesUi\":{\"propertyValues\":[{\"key\":\"Name|title\",\"title\":\"={{$json[\\\"payload\\\"][\\\"invitee\\\"][\\\"name\\\"]}}\",\"peopleValue\":[],\"relationValue\":[\"\"],\"multiSelectValue\":[]},{\"key\":\"Email|email\",\"emailValue\":\"={{$json[\\\"payload\\\"][\\\"invitee\\\"][\\\"email\\\"]}}\",\"peopleValue\":[],\"relationValue\":[\"\"],\"multiSelectValue\":[]},{\"key\":\"Status|select\",\"peopleValue\":[],\"selectValue\":\"6ad3880b-260a-4d12-999f-5b605e096c1c\",\"relationValue\":[\"\"],\"multiSelectValue\":[]}]}},\"credentials\":{\"notionApi\":\"Notion API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Calendly Trigger\":{\"main\":[[{\"node\":\"Notion\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to add a new user to your Notion database when an invite gets created via Calendly.\n\n**Calendly Trigger node:** The Calendly node will trigger the workflow when an invite gets created.\n\n**Notion node:** This node will create a new record using the information received from the previous node.\n",
+  "crawled_at": "2025-05-25T19:20:51.326738"
+}

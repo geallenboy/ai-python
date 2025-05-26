@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1914-export-sql-table-into-csv-file/",
+  "title": "Export SQL table into CSV file",
+  "author": "Eduard",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow demonstrates how easy it is to export SQL query to CSV automatically!\n\n![workflowexamplefix.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/workflow_example_fix_0e73e544b6.png)\n\nBefore running the workflow please make sure you have access to a local or remote MSSQL server with a [sample AdventureWorks database](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms).\n\nThe detailed process is explained in the tutorial  \n<https://blog.n8n.io/sql-export-to-csv/>\n",
+  "crawled_at": "2025-05-25T20:17:09.192784"
+}

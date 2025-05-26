@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/1460-notify-on-slack-when-refund-is-registered-in-woocommerce/",
+  "title": "Notify on Slack when refund is registered in WooCommerce",
+  "author": "Jonathan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Finance"
+    },
+    {
+      "name": "Support"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow uses a WooCommerce trigger that will run when an order has been updated and the status is refunded.\n\nIf the value of this is over 100 it will post it to a Slack channel.\n\nTo use this workflow you will need to set the credentials to use for the WooCommerce and Slack nodes, You will also need to pick a channel to post the message to.\n",
+  "crawled_at": "2025-05-25T19:43:57.292191"
+}

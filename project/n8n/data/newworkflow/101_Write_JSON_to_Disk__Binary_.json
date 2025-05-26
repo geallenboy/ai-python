@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/101-write-json-to-disk-binary/",
+  "title": "Write JSON to Disk (Binary)",
+  "author": "mike",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Write Binary File\",\"type\":\"n8n-nodes-base.writeBinaryFile\",\"position\":[800,350],\"parameters\":{\"fileName\":\"test.json\"},\"typeVersion\":1},{\"name\":\"Make Binary\",\"type\":\"n8n-nodes-base.function\",\"position\":[600,350],\"parameters\":{\"functionCode\":\"items[0].binary = {\\n  data: {\\n    data: new Buffer(JSON.stringify(items[0].json, null, 2)).toString('base64')\\n  }\\n};\\nreturn items;\"},\"typeVersion\":1},{\"name\":\"Create Example Data\",\"type\":\"n8n-nodes-base.function\",\"position\":[390,350],\"parameters\":{\"functionCode\":\"items[0].json = {\\n  \\\"text\\\": \\\"asdf\\\",\\n  \\\"number\\\": 1\\n};\\nreturn items;\"},\"typeVersion\":1}],\"connections\":{\"Make Binary\":{\"main\":[[{\"node\":\"Write Binary File\",\"type\":\"main\",\"index\":0}]]},\"Create Example Data\":{\"main\":[[{\"node\":\"Make Binary\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "The “Write Binary File” expects binary data. The JSON data is, however, JSON ;) There should really be a node that allows moving data around between both of them. For now, it can be done with a Function-Node. At least till a proper one is in place. The first node is example data, wich you can customize or replace. The second node named “Make Binary” is the important one with the custom code which makes the data binary and writes it to the correct location.\n",
+  "crawled_at": "2025-05-25T17:57:45.927320",
+  "readme_zh": "“写入二进制文件”节点需要二进制数据。然而，JSON数据本质上是JSON格式 ;) 确实应该有一个节点能在两者之间转换数据。目前可以通过“函数”节点实现这一功能，至少在没有专用节点之前可以这样处理。第一个节点是示例数据，您可以自定义或替换它。第二个名为“生成二进制”的节点是关键，它包含自定义代码，能将数据转换为二进制并写入正确位置。",
+  "title_zh": "写入JSON到磁盘（二进制）",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\n  \"nodes\": [\n    {\n      \"name\": \"Write Binary File\",\n      \"type\": \"n8n-nodes-base.writeBinaryFile\",\n      \"position\": [\n        800,\n        350\n      ],\n      \"parameters\": {\n        \"fileName\": \"test.json\"\n      },\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Make Binary\",\n      \"type\": \"n8n-nodes-base.function\",\n      \"position\": [\n        600,\n        350\n      ],\n      \"parameters\": {\n        \"functionCode\": \"items[0].binary = {\\n  data: {\\n    data: new Buffer(JSON.stringify(items[0].json, null, 2)).toString('base64')\\n  }\\n};\\nreturn items;\"\n      },\n      \"typeVersion\": 1\n    },\n    {\n      \"name\": \"Create Example Data\",\n      \"type\": \"n8n-nodes-base.function\",\n      \"position\": [\n        390,\n        350\n      ],\n      \"parameters\": {\n        \"functionCode\": \"items[0].json = {\\n  \\\"text\\\": \\\"asdf\\\",\\n  \\\"number\\\": 1\\n};\\nreturn items;\"\n      },\n      \"typeVersion\": 1\n    }\n  ],\n  \"connections\": {\n    \"Make Binary\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Write Binary File\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Create Example Data\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Make Binary\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  }\n}"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1980-use-an-open-source-llm-via-huggingface/",
+  "title": "Use an open-source LLM (via HuggingFace)",
+  "author": "n8n Team",
+  "publish_date": "Last update 2 months ago",
+  "publish_date_absolute": "2025-03-25",
+  "categories": [
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow demonstrates how to connect an open-source model to a Basic LLM node.\n\nThe workflow is triggered when a new manual chat message appears. The message is then run through a Language Model Chain that is set up to process text with a specific prompt to guide the model's responses.\n\nNote that open-source LLMs with a small number of parameters require slightly different prompting with more guidance to the model.\n\nYou can change the default Mistral-7B-Instruct-v0.1 model to any other LLM supported by HuggingFace. You can also connect other nodes, such as Ollama.\n\nNote that to use this template, you need to be on n8n version 1.19.4 or later.\n",
+  "crawled_at": "2025-05-25T20:31:29.166080",
+  "readme_zh": "此工作流程演示了如何将开源模型连接至基础LLM节点。\n\n当出现新的手动聊天消息时，该工作流程即被触发。消息随后经由语言模型链处理，该链配置了特定提示词以引导模型生成响应。\n\n请注意，参数规模较小的开源LLM需要稍有不同的提示策略，需为模型提供更多引导。\n\n您可将默认的Mistral-7B-Instruct-v0.1模型替换为HuggingFace支持的任何其他LLM，也可连接其他节点（如Ollama）。\n\n需注意：使用此模板需确保n8n版本为1.19.4或更高。",
+  "title_zh": "使用一个开源的大语言模型（通过HuggingFace平台）",
+  "publish_date_zh": "上次更新于一个月前",
+  "workflow_json_zh": "{\"meta\":{\"instanceId\":\"408f9fb9940c3cb18ffdef0e0150fe342d6e655c3a9fac21f0f644e8bedabcd9\",\"templateCredsSetupCompleted\":true},\"nodes\":[{\"id\":\"27e5f0c0-ba88-4c28-b3be-99c973be15cb\",\"name\":\"Sticky Note\",\"type\":\"n8n-nodes-base.stickyNote\",\"position\":[-480,-140],\"parameters\":{\"width\":1083,\"height\":357,\"content\":\"## 这是一个连接开源模型的基础LLM链示例\\n### 当前链连接的是Mistral-7B-Instruct-v0.1模型，但您可以更换其他模型\\n\\n请注意引导模型行为的初始提示词：\\n```\\n你是一个乐于助人的助手。\\n请礼貌地回复用户。\\n回答时请使用表情符号和文字。\\n问：{{ $json.input }}\\n答：\\n```\\n\\n通过这种格式，模型\\\"知道\\\"需要在`答：`后面直接回答问题。\\n\\n由于当前使用的是Hugging Face推理节点，该模式暂不支持LangChain智能体功能。如需使用该功能，请改用[Ollama聊天模型](https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama/)节点\"},\"typeVersion\":1},{\"id\":\"4756d5a8-7027-4942-b214-a5ff8310869a\",\"name\":\"When chat message received\",\"type\":\"@n8n/n8n-nodes-langchain.chatTrigger\",\"position\":[-200,280],\"webhookId\":\"bf2e38b8-566a-4aeb-8efe-28240f4a6991\",\"parameters\":{\"options\":{}},\"typeVersion\":1.1},{\"id\":\"20a36351-8579-4ac6-9746-526b072aeaa6\",\"name\":\"Basic LLM Chain\",\"type\":\"@n8n/n8n-nodes-langchain.chainLlm\",\"position\":[20,280],\"parameters\":{\"messages\":{\"messageValues\":[{\"message\":\"=You are a helpful assistant. Please reply politely to the users. Use emojis and a text.\"}]}},\"typeVersion\":1.5},{\"id\":\"9b88e307-3ad5-4167-8c5f-e5827f7444ac\",\"name\":\"Hugging Face Inference Model\",\"type\":\"@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference\",\"position\":[120,440],\"parameters\":{\"model\":\"mistralai/Mistral-7B-Instruct-v0.1\",\"options\":{\"maxTokens\":512,\"temperature\":0.8,\"frequencyPenalty\":2}},\"credentials\":{\"huggingFaceApi\":{\"id\":\"ARQ5mOhvBxi283Qk\",\"name\":\"HuggingFaceApi account\"}},\"typeVersion\":1}],\"pinData\":{},\"connections\":{\"When chat message received\":{\"main\":[[{\"node\":\"Basic LLM Chain\",\"type\":\"main\",\"index\":0}]]},\"Hugging Face Inference Model\":{\"ai_languageModel\":[[{\"node\":\"Basic LLM Chain\",\"type\":\"ai_languageModel\",\"index\":0}]]}}}"
+}

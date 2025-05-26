@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/815-create-a-short-url-and-get-the-statistics-of-the-url/",
+  "title": "Create a short URL and get the statistics of the URL",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:53:17.863252"
+}

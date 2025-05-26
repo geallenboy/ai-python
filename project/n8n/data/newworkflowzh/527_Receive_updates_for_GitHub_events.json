@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/527-receive-updates-for-github-events/",
+  "title": "Receive updates for GitHub events",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Github Trigger\",\"type\":\"n8n-nodes-base.githubTrigger\",\"position\":[260,410],\"webhookId\":\"887a6b2b-dfc3-48b5-86e3-fc414613baee\",\"parameters\":{\"owner\":\"n8n-io\",\"events\":[\"*\"],\"repository\":\"n8n-docs\"},\"credentials\":{\"githubApi\":\"github_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Github Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:17:44.497904"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1599-send-new-youtube-channel-videos-to-telegram/",
+  "title": "Send new YouTube channel videos to Telegram",
+  "author": "Alessio",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "![](https://hostux.pics/images/2022/04/17/image8c74c187fe43f155.png)  \nA simple node to send new YouTube videos from a channel to a Telegram chat (private, group or channel).  \n**CheckTime** : set how often videos should be fetched from YouTube. Default is 30 minutes.  \n**GetVideosYT** : this node will fetch the list of videos from a given channel. Here you need to specify on \"Limit\" the number of videos to fetch, and on \"Channel ID\" the ID of the desired channel (it should be the ending part of the URL). You need Google OAuth2 credentials to make it work. A guide is available [here](https://docs.n8n.io/integrations/credentials/google/). (If you use n8n's tunneling, you may need to adjust the OAuth callback URL on Google Cloud Platform)  \n**Set** : this node will set some variables to work easily with the next nodes. You shouldn't edit this.  \n**Function** : this node checks if the video was seen previously by the workflow, so that it won't be published a second time on Telegram. You shouldn't edit this.  \n**SendVideo** : this node sends the message to Telegram. You need to set your bot's credentials ([guide here](https://docs.n8n.io/integrations/credentials/telegram)), specify the Chat ID to send the message ([how to get](https://docs.n8n.io/integrations/nodes/n8n-nodes-base.telegram/?utm_source=n8n_app&utm_medium=node_settings_modal-credential_link&utm_campaign=n8n-nodes-base.telegram#how-do-i-get-the-chat-id)) and personalize the Text of your message.\n\nThis workflow works correctly only when it's activated. If you manually execute the workflow, it will send every time the latest videos.\n",
+  "crawled_at": "2025-05-25T19:55:52.823919"
+}

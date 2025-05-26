@@ -1,0 +1,25 @@
+{
+  "url": "https://n8n.io/workflows/384-save-typeform-survey-results-to-airtable/",
+  "title": "Save Typeform survey results to Airtable",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"54\",\"name\":\"CFP Selection 1\",\"nodes\":[{\"name\":\"Typeform Trigger\",\"type\":\"n8n-nodes-base.typeformTrigger\",\"position\":[450,250],\"parameters\":{\"formId\":\"\"},\"credentials\":{\"typeformApi\":\"Typeform\"},\"typeVersion\":1},{\"name\":\"Airtable\",\"type\":\"n8n-nodes-base.airtable\",\"position\":[660,250],\"parameters\":{\"table\":\"\",\"operation\":\"append\",\"application\":\"\"},\"credentials\":{\"airtableApi\":\"Airtable\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Typeform Trigger\":{\"main\":[[{\"node\":\"Airtable\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "With this workflow, you can collect the data from Typeform with the Typeform Trigger node every time someone submits a response and save it to Airtable with the Airtable node.\n",
+  "crawled_at": "2025-05-25T18:03:12.975360",
+  "readme_zh": "通过此工作流程，您可以在每次有人提交回答时，使用Typeform触发器节点从Typeform收集数据，并通过Airtable节点将其保存至Airtable。",
+  "title_zh": "将Typeform调查结果保存至Airtable",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"54\",\"name\":\"CFP Selection 1\",\"nodes\":[{\"name\":\"Typeform Trigger\",\"type\":\"n8n-nodes-base.typeformTrigger\",\"position\":[450,250],\"parameters\":{\"formId\":\"\"},\"credentials\":{\"typeformApi\":\"Typeform\"},\"typeVersion\":1},{\"name\":\"Airtable\",\"type\":\"n8n-nodes-base.airtable\",\"position\":[660,250],\"parameters\":{\"table\":\"\",\"operation\":\"append\",\"application\":\"\"},\"credentials\":{\"airtableApi\":\"Airtable\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Typeform Trigger\":{\"main\":[[{\"node\":\"Airtable\",\"type\":\"main\",\"index\":0}]]}}}"
+}

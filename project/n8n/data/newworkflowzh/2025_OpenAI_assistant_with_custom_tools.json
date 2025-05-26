@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/2025-openai-assistant-with-custom-tools/",
+  "title": "OpenAI assistant with custom tools",
+  "author": "David Roberts",
+  "publish_date": "Last update 2 months ago",
+  "publish_date_absolute": "2025-03-25",
+  "categories": [
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow shows how you can get your OpenAI assistant to call an n8n workflow as a tool. Since you can put almost any functionality in an n8n workflow, this means you can give your assistant access to almost any data source.\n\nNote that to use this template, you need to be on n8n version 1.19.4 or later.\n",
+  "crawled_at": "2025-05-25T20:36:53.577386"
+}

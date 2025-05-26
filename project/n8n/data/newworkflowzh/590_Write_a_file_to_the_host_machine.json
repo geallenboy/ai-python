@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/590-write-a-file-to-the-host-machine/",
+  "title": "Write a file to the host machine",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    }
+  ],
+  "workflow_json": "{\"id\":\"160\",\"name\":\"Write a file to the host machine\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[260,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[460,300],\"parameters\":{\"url\":\"https://docs.n8n.io/assets/img/n8n-logo.png\",\"options\":{},\"responseFormat\":\"file\"},\"typeVersion\":1},{\"name\":\"Write Binary File\",\"type\":\"n8n-nodes-base.writeBinaryFile\",\"position\":[660,300],\"parameters\":{\"fileName\":\"/Users/tanay/Desktop/n8n-logo.png\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"HTTP Request\":{\"main\":[[{\"node\":\"Write Binary File\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:24:34.355326"
+}

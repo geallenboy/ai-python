@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/966-send-weather-alerts-to-your-mobile-phone-with-openweathermap-and-signl4/",
+  "title": "Send weather alerts to your mobile phone with OpenWeatherMap and SIGNL4",
+  "author": "Ron",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Get weather alerts on your mobile phone via push, SMS or voice call.\n\nThis flow gets weather information every morning and sends out an alert to your [SIGNL4](https://www.signl4.com) on-call team.\n\nFor example you can send out weather alerts in case of freezing temperatures, snow, rain, hail storms, hot weather, etc. The flow also supports automatic alert resolution. So, for example if the temperature goes up again the alert is closed automatically in the app.\n\nUser cases:\n\n  * Dispatch snow removal teams\n  * Inform car dealers to protect the cars outside in case of hail storms\n  * Set sails if there are high winds\n  * And much more ...\n\n\n\n![signl4n8n.gif](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/signl4_n8n_9e680d5f9b.gif)\n\nCan be adapted easily to other weather warnings, like rain, hail storm, etc.\n",
+  "crawled_at": "2025-05-25T19:08:35.385638"
+}

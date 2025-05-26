@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/493-get-details-of-a-forum-in-disqus/",
+  "title": "Get details of a forum in Disqus",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Support"
+    },
+    {
+      "name": "Product"
+    }
+  ],
+  "workflow_json": "{\"id\":\"119\",\"name\":\"Get details of a forum in Disqus\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Disqus\",\"type\":\"n8n-nodes-base.disqus\",\"position\":[450,300],\"parameters\":{\"id\":\"hackernoon\",\"additionalFields\":{}},\"credentials\":{\"disqusApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Disqus\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:13:15.873863"
+}

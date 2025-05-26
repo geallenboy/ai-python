@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/781-periodically-send-data-from-http-request-node-to-telegram/",
+  "title": "Periodically send data from HTTP Request node to Telegram",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:48:26.108745",
+  "readme_zh": "您是一位翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "定期将HTTP请求节点的数据发送至Telegram",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"57\",\"name\":\"Send a cocktail recipe every day via a Telegram\",\"nodes\":[{\"name\":\"Telegram\",\"type\":\"n8n-nodes-base.telegram\",\"position\":[930,300],\"parameters\":{\"file\":\"={{$node[\\\"HTTP Request\\\"].json[\\\"drinks\\\"][0][\\\"strDrinkThumb\\\"]}}\",\"chatId\":\"-485396236\",\"operation\":\"sendPhoto\",\"additionalFields\":{\"caption\":\"={{$node[\\\"HTTP Request\\\"].json[\\\"drinks\\\"][0][\\\"strInstructions\\\"]}}\"}},\"credentials\":{\"telegramApi\":\"telegram-bot\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[530,300],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":20}]}},\"typeVersion\":1},{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[730,300],\"parameters\":{\"url\":\"https://www.thecocktaildb.com/api/json/v1/1/random.php\",\"options\":{}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"Telegram\",\"type\":\"main\",\"index\":0}]]}}}"
+}

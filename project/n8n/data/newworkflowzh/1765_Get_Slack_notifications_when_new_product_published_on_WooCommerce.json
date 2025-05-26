@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1765-get-slack-notifications-when-new-product-published-on-woocommerce/",
+  "title": "Get Slack notifications when new product published on WooCommerce",
+  "author": "n8n Team",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow let's a bot in Slack notify a specific channel when a new product in WooCommerce is published and live on the site.\n\n## Prerequisites\n\n[WooCommerce](https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.woocommercetrigger/) account  \n[Slack](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.slack/) and a [Slack bot](https://slack.com/help/articles/115005265703-Create-a-bot-for-your-workspace)\n\n## How it works\n\n  1. Listen for WooCommerce product creation\n  2. If permalink starts with https://[your-url-here].com/product/\n  3. Slack bot notifies channel that a new product has been added.\n\n\n\nPlease note, you must update the URL in the IF node to match your url. If your WooCommerce doesn't use the slug /product/, that will need to be updated too.\n",
+  "crawled_at": "2025-05-25T20:02:35.236638"
+}

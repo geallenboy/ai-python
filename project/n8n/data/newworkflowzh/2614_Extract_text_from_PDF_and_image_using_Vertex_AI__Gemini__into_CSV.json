@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/2614-extract-text-from-pdf-and-image-using-vertex-ai-gemini-into-csv/",
+  "title": "Extract text from PDF and image using Vertex AI (Gemini) into CSV",
+  "author": "Keith Rumjahn",
+  "publish_date": "Last update 6 months ago",
+  "publish_date_absolute": "2024-11-26",
+  "categories": [
+    {
+      "name": "AI"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "![Cover1024x576.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Cover_1024x576_751377aeda.png)\n\n# Case Study\n\nI'm too lazy to record every transaction for my expense tracking. Since all my expenses are digital, I just extract the transactions from bank PDF statements and screenshots into CSV to import into my budgeting software.\n\n[Read more -> How I used A.I. to track all my expenses](https://rumjahn.com/how-to-extract-pdf-and-image-text-into-csv-using-n8n-without-manual-data-entry/)\n\n# What this workflow does\n\n  * Upload your PDF or screenshots into Google Drive\n  * It then passes the PDF/image to Vertex Gemini to do some A.I. image recognition\n  * It then sends the transactions as CSV and stores it into another Google Drive folder\n\n\n\n# Setup\n\n  1. Set up 2 google drive folders. 1 for uploading and 1 for the output.\n  2. Input your Google Drive crendtials\n  3. Input your Vertex Gemini credentials\n\n\n\n# How to adjust it to your needs\n\n  * You can upload other types of documents for information extraction.\n  * You can extract any text data from any image or PDF\n  * You can adjust the A.I. prompt to do different things\n\n\n",
+  "crawled_at": "2025-05-26T00:45:03.007694"
+}

@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/993-receive-transfer-updates-from-wise-and-add-to-airtable/",
+  "title": "Receive transfer updates from Wise and add to Airtable",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to receive updates from Wise and add information of a transfer to a base in Airtable.\n\n**Wise Trigger node:** This node will trigger the workflow when the status of your transfer changes.\n\n**Wise node:** This node will get the information about the transfer.\n\n**Set node:** We use the Set node to ensure that only the data that we set in this node gets passed on to the next nodes in the workflow. We set the value of `Transfer ID`, `Date`, `Reference`, and `Amount` in this node.\n\n**Airtable node:** This node will append the data that we set in the previous node to a table.\n",
+  "crawled_at": "2025-05-25T19:12:13.272101",
+  "readme_zh": "此工作流程允许您接收来自Wise的更新，并将转账信息添加至Airtable数据库。\n\n**Wise触发器节点：** 当您的转账状态发生变化时，该节点将触发工作流程。\n\n**Wise节点：** 该节点用于获取转账的相关信息。\n\n**设置节点：** 通过此节点确保仅传递预设数据至后续节点。我们在此节点中设定`转账ID`、`日期`、`参考号`及`金额`的值。\n\n**Airtable节点：** 该节点将前序节点设置的数据追加到指定数据表中。",
+  "title_zh": "接收来自Wise的转账更新并添加到Airtable",
+  "publish_date_zh": "最后更新于10个月前"
+}

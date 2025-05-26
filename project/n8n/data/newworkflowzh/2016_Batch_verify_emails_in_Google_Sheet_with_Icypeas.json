@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/2016-batch-verify-emails-in-google-sheet-with-icypeas/",
+  "title": "Batch verify emails in Google Sheet with Icypeas",
+  "author": "Corentin Ribeyre",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Building Blocks"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This template can be used to verify email addresses with [Icypeas](https://www.icypeas.com/). Be sure to have an active account to use this template.\n\n**How it works**  \nThis workflow can be divided into four steps :\n    \n    \n    1. The workflow initiates with a manual trigger (On clicking ‘execute’).\n    2. It reads your Google Sheet file.\n    3. It converts your file to an array.\n    4. It connects to your Icypeas account.\n    5. It performs an HTTP request to verify the emails.\n    \n\n**Set up steps**  \n1\\. You will need a formated Google sheet file with email addresses.  \n2\\. You will need a working icypeas account to run the workflow and get your API Key, API Secret and User ID.  \n3\\. You will need email addresses to verify them.\n",
+  "crawled_at": "2025-05-25T20:35:57.580836"
+}

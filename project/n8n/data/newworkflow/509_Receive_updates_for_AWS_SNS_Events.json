@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/509-receive-updates-for-aws-sns-events/",
+  "title": "Receive updates for AWS SNS Events",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"AWS-SNS-Trigger\",\"type\":\"n8n-nodes-base.awsSnsTrigger\",\"position\":[440,300],\"parameters\":{\"topic\":\"arn:aws:sns:ap-south-1:100558637562:n8n-rocks\"},\"credentials\":{\"aws\":\"amudhan-aws\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for AWS SNS Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:15:38.227588",
+  "readme_zh": "AWS SNS触发器节点文档配套工作流",
+  "title_zh": "接收AWS SNS事件更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"AWS-SNS-Trigger\",\"type\":\"n8n-nodes-base.awsSnsTrigger\",\"position\":[440,300],\"parameters\":{\"topic\":\"arn:aws:sns:ap-south-1:100558637562:n8n-rocks\"},\"credentials\":{\"aws\":\"amudhan-aws\"},\"typeVersion\":1}],\"connections\":{}}"
+}

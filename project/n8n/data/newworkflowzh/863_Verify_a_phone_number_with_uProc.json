@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/863-verify-a-phone-number-with-uproc/",
+  "title": "Verify a phone number with uProc",
+  "author": "Miquel Colomer",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"114\",\"name\":\"Verify phone numbers\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[440,510],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Create Phone Item\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[640,510],\"parameters\":{\"functionCode\":\"item.phone = \\\"+34605281220\\\";\\nreturn item;\"},\"typeVersion\":1},{\"name\":\"Parse and Validate Phone\",\"type\":\"n8n-nodes-base.uproc\",\"position\":[850,510],\"parameters\":{\"tool\":\"getPhoneParsed\",\"phone\":\"={{$node[\\\"Create Phone Item\\\"].json[\\\"phone\\\"]}}\",\"additionalOptions\":{}},\"credentials\":{\"uprocApi\":\"miquel-uproc\"},\"typeVersion\":1},{\"name\":\"Phone is Valid?\",\"type\":\"n8n-nodes-base.if\",\"position\":[1050,510],\"parameters\":{\"conditions\":{\"string\":[{\"value1\":\"={{$node[\\\"Parse and Validate Phone\\\"].json[\\\"message\\\"][\\\"valid\\\"]+\\\"\\\"}}\",\"value2\":\"true\"}]}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Create Phone Item\":{\"main\":[[{\"node\":\"Parse and Validate Phone\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Create Phone Item\",\"type\":\"main\",\"index\":0}]]},\"Parse and Validate Phone\":{\"main\":[[{\"node\":\"Phone is Valid?\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Do you want to avoid communication problems when launching phone calls?\n\nThis workflow verifies landline and mobile phone numbers using the uProc [**Get Parsed and validated phone tool**](https://app.uproc.io/#/tools/processor/get/phone/parsed) with worldwide coverage.\n\nYou need to add your credentials (Email and API Key - real -) located at [**Integration section**](https://app.uproc.io/#/settings/integration) to n8n.\n\nNode \"Create Phone Item\" can be replaced by any other supported service with phone values, like databases (MySQL, Postgres), or Typeform.\n\nThe \"uProc\" node returns the next fields per every parsed and validated phone number:\n\n  * country_prefix: contains the international country phone prefix number.\n  * country_code: contains the 2-digit ISO country code of the phone number.\n  * local_number: contains the phone number without international prefix.\n  * formatted: contains a formatted version of the phone number, according to country detected.\n  * valid: detects if the phone number has a valid format and prefix.\n  * type: the phone number type (mobile, landline, or something else).\n\n\n\n\"If\" node checks if the phone number is valid.\n\nYou can use the result to mark invalid phone numbers in your database or discard them from future telemarketing campaigns.\n",
+  "crawled_at": "2025-05-25T18:59:56.226697"
+}

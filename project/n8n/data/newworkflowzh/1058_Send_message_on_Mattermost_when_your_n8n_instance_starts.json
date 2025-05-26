@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1058-send-message-on-mattermost-when-your-n8n-instance-starts/",
+  "title": "Send message on Mattermost when your n8n instance starts",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to receive a message on Mattermost when your n8n instance starts.\n\n**n8n Trigger node:** The n8n Trigger node will trigger the workflow whenever the instance starts.\n\n**Mattermost node:** This node will send a message on Mattermost, notifying you when n8n starts.\n",
+  "crawled_at": "2025-05-25T19:17:28.647971"
+}

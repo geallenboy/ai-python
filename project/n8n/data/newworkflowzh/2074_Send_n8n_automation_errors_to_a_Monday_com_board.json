@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/2074-send-n8n-automation-errors-to-a-mondaycom-board/",
+  "title": "Send n8n automation errors to a Monday.com board",
+  "author": "Joey D’Anna",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This template is an error handler that will log n8n workflow errors to a [Monday.com](http://Monday.com) board for troubleshooting and tracking.\n\nPrerequisites\n\n  * Monday account and Monday credential\n  * Create a board on Monday for error logging, with the following columns and types: \n    * Timestamp (text)\n    * Error Message (text)\n    * Stack Trace (long text)\n  * Determine the column IDs using Monday's [instructions](https://support.monday.com/hc/en-us/articles/360000225709-Board-item-column-and-automation-or-integration-ID-s)\n\n\n\nSetup\n\n  * Edit the Monday nodes to use your credential\n  * Edit the node labeled **CREATE ERROR ITEM** to point to your error log board and group name\n  * Edit the column IDs in the \"Column Values\" field of the **UPDATE** node to match the IDs of the fields on your error log board\n  * To trigger error logging, select this automation as the error workflow on any automation \n    * For more detailed logging, add **Stop and Error** nodes in your workflow to send specific error messages to your board.\n\n\n",
+  "crawled_at": "2025-05-25T20:48:39.014397"
+}

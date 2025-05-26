@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/429-gather-leads-in-google-sheet-and-mailchimp/",
+  "title": "Gather leads in Google Sheet and Mailchimp",
+  "author": "emmanuelchilaka779",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"1\",\"name\":\"Google Sheet to Mailchimp\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[110,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[530,300],\"parameters\":{\"range\":\"sheetone!A:C\",\"options\":{},\"sheetId\":\"1jwEoPPrkQ2qYMYLZ_I0hlME_Ya_p2YZvaxG10Nf_R20\"},\"credentials\":{\"googleApi\":\"Google mailchimp\"},\"typeVersion\":1},{\"name\":\"Mailchimp\",\"type\":\"n8n-nodes-base.mailchimp\",\"position\":[720,300],\"parameters\":{\"list\":\"90d12734de\",\"email\":\"={{$node[\\\"Google Sheets\\\"].json[\\\"email\\\"]}}\",\"status\":\"subscribed\",\"options\":{}},\"credentials\":{\"mailchimpApi\":\"Google mailchimp\"},\"typeVersion\":1},{\"name\":\"Interval\",\"type\":\"n8n-nodes-base.interval\",\"position\":[290,300],\"parameters\":{\"interval\":2},\"typeVersion\":1}],\"active\":true,\"settings\":{},\"connections\":{\"Interval\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets\":{\"main\":[[{\"node\":\"Mailchimp\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[]]}}}",
+  "readme": "Gather leads into Mailchimp, automate marketing, and sales process.\n",
+  "crawled_at": "2025-05-25T18:05:35.670877",
+  "readme_zh": "将潜在客户汇集至Mailchimp，实现营销与销售流程自动化。",
+  "title_zh": "在Google表格和Mailchimp中收集潜在客户",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"1\",\"name\":\"Google Sheet to Mailchimp\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[110,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[530,300],\"parameters\":{\"range\":\"sheetone!A:C\",\"options\":{},\"sheetId\":\"1jwEoPPrkQ2qYMYLZ_I0hlME_Ya_p2YZvaxG10Nf_R20\"},\"credentials\":{\"googleApi\":\"Google mailchimp\"},\"typeVersion\":1},{\"name\":\"Mailchimp\",\"type\":\"n8n-nodes-base.mailchimp\",\"position\":[720,300],\"parameters\":{\"list\":\"90d12734de\",\"email\":\"={{$node[\\\"Google Sheets\\\"].json[\\\"email\\\"]}}\",\"status\":\"subscribed\",\"options\":{}},\"credentials\":{\"mailchimpApi\":\"Google mailchimp\"},\"typeVersion\":1},{\"name\":\"Interval\",\"type\":\"n8n-nodes-base.interval\",\"position\":[290,300],\"parameters\":{\"interval\":2},\"typeVersion\":1}],\"active\":true,\"settings\":{},\"connections\":{\"Interval\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets\":{\"main\":[[{\"node\":\"Mailchimp\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[]]}}}"
+}

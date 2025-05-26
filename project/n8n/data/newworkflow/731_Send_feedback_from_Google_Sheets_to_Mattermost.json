@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/731-send-feedback-from-google-sheets-to-mattermost/",
+  "title": "Send feedback from Google Sheets to Mattermost",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-26",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[450,300],\"parameters\":{\"triggerTimes\":{\"item\":[{\"mode\":\"custom\",\"cronExpression\":\"0 0 17 28 9 *\"}]}},\"typeVersion\":1},{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[650,300],\"parameters\":{\"range\":\"Sessions!A:D\",\"options\":{},\"sheetId\":\"1nlnsTQKGgQZN-Rtd07K9bn0ROm0aFBC2O4kzM2YaTBI\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":\"n8ndocsburner-googlesheets\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[850,300],\"parameters\":{\"message\":\"= Hey @channel, we hope you had a great time at **{{$node[\\\"Google Sheets\\\"].json[\\\"Session\\\"]}}**.\\nLet us know how we did by sharing your feedback with us on the link below!\",\"channelId\":\"={{$node[\\\"Google Sheets\\\"].json[\\\"Mattermost Channel ID\\\"]}}\",\"attachments\":[{\"title\":\"=Feedback Form - {{$node[\\\"Google Sheets\\\"].json[\\\"Session\\\"]}}\",\"title_link\":\"={{$node[\\\"Google Sheets\\\"].json[\\\"Feedback Form Link\\\"]}}\"}],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"mm_failedmachine\"},\"typeVersion\":1}],\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "n8nConf Companion workflow for blog post\n",
+  "crawled_at": "2025-05-26T07:37:57.226653",
+  "readme_zh": "n8nConf 博客文章配套工作流",
+  "title_zh": "将Google Sheets中的反馈发送至Mattermost",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[450,300],\"parameters\":{\"triggerTimes\":{\"item\":[{\"mode\":\"custom\",\"cronExpression\":\"0 0 17 28 9 *\"}]}},\"typeVersion\":1},{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[650,300],\"parameters\":{\"range\":\"Sessions!A:D\",\"options\":{},\"sheetId\":\"1nlnsTQKGgQZN-Rtd07K9bn0ROm0aFBC2O4kzM2YaTBI\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleSheetsOAuth2Api\":\"n8ndocsburner-googlesheets\"},\"typeVersion\":1},{\"name\":\"Mattermost\",\"type\":\"n8n-nodes-base.mattermost\",\"position\":[850,300],\"parameters\":{\"message\":\"= Hey @channel, we hope you had a great time at **{{$node[\\\"Google Sheets\\\"].json[\\\"Session\\\"]}}**.\\nLet us know how we did by sharing your feedback with us on the link below!\",\"channelId\":\"={{$node[\\\"Google Sheets\\\"].json[\\\"Mattermost Channel ID\\\"]}}\",\"attachments\":[{\"title\":\"=Feedback Form - {{$node[\\\"Google Sheets\\\"].json[\\\"Session\\\"]}}\",\"title_link\":\"={{$node[\\\"Google Sheets\\\"].json[\\\"Feedback Form Link\\\"]}}\"}],\"otherOptions\":{}},\"credentials\":{\"mattermostApi\":\"mm_failedmachine\"},\"typeVersion\":1}],\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]},\"Google Sheets\":{\"main\":[[{\"node\":\"Mattermost\",\"type\":\"main\",\"index\":0}]]}}}"
+}

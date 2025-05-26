@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1076-transfer-data-from-website-to-google-sheets/",
+  "title": "Transfer data from website to Google Sheets",
+  "author": "Mark Bowen",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Take data from website form via webhook and save data into Google Sheets document!\n",
+  "crawled_at": "2025-05-25T19:19:43.777665",
+  "readme_zh": "通过Webhook从网站表单获取数据并保存到Google Sheets文档中！",
+  "title_zh": "将数据从网站传输到Google表格",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Google Sheets\",\"type\":\"n8n-nodes-base.googleSheets\",\"position\":[700,300],\"parameters\":{\"range\":\"Problems!A:D\",\"options\":{},\"sheetId\":\"17fzSFl1BZ1njldTfp5lvh8HtS0-pNXH66b7qGZIiGRU\"},\"credentials\":{\"googleApi\":\"\"},\"typeVersion\":1},{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[500,300],\"parameters\":{\"path\":\"webhook\",\"options\":{},\"responseData\":\"allEntries\",\"responseMode\":\"lastNode\"},\"typeVersion\":1}],\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"Google Sheets\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/435-create-a-new-digitalocean-droplet/",
+  "title": "Create a new DigitalOcean Droplet",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "DevOps"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[450,300],\"parameters\":{\"url\":\"https://api.digitalocean.com/v2/droplets\",\"options\":{\"bodyContentType\":\"json\"},\"requestMethod\":\"POST\",\"bodyParametersUi\":{\"parameter\":[{\"name\":\"name\",\"value\":\"API-creation-test\"},{\"name\":\"region\",\"value\":\"blr1\"},{\"name\":\"size\",\"value\":\"s-1vcpu-1gb\"},{\"name\":\"image\",\"value\":\"ubuntu-20-04-x64\"}]},\"headerParametersUi\":{\"parameter\":[{\"name\":\"Authorization\",\"value\":\"Bearer {your_personal_access_token}\"}]}},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Uses a DigitalOcean Personal Access Token to create a new Droplet.\n\nAdd your personal access token and change the parameters to create droplets of different sizes.\n\nYou can also specify more options; refer the [API docs](https://developers.digitalocean.com/documentation/v2/#create-a-new-droplet)\n",
+  "crawled_at": "2025-05-25T18:05:49.427697",
+  "readme_zh": "使用DigitalOcean个人访问令牌创建新的Droplet虚拟机。\n\n添加您的个人访问令牌并修改参数即可创建不同规格的Droplet。\n\n您还可以指定更多选项，具体请参阅[API文档](https://developers.digitalocean.com/documentation/v2/#create-a-new-droplet)",
+  "title_zh": "创建一个新的DigitalOcean Droplet",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[450,300],\"parameters\":{\"url\":\"https://api.digitalocean.com/v2/droplets\",\"options\":{\"bodyContentType\":\"json\"},\"requestMethod\":\"POST\",\"bodyParametersUi\":{\"parameter\":[{\"name\":\"name\",\"value\":\"API-creation-test\"},{\"name\":\"region\",\"value\":\"blr1\"},{\"name\":\"size\",\"value\":\"s-1vcpu-1gb\"},{\"name\":\"image\",\"value\":\"ubuntu-20-04-x64\"}]},\"headerParametersUi\":{\"parameter\":[{\"name\":\"Authorization\",\"value\":\"Bearer {your_personal_access_token}\"}]}},\"typeVersion\":1}],\"connections\":{}}"
+}

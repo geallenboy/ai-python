@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/1546-create-a-quickbooks-invoice-on-a-new-onfleet-task-creation/",
+  "title": "Create a QuickBooks invoice on a new Onfleet Task creation",
+  "author": "James Li",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Finance"
+    }
+  ],
+  "workflow_json": "{\"name\":\"Create a QuickBooks invoice on a new Onfleet Task creation\",\"nodes\":[{\"name\":\"Onfleet Trigger\",\"type\":\"n8n-nodes-base.onfleetTrigger\",\"position\":[460,300],\"webhookId\":\"6d6a2bee-f83e-4ebd-a1d5-8708c34393dc\",\"parameters\":{\"triggerOn\":\"taskCreated\",\"additionalFields\":{}},\"typeVersion\":1},{\"name\":\"QuickBooks Online\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[680,300],\"parameters\":{\"Line\":[],\"resource\":\"invoice\",\"operation\":\"create\",\"additionalFields\":{\"Balance\":0,\"TxnDate\":\"\",\"ShipAddr\":\"\",\"BillEmail\":\"\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Onfleet Trigger\":{\"main\":[[{\"node\":\"QuickBooks Online\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "**Summary**\n\nOnfleet is a last-mile delivery software that provides end-to-end route planning, dispatch, communication, and analytics to handle the heavy lifting while you can focus on your customers.\n\nThis workflow template listens to an Onfleet event and interacts with the **QuickBooks API**. You can easily streamline this with your QuickBooks invoices or other entities. Typically, you can create an invoice when an Onfleet task is created to allow your customers to pay ahead of an upcoming delivery.\n\n**Configurations**\n\n  * Update the Onfleet trigger node with your own Onfleet credentials, to register for an **Onfleet API key** , please visit <https://onfleet.com/signup> to get started\n  * You can easily change which Onfleet event to listen to. Learn more about Onfleet webhooks with [Onfleet Support](https://support.onfleet.com/hc/en-us/articles/360045763852-Webhooks)\n  * Update the QuickBooks Online node with your QuickBooks credentials\n\n\n",
+  "crawled_at": "2025-05-25T19:52:50.240398",
+  "readme_zh": "**概述**\n\nOnfleet是一款专注于最后一公里配送的软件，提供端到端的路线规划、调度、通讯及数据分析功能，代您处理繁重的物流事务，让您能专注于服务客户。\n\n本工作流模板可监听Onfleet平台事件，并与**QuickBooks API**实现数据交互。您可轻松将其与QuickBooks发票系统或其他业务模块对接。典型应用场景包括：当Onfleet生成配送任务时自动创建预付发票，方便客户在货物送达前完成支付。\n\n**配置说明**\n\n  * 在Onfleet触发器节点中配置您的账户凭证。如需获取**Onfleet API密钥**，请访问<https://onfleet.com/signup>进行注册\n  * 支持自由设置需要监听的Onfleet事件类型。更多关于Webhooks的配置指南，请参阅[Onfleet官方支持文档](https://support.onfleet.com/hc/en-us/articles/360045763852-Webhooks)\n  * 在QuickBooks Online节点中配置您的QuickBooks账户信息",
+  "title_zh": "在新建Onfleet任务时创建QuickBooks发票",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"name\":\"Create a QuickBooks invoice on a new Onfleet Task creation\",\"nodes\":[{\"name\":\"Onfleet Trigger\",\"type\":\"n8n-nodes-base.onfleetTrigger\",\"position\":[460,300],\"webhookId\":\"6d6a2bee-f83e-4ebd-a1d5-8708c34393dc\",\"parameters\":{\"triggerOn\":\"taskCreated\",\"additionalFields\":{}},\"typeVersion\":1},{\"name\":\"QuickBooks Online\",\"type\":\"n8n-nodes-base.quickbooks\",\"position\":[680,300],\"parameters\":{\"Line\":[],\"resource\":\"invoice\",\"operation\":\"create\",\"additionalFields\":{\"Balance\":0,\"TxnDate\":\"\",\"ShipAddr\":\"\",\"BillEmail\":\"\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Onfleet Trigger\":{\"main\":[[{\"node\":\"QuickBooks Online\",\"type\":\"main\",\"index\":0}]]}}}"
+}

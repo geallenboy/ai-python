@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/426-set-alert-on-the-website-changes/",
+  "title": "Set alert on the website changes",
+  "author": "darkesthour111",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"1\",\"name\":\"Website check\",\"nodes\":[{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[400,300],\"parameters\":{\"url\":\"\",\"options\":{},\"responseFormat\":\"string\"},\"typeVersion\":1},{\"name\":\"IF\",\"type\":\"n8n-nodes-base.if\",\"position\":[550,300],\"parameters\":{\"conditions\":{\"string\":[{\"value1\":\"={{$node[\\\"HTTP Request\\\"].json[\\\"data\\\"]}}\",\"value2\":\"Out Of Stock\",\"operation\":\"contains\"}]}},\"typeVersion\":1},{\"name\":\"Discord\",\"type\":\"n8n-nodes-base.discord\",\"position\":[700,300],\"parameters\":{\"text\":\"value found\",\"webhookUri\":\"\"},\"typeVersion\":1},{\"name\":\"Discord1\",\"type\":\"n8n-nodes-base.discord\",\"position\":[700,450],\"parameters\":{\"text\":\"value not found\",\"webhookUri\":\"\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[210,300],\"parameters\":{\"triggerTimes\":{\"item\":[{\"mode\":\"everyHour\"}]}},\"typeVersion\":1}],\"active\":false,\"settings\":{\"timezone\":\"America/Los_Angeles\"},\"connections\":{\"IF\":{\"main\":[[],[{\"node\":\"Discord1\",\"type\":\"main\",\"index\":0}]]},\"Cron\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"IF\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "I used this to check for a page that had Out Of Stock not found when an item came back in stock.\n\nSet the URL for the HTTP Request node and your Webhook URL and Messages for the discord nodes.\n",
+  "crawled_at": "2025-05-25T18:05:04.934737",
+  "readme_zh": "我用这个来检查一个页面，当商品重新有货时，原本显示“缺货”的信息会消失。\n\n为HTTP请求节点设置URL，并为Discord节点配置你的Webhook URL和消息。",
+  "title_zh": "设置网站变更提醒",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"1\",\"name\":\"Website check\",\"nodes\":[{\"name\":\"HTTP Request\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[400,300],\"parameters\":{\"url\":\"\",\"options\":{},\"responseFormat\":\"string\"},\"typeVersion\":1},{\"name\":\"IF\",\"type\":\"n8n-nodes-base.if\",\"position\":[550,300],\"parameters\":{\"conditions\":{\"string\":[{\"value1\":\"={{$node[\\\"HTTP Request\\\"].json[\\\"data\\\"]}}\",\"value2\":\"Out Of Stock\",\"operation\":\"contains\"}]}},\"typeVersion\":1},{\"name\":\"Discord\",\"type\":\"n8n-nodes-base.discord\",\"position\":[700,300],\"parameters\":{\"text\":\"value found\",\"webhookUri\":\"\"},\"typeVersion\":1},{\"name\":\"Discord1\",\"type\":\"n8n-nodes-base.discord\",\"position\":[700,450],\"parameters\":{\"text\":\"value not found\",\"webhookUri\":\"\"},\"typeVersion\":1},{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[210,300],\"parameters\":{\"triggerTimes\":{\"item\":[{\"mode\":\"everyHour\"}]}},\"typeVersion\":1}],\"active\":false,\"settings\":{\"timezone\":\"America/Los_Angeles\"},\"connections\":{\"IF\":{\"main\":[[],[{\"node\":\"Discord1\",\"type\":\"main\",\"index\":0}]]},\"Cron\":{\"main\":[[{\"node\":\"HTTP Request\",\"type\":\"main\",\"index\":0}]]},\"HTTP Request\":{\"main\":[[{\"node\":\"IF\",\"type\":\"main\",\"index\":0}]]}}}"
+}

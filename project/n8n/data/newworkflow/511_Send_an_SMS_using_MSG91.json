@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/511-send-an-sms-using-msg91/",
+  "title": "Send an SMS using MSG91",
+  "author": "Max Tkacz",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"name\":\"Send an SMS using MSG91\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Msg91\",\"type\":\"n8n-nodes-base.msg91\",\"position\":[450,300],\"parameters\":{\"to\":\"\",\"from\":\"\",\"message\":\"\"},\"credentials\":{\"msg91Api\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Msg91\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Sending an SMS using MSG91\n",
+  "crawled_at": "2025-05-25T18:15:57.962804",
+  "readme_zh": "使用MSG91发送短信",
+  "title_zh": "使用MSG91发送短信",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"name\":\"Send an SMS using MSG91\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Msg91\",\"type\":\"n8n-nodes-base.msg91\",\"position\":[450,300],\"parameters\":{\"to\":\"\",\"from\":\"\",\"message\":\"\"},\"credentials\":{\"msg91Api\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Msg91\",\"type\":\"main\",\"index\":0}]]}}}"
+}

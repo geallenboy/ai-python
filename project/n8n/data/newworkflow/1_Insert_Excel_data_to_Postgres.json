@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/1-insert-excel-data-to-postgres/",
+  "title": "Insert Excel data to Postgres",
+  "author": "Jan Oberhauser",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Read Binary File\",\"type\":\"n8n-nodes-base.readBinaryFile\",\"position\":[450,650],\"parameters\":{\"filePath\":\"spreadsheet.xls\"},\"typeVersion\":1},{\"name\":\"Spreadsheet File1\",\"type\":\"n8n-nodes-base.spreadsheetFile\",\"position\":[600,650],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Insert Rows1\",\"type\":\"n8n-nodes-base.postgres\",\"position\":[750,650],\"parameters\":{\"table\":\"product\",\"columns\":\"name,ean\"},\"credentials\":{\"postgres\":\"postgres\"},\"typeVersion\":1}],\"connections\":{\"Read Binary File\":{\"main\":[[{\"node\":\"Spreadsheet File1\",\"type\":\"main\",\"index\":0}]]},\"Spreadsheet File1\":{\"main\":[[{\"node\":\"Insert Rows1\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "  1. Read XLS from file\n  2. Convert it to JSON\n  3. Insert it in Postgres\n\n\n",
+  "readme_zh": "1. 从文件读取XLS  \n2. 将其转换为JSON格式  \n3. 插入到Postgres数据库中",
+  "title_zh": "将Excel数据插入Postgres",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Read Binary File\",\"type\":\"n8n-nodes-base.readBinaryFile\",\"position\":[450,650],\"parameters\":{\"filePath\":\"spreadsheet.xls\"},\"typeVersion\":1},{\"name\":\"Spreadsheet File1\",\"type\":\"n8n-nodes-base.spreadsheetFile\",\"position\":[600,650],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Insert Rows1\",\"type\":\"n8n-nodes-base.postgres\",\"position\":[750,650],\"parameters\":{\"table\":\"product\",\"columns\":\"name,ean\"},\"credentials\":{\"postgres\":\"postgres\"},\"typeVersion\":1}],\"connections\":{\"Read Binary File\":{\"main\":[[{\"node\":\"Spreadsheet File1\",\"type\":\"main\",\"index\":0}]]},\"Spreadsheet File1\":{\"main\":[[{\"node\":\"Insert Rows1\",\"type\":\"main\",\"index\":0}]]}}}"
+}

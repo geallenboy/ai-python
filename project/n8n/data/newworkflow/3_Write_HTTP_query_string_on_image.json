@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/3-write-http-query-string-on-image/",
+  "title": "Write HTTP query string on image",
+  "author": "Jan Oberhauser",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[700,350],\"parameters\":{\"path\":\"test\",\"responseData\":\"firstEntryBinary\",\"responseMode\":\"lastNode\"},\"typeVersion\":1},{\"name\":\"Edit Image\",\"type\":\"n8n-nodes-base.editImage\",\"position\":[1100,350],\"parameters\":{\"text\":\"=They found the killer it was {{$node[\\\"Webhook\\\"].data[\\\"query\\\"][\\\"name\\\"]}}!\",\"fontSize\":\"=25\",\"operation\":\"text\",\"positionX\":150,\"positionY\":180,\"lineLength\":18},\"typeVersion\":1},{\"name\":\"Read File URL\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[900,350],\"parameters\":{\"url\":\"https://www.needpix.com/file_download.php?url=//storage.needpix.com/thumbs/newspaper-412809_1280.jpg\",\"responseFormat\":\"file\"},\"typeVersion\":1}],\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"Read File URL\",\"type\":\"main\",\"index\":0}]]},\"Read File URL\":{\"main\":[[{\"node\":\"Edit Image\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "  1. Receives data from an incoming HTTP Request\n  2. Reads file from internet\n  3. Writes data on image\n  4. Returns the data\n\n\n\nThe URL to call will look like this:  \n<http://localhost:5678/webhook-test/webhook/test?name=Jim>\n\nOnce called it will return an image like this:\n\n![reponseimage.jpeg](https://f000.backblazeb2.com/file/n8n-website-images/ef2f4390cc5b4140b74ce420d5b7ad33.jpeg)\n",
+  "readme_zh": "1. 接收来自HTTP请求的数据  \n2. 从互联网读取文件  \n3. 在图片上写入数据  \n4. 返回处理后的数据  \n\n调用的URL格式如下：  \n<http://localhost:5678/webhook-test/webhook/test?name=Jim>  \n\n调用后将返回如下图片：  \n\n![reponseimage.jpeg](https://f000.backblazeb2.com/file/n8n-website-images/ef2f4390cc5b4140b74ce420d5b7ad33.jpeg)",
+  "title_zh": "在图片上写入HTTP查询字符串",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Webhook\",\"type\":\"n8n-nodes-base.webhook\",\"position\":[700,350],\"parameters\":{\"path\":\"test\",\"responseData\":\"firstEntryBinary\",\"responseMode\":\"lastNode\"},\"typeVersion\":1},{\"name\":\"Edit Image\",\"type\":\"n8n-nodes-base.editImage\",\"position\":[1100,350],\"parameters\":{\"text\":\"=They found the killer it was {{$node[\\\"Webhook\\\"].data[\\\"query\\\"][\\\"name\\\"]}}!\",\"fontSize\":\"=25\",\"operation\":\"text\",\"positionX\":150,\"positionY\":180,\"lineLength\":18},\"typeVersion\":1},{\"name\":\"Read File URL\",\"type\":\"n8n-nodes-base.httpRequest\",\"position\":[900,350],\"parameters\":{\"url\":\"https://www.needpix.com/file_download.php?url=//storage.needpix.com/thumbs/newspaper-412809_1280.jpg\",\"responseFormat\":\"file\"},\"typeVersion\":1}],\"connections\":{\"Webhook\":{\"main\":[[{\"node\":\"Read File URL\",\"type\":\"main\",\"index\":0}]]},\"Read File URL\":{\"main\":[[{\"node\":\"Edit Image\",\"type\":\"main\",\"index\":0}]]}}}"
+}

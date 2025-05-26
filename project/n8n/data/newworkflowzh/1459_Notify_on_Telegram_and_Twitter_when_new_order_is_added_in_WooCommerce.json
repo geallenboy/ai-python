@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1459-notify-on-telegram-and-twitter-when-new-order-is-added-in-woocommerce/",
+  "title": "Notify on Telegram and Twitter when new order is added in WooCommerce",
+  "author": "Jonathan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":85,\"name\":\"New WooCommerce Product to Twitter and Telegram\",\"nodes\":[{\"name\":\"Twitter\",\"type\":\"n8n-nodes-base.twitter\",\"position\":[720,300],\"parameters\":{\"text\":\"=✨ New Product Announcement ✨\\nWe have just added {{$json[\\\"name\\\"]}}, Head to {{$json[\\\"permalink\\\"]}} to find out more.\",\"additionalFields\":{}},\"credentials\":{\"twitterOAuth1Api\":{\"id\":\"37\",\"name\":\"joffcom\"}},\"typeVersion\":1},{\"name\":\"Telegram\",\"type\":\"n8n-nodes-base.telegram\",\"position\":[720,500],\"parameters\":{\"text\":\"=✨ New Product Announcement ✨\\nWe have just added {{$json[\\\"name\\\"]}}, Head to {{$json[\\\"permalink\\\"]}} to find out more.\",\"chatId\":\"123456\",\"additionalFields\":{}},\"credentials\":{\"telegramApi\":{\"id\":\"56\",\"name\":\"Telegram account\"}},\"typeVersion\":1},{\"name\":\"WooCommerce Trigger\",\"type\":\"n8n-nodes-base.wooCommerceTrigger\",\"position\":[540,400],\"webhookId\":\"ab7b134b-9b2d-4e0d-b496-1aee30db0808\",\"parameters\":{\"event\":\"product.created\"},\"credentials\":{\"wooCommerceApi\":{\"id\":\"48\",\"name\":\"WooCommerce account\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"WooCommerce Trigger\":{\"main\":[[{\"node\":\"Twitter\",\"type\":\"main\",\"index\":0},{\"node\":\"Telegram\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow uses a WooCommerce trigger that will run a new product has been added, It will then post the product to Telegram and Twitter.\n\nTo use this workflow you will need to set the credentials to use for the WooCommerce, Twitter and Telegram nodes.\n",
+  "crawled_at": "2025-05-25T19:43:51.196475"
+}

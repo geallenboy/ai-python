@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/644-receive-updates-on-a-subscriber-added-in-convertkit/",
+  "title": "Receive updates on a subscriber added in ConvertKit",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"28\",\"name\":\"Receive updates when a subscriber is added through a form in ConvertKit\",\"nodes\":[{\"name\":\"ConvertKit Trigger\",\"type\":\"n8n-nodes-base.convertKitTrigger\",\"position\":[690,260],\"webhookId\":\"55336480-7be1-4432-8fc8-d860572c1c18\",\"parameters\":{\"event\":\"formSubscribe\",\"formId\":1657198},\"credentials\":{\"convertKitApi\":\"convertkit\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:32:42.053041"
+}

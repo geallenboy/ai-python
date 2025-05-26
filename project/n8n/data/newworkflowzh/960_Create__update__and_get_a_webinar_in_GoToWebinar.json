@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/960-create-update-and-get-a-webinar-in-gotowebinar/",
+  "title": "Create, update, and get a webinar in GoToWebinar",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"GoToWebinar2\",\"type\":\"n8n-nodes-base.goToWebinar\",\"position\":[930,280],\"parameters\":{\"resource\":\"webinar\",\"webinarKey\":\"={{$node[\\\"GoToWebinar\\\"].json[\\\"webinarKey\\\"]}}\"},\"credentials\":{\"goToWebinarOAuth2Api\":\"GoToWebinar OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"GoToWebinar1\",\"type\":\"n8n-nodes-base.goToWebinar\",\"position\":[730,280],\"parameters\":{\"resource\":\"webinar\",\"operation\":\"update\",\"webinarKey\":\"={{$json[\\\"webinarKey\\\"]}}\",\"updateFields\":{\"description\":\"Get started with n8n and create your first automation workflow\"}},\"credentials\":{\"goToWebinarOAuth2Api\":\"GoToWebinar OAuth Credentials\"},\"typeVersion\":1},{\"name\":\"GoToWebinar\",\"type\":\"n8n-nodes-base.goToWebinar\",\"position\":[520,280],\"parameters\":{\"times\":{\"timesProperties\":[{\"endTime\":\"2021-03-02T10:00:00.000Z\",\"startTime\":\"2021-03-02T09:00:00.000Z\"}]},\"subject\":\"Getting started with n8n\",\"resource\":\"webinar\",\"operation\":\"create\",\"additionalFields\":{}},\"credentials\":{\"goToWebinarOAuth2Api\":\"GoToWebinar OAuth Credentials\"},\"typeVersion\":1}],\"connections\":{\"GoToWebinar\":{\"main\":[[{\"node\":\"GoToWebinar1\",\"type\":\"main\",\"index\":0}]]},\"GoToWebinar1\":{\"main\":[[{\"node\":\"GoToWebinar2\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create, update, and get a webinar in GoToWebinar.\n\n**GoToWebinar node:** This node will create a new webinar in GoToWebinar.\n\n**GoToWebinar1 node:** This node will update the description of the webinar that we created in the previous node.\n\n**GoToWebinar2 node:** This node will get the information about the webinar that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:08:06.531576"
+}

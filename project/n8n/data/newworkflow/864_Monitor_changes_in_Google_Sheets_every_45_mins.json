@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/864-monitor-changes-in-google-sheets-every-45-mins/",
+  "title": "Monitor changes in Google Sheets every 45 mins",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Based on your use case, you might want to trigger a workflow if new data gets added to your database. This workflow allows you to send a message to Mattermost when new data gets added in Google Sheets.\n\nThe Interval node triggers the workflow every 45 minutes. You can modify the timing based on your use case. You can even use the Cron node to trigger the workflow.\n\nIf you wish to fetch new Tweets from Twitter, replace the Google Sheet node with the respective node. Update the Function node accordingly.\n\n![Screenshot of the workflow](https://f000.backblazeb2.com/file/n8n-website-images/b965cf8aa1494e6ba985405cea911cda.png)\n",
+  "crawled_at": "2025-05-25T19:00:02.524609",
+  "readme_zh": "根据您的使用场景，若数据库新增数据时可能需要触发工作流。该工作流可在Google Sheets新增数据时向Mattermost发送消息。\n\n间隔节点会每45分钟触发一次工作流，您可根据实际需求调整时间间隔。您也可以改用Cron节点来触发工作流。\n\n如需获取Twitter的新推文，只需将Google Sheets节点替换为对应节点，并相应调整函数节点即可。\n\n![工作流截图](https://f000.backblazeb2.com/file/n8n-website-images/b965cf8aa1494e6ba985405cea911cda.png)",
+  "title_zh": "每隔45分钟监控Google Sheets中的变化",
+  "publish_date_zh": "最后更新于10个月前"
+}

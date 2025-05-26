@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/442-create-a-url-on-bitly/",
+  "title": "Create a URL on Bitly",
+  "author": "sshaligr",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"5\",\"name\":\"new\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[490,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Bitly\",\"type\":\"n8n-nodes-base.bitly\",\"position\":[830,300],\"parameters\":{\"longUrl\":\"https://calendar.usc.edu/event/curricular_practical_training_cpt_information_session_8120?utm_campaign=widget&utm_medium=widget&utm_source=USC+Event+Calendar#.Xv0UlpNKhQK\",\"additionalFields\":{}},\"credentials\":{\"bitlyApi\":\"test\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Bitly\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:06:54.827629",
+  "readme_zh": "你是一个翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在Bitly上创建一个URL",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"5\",\"name\":\"new\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[490,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Bitly\",\"type\":\"n8n-nodes-base.bitly\",\"position\":[830,300],\"parameters\":{\"longUrl\":\"https://calendar.usc.edu/event/curricular_practical_training_cpt_information_session_8120?utm_campaign=widget&utm_medium=widget&utm_source=USC+Event+Calendar#.Xv0UlpNKhQK\",\"additionalFields\":{}},\"credentials\":{\"bitlyApi\":\"test\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Bitly\",\"type\":\"main\",\"index\":0}]]}}}"
+}

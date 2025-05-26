@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1807-sync-zendesk-tickets-to-pipedrive-contact-owners/",
+  "title": "Sync Zendesk tickets to Pipedrive contact owners",
+  "author": "n8n Team",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Support"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow syncs Zendesk tickets to Pipedrive contact owners.\n\nThis workflow is triggered every day at 09:00 with Zendesk collecting all the tickets updated after the last execution timestamp and updating them according to Pipedrive contacts. It also adds Zendesk comments to the tickets as notes in Pipedrive.\n\n## Prerequisites\n\n  * Pipedrive account and [Pipedrive credentials](https://docs.n8n.io/integrations/builtin/credentials/pipedrive/)\n  * Zendesk account and [Zendesk credentials](https://docs.n8n.io/integrations/builtin/credentials/zendesk/)\n\n\n\n_Note: The Pipedrive and the Zendesk accounts need to be created by the same person / with the same email._\n\n## How it works\n\n  1. Cron node triggers the workflow every day at 09:00.\n  2. Zendesk node collects all the tickets updated after the last execution timestamp.\n  3. If node checks if the channel in the ticket is an email, and if so, it continues the workflow.\n  4. The Item Lists node removes duplicates to make search efficient.\n  5. Pipedrive node searches persons by email.\n  6. Set node renames and keeps only needed fields (email & person id)\n  7. Merge by key node adds the Pipedrive contact id to Zendesk tickets.\n  8. The HTTP Request node gets Zendesk comments for tickets and the Merge node adds them to tickets.\n  9. Split node adds nodes in batches with each iteration.\n  10. Item list node splits comments into separate items.\n  11. Pipedrive node adds comment as notes.\n  12. If node checks if the data processing is done and if not, goes back to the Split node.  \nThe Function Item node sets the new last execution timestamp.\n\n\n",
+  "crawled_at": "2025-05-25T20:08:00.526322"
+}

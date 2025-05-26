@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1076-transfer-data-from-website-to-google-sheets/",
+  "title": "Transfer data from website to Google Sheets",
+  "author": "Mark Bowen",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Take data from website form via webhook and save data into Google Sheets document!\n",
+  "crawled_at": "2025-05-25T19:19:43.777665"
+}

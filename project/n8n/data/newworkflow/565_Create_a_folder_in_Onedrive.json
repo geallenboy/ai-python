@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/565-create-a-folder-in-onedrive/",
+  "title": "Create a folder in Onedrive",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Microsoft OneDrive\",\"type\":\"n8n-nodes-base.microsoftOneDrive\",\"position\":[450,300],\"parameters\":{\"name\":\"n8n-rocks\",\"options\":{},\"resource\":\"folder\",\"operation\":\"create\"},\"credentials\":{\"microsoftOneDriveOAuth2Api\":\"n8n-docs-creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Microsoft OneDrive\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Onedrive node docs\n",
+  "crawled_at": "2025-05-25T18:21:22.706397",
+  "readme_zh": "OneDrive节点文档配套工作流程",
+  "title_zh": "在Onedrive中创建一个文件夹",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Microsoft OneDrive\",\"type\":\"n8n-nodes-base.microsoftOneDrive\",\"position\":[450,300],\"parameters\":{\"name\":\"n8n-rocks\",\"options\":{},\"resource\":\"folder\",\"operation\":\"create\"},\"credentials\":{\"microsoftOneDriveOAuth2Api\":\"n8n-docs-creds\"},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Microsoft OneDrive\",\"type\":\"main\",\"index\":0}]]}}}"
+}

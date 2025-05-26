@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/888-get-data-from-hacker-news-and-send-to-airtable-or-via-sms/",
+  "title": "Get data from Hacker News and send to Airtable or via SMS",
+  "author": "isa024787bel",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This n8n workflow automates sending out SMS notifications via Vonage which includes new tech-related vocabulary everyday.\n\nTo build this handy vocabulary improver, you’ll need the following:\n\n  * n8n – You can find details on how to install n8n on the [Quickstart](https://docs.n8n.io/getting-started/quickstart.html) page.\n  * LingvaNex account – You can create a free [account](https://lingvanex.com/registration/) here. Up to 200,000 characters are included in the free plan when you generate your API key.\n  * Airtable account – You can [register](https://airtable.com/signup) for free.\n  * Vonage account – You can [sign up](https://dashboard.nexmo.com/sign-up) free of charge if you aren’t already.\n\n\n\n![Completed workflow for automated vocabulary improvement](https://i.imgur.com/dtZUSxM.png)\n",
+  "crawled_at": "2025-05-25T19:03:02.883145"
+}

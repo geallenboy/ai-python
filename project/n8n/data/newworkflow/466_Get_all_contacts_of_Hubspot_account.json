@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/466-get-all-contacts-of-hubspot-account/",
+  "title": "Get all contacts of Hubspot account",
+  "author": "sshaligr",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"7\",\"name\":\"6\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[440,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Hubspot\",\"type\":\"n8n-nodes-base.hubspot\",\"position\":[750,320],\"parameters\":{\"resource\":\"contact\",\"operation\":\"getAll\",\"returnAll\":true,\"additionalFields\":{}},\"credentials\":{\"hubspotApi\":\"scsc\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Hubspot\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:09:13.097349",
+  "readme_zh": "你是一个翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "获取Hubspot账户的所有联系人",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"7\",\"name\":\"6\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[440,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Hubspot\",\"type\":\"n8n-nodes-base.hubspot\",\"position\":[750,320],\"parameters\":{\"resource\":\"contact\",\"operation\":\"getAll\",\"returnAll\":true,\"additionalFields\":{}},\"credentials\":{\"hubspotApi\":\"scsc\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Hubspot\",\"type\":\"main\",\"index\":0}]]}}}"
+}

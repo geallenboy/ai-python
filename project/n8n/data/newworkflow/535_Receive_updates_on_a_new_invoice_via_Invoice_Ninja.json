@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/535-receive-updates-on-a-new-invoice-via-invoice-ninja/",
+  "title": "Receive updates on a new invoice via Invoice Ninja",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Finance"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Invoice Ninja Trigger\",\"type\":\"n8n-nodes-base.invoiceNinjaTrigger\",\"position\":[890,400],\"webhookId\":\"97be21b3-ebf5-48cf-b291-5d954657a544\",\"parameters\":{\"event\":\"create_invoice\"},\"credentials\":{\"invoiceNinjaApi\":\"invoice_ninja_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Invoice Ninja Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:18:24.436737",
+  "readme_zh": "发票忍者触发器节点文档配套工作流程",
+  "title_zh": "通过Invoice Ninja接收新发票的更新通知",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Invoice Ninja Trigger\",\"type\":\"n8n-nodes-base.invoiceNinjaTrigger\",\"position\":[890,400],\"webhookId\":\"97be21b3-ebf5-48cf-b291-5d954657a544\",\"parameters\":{\"event\":\"create_invoice\"},\"credentials\":{\"invoiceNinjaApi\":\"invoice_ninja_creds\"},\"typeVersion\":1}],\"connections\":{}}"
+}

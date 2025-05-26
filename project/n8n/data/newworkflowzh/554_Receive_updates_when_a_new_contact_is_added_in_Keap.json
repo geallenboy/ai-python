@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/554-receive-updates-when-a-new-contact-is-added-in-keap/",
+  "title": "Receive updates when a new contact is added in Keap",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Keap Trigger\",\"type\":\"n8n-nodes-base.keapTrigger\",\"position\":[440,320],\"webhookId\":\"1df33e6f-7e5c-4d70-b90d-d5666aaf63e7\",\"parameters\":{\"eventId\":\"contact.add\"},\"credentials\":{\"keapOAuth2Api\":\"keap_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Keap Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:20:28.468175"
+}

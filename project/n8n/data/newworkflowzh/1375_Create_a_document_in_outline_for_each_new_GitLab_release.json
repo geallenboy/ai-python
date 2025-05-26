@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1375-create-a-document-in-outline-for-each-new-gitlab-release/",
+  "title": "Create a document in outline for each new GitLab release",
+  "author": "Manu",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Create a document in Outline for each new GitLab release.\n\nDepends on [this PR](https://github.com/n8n-io/n8n/pull/2591) being merged.\n\n  1. Copy workflow\n  2. Set credentials for GitLab and Outline\n  3. Inside HTTP Request node, set the following: \n     * `collectionId`\n     * `parentDocumentId` (or remove if unwanted)\n\n\n\n[Example result](https://onezoomin.getoutline.com/share/f4fb81fc-af09-442c-9bdd-6365aeb70058/doc/gitlab-releases-test-ffbapVHbBt)\n",
+  "crawled_at": "2025-05-25T19:36:13.590572"
+}

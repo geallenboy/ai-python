@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/594-publish-a-post-to-a-publication-on-medium/",
+  "title": "Publish a post to a publication on Medium",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"7\",\"name\":\"Publish post to a publication\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Medium\",\"type\":\"n8n-nodes-base.medium\",\"position\":[800,300],\"parameters\":{\"title\":\"\",\"content\":\"\",\"publication\":true,\"contentFormat\":\"\",\"publicationId\":\"\",\"additionalFields\":{}},\"credentials\":{\"mediumApi\":\"medium\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Medium\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:25:50.681378",
+  "readme_zh": "你是一个翻译助手。将以下文本从英语翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在Medium上向一个出版物发布文章",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"7\",\"name\":\"Publish post to a publication\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[600,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Medium\",\"type\":\"n8n-nodes-base.medium\",\"position\":[800,300],\"parameters\":{\"title\":\"\",\"content\":\"\",\"publication\":true,\"contentFormat\":\"\",\"publicationId\":\"\",\"additionalFields\":{}},\"credentials\":{\"mediumApi\":\"medium\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Medium\",\"type\":\"main\",\"index\":0}]]}}}"
+}

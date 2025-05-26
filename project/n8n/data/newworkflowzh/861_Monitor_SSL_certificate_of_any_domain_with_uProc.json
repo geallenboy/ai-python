@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/861-monitor-ssl-certificate-of-any-domain-with-uproc/",
+  "title": "Monitor SSL certificate of any domain with uProc",
+  "author": "Miquel Colomer",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "IT Ops"
+    },
+    {
+      "name": "SecOps"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "Do you want to check the SSL certificate expiration dates of your customers or servers?\n\nThis workflow gets information of an SSL certificate using the uProc [**Get Certificate by domain tool**](https://app.uproc.io/#/tools/processor/get/domain/certificate).  \nYou can use this workflow to query SSL certificates in bulk and send alarms when any certificate has expired.\n\nYou need to add your credentials (Email and API Key - real -) located at [**Integration section**](https://app.uproc.io/#/settings/integration) to n8n.\n\nYou can replace \"Create Domain Item\" with any integration containing a domain, like Google Sheets, MySQL, or Zabbix server.\n\nEvery \"uProc\" node returns the next fields per every analyzed SSL certificate:\n\n  * issuer: Contains the issuer.\n  * provider: Contains the provider.\n  * valid_from: Contains the start date.\n  * valid_to: Contains the end date.\n  * serial_number: Contains the serial number.\n  * type: Contains if supports one or multiple domains.\n  * protocol: Contains the protocol.\n  * valid: Contains its validity.\n  * domains: Contains all domains and subdomains supported.\n\n\n\nAn \"IF\" node detects if the certificate is valid or not.\n\nFinally, the workflow sends an alarm to a Telegram channel to know if the certificate has expired.\n",
+  "crawled_at": "2025-05-25T18:59:30.163827"
+}

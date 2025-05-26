@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/796-send-daily-weather-updates-via-a-push-notification-using-spontit/",
+  "title": "Send daily weather updates via a push notification using Spontit",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":\"141\",\"name\":\"Send daily weather updates via a push notification using Spontit\",\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[810,340],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[1010,340],\"parameters\":{\"cityName\":\"berlin\"},\"credentials\":{\"openWeatherMapApi\":\"owm\"},\"typeVersion\":1},{\"name\":\"Spontit\",\"type\":\"n8n-nodes-base.spontit\",\"position\":[1210,340],\"parameters\":{\"content\":\"=Hey! The temperature outside is {{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}°C.\",\"additionalFields\":{\"pushTitle\":\"Today's Weather Update\"}},\"credentials\":{\"spontitApi\":\"spontit\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Spontit\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:50:33.562772",
+  "readme_zh": "你是翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "通过Spontit推送每日天气更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"141\",\"name\":\"Send daily weather updates via a push notification using Spontit\",\"nodes\":[{\"name\":\"Cron\",\"type\":\"n8n-nodes-base.cron\",\"position\":[810,340],\"parameters\":{\"triggerTimes\":{\"item\":[{\"hour\":9}]}},\"typeVersion\":1},{\"name\":\"OpenWeatherMap\",\"type\":\"n8n-nodes-base.openWeatherMap\",\"position\":[1010,340],\"parameters\":{\"cityName\":\"berlin\"},\"credentials\":{\"openWeatherMapApi\":\"owm\"},\"typeVersion\":1},{\"name\":\"Spontit\",\"type\":\"n8n-nodes-base.spontit\",\"position\":[1210,340],\"parameters\":{\"content\":\"=Hey! The temperature outside is {{$node[\\\"OpenWeatherMap\\\"].json[\\\"main\\\"][\\\"temp\\\"]}}°C.\",\"additionalFields\":{\"pushTitle\":\"Today's Weather Update\"}},\"credentials\":{\"spontitApi\":\"spontit\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Cron\":{\"main\":[[{\"node\":\"OpenWeatherMap\",\"type\":\"main\",\"index\":0}]]},\"OpenWeatherMap\":{\"main\":[[{\"node\":\"Spontit\",\"type\":\"main\",\"index\":0}]]}}}"
+}

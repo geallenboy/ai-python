@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/1442-automate-assigning-github-issues/",
+  "title": "Automate assigning GitHub issues",
+  "author": "manohar",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    },
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow assigns a user to an issue if they include \"assign me\" when opening or commenting. To use this workflow you will need to update the credentials used for the Github nodes.\n",
+  "crawled_at": "2025-05-25T19:42:29.934802"
+}

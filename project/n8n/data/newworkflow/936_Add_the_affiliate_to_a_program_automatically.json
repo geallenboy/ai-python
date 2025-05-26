@@ -1,0 +1,22 @@
+{
+  "url": "https://n8n.io/workflows/936-add-the-affiliate-to-a-program-automatically/",
+  "title": "Add the affiliate to a program automatically",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow allows you to create an affiliate, add metadata, and add the affiliate to a program.\n\n**Tapfiliate node:** This node allows you to create a new affiliate in Tapfiliate.\n\n**Tapfiliate1 node:** This node allows you add metadata to the affiliate that you created previously. Based on your use-case, you may or may not require this node.\n\n**Tapfiliate2 node:** This node allows you to add the affiliate that you created previously to a program.\n\nBased on your use-case, you might want to replace the **Start node** with a trigger node that gets you the information of an affiliate.\n",
+  "crawled_at": "2025-05-25T19:07:13.867302",
+  "readme_zh": "此工作流程允许您创建推广会员、添加元数据，并将该会员加入推广计划。\n\n**Tapfiliate节点**：此节点用于在Tapfiliate中创建新推广会员。\n\n**Tapfiliate1节点**：此节点可为先前创建的推广会员添加元数据。根据实际需求，您可选择是否使用该节点。\n\n**Tapfiliate2节点**：此节点可将先前创建的推广会员添加到推广计划中。\n\n根据具体场景，您可能需要将**起始节点**替换为能获取推广会员信息的触发节点。",
+  "title_zh": "自动将联盟成员加入计划",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Tapfiliate2\",\"type\":\"n8n-nodes-base.tapfiliate\",\"position\":[870,300],\"parameters\":{\"resource\":\"programAffiliate\",\"programId\":\"testing-program-5\",\"affiliateId\":\"={{$node[\\\"Tapfiliate\\\"].json[\\\"id\\\"]}}\",\"additionalFields\":{}},\"credentials\":{\"tapfiliateApi\":\"Tapfiliate API credentials\"},\"typeVersion\":1},{\"name\":\"Tapfiliate1\",\"type\":\"n8n-nodes-base.tapfiliate\",\"position\":[670,300],\"parameters\":{\"resource\":\"affiliateMetadata\",\"metadataUi\":{\"metadataValues\":[{\"key\":\"tag\",\"value\":\"n8n\"}]},\"affiliateId\":\"={{$json[\\\"id\\\"]}}\"},\"credentials\":{\"tapfiliateApi\":\"Tapfiliate API credentials\"},\"typeVersion\":1},{\"name\":\"Tapfiliate\",\"type\":\"n8n-nodes-base.tapfiliate\",\"position\":[470,300],\"parameters\":{\"email\":\"n8ndocsburner@gmail.com\",\"lastname\":\"Ryan\",\"firstname\":\"Jack\",\"additionalFields\":{}},\"credentials\":{\"tapfiliateApi\":\"Tapfiliate API credentials\"},\"typeVersion\":1},{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,300],\"parameters\":{},\"typeVersion\":1}],\"connections\":{\"Tapfiliate\":{\"main\":[[{\"node\":\"Tapfiliate1\",\"type\":\"main\",\"index\":0}]]},\"Tapfiliate1\":{\"main\":[[{\"node\":\"Tapfiliate2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Tapfiliate\",\"type\":\"main\",\"index\":0}]]}}}"
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/850-verify-an-email-recipient-with-uproc/",
+  "title": "Verify an email recipient with uProc",
+  "author": "Miquel Colomer",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"103\",\"name\":\"verify email\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[440,510],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Create Email Item\",\"type\":\"n8n-nodes-base.functionItem\",\"position\":[640,510],\"parameters\":{\"functionCode\":\"item.email = \\\"mcolomer@gmail.com\\\";\\nreturn item;\"},\"typeVersion\":1},{\"name\":\"Check Email Exists\",\"type\":\"n8n-nodes-base.uproc\",\"position\":[850,510],\"parameters\":{\"tool\":\"checkEmailExists\",\"email\":\"={{$node[\\\"Create Email Item\\\"].json[\\\"email\\\"]}}\",\"additionalOptions\":{}},\"credentials\":{\"uprocApi\":\"miquel-uproc\"},\"typeVersion\":1},{\"name\":\"Email Exists?\",\"type\":\"n8n-nodes-base.if\",\"position\":[1050,510],\"parameters\":{\"conditions\":{\"string\":[{\"value1\":\"={{$node[\\\"Check Email Exists\\\"].json[\\\"message\\\"][\\\"response\\\"]}}\",\"value2\":\"deliverable\"}]}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Create Email Item\":{\"main\":[[{\"node\":\"Check Email Exists\",\"type\":\"main\",\"index\":0}]]},\"Check Email Exists\":{\"main\":[[{\"node\":\"Email Exists?\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Create Email Item\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Do you want to avoid bounces in your Email Marketing campaigns?\n\nThis workflow verifies emails using the [**uProc.io email verifier**](https://app.uproc.io/#/tools/processor/check/email/exists).\n\nYou need to add your credentials (Email and API Key - real -) located at [**Integration section**](https://app.uproc.io/#/settings/integration) to n8n.\n\nNode \"Create Email Item\" can be replaced by any other supported service with email value, like Mailchimp, Calendly, MySQL, or Typeform.\n\nThe \"uProc\" node returns a status per checked email (deliverable, undeliverable, spamtrap, softbounce,...).\n\n\"If\" node checks if \"deliverable\" status exists. If value is not present, you can mark email as invalid to discard bounces. If \"deliverable\" status is present, you can use email in your Email Marketing campaigns.\n\nIf you need to know detailed indicators of any email, you can use the tool \"Communication\" > \"Check Email Exists (Extended)\" to get advanced information.\n",
+  "crawled_at": "2025-05-25T18:57:29.609830"
+}

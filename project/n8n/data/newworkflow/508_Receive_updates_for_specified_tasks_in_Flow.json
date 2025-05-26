@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/508-receive-updates-for-specified-tasks-in-flow/",
+  "title": "Receive updates for specified tasks in Flow",
+  "author": "tanaypant",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"133\",\"name\":\"Receive updates for specified tasks in Flow\",\"nodes\":[{\"name\":\"Flow Trigger\",\"type\":\"n8n-nodes-base.flowTrigger\",\"position\":[650,250],\"parameters\":{\"taskIds\":\"\",\"resource\":\"task\"},\"credentials\":{\"flowApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:15:27.170012",
+  "readme_zh": "您是一位翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "接收Flow中指定任务的更新",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"133\",\"name\":\"Receive updates for specified tasks in Flow\",\"nodes\":[{\"name\":\"Flow Trigger\",\"type\":\"n8n-nodes-base.flowTrigger\",\"position\":[650,250],\"parameters\":{\"taskIds\":\"\",\"resource\":\"task\"},\"credentials\":{\"flowApi\":\"\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

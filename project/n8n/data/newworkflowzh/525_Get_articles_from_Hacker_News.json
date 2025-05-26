@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/525-get-articles-from-hacker-news/",
+  "title": "Get articles from Hacker News",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[250,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Hacker News\",\"type\":\"n8n-nodes-base.hackerNews\",\"position\":[450,300],\"parameters\":{\"resource\":\"all\",\"additionalFields\":{}},\"typeVersion\":1}],\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Hacker News\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "Companion workflow for Hacker News node docs\n",
+  "crawled_at": "2025-05-25T18:17:29.498230"
+}

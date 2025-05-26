@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/743-translate-text-from-english-to-german/",
+  "title": "Translate text from English to German",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"92\",\"name\":\"Translate text from English to German\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[270,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Google Translate\",\"type\":\"n8n-nodes-base.googleTranslate\",\"position\":[470,300],\"parameters\":{\"text\":\"Hello from n8n!\",\"translateTo\":\"de\",\"authentication\":\"oAuth2\"},\"credentials\":{\"googleTranslateOAuth2Api\":\"google-translate\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Google Translate\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:44:16.730095"
+}

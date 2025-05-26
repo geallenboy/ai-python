@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/651-receive-updates-when-a-form-submission-occurs-in-your-webflow-website/",
+  "title": "Receive updates when a form submission occurs in your Webflow website",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"42\",\"name\":\"Receive updates when a form submission occurs in your Webflow website\",\"nodes\":[{\"name\":\"Webflow Trigger\",\"type\":\"n8n-nodes-base.webflowTrigger\",\"position\":[514,217],\"webhookId\":\"ce934229-1396-4920-8bfe-10579aa6f9dd\",\"parameters\":{\"site\":\"5f4e2d2bbdf69039816428f7\",\"authentication\":\"oAuth2\"},\"credentials\":{\"webflowOAuth2Api\":\"webflow\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:33:36.379473",
+  "readme_zh": "您是一位翻译助手。将以下文本从英语翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在您的Webflow网站中接收表单提交时的更新通知",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"42\",\"name\":\"Receive updates when a form submission occurs in your Webflow website\",\"nodes\":[{\"name\":\"Webflow Trigger\",\"type\":\"n8n-nodes-base.webflowTrigger\",\"position\":[514,217],\"webhookId\":\"ce934229-1396-4920-8bfe-10579aa6f9dd\",\"parameters\":{\"site\":\"5f4e2d2bbdf69039816428f7\",\"authentication\":\"oAuth2\"},\"credentials\":{\"webflowOAuth2Api\":\"webflow\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{}}"
+}

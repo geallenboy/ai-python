@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/1474-standup-bot-34-override-config/",
+  "title": "Standup bot (3/4): Override Config",
+  "author": "Jonathan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"id\":113,\"name\":\"Standup Bot - Override Config\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[240,300],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Write Binary File\",\"type\":\"n8n-nodes-base.writeBinaryFile\",\"position\":[600,300],\"parameters\":{\"fileName\":\"/home/node/.n8n/standup-bot-config.json\"},\"typeVersion\":1},{\"name\":\"Move Binary Data\",\"type\":\"n8n-nodes-base.moveBinaryData\",\"position\":[420,300],\"parameters\":{\"mode\":\"jsonToBinary\",\"options\":{\"encoding\":\"utf8\",\"fileName\":\"standup-bot-config.json\"}},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Move Binary Data\":{\"main\":[[{\"node\":\"Write Binary File\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Move Binary Data\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This is the third bot for the Mattermost Standup Bot. This workflow will override or update the configuration file as needed. This workflow is called by the 'Standup Bot - Worker' workflow.\n",
+  "crawled_at": "2025-05-25T19:47:19.846369"
+}

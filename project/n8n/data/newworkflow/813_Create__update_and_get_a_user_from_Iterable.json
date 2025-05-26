@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/813-create-update-and-get-a-user-from-iterable/",
+  "title": "Create, update and get a user from Iterable",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "{\"id\":\"165\",\"name\":\"Create, update and get a user from Iterable\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[310,340],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Iterable\",\"type\":\"n8n-nodes-base.iterable\",\"position\":[510,340],\"parameters\":{\"value\":\"\",\"identifier\":\"email\",\"additionalFields\":{}},\"credentials\":{\"iterableApi\":\"Iterable\"},\"typeVersion\":1},{\"name\":\"Iterable1\",\"type\":\"n8n-nodes-base.iterable\",\"position\":[710,340],\"parameters\":{\"value\":\"={{$node[\\\"Iterable\\\"].parameter[\\\"value\\\"]}}\",\"identifier\":\"email\",\"additionalFields\":{\"dataFieldsUi\":{\"dataFieldValues\":[{\"key\":\"Name\",\"value\":\"\"}]}}},\"credentials\":{\"iterableApi\":\"Iterable\"},\"typeVersion\":1},{\"name\":\"Iterable2\",\"type\":\"n8n-nodes-base.iterable\",\"position\":[910,340],\"parameters\":{\"email\":\"={{$node[\\\"Iterable\\\"].parameter[\\\"value\\\"]}}\",\"operation\":\"get\"},\"credentials\":{\"iterableApi\":\"Iterable\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Iterable\":{\"main\":[[{\"node\":\"Iterable1\",\"type\":\"main\",\"index\":0}]]},\"Iterable1\":{\"main\":[[{\"node\":\"Iterable2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Iterable\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:53:02.428660",
+  "readme_zh": "您是一位翻译助手。将以下文本从英文翻译成中文。只需提供翻译，无需其他内容。",
+  "title_zh": "在Iterable中创建、更新和获取用户",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"id\":\"165\",\"name\":\"Create, update and get a user from Iterable\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[310,340],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Iterable\",\"type\":\"n8n-nodes-base.iterable\",\"position\":[510,340],\"parameters\":{\"value\":\"\",\"identifier\":\"email\",\"additionalFields\":{}},\"credentials\":{\"iterableApi\":\"Iterable\"},\"typeVersion\":1},{\"name\":\"Iterable1\",\"type\":\"n8n-nodes-base.iterable\",\"position\":[710,340],\"parameters\":{\"value\":\"={{$node[\\\"Iterable\\\"].parameter[\\\"value\\\"]}}\",\"identifier\":\"email\",\"additionalFields\":{\"dataFieldsUi\":{\"dataFieldValues\":[{\"key\":\"Name\",\"value\":\"\"}]}}},\"credentials\":{\"iterableApi\":\"Iterable\"},\"typeVersion\":1},{\"name\":\"Iterable2\",\"type\":\"n8n-nodes-base.iterable\",\"position\":[910,340],\"parameters\":{\"email\":\"={{$node[\\\"Iterable\\\"].parameter[\\\"value\\\"]}}\",\"operation\":\"get\"},\"credentials\":{\"iterableApi\":\"Iterable\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"Iterable\":{\"main\":[[{\"node\":\"Iterable1\",\"type\":\"main\",\"index\":0}]]},\"Iterable1\":{\"main\":[[{\"node\":\"Iterable2\",\"type\":\"main\",\"index\":0}]]},\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Iterable\",\"type\":\"main\",\"index\":0}]]}}}"
+}

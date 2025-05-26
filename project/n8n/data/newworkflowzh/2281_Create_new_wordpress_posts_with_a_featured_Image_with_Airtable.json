@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/2281-create-new-wordpress-posts-with-a-featured-image-with-airtable/",
+  "title": "Create new wordpress posts with a featured Image with Airtable",
+  "author": "Imperol",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "This workflow is aimed to create new posts in wordpress automatically from an airtable dashboard.  \nWhen creating content in bulk, we can save time by automating how we can post and publish this content.\n\n## Usage\n\n  1. Get the content from Airtable. Since we have this as a markdown, we will have to convert it to a html format to make it easier to publish and manage on WordPress\n  2. Upload the blog post with the content, title and all other relevant information needed for an optimized blog\n  3. Once the post is posted, we need to upload the image and set it as a features image for the blogs\n\n\n\nHappy productivity\n",
+  "crawled_at": "2025-05-25T21:59:32.153524"
+}

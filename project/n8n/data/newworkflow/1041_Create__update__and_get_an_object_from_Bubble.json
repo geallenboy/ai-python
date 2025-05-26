@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/1041-create-update-and-get-an-object-from-bubble/",
+  "title": "Create, update, and get an object from Bubble",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Building Blocks"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Bubble\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[450,280],\"parameters\":{\"typeName\":\"Doc\",\"operation\":\"create\",\"properties\":{\"property\":[{\"key\":\"Name\",\"value\":\"Bubble\"}]}},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1},{\"name\":\"Bubble1\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[650,280],\"parameters\":{\"objectId\":\"={{$json[\\\"id\\\"]}}\",\"typeName\":\"={{$node[\\\"Bubble\\\"].parameter[\\\"typeName\\\"]}}\",\"operation\":\"update\",\"properties\":{\"property\":[{\"key\":\"Name\",\"value\":\"Bubble node\"}]}},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1},{\"name\":\"Bubble2\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[850,280],\"parameters\":{\"objectId\":\"={{$node[\\\"Bubble\\\"].json[\\\"id\\\"]}}\",\"typeName\":\"={{$node[\\\"Bubble\\\"].parameter[\\\"typeName\\\"]}}\"},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Bubble\":{\"main\":[[{\"node\":\"Bubble1\",\"type\":\"main\",\"index\":0}]]},\"Bubble1\":{\"main\":[[{\"node\":\"Bubble2\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "This workflow allows you to create, update, and get an object from Bubble.\n\n**Bubble node:** This node will create a new object of the type `Doc` in Bubble. If you want to create an object with a different type, use that type instead.\n\n**Bubble1 node:** This node will update the object that we created using the previous node.\n\n**Bubble2 node:** This node will retrieve the information of the object that we created earlier.\n",
+  "crawled_at": "2025-05-25T19:15:33.149349",
+  "readme_zh": "该工作流允许您在Bubble中创建、更新和获取对象。\n\n**Bubble节点**：此节点将在Bubble中创建一个类型为`Doc`的新对象。如需创建其他类型的对象，请替换对应类型名称。\n\n**Bubble1节点**：此节点将更新我们通过前一个节点创建的对象\n\n**Bubble2节点**：此节点将检索我们先前创建的对象信息",
+  "title_zh": "在Bubble中创建、更新和获取对象",
+  "publish_date_zh": "最后更新于10个月前",
+  "workflow_json_zh": "{\"nodes\":[{\"name\":\"Bubble\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[450,280],\"parameters\":{\"typeName\":\"Doc\",\"operation\":\"create\",\"properties\":{\"property\":[{\"key\":\"Name\",\"value\":\"Bubble\"}]}},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1},{\"name\":\"Bubble1\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[650,280],\"parameters\":{\"objectId\":\"={{$json[\\\"id\\\"]}}\",\"typeName\":\"={{$node[\\\"Bubble\\\"].parameter[\\\"typeName\\\"]}}\",\"operation\":\"update\",\"properties\":{\"property\":[{\"key\":\"Name\",\"value\":\"Bubble node\"}]}},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1},{\"name\":\"Bubble2\",\"type\":\"n8n-nodes-base.bubble\",\"position\":[850,280],\"parameters\":{\"objectId\":\"={{$node[\\\"Bubble\\\"].json[\\\"id\\\"]}}\",\"typeName\":\"={{$node[\\\"Bubble\\\"].parameter[\\\"typeName\\\"]}}\"},\"credentials\":{\"bubbleApi\":\"Bubble API Credentials\"},\"typeVersion\":1}],\"connections\":{\"Bubble\":{\"main\":[[{\"node\":\"Bubble1\",\"type\":\"main\",\"index\":0}]]},\"Bubble1\":{\"main\":[[{\"node\":\"Bubble2\",\"type\":\"main\",\"index\":0}]]}}}"
+}

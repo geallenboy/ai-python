@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/781-periodically-send-data-from-http-request-node-to-telegram/",
+  "title": "Periodically send data from HTTP Request node to Telegram",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:48:26.108745"
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://n8n.io/workflows/465-get-details-of-a-gitlab-repository/",
+  "title": "Get details of a GitLab repository",
+  "author": "sshaligr",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Engineering"
+    }
+  ],
+  "workflow_json": "{\"id\":\"7\",\"name\":\"6\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[440,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Gitlab\",\"type\":\"n8n-nodes-base.gitlab\",\"position\":[780,320],\"parameters\":{\"owner\":\"shaligramshraddha\",\"resource\":\"repository\",\"operation\":\"get\",\"repository\":\"trial\"},\"credentials\":{\"gitlabApi\":\"new\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Gitlab\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:09:03.567408",
+  "readme_zh": "我是一个翻译助手，将以下文本从英文翻译成中文。只提供翻译，无需其他内容。",
+  "title_zh": "获取GitLab仓库的详细信息",
+  "publish_date_zh": "最后更新于9个月前",
+  "workflow_json_zh": "{\"id\":\"7\",\"name\":\"6\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[440,320],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Gitlab\",\"type\":\"n8n-nodes-base.gitlab\",\"position\":[780,320],\"parameters\":{\"owner\":\"shaligramshraddha\",\"resource\":\"repository\",\"operation\":\"get\",\"repository\":\"trial\"},\"credentials\":{\"gitlabApi\":\"new\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Gitlab\",\"type\":\"main\",\"index\":0}]]}}}"
+}

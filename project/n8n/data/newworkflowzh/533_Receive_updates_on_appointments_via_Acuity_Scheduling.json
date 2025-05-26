@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/533-receive-updates-on-appointments-via-acuity-scheduling/",
+  "title": "Receive updates on appointments via Acuity Scheduling",
+  "author": "amudhan",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"nodes\":[{\"name\":\"Acuity Scheduling Trigger\",\"type\":\"n8n-nodes-base.acuitySchedulingTrigger\",\"position\":[880,400],\"webhookId\":\"b326732d-9473-469f-a421-dd823d26b945\",\"parameters\":{\"event\":\"appointment.scheduled\"},\"credentials\":{\"acuitySchedulingApi\":\"acuity_creds\"},\"typeVersion\":1}],\"connections\":{}}",
+  "readme": "Companion workflow for Acuity Scheduling Trigger node docs\n",
+  "crawled_at": "2025-05-25T18:18:04.134087"
+}

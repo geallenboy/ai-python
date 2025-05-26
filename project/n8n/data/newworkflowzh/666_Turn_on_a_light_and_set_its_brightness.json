@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/666-turn-on-a-light-and-set-its-brightness/",
+  "title": "Turn on a light and set its brightness",
+  "author": "Harshil Agrawal",
+  "publish_date": "Last update 10 months ago",
+  "publish_date_absolute": "2024-07-25",
+  "categories": [
+    {
+      "name": "Other"
+    }
+  ],
+  "workflow_json": "{\"id\":\"58\",\"name\":\"Turn on a light and set its brightness\",\"nodes\":[{\"name\":\"On clicking 'execute'\",\"type\":\"n8n-nodes-base.manualTrigger\",\"position\":[590,260],\"parameters\":{},\"typeVersion\":1},{\"name\":\"Philips Hue\",\"type\":\"n8n-nodes-base.philipsHue\",\"position\":[790,260],\"parameters\":{\"lightId\":\"123\",\"additionalFields\":{\"bri\":90}},\"credentials\":{\"philipsHueOAuth2Api\":\"philips-hue\"},\"typeVersion\":1}],\"active\":false,\"settings\":{},\"connections\":{\"On clicking 'execute'\":{\"main\":[[{\"node\":\"Philips Hue\",\"type\":\"main\",\"index\":0}]]}}}",
+  "readme": "\n",
+  "crawled_at": "2025-05-25T18:36:10.162571"
+}

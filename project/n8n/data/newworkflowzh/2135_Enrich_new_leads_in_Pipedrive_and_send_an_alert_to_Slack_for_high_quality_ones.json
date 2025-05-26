@@ -1,0 +1,18 @@
+{
+  "url": "https://n8n.io/workflows/2135-enrich-new-leads-in-pipedrive-and-send-an-alert-to-slack-for-high-quality-ones/",
+  "title": "Enrich new leads in Pipedrive and send an alert to Slack for high-quality ones",
+  "author": "Niklas Hatje",
+  "publish_date": "Last update a year ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## Use Case\n\nThis workflow is beneficial when you're automatically adding new leads to your Pipedrive CRM. Usually, you'd have to manually review each lead to determine if they're a good fit. This process is time-consuming and increases the chances of missing important leads. This workflow ensures every new lead is promptly evaluated upon addition.\n\n## What this workflow does\n\nThe workflow runs every 5 minutes. On every run, it checks your new Pipedrive leads and enriches them with Clearbit. It then marks items as enriched and checks if the company of the new lead matches certain criteria (in this case if they are B2B and have more than 100 employees) and sends a Slack alert to a channel for every match.\n\n## Pre Conditions\n\nYou must have Pipedrive, Clearbit, and Slack accounts. You also need to set up the custom fields `Domain` and `Enriched at` in Pipedrive.\n\n## Setup\n\n  1. Go to Company Settings -> Data fields -> Organization and add `Domain` as a custom field\n  2. Go to Company Settings -> Data fields -> Leads and add `Enriched at` as a custom date field\n  3. Add your `Pipedrive`, `Clearbit` and `Slack` credentials.\n  4. Fill the `setup` node below. To get the ID of your custom domain fields, simply run the `Show only custom organization fields` and `Show only custom lead fields` nodes below and copy the keys of your `domain`, and `enriched at` fields.\n\n\n\n## How to adjust this workflow to your needs\n\n  * Modify the criteria to suit your definition of an interesting lead.\n  * If you only want to focus on interesting leads in Pipedrive, add a node that archives all others.\n\n\n\nThis workflow was built using n8n version 1.29.1\n",
+  "crawled_at": "2025-05-25T21:21:02.547833"
+}
