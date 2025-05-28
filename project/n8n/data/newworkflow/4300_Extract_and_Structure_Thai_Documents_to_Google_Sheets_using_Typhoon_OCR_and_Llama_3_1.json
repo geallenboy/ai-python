@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/4300-extract-and-structure-thai-documents-to-google-sheets-using-typhoon-ocr-and-llama-31/",
+  "title": "Extract and Structure Thai Documents to Google Sheets using Typhoon OCR and Llama 3.1",
+  "author": "Jaruphat J.",
+  "publish_date": "Last update a day ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "AI"
+    },
+    {
+      "name": "IT Ops"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "![20250522_93100.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/2025_05_22_9_31_00_c72e55ca63.png)  \n⚠️ **Note:** This template requires a community node and works **only on self-hosted** n8n installations. It uses the Typhoon OCR Python package and custom command execution. Make sure to install required dependencies locally.\n\n* * *\n\n## Who is this for?\n\nThis template is for developers, operations teams, and automation builders in Thailand (or any Thai-speaking environment) who regularly process PDFs or scanned documents in Thai and want to extract structured text into a Google Sheet.\n\n### It is ideal for:\n\n  * Local government document processing\n  * Thai-language enterprise paperwork\n  * AI automation pipelines requiring Thai OCR\n\n\n\n* * *\n\n## What problem does this solve?\n\nTyphoon OCR is one of the most accurate OCR tools for Thai text. However, integrating it into an end-to-end workflow usually requires manual scripting and data wrangling.\n\n### This template solves that by:\n\n  * Running Typhoon OCR on PDF files\n  * Using AI to extract structured data fields\n  * Automatically storing results in Google Sheets\n\n\n\n* * *\n\n## What this workflow does\n\n  1. **Trigger** : Run manually or from any automation source\n  2. **Read Files** : Load local PDF files from a `doc/` folder\n  3. **Execute Command** : Run Typhoon OCR on each file using a Python command\n  4. **LLM Extraction** : Send the OCR markdown to an AI model (e.g., GPT-4 or OpenRouter) to extract fields\n  5. **Code Node** : Parse the LLM output as JSON\n  6. **Google Sheets** : Append structured data into a spreadsheet\n\n\n\n* * *\n\n## Setup\n\n### 1\\. **Install Requirements**\n\n  * Python 3.10+\n  * `typhoon-ocr`: `pip install typhoon-ocr`\n  * Install [Poppler](https://github.com/oschwartz10612/poppler-windows/releases/) and add to system PATH (needed for `pdftoppm`, `pdfinfo`)\n\n\n\n### 2\\. **Create folders**\n\n  * Create a folder called `doc` in the same directory where n8n runs (or mount it via Docker)\n\n\n\n### 3\\. **Google Sheet**\n\nCreate a Google Sheet with the following column headers:\n\nbook_id | date | subject | detail | signed_by | signed_by2 | contact | download_url  \n---|---|---|---|---|---|---|---  \n  \nYou can use this [example Google Sheet](https://docs.google.com/spreadsheets/d/1h70cJyLj5i2j0Ag5kqp93ccZjjhJnqpLmz-ee5r4brU) as a reference.\n\n### 4\\. **API Key**\n\nExport your `TYPHOON_OCR_API_KEY` and `OPENAI_API_KEY` in your environment (or set inside the command string in `Execute Command` node).\n\n* * *\n\n## How to customize this workflow\n\n  * Replace the LLM provider in the `Basic LLM Chain` node (currently supports OpenRouter)\n  * Change output fields to match your data structure (adjust the prompt and Google Sheet headers)\n  * Add trigger nodes (e.g., Dropbox Upload, Webhook) to automate input\n\n\n\n* * *\n\n## About Typhoon OCR\n\n[Typhoon](https://docs.opentyphoon.ai/en/) is a multilingual LLM and toolkit optimized for Thai NLP. It includes `typhoon-ocr`, a Python OCR library designed for Thai-centric documents. It is open-source, highly accurate, and works well in automation pipelines. Perfect for government paperwork, PDF reports, and multilingual documents in Southeast Asia.\n\n* * *\n",
+  "crawled_at": "2025-05-27T23:02:08.418383",
+  "readme_zh": "![20250522_93100.png](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/2025_05_22_9_31_00_c72e55ca63.png)  \n⚠️ **注意：** 此模板需使用社区节点，且仅适用于**自托管**的n8n环境。该流程依赖Typhoon OCR Python包及自定义命令执行功能，请确保本地已安装相关依赖项。\n\n* * *\n\n## 适用场景\n\n本模板专为泰国（或任何泰语环境）的开发人员、运维团队和自动化构建者设计，适用于需要从泰语PDF或扫描文档中提取结构化文本并存入Google表格的场景。\n\n### 典型应用：\n\n  * 地方政府文件处理\n  * 泰语企业文书\n  * 需要泰语OCR的AI自动化流程",
+  "title_zh": "使用Typhoon OCR和Llama 3.1从泰语文档提取数据并结构化至Google Sheets",
+  "publish_date_zh": "最近更新于一天前"
+}

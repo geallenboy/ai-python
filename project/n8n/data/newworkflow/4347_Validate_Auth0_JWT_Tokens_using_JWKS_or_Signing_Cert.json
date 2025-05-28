@@ -1,0 +1,15 @@
+{
+  "url": "https://n8n.io/workflows/4347-validate-auth0-jwt-tokens-using-jwks-or-signing-cert/",
+  "title": "Validate Auth0 JWT Tokens using JWKS or Signing Cert",
+  "author": "Jimleuk",
+  "publish_date": "Last update a day ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Engineering"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "> Note: This template requires a self-hosted community edition of n8n. Does not work on cloud.\n\n## Try It Out\n\n### This n8n template shows how to validate API requests with Auth0 Authorization tokens.\n\nAuth0 doesn't work with the standard JWT auth option because:\n\n  1. Auth0 tokens use the RS256 algorithm.\n  2. RS256 JWT credentials in n8n require the user to use private and public keys and not secret phrase.\n  3. Auth0 does not give you access to your Auth0 instance private keys.\n\n\n\nThe solution is to handle JWT validation after the webhook is received using the code node.\n\n### How it works\n\n  * There are 2 approaches to validate Auth0 tokens: using your application's JWKS file or using your signing cert.\n  * Both solutions uses the code node to access nodeJS libraries to verify the token.\n  * **JWKS** : the `JWK-RSA` library is used to validate the application's JWKS URI hosted on Auth0\n  * **Signing Cert** : the application's signing cert is imported into the workflow and used to verify token.\n  * In both cases, when the token is found to be invalid, an error is thrown. However, as we can use error outputs for the code node, the error does not stop the workflow and instead is redirected to a 401 unauthorized webhook response.\n  * When token is validated, the webhook response is forwarded on the success branch and the token decoded payload is attached.\n\n\n\n### How to use\n\n  * Follow the instructions as stated in each scenario's sticky notes.\n  * Modify the Auth0 details with that of your application and Auth0 instance.\n\n\n\n### Requirements\n\n  * Self-hosted community edition of n8n\n  * Ability to install npm packages\n  * Auth0 application and some way to get either the JWK url or signing cert.\n\n\n",
+  "crawled_at": "2025-05-27T23:09:35.241203"
+}

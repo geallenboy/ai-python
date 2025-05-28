@@ -1,0 +1,21 @@
+{
+  "url": "https://n8n.io/workflows/4295-automate-business-lead-scraping-from-apify-to-google-sheets-with-data-cleaning/",
+  "title": "Automate Business Lead Scraping from Apify to Google Sheets with Data Cleaning",
+  "author": "David Olusola",
+  "publish_date": "Last update a day ago",
+  "publish_date_absolute": "",
+  "categories": [
+    {
+      "name": "Sales"
+    },
+    {
+      "name": "AI"
+    },
+    {
+      "name": "Marketing"
+    }
+  ],
+  "workflow_json": "",
+  "readme": "## 🚀 Automated Lead Scraper Workflow (Apify + n8n + Google Sheets)\n\n### 🧠 What It Does\n\nThis n8n workflow automates the process of scraping leads using **Apify** , cleaning the extracted data, and exporting it to **Google Sheets** —ready for use in outreach, prospecting, or CRM pipelines.\n\n* * *\n\n### 🔄 Workflow Steps\n\n  1. ✅ **Start** – Manually triggers the workflow.\n\n  2. 🧩 **Set Variables** – Stores required Apify credentials:\n\n     * `APIFY_TOKEN`: Your Apify token.\n     * `APIFY_TASK_ID`: The Apify task to run.\n  3. 🕸️ **Run Apify Scraper** – Launches the scraper and fetches the dataset.\n\n  4. 🧹 **Clean Data** – Processes scraped results to:\n\n     * ✂️ Strip non-numeric characters from phone numbers.\n     * ✉️ Format emails (lowercase + trimmed).\n  5. 📊 **Export to Google Sheets** – Appends clean data to your spreadsheet:\n\n     * 🏢 `company name` → from `title`\n     * 📞 `phone` → cleaned number\n     * 📍 `address` → from scraped info\n\n\n\n* * *\n\n### 🛠️ Requirements\n\n  * 🕷️ **Apify Account**\n\n    * A valid `APIFY_TOKEN`\n    * An existing Apify task (`APIFY_TASK_ID`)\n  * 📗 **Google Sheets Access**\n\n    * OAuth2 credentials set up in n8n (e.g., `\"Google Sheets account 2\"`)\n\n\n\n* * *\n\n### 🚦 How to Use\n\n  1. ⚙️ Open the **Variables** node and plug in your Apify credentials.\n  2. 📄 Confirm the **Google Sheets** node points to your desired spreadsheet.\n  3. ▶️ Run the workflow manually from the **Start** node.\n\n\n\n* * *\n\n### 📥 Output\n\nA ready-to-use sheet of **cleaned lead data** containing:\n\n  * Company names\n  * Phone numbers\n  * Addresses\n\n\n\n* * *\n\n### 💼 Perfect For:\n\n  * Sales teams doing outbound prospecting\n  * Marketers building lead lists\n  * Agencies running data aggregation tasks\n\n\n\n* * *\n",
+  "crawled_at": "2025-05-27T23:01:49.257025"
+}
